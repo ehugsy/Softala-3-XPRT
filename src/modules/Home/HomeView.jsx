@@ -20,9 +20,9 @@ const styles = {
     height: 68
   },
   card: {
-      margin: 20, // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2,
-      flex: 1,
-      flexBasis: '450px'
+    margin: 20, // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2,
+    flex: 1,
+    flexBasis: '450px'
   }
 };
 
@@ -40,9 +40,13 @@ class Home extends Component {
     this.props.dispatch(push(path));
   }
 
-  componentDidMount = async () => {
-    const experts = await get('/experts');
-    this.setState({ experts });
+  createAccount = () => {
+    const path = '/register';
+    this.props.dispatch(push(path));
+  }
+
+  componentDidMount = () => {
+    this.props.getExperts();
   }
 
   render() {
@@ -59,13 +63,13 @@ class Home extends Component {
                 <li>Curabitur faucibus, nibh mollis porttitor mollis, tellus ligula blandit erat, sit amet tempor magna ligula vitae massa.</li>
                 <li>Sed turpis leo, sodales auctor ex quis, vehicula iaculis augue. Donec condimentum consequat augue, in bibendum nisl cursus vulputate. Aenean faucibus ex nec ligula euismod, et euismod magna eleifend.</li>
               </ul>
-              <RaisedButton label="Create Account" primary={true} fullWidth={true} style={styles.button} />
+              <RaisedButton label="Create Account" primary={true} fullWidth={true} style={styles.button} onTouchTap={this.createAccount} />
             </CardText>
           </Card>
           <Card style={styles.card}>
             <CardText>
               <h1>Some of our Experts</h1>
-              <ExpertList experts={this.state.experts.slice(0, 5)} openExpert={this.openExpert} />
+              <ExpertList experts={this.props.experts.data.slice(0, 5)} openExpert={this.openExpert} />
             </CardText>
           </Card>
       </div>
