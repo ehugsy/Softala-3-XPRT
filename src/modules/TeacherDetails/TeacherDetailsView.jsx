@@ -2,10 +2,6 @@ import { Component, PropTypes } from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
-import {
-  get
-} from '../../utils/api';
-
 function sendEmail() {
   alert('Send email?');
 }

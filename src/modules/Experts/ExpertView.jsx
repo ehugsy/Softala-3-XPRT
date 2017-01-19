@@ -1,9 +1,6 @@
 import { Component, PropTypes } from 'react';
 import ExpertList from '../../components/Experts/ExpertList'
 import { push } from 'react-router-redux';
-import {
-  get
-} from '../../utils/api';
 
 class Experts extends Component {
   constructor(props) {

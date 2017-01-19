@@ -5,9 +5,6 @@ import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import Moment from 'moment';
 import _ from 'lodash';
-import {
-  get
-} from '../../utils/api';
 
 const styles = {
   chip: {

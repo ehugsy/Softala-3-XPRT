@@ -3,10 +3,6 @@ import { List, ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import { push } from 'react-router-redux'
 
-import {
-  get
-} from '../../utils/api';
-
 class Teachers extends Component {
   constructor(props) {
     super(props);

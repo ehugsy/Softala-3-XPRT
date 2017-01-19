@@ -5,10 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { push } from 'react-router-redux';
 import ExpertList from '../../components/Experts/ExpertList'
 
-import {
-  get
-} from '../../utils/api';
-
 const styles = {
   wrapper: {
     display: 'flex',
