@@ -1,10 +1,8 @@
-# hemmo-admin
+# XPRT web interface
 
-This is the admin frontend for Pelastakaa Lapset ry's Hemmo mobile app. It provides an interface for reading feedback sent by children, and various other administrative tasks.
+This is the web interface for the XPRT project
 
-The mobile app source will be released at a later date.
-
-Backend app: https://github.com/futurice/hemmo-backend
+Backend app: https://github.com/futurice/xprt-backend
 
 ## Package installation
 ```bash
