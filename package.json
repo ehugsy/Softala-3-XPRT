@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development webpack-dev-server --hot --inline --progress --colors --host 0.0.0.0",
+    "start": "webpack-dev-server --hot --inline --progress --colors --host 0.0.0.0",
     "start-heroku": "node run-heroku.js",
     "build": "NODE_ENV=production webpack --progress --colors",
     "postinstall": "npm run build"
