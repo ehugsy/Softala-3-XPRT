@@ -18,9 +18,9 @@ export default [{
   component: Preferences,
   icon: PreferencesIcon,
   separator: true,
-}, {
+}, /*{
   path: '/logout',
   name: 'Logout',
   component: Logout,
   icon: LogoutIcon,
-}];
+}*/];

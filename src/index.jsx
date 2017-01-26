@@ -59,6 +59,9 @@ const requireAuthentication = UserAuthWrapper({
   wrapperDisplayName: 'requireAuthentication'
 })
 
+// Authentication can be required for a component (e.g. App) like so:
+// <Route path='/' component={requireAuthentication(App)}>
+
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
@@ -69,7 +72,7 @@ ReactDOM.render(
       >
         <Router history={history}>
           <Route path='/login' component={Login}/>
-          <Route path='/' component={requireAuthentication(App)}>
+          <Route path='/' component={App}>
             <IndexRoute component={routes[0].component}/>
             <Redirect from={routes[0].path} to='/' />
             {
