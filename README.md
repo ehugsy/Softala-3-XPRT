@@ -17,3 +17,11 @@ $ npm install
 ```bash
 $ npm start
 ```
+
+## List of software and tools recommended
+*Node
+*Npm
+*Git
+*Atom text editor (language-babel extension for React syntax)
+
+
