@@ -51,3 +51,9 @@ $ npm start
 * Git
 * Atom text editor (language-babel extension for React syntax)
 
+## Misc commands and links for backend tools
+https://github.com/futurice/xprt-backend 
+
+When using Ubuntu & postgresql:
+https://gist.github.com/p1nox/4953113#configuration
+psql --username=postgres 
