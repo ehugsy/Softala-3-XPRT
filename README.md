@@ -19,9 +19,9 @@ $ npm start
 ```
 
 ## List of software and tools recommended
-*Node
-*Npm
-*Git
-*Atom text editor (language-babel extension for React syntax)
+* Node
+* Npm
+* Git
+* Atom text editor (language-babel extension for React syntax)
 
 
