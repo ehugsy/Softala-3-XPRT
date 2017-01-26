@@ -1,27 +1,28 @@
+# XPRT web interface
 
-## Haaga-Helia University of Applied Sciences
-# School project for course Softala 3 with Futurice
+This is the web interface for the XPRT project
 
-## Clone the project
+Backend app: https://github.com/futurice/xprt-backend
 
-```bash
-git clone https://github.com/kingHUGSY/Softala-3-XPRT.git
-```
-
-## Navigate to xprt-web using terminal and run npm install
+## Package installation
 ```bash
 $ npm install
 ```
 
-## Start development server
+## Use development server
+webpack-dev-server is used as development server.
+It monitors update files and rebuilds them automatically.
+Note that this is not suitable for production use.
+
 ```bash
 $ npm start
 ```
 
-## List of software and tools recommended
-* Node
-* Npm
-* Git
-* Atom text editor (language-babel extension for React syntax)
+## Release build
+To put compiled files into `static` directory, type the following command.
+Note that this is automatically ran as a post-install hook after `npm install`.
 
+```bash
+$ npm run build
+```
 
