@@ -27,7 +27,7 @@ $ npm run build
 ```
 
 ## Haaga-Helia University of Applied Sciences
-# School project for course Softala 3 with Futurice
+### School project for course Softala 3 with Futurice 
 
 ## Clone the project
 
