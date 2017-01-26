@@ -1,8 +1,7 @@
-import { combineReducers } from 'redux-immutablejs';
+import { combineReducers } from 'redux';
 import menuDrawerReducer from '../modules/MenuDrawer/MenuDrawerState';
-import authReducer from '../modules/Auth/AuthState';
-import { restReducer } from '../services/rest';
-import routerReducer from '../services/router';
+import rest from '../services/rest';
+import { routerReducer } from 'react-router-redux';
 import { intlReducer } from 'react-intl-redux'
 import { reducer as formReducer } from 'redux-form'
 
@@ -13,17 +12,14 @@ const reducers = {
   // Routing state
   routing: routerReducer,
 
-  // REST API
-  rest: restReducer,
-
   // Internationalization state (TODO!)
   intl: intlReducer,
 
-  // Authentication
-  auth: authReducer,
-
   // Redux Form
   form: formReducer,
+
+  // REST API
+  ...rest.reducers,
 }
 
 export default combineReducers(reducers);

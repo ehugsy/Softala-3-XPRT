@@ -1,3 +1,3 @@
 export default {
-  API_ROOT: 'https://hemmo-backend.herokuapp.com'
+  API_ROOT: 'https://superada.herokuapp.com'
 };
