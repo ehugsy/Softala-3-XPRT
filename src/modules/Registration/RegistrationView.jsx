@@ -170,13 +170,13 @@ class HorizontalTransition extends Component {
       <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
         <Stepper activeStep={stepIndex} connector={null}>
           <Step>
-            <StepLabel style={{color: theme.palette.primary2Color}}>BASIC INFO</StepLabel>
+            <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>BASIC INFO</StepLabel>
           </Step>
           <Step>
-            <StepLabel style={{color: theme.palette.primary2Color}}>OCCUPATION</StepLabel>
+            <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>OCCUPATION</StepLabel>
           </Step>
           <Step>
-            <StepLabel style={{color: theme.palette.primary2Color}}>EXPERT PROFILE</StepLabel>
+            <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>EXPERT PROFILE</StepLabel>
           </Step>
         </Stepper>
         <ExpandTransition loading={loading} open={true}>
@@ -192,7 +192,7 @@ class RegisterExpert extends Component {
     console.log(this.props);
     return(
       <div style={styles.header}>
-        <h1>Create an account</h1>
+        <h1>CREATE AN ACCOUNT</h1>
       <div style={styles.wrapper}>
         <Card style={styles.card}>
           <CardText>
