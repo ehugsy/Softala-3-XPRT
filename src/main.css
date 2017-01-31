@@ -6,6 +6,7 @@ body {
   font-size: 13px;
   line-height: 20px;
   margin: 0px;
+  background: #222222;
 }
 
 .formcontainer input:-webkit-autofill { -webkit-text-fill-color: green; -webkit-box-shadow: 0 0 0 1000px white inset; }

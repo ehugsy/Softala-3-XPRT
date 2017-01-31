@@ -18,19 +18,19 @@ module.exports = {
   },
   fontFamily: 'Roboto, sans-serif',
   palette: {
-    primary1Color: '#fe9593',
-    primary2Color: '#ed3a4b',
-    primary3Color: '#eeeeee',
+    primary1Color: '#15a369',
+    primary2Color: '#15a369',
+    primary3Color: '#333333',
     accent1Color: Colors.pinkA200,
-    accent2Color: Colors.grey100,
-    accent3Color: Colors.grey500,
-    textColor: Colors.darkBlack,
+    accent2Color: Colors.pinkA200,
+    accent3Color: Colors.pinkA200,
+    textColor: Colors.white,
     alternateTextColor: Colors.white,
-    canvasColor: '#fafafa',
+    canvasColor: '#333333',
     borderColor: Colors.grey300,
-    disabledColor: ColorManipulator.fade(Colors.darkBlack, 0.3),
+    disabledColor: Colors.white,
     pickerHeaderColor: Colors.yellow500,
     clockCircleColor: ColorManipulator.fade(Colors.darkBlack, 0.07),
-    shadowColor: Colors.fullBlack
+    shadowColor: Colors.white
   }
 };
