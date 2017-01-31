@@ -23,6 +23,7 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    textAlign: 'left',
     padding: 0 // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2
   },
   header: {
