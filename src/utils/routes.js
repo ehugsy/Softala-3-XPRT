@@ -7,6 +7,8 @@ import Login from '../modules/Auth/Login';
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import PreferencesIcon from 'material-ui/svg-icons/action/settings';
 import LogoutIcon from 'material-ui/svg-icons/action/exit-to-app';
+import LoginIcon from 'material-ui/svg-icons/action/lock';
+import RegisterIcon from 'material-ui/svg-icons/maps/rate-review'
 
 // First route is the index route
 export default [{
@@ -24,13 +26,13 @@ export default [{
   path: '/registration',
   name: 'Registration',
   component: Registration,
-  icon: LogoutIcon,
+  icon: RegisterIcon,
   seperator: true,
 }, {
   path: '/login',
   name: 'Login',
   component: Login,
-  icon: LogoutIcon,
+  icon: LoginIcon,
   seperator: true,
 },/*{
   path: '/logout',
