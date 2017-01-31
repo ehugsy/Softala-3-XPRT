@@ -4,4 +4,5 @@ export default {
   Preferences: 'Preferences',
   Registration: 'Registration',
   Logout: 'Logout',
+  Login: 'Login',
 };

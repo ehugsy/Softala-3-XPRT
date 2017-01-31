@@ -15,6 +15,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import ExpandTransition from 'material-ui/internal/ExpandTransition';
 import TextField from 'material-ui/TextField';
+import theme from '../../utils/theme'
 
 
 const styles = {
@@ -28,7 +29,7 @@ const styles = {
   header: {
     textAlign: 'center',
     padding: 0,
-    color: '#15a369'
+    color: theme.palette.primary1Color,
   },
   button: {
     height: 68
@@ -40,10 +41,10 @@ const styles = {
     maxWidth: '650px'
   },
   floatingLabelFocusStyle: {
-    color: "#eab94e"
+    color: theme.palette.primary2Color
   },
   underlineStyle: {
-    color: "#eab94e"
+    color: theme.palette.primary2Color
   }
 };
 
@@ -169,13 +170,13 @@ class HorizontalTransition extends Component {
       <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
         <Stepper activeStep={stepIndex} connector={null}>
           <Step>
-            <StepLabel style={{color: "#eab94e"}}>BASIC INFO</StepLabel>
+            <StepLabel style={{color: theme.palette.primary2Color}}>BASIC INFO</StepLabel>
           </Step>
           <Step>
-            <StepLabel style={{color: "#eab94e"}}>OCCUPATION</StepLabel>
+            <StepLabel style={{color: theme.palette.primary2Color}}>OCCUPATION</StepLabel>
           </Step>
           <Step>
-            <StepLabel style={{color: "#eab94e"}}>EXPERT PROFILE</StepLabel>
+            <StepLabel style={{color: theme.palette.primary2Color}}>EXPERT PROFILE</StepLabel>
           </Step>
         </Stepper>
         <ExpandTransition loading={loading} open={true}>

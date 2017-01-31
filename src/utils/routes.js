@@ -2,6 +2,7 @@ import Home from '../modules/Home';
 import Preferences from '../modules/Preferences';
 import Logout from '../modules/Auth/Logout';
 import Registration from '../modules/Registration';
+import Login from '../modules/Auth/Login';
 
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import PreferencesIcon from 'material-ui/svg-icons/action/settings';
@@ -23,6 +24,12 @@ export default [{
   path: '/registration',
   name: 'Registration',
   component: Registration,
+  icon: LogoutIcon,
+  seperator: true,
+}, {
+  path: '/login',
+  name: 'Login',
+  component: Login,
   icon: LogoutIcon,
   seperator: true,
 },/*{

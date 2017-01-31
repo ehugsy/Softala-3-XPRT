@@ -19,7 +19,7 @@ module.exports = {
   fontFamily: 'Catamaran, sans-serif',
   palette: {
     primary1Color: '#15a369',
-    primary2Color: '#15a369',
+    primary2Color: '#eab94e',
     primary3Color: '#333333',
     accent1Color: Colors.white,
     accent2Color: Colors.white,
