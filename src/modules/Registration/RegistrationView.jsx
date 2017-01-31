@@ -167,13 +167,13 @@ class HorizontalTransition extends Component {
       <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
         <Stepper activeStep={stepIndex} connector={null}>
           <Step>
-            <StepLabel style={{color: "#eab94e"}}>Basic info</StepLabel>
+            <StepLabel style={{color: "#eab94e"}}>BASIC INFO</StepLabel>
           </Step>
           <Step>
-            <StepLabel style={{color: "#eab94e"}}>Expert profile</StepLabel>
+            <StepLabel style={{color: "#eab94e"}}>OCCUPATION</StepLabel>
           </Step>
           <Step>
-            <StepLabel style={{color: "#eab94e"}}>Occupation</StepLabel>
+            <StepLabel style={{color: "#eab94e"}}>EXPERT PROFILE</StepLabel>
           </Step>
         </Stepper>
         <ExpandTransition loading={loading} open={true}>
