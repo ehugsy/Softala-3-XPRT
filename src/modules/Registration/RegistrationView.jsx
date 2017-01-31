@@ -41,6 +41,9 @@ const styles = {
   },
   floatingLabelFocusStyle: {
     color: "#eab94e"
+  },
+  underlineStyle: {
+    color: "#eab94e"
   }
 };
 
@@ -87,19 +90,19 @@ class HorizontalTransition extends Component {
       case 0:
         return (
           <div>
-            <TextField style={{margin: 0}} floatingLabelText="Name" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Phone" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true} />
-            <TextField style={{margin: 0}} floatingLabelText="Email" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} className="formcontainer"  fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} className="formcontainer" type='password' fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Repeat Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} className="formcontainer" type='password' fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Name" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Phone" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true} />
+            <TextField style={{margin: 0}} floatingLabelText="Email" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} className="formcontainer"  fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} className="formcontainer" type='password' fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Repeat Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} className="formcontainer" type='password' fullWidth={true}/>
           </div>
         );
       case 1:
         return (
           <div>
-            <TextField style={{margin: 0}} floatingLabelText="Company name" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Company name" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
             <br />
-            <TextField style={{margin: 0}} floatingLabelText="Title" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Title" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
             <br /><br />
             <Checkbox label="Office visit possible" style={styles.checkbox}/>
             <p>Check this box if you agree that teachers can come to your office with
@@ -110,9 +113,9 @@ class HorizontalTransition extends Component {
       case 2:
         return (
           <div>
-          <TextField style={{margin: 10}} hintText="Tell briefly about you, your expertise and experience" floatingLabelText="Short introduction" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
-          <TextField style={{margin: 10}} hintText="List the subjects you could teach about (keywords)" floatingLabelText="Subjects" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
-          <TextField style={{margin: 10}} hintText="Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?" floatingLabelText="Lecture details (if possible)" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} floatingLabelFixed={true} className="formcontainer" multiLine={true} rows={2} rowsMax={4} fullWidth={true}/>
+          <TextField style={{margin: 10}} hintText="Tell briefly about you, your expertise and experience" floatingLabelText="Short introduction" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
+          <TextField style={{margin: 10}} hintText="List the subjects you could teach about (keywords)" floatingLabelText="Subjects" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
+          <TextField style={{margin: 10}} hintText="Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?" floatingLabelText="Lecture details (if possible)" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} floatingLabelFixed={true} className="formcontainer" multiLine={true} rows={2} rowsMax={4} fullWidth={true}/>
           </div>
         );
     }
