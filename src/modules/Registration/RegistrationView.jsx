@@ -23,16 +23,24 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    padding: 20 // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2
+    padding: 0 // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2
+  },
+  header: {
+    textAlign: 'center',
+    padding: 0,
+    color: '#15a369'
   },
   button: {
     height: 68
   },
   card: {
-      margin: 20, // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2,
-      flex: 1,
-      flexBasis: '450px',
-      maxWidth: '650px'
+    margin: 20, // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2,
+    flex: 1,
+    flexBasis: '450px',
+    maxWidth: '650px'
+  },
+  floatingLabelFocusStyle: {
+    color: "#eab94e"
   }
 };
 
@@ -79,24 +87,19 @@ class HorizontalTransition extends Component {
       case 0:
         return (
           <div>
-            <p>
-              Please enter your account info.
-            </p>
-
-            <TextField style={{margin: 0}} floatingLabelText="Name" floatingLabelFocusStyle={{color:"#eab94e"}} fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Phone" floatingLabelFocusStyle={{color:"#eab94e"}} fullWidth={true} />
-            <TextField style={{margin: 0}} floatingLabelText="Email" className="formcontainer"  fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Password" className="formcontainer" type='password' fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Repeat Password" className="formcontainer" type='password' fullWidth={true}/>
-
+            <TextField style={{margin: 0}} floatingLabelText="Name" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Phone" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true} />
+            <TextField style={{margin: 0}} floatingLabelText="Email" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} className="formcontainer"  fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} className="formcontainer" type='password' fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Repeat Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} className="formcontainer" type='password' fullWidth={true}/>
           </div>
         );
       case 1:
         return (
           <div>
-            <TextField style={{margin: 0}} floatingLabelText="Company name" className="formcontainer"  fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Company name" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true}/>
             <br />
-            <TextField style={{margin: 0}} floatingLabelText="Title" className="formcontainer"  fullWidth={true}/>
+            <TextField style={{margin: 0}} floatingLabelText="Title" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} fullWidth={true}/>
             <br /><br />
             <Checkbox label="Office visit possible" style={styles.checkbox}/>
             <p>Check this box if you agree that teachers can come to your office with
@@ -107,9 +110,9 @@ class HorizontalTransition extends Component {
       case 2:
         return (
           <div>
-          <TextField style={{margin: 10}} hintText="Tell briefly about you, your expertise and experience" floatingLabelText="Short introduction" floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
-          <TextField style={{margin: 10}} hintText="List the subjects you could teach about (keywords)" floatingLabelText="Subjects" floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
-          <TextField style={{margin: 10}} hintText="Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?" floatingLabelText="Lecture details (if possible)" floatingLabelFixed={true} className="formcontainer" multiLine={true} rows={2} rowsMax={4} fullWidth={true}/>
+          <TextField style={{margin: 10}} hintText="Tell briefly about you, your expertise and experience" floatingLabelText="Short introduction" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
+          <TextField style={{margin: 10}} hintText="List the subjects you could teach about (keywords)" floatingLabelText="Subjects" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} floatingLabelFixed={true} className="formcontainer"  fullWidth={true}/>
+          <TextField style={{margin: 10}} hintText="Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?" floatingLabelText="Lecture details (if possible)" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} floatingLabelFixed={true} className="formcontainer" multiLine={true} rows={2} rowsMax={4} fullWidth={true}/>
           </div>
         );
     }
@@ -161,7 +164,7 @@ class HorizontalTransition extends Component {
 
     return (
       <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-        <Stepper activeStep={stepIndex}>
+        <Stepper activeStep={stepIndex} connector={null}>
           <Step>
             <StepLabel style={{color: "#eab94e"}}>Basic info</StepLabel>
           </Step>
@@ -184,12 +187,15 @@ class RegisterExpert extends Component {
   render() {
     console.log(this.props);
     return(
+      <div style={styles.header}>
+        <h1>Create an account</h1>
       <div style={styles.wrapper}>
         <Card style={styles.card}>
           <CardText>
             <HorizontalTransition closeRegistration={ this.props.closeRegistration } />
           </CardText>
         </Card>
+      </div>
       </div>
     );
   }

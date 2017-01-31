@@ -16,7 +16,7 @@ module.exports = {
     desktopSubheaderHeight: 48,
     desktopToolbarHeight: 56,
   },
-  fontFamily: 'Roboto, sans-serif',
+  fontFamily: 'Catamaran, sans-serif',
   palette: {
     primary1Color: '#15a369',
     primary2Color: '#15a369',
@@ -28,7 +28,7 @@ module.exports = {
     alternateTextColor: Colors.white,
     canvasColor: '#333333',
     borderColor: Colors.grey300,
-    disabledColor: Colors.white,
+    disabledColor: '#cccccc',
     pickerHeaderColor: Colors.yellow500,
     clockCircleColor: ColorManipulator.fade(Colors.darkBlack, 0.07),
     shadowColor: Colors.white
