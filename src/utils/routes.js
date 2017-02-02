@@ -4,6 +4,8 @@ import Logout from '../modules/Auth/Logout';
 import Registration from '../modules/Registration';
 import MyAccount from '../modules/MyAccount';
 import Login from '../modules/Auth/Login';
+import Contact from '../modules/Contact';
+import About from '../modules/About';
 
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import PreferencesIcon from 'material-ui/svg-icons/action/settings';
@@ -39,6 +41,16 @@ export default [{
   component: Login,
   icon: LoginIcon,
   seperator: true,
+}, {
+  path: '/contact',
+  name: 'Contact us',
+  component: Contact,
+  icon: PreferencesIcon,
+}, {
+  path: '/about',
+  name: 'About xprt',
+  component: About,
+  icon: PreferencesIcon,
 },/*{
   path: '/logout',
   name: 'Logout',
