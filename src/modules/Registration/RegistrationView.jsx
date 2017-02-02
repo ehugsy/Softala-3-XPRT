@@ -16,6 +16,7 @@ import FlatButton from 'material-ui/FlatButton';
 import ExpandTransition from 'material-ui/internal/ExpandTransition';
 import TextField from 'material-ui/TextField';
 import theme from '../../utils/theme'
+import MyTextField from '../../components/MyTextField';
 
 
 const styles = {
@@ -91,19 +92,19 @@ class HorizontalTransition extends Component {
       case 0:
         return (
           <div>
-            <TextField style={{margin: 0}} floatingLabelText="Name" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Phone" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true} />
-            <TextField style={{margin: 0}} floatingLabelText="Email" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} className="formcontainer"  fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} className="formcontainer" type='password' fullWidth={true}/>
-            <TextField style={{margin: 0}} floatingLabelText="Repeat Password" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} className="formcontainer" type='password' fullWidth={true}/>
+            <MyTextField label="Name" />
+            <MyTextField label="Phone" />
+            <MyTextField label="Email" />
+            <MyTextField label="Password" type="password" />
+            <MyTextField label="Repeat password" type="password" />
           </div>
         );
       case 1:
         return (
           <div>
-            <TextField style={{margin: 0}} floatingLabelText="Company name" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
+            <MyTextField label="Company name" />
             <br />
-            <TextField style={{margin: 0}} floatingLabelText="Title" className="formcontainer" floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
+            <MyTextField label="Title" />
             <br /><br />
             <Checkbox label="Office visit possible" style={styles.checkbox}/>
             <p>Check this box if you agree that teachers can come to your office with
