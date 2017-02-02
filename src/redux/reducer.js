@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import menuDrawerReducer from '../modules/MenuDrawer/MenuDrawerState';
+import menuDrawerReducer from '../modules/MenuDrawerWide/MenuDrawerState';
 import rest from '../services/rest';
 import { routerReducer } from 'react-router-redux';
 import { intlReducer } from 'react-intl-redux'

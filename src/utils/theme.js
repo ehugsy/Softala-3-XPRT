@@ -31,6 +31,6 @@ module.exports = {
     disabledColor: '#cccccc',
     pickerHeaderColor: Colors.white,
     clockCircleColor: ColorManipulator.fade(Colors.darkBlack, 0.07),
-    shadowColor: Colors.white
+    shadowColor: Colors.fullBlack,
   }
 };

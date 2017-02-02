@@ -2,14 +2,14 @@ import React from 'react';
 import { Component } from 'react';
 
 import MenuDrawer from './MenuDrawer';
-import Header from './Header';
+import MenuDrawerWide from './MenuDrawerWide';
 
 class App extends Component {
   render() {
     return(
       <div>
         <MenuDrawer pathname={this.props.location.pathname} />
-        <Header pathname={this.props.location.pathname} params={this.props.params} />
+        <MenuDrawerWide pathname={this.props.location.pathname} />
         {React.cloneElement(this.props.children, this.props)}
       </div>
     );

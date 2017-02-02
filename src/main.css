@@ -11,5 +11,8 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+body {
+  margin-left: 60px;
+}
 
 .formcontainer input:-webkit-autofill { -webkit-text-fill-color: green; -webkit-box-shadow: 0 0 0 1000px white inset; }
