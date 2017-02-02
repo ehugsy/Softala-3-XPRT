@@ -39,14 +39,9 @@ const styles = {
     margin: 20, // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2,
     flex: 1,
     flexBasis: '450px',
-    maxWidth: '650px'
-  },
-  floatingLabelFocusStyle: {
-    color: theme.palette.primary2Color
-  },
-  underlineStyle: {
-    color: theme.palette.primary2Color
+    maxWidth: '650px',
   }
+
 };
 
 class HorizontalTransition extends Component {
