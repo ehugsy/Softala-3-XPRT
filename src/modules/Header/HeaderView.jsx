@@ -28,7 +28,7 @@ class Header extends Component {
 
     return (
       <header>
-        <AppBar style={{background:'#222222', boxShadow:'none'}} title={<FormattedMessage id={title} /> }
+        <AppBar style={{background:'transparent', boxShadow:'none'}} title={<FormattedMessage id={title} /> }
                 onLeftIconButtonTouchTap={() => this.props.toggleDrawer()}/>
       </header>
     );
