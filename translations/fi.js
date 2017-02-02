@@ -4,4 +4,5 @@ export default {
   Preferences: 'Asetukset',
   Registration: 'Rekisteröinti',
   Logout: 'Kirjaudu ulos',
+  Login: 'Kirjaudu sisään',
 };
