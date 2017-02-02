@@ -5,4 +5,5 @@ export default {
   Registration: 'Registration',
   Logout: 'Logout',
   Login: 'Login',
+  MyAccount: 'My Account',
 };

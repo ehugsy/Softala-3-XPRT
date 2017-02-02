@@ -5,4 +5,5 @@ export default {
   Registration: 'Rekisteröinti',
   Logout: 'Kirjaudu ulos',
   Login: 'Kirjaudu sisään',
+  MyAccount: 'Omat tiedot',
 };

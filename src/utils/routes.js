@@ -30,7 +30,7 @@ export default [{
   icon: RegisterIcon,
 }, {
   path: '/myaccount',
-  name: 'My Account',
+  name: 'MyAccount',
   component: MyAccount,
   icon: AccountCircle,
 }, {
