@@ -1,19 +1,4 @@
-import { Component, PropTypes } from 'react';
-import Dialog from 'material-ui/Dialog';
-import Divider from 'material-ui/Divider';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
-import Paper from 'material-ui/Paper';
-import Checkbox from 'material-ui/Checkbox';
-
-import {
-  Step,
-  Stepper,
-  StepLabel,
-  StepContent
-} from 'material-ui/Stepper';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
-import ExpandTransition from 'material-ui/internal/ExpandTransition';
+import { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import theme from '../../utils/theme'
 
@@ -22,7 +7,8 @@ const styles = {
     color: theme.palette.primary2Color
   },
   underlineStyle: {
-    color: theme.palette.primary2Color
+    color: theme.palette.primary2Color,
+    borderColor: theme.palette.primary2Color,
   },
 }
 
