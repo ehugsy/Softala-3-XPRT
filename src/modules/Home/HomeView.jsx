@@ -16,8 +16,9 @@ const styles = {
     justifyContent: 'flex-start',
     padding: theme.spacing.desktopGutter,
   },
-  card: {
+  cardRight: {
     position: 'absolute',
+    right: '0',
     border: 'none',
     background: 'none',
     boxShadow: 'none',
@@ -25,23 +26,9 @@ const styles = {
     float: 'left',
     fontSize: '18px',
     fontWeight: '300',
-    height: '100vh',
-  },
-  cardRight: {
-    right: '0',
     margin: 'auto',
     marginRight: '10%',
-  },
-  cardBottomLeft: {
-    left: '60px',
-    margin: 'auto'
-  },
-  cardBottomRight: {
-    position: 'relative',
-    right: '0px',
-    margin: 'auto',
-    float: 'right',
-    width: '50px',
+    marginTop: '150px',
   }
 };
 
@@ -49,7 +36,7 @@ class Home extends Component {
   render() {
     return(
       <div style={styles.wrapper}>
-        <Card style={{...styles.card, ...styles.cardRight}}>
+        <Card style={styles.cardRight}>
           <svg width="204px" height="81px" viewBox="0 0 291 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <defs>
                   <polygon id="path-1" points="0.9303 97 76.7503 97 76.7503 0.0424 0.9303 0.0424 0.9303 97"></polygon>
@@ -86,12 +73,6 @@ class Home extends Component {
           <p>Xprt connects teachers and experts for the benefit of Finnish school children.
           Arranging a visiting lecture from a professional expert has become easier.</p>
 
-        </Card>
-        <Card style={{...styles.card, ...styles.cardBottomLeft}}>
-          <p>KAKKAKORTTI</p>
-        </Card>
-        <Card style={{...styles.card, ...styles.cardBottomRight}}>
-          <p>KORTTIKAKKA</p>
         </Card>
       </div>
     );
