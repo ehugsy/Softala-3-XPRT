@@ -5,16 +5,21 @@ import { AppBar, Divider, Drawer, MenuItem } from 'material-ui';
 import routes from '../../utils/routes';
 import theme from '../../utils/theme';
 
+const styles = {
+  drawer: {
+    backgroundColor:'rgba(21,163,105,0.8)',
+    color: theme.palette.textColor,
+  }
+}
+
 class MenuDrawer extends Component {
   render() {
     return (
       <Drawer
         open={this.props.drawerOpened}
         docked={false}
+        containerStyle={styles.drawer}
         onRequestChange={() => this.props.closeDrawer()} >
-
-        <AppBar title={<FormattedMessage id='navigation' />}
-                onLeftIconButtonTouchTap={() => this.props.toggleDrawer()} />
 
         {
           routes.map((route, index) => {
