@@ -6,7 +6,7 @@ import {
   CardMedia,
 } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
+import Dialog from 'material-ui/Dialog';
 import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
 
@@ -73,7 +73,7 @@ const styles = {
     padding: '15px',
     borderRadius: '20px',
     marginTop: '10px',
-    lineHeight: '0.5em'
+    lineHeight: '0.4em'
   },
   buttonGold: {
     color: theme.palette.primary2Color,
@@ -82,7 +82,32 @@ const styles = {
 };
 
 class Home extends Component {
+  state = {
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
   render() {
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        disabled={true}
+        onTouchTap={this.handleClose}
+      />,
+    ];
     return(
       <div style={styles.wrapper}>
         <Card style={styles.cardTop}>
@@ -134,9 +159,17 @@ class Home extends Component {
         <Card style={styles.cardRight}>
           <p style={styles.smallHeader}>EXPERTS</p>
           <p>Sign up as an expert and  to share your skills for the  benefit of the future generation.</p>
-          <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}}/><br />
+          <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
           <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
         </Card>
+        <Dialog
+          title="Dialog With Actions"
+          actions={actions}
+          modal={true}
+          open={this.state.open}
+        >
+          <div><p>Vat</p></div>
+        </Dialog>
       </div>
     );
   }
