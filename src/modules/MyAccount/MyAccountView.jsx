@@ -57,7 +57,7 @@ const styles = {
   }
 };
 
-class HorizontalTransition extends Component {
+class MyAccountTabs extends Component {
   state = {
     loading: false,
     finished: false,
@@ -70,6 +70,30 @@ class HorizontalTransition extends Component {
     });
   };
 
+  handleSave = () => {
+    const {stepIndex} = this.state;
+    if (!this.state.loading) {
+      this.dummyAsync(() => this.setState({
+        loading: false,
+        stepIndex: stepIndex + 1,
+        finished: stepIndex >= 2
+      }));
+    }
+  };
+
+  handleCancel = () => {
+    const {stepIndex} = this.state;
+    if (stepIndex === 0) {
+      return this.props.closeMyAccount();
+    }
+
+    if (!this.state.loading) {
+      this.dummyAsync(() => this.setState({
+        loading: false,
+        stepIndex: stepIndex - 1
+      }));
+    }
+  };
 
 
   getStepContent(stepIndex) {
@@ -77,11 +101,10 @@ class HorizontalTransition extends Component {
       case 0:
         return (
           <div>
-
             <MyTextField label='Name'/>
             <MyTextField label='Phone' />
             <MyTextField label='Email'/>
-            <br /><br /><Subheader>Change password</Subheader>
+            <br /><br /><Subheader style={styles.stepLabel}>CHANGE YOUR PASSWORD</Subheader>
             <MyTextField label='Old password' type='password'/>
             <MyTextField label='New password' type='password'/>
             <MyTextField label='Repeat new password' type='password'/>
@@ -139,12 +162,12 @@ class HorizontalTransition extends Component {
         <div>{this.getStepContent(stepIndex)}</div>
         <div style={{marginTop: 24, marginBottom: 12}}>
           <FlatButton
-            label={stepIndex === 0 ? 'Cancel' : 'Back'}
+            label='Cancel'
             onTouchTap={this.handlePrev}
             style={{marginRight: 12}}
           />
           <RaisedButton
-            label={stepIndex === 2 ? 'Finish' : 'Next'}
+            label='Save'
             primary={true}
             onTouchTap={this.handleNext}
           />
@@ -183,7 +206,7 @@ class HorizontalTransition extends Component {
   }
 }
 
-class RegisterExpert extends Component {
+class ExpertAccount extends Component {
   render() {
     console.log(this.props);
     return(
@@ -194,7 +217,7 @@ class RegisterExpert extends Component {
         <div style={styles.wrapper}>
           <Card style={styles.card}>
             <CardText>
-              <HorizontalTransition closeRegistration={ this.props.closeRegistration } />
+              <MyAccountTabs closeMyAccount={ this.props.closeMyAccount }/>
             </CardText>
           </Card>
         </div>
@@ -203,8 +226,8 @@ class RegisterExpert extends Component {
   }
 }
 
-RegisterExpert.contextTypes = {
+ExpertAccount.contextTypes = {
   muiTheme: PropTypes.object.isRequired
 };
 
-export default RegisterExpert;
+export default ExpertAccount;
