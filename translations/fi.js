@@ -1,9 +1,11 @@
 export default {
-  navigation: 'Navigaatio',
+  Navigation: 'Navigaatio',
   Home: 'Koti',
   Preferences: 'Asetukset',
   Registration: 'Rekisteröinti',
   Logout: 'Kirjaudu ulos',
   Login: 'Kirjaudu sisään',
   MyAccount: 'Omat tiedot',
+  ContactUs: 'OTA YHTEYTTÄ',
+  AboutXprt: 'Tietoa XPRT:stä',
 };
