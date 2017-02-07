@@ -54,6 +54,18 @@ const styles = {
   stepLabel: {
     color: theme.palette.primary2Color,
     fontSize: 17,
+  },
+  ProfilePictureDiv: {
+    borderRadius: '50%',
+    overflow: 'hidden',
+    width: '150px',
+    height: '150px',
+    margin: '0 auto',
+  },
+  ProfilePicture: {
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
   }
 };
 
@@ -101,6 +113,9 @@ class MyAccountTabs extends Component {
       case 0:
         return (
           <div>
+            <div style={styles.ProfilePictureDiv}>
+               <img style={styles.ProfilePicture} src='../img/placeholder_profilepicture.png' />
+            </div>
             <MyTextField label='Name'/>
             <MyTextField label='Phone' />
             <MyTextField label='Email'/>
