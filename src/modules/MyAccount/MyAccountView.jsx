@@ -4,6 +4,8 @@ import Divider from 'material-ui/Divider';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import Checkbox from 'material-ui/Checkbox';
+import Avatar from 'material-ui/Avatar';
+
 
 import {
   Step,
@@ -55,18 +57,9 @@ const styles = {
     color: theme.palette.primary2Color,
     fontSize: 17,
   },
-  ProfilePictureDiv: {
-    borderRadius: '50%',
-    overflow: 'hidden',
-    width: '150px',
-    height: '150px',
-    margin: '0 auto',
+  avatarContainer: {
+    textAlign: 'center',
   },
-  ProfilePicture: {
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
-  }
 };
 
 class MyAccountTabs extends Component {
@@ -113,8 +106,8 @@ class MyAccountTabs extends Component {
       case 0:
         return (
           <div>
-            <div style={styles.ProfilePictureDiv}>
-               <img style={styles.ProfilePicture} src='../img/placeholder_profilepicture.png' />
+            <div style={styles.avatarContainer}>
+              <Avatar size={160} src='../img/placeholder_profilepicture.png' />
             </div>
             <MyTextField label='Name'/>
             <MyTextField label='Phone' />
