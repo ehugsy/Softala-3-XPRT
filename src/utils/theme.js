@@ -19,6 +19,7 @@ module.exports = {
   fontFamily: 'Catamaran, sans-serif',
   palette: {
     primary1Color: '#15a369',
+    primary1ColorTransparent: 'rgba(21,163,105,0.8)',
     primary2Color: '#eab94e',
     primary3Color: '#333333',
     accent1Color: Colors.white,
@@ -26,6 +27,8 @@ module.exports = {
     accent3Color: Colors.white,
     textColor: Colors.white,
     alternateTextColor: Colors.white,
+    menuTextColor:'#08412A',
+    menuTextColorActive:'#fff',
     canvasColor: '#333333',
     borderColor: Colors.grey300,
     disabledColor: '#cccccc',

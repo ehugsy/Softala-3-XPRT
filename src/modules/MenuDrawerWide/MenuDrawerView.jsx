@@ -7,8 +7,8 @@ import theme from '../../utils/theme';
 
 const styles = {
   drawer: {
-    backgroundColor:'rgba(21,163,105,0.8)',
-    color: theme.palette.textColor,
+    backgroundColor:theme.palette.primary1ColorTransparent,
+    color: theme.palette.menuTextColor,
   }
 }
 
@@ -33,7 +33,7 @@ class MenuDrawer extends Component {
                 {route.separator ? <Divider /> : null}
                 <MenuItem
                   leftIcon={React.createElement(route.icon)}
-                  style={{color: active ? theme.palette.primary1Color : null}}
+                  style={{color: active ? theme.palette.menuTextColorActive : null}}
                   onTouchTap={() => {this.props.changeView(route.path)}}>
 
                   <FormattedMessage id={route.name} />

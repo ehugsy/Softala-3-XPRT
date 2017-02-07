@@ -10,6 +10,9 @@ const styles = {
     backgroundColor:theme.palette.primary1Color,
     color: theme.palette.textColor,
     zIndex: '9999'
+  },
+  appBar: {
+    boxShadow: 'none',
   }
 }
 
@@ -24,8 +27,8 @@ class MenuDrawer extends Component {
         onRequestChange={() => this.props.closeDrawer()} >
 
         <AppBar
-                onLeftIconButtonTouchTap={() => this.props.toggleDrawer()} />
-
+          style={styles.appBar}
+          onLeftIconButtonTouchTap={() => this.props.toggleDrawer()} />
 
       </Drawer>
     );
