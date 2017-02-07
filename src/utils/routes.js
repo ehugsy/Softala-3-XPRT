@@ -17,38 +17,38 @@ import RegisterIcon from 'material-ui/svg-icons/maps/rate-review'
 // First route is the index route
 export default [{
   path: '/home',
-  name: 'Home',
+  name: 'HOME',
   component: Home,
   icon: HomeIcon,
 }, {
   path: '/preferences',
-  name: 'Preferences',
+  name: 'PREFERENCES',
   component: Preferences,
   icon: PreferencesIcon,
 }, {
   path: '/registration',
-  name: 'Registration',
+  name: 'REGISTRATION',
   component: Registration,
   icon: RegisterIcon,
 }, {
   path: '/myaccount',
-  name: 'MyAccount',
+  name: 'MY ACCOUNT',
   component: MyAccount,
   icon: AccountCircle,
 }, {
   path: '/login',
-  name: 'Login',
+  name: 'LOGIN',
   component: Login,
   icon: LoginIcon,
   seperator: true,
 }, {
   path: '/contact',
-  name: 'Contact us',
+  name: 'CONTACT US',
   component: Contact,
   icon: PreferencesIcon,
 }, {
   path: '/about',
-  name: 'About xprt',
+  name: 'ABOUT XPRT',
   component: About,
   icon: PreferencesIcon,
 },/*{
