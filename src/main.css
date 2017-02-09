@@ -12,7 +12,9 @@ html {
   background-repeat: no-repeat;
 }
 body {
+  margin: 0;
   margin-left: 60px;
+
 }
 
 .formcontainer input:-webkit-autofill { -webkit-text-fill-color: green; -webkit-box-shadow: 0 0 0 1000px white inset; }

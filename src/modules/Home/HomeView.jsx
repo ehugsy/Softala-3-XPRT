@@ -25,13 +25,17 @@ const styles = {
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
-    padding: theme.spacing.desktopGutter,
     marginTop:'10%'
   },
   innerWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-end'
+  },
+  secondWrapper: {
+    background: '#cccccc',
+    height: '70vmin',
+    marginTop: '12em'
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -167,6 +171,9 @@ const contentStyle = {margin: '0 16px'};
           <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
           <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
         </Card>
+      </div>
+      <div style={styles.secondWrapper}>
+        <p>Testi</p>
       </div>
         <Dialog
           title="Dialog With Actions"
