@@ -25,7 +25,7 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     padding: theme.spacing.desktopGutter,
-    marginTop:'15%'
+    marginTop:'10%'
   },
   innerWrapper: {
     display: 'flex',
@@ -63,7 +63,7 @@ const styles = {
     boxShadow: 'none',
     fontSize: '18px',
     fontWeight: '300',
-    borderLeft: '1px solid #cccccc',
+    borderLeft: '1px solid #333333',
     textAlign: 'left',
     width: '40%',
     height: '12em',
@@ -71,11 +71,11 @@ const styles = {
     paddingLeft: '3em'
   },
   buttonStyle: {
-    border: '1px solid #cccccc',
+    border: '1px solid #555555',
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    margin: '0.2em'
+    marginTop: '1em'
   },
   buttonGold: {
     color: theme.palette.primary2Color,
