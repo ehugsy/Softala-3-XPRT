@@ -5,9 +5,17 @@ import {
   CardTitle,
   CardMedia,
 } from 'material-ui/Card';
-
+import FlatButton from 'material-ui/FlatButton';
+import Dialog from 'material-ui/Dialog';
 import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
+import {
+  Step,
+  Stepper,
+  StepButton,
+} from 'material-ui/Stepper';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 const styles = {
   wrapper: {
@@ -16,7 +24,10 @@ const styles = {
     justifyContent: 'flex-start',
     padding: theme.spacing.desktopGutter,
   },
-  cardRight: {
+  smallHeader: {
+    color: theme.palette.primary1Color,
+  },
+  cardTop: {
     position: 'absolute',
     right: '0',
     border: 'none',
@@ -28,15 +39,118 @@ const styles = {
     fontWeight: '300',
     margin: 'auto',
     marginRight: '10%',
-    marginTop: '150px',
+    marginTop: '10%',
+  },
+  cardLeft: {
+    position: 'absolute',
+    left: '0',
+    border: 'none',
+    backgroundColor: theme.palette.transparentColor,
+    boxShadow: 'none',
+    width: '30%',
+    float: 'left',
+    fontSize: '18px',
+    fontWeight: '300',
+    margin: 'auto',
+    marginTop: '25%',
+    textAlign: 'right',
+    marginLeft:'20%',
+  },
+  cardRight: {
+    position: 'absolute',
+    right: '0',
+    border: 'none',
+    backgroundColor: theme.palette.transparentColor,
+    boxShadow: 'none',
+    width: '40%',
+    height: '300',
+    float: 'right',
+    fontSize: '18px',
+    fontWeight: '300',
+    margin: 'auto',
+    marginTop: '25%',
+    marginRight: '5%',
+    paddingLeft: '75',
+    marginLeft: '75',
+    borderLeft: '1px solid #cccccc',
+    paddingRight: '100px'
+  },
+  buttonStyle: {
+    border: '1px solid #cccccc',
+    padding: '15px',
+    borderRadius: '20px',
+    marginTop: '10px',
+    lineHeight: '0.4em'
+  },
+  buttonGold: {
+    color: theme.palette.primary2Color,
   }
+
 };
 
 class Home extends Component {
+  state = {
+  stepIndex: 0,
+};
+
+handleNext = () => {
+  const {stepIndex} = this.state;
+  if (stepIndex < 2) {
+    this.setState({stepIndex: stepIndex + 1});
+  }
+};
+
+handlePrev = () => {
+  const {stepIndex} = this.state;
+  if (stepIndex > 0) {
+    this.setState({stepIndex: stepIndex - 1});
+  }
+};
+
+getStepContent(stepIndex) {
+  switch (stepIndex) {
+    case 0:
+      return 'Select campaign settings...';
+    case 1:
+      return 'What is an ad group anyways?';
+    case 2:
+      return 'This is the bit I really care about!';
+    default:
+      return 'You\'re a long way from home sonny jim!';
+  }
+}
+  state = {
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
   render() {
+    const {stepIndex} = this.state;
+const contentStyle = {margin: '0 16px'};
+
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        disabled={true}
+        onTouchTap={this.handleClose}
+      />,
+    ];
     return(
       <div style={styles.wrapper}>
-        <Card style={styles.cardRight}>
+        <Card style={styles.cardTop}>
           <svg width="204px" height="81px" viewBox="0 0 291 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <defs>
                   <polygon id="path-1" points="0.9303 97 76.7503 97 76.7503 0.0424 0.9303 0.0424 0.9303 97"></polygon>
@@ -73,7 +187,64 @@ class Home extends Component {
           <p>Xprt connects teachers and experts for the benefit of Finnish school children.
           Arranging a visiting lecture from a professional expert has become easier.</p>
 
+
+
         </Card>
+        <Card style={styles.cardLeft}>
+          <p style={styles.smallHeader}>TEACHERS</p>
+          <p>Download and install the app to browse and view the experts' profile. Easily inite experts to your classroom.</p>
+          <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
+          <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
+        </Card>
+        <Card style={styles.cardRight}>
+          <p style={styles.smallHeader}>EXPERTS</p>
+          <p>Sign up as an expert and  to share your skills for the  benefit of the future generation.</p>
+          <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
+          <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+        </Card>
+        <Dialog
+          title="Dialog With Actions"
+          actions={actions}
+          modal={true}
+          open={this.state.open}
+        >
+          <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+        <Stepper linear={false} activeStep={stepIndex}>
+          <Step>
+            <StepButton onClick={() => this.setState({stepIndex: 0})}>
+              Select campaign settings
+            </StepButton>
+          </Step>
+          <Step>
+            <StepButton onClick={() => this.setState({stepIndex: 1})}>
+              Create an ad group
+            </StepButton>
+          </Step>
+          <Step>
+            <StepButton onClick={() => this.setState({stepIndex: 2})}>
+              Create an ad
+            </StepButton>
+          </Step>
+        </Stepper>
+        <div style={contentStyle}>
+          <p>{this.getStepContent(stepIndex)}</p>
+          <div style={{marginTop: 12}}>
+            <FlatButton
+              label="Back"
+              disabled={stepIndex === 0}
+              onTouchTap={this.handlePrev}
+              style={{marginRight: 12}}
+            />
+            <RaisedButton
+              label="Next"
+              disabled={stepIndex === 2}
+              primary={true}
+              onTouchTap={this.handleNext}
+            />
+          </div>
+        </div>
+      </div>
+        </Dialog>
       </div>
     );
   }
