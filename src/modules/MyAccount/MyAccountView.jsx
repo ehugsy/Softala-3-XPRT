@@ -21,8 +21,10 @@ import TextField from 'material-ui/TextField';
 import {red500} from 'material-ui/styles/colors';
 import Subheader from 'material-ui/Subheader';
 import theme from '../../utils/theme';
-
 import MyTextField from '../../components/MyTextField';
+
+import ChipInput from 'material-ui-chip-input';
+import AutoComplete from 'material-ui/AutoComplete';
 
 
 
@@ -61,6 +63,19 @@ const styles = {
     textAlign: 'center',
   },
 };
+
+// Source of suggestions for autocomplete
+// Hardcoded subjects here:
+const subjectList = [
+  'Liikunta',
+  'Äidinkieli',
+  'Matematiikka',
+  'Fysiikka',
+  'Kemia',
+  'Psykologia',
+  'Musiikki',
+  'Historia',
+];
 
 class MyAccountTabs extends Component {
   state = {
@@ -135,9 +150,38 @@ class MyAccountTabs extends Component {
       case 2:
         return (
           <div>
-          <TextField style={{margin: 10}} hintText="Tell briefly about you, your expertise and experience" floatingLabelText="Short introduction" floatingLabelFixed={true} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
-          <TextField style={{margin: 10}} hintText="List the subjects you could teach about (keywords)" floatingLabelText="Subjects" floatingLabelFixed={true} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} fullWidth={true}/>
-          <TextField style={{margin: 10}} hintText="Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?" floatingLabelText="Lecture details (if possible)" floatingLabelFixed={true} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} underlineFocusStyle={styles.underlineStyle} multiLine={true} rows={2} rowsMax={4} fullWidth={true}/>
+            <TextField
+              style={{margin: 10}}
+              hintText="Tell briefly about you, your expertise and experience"
+              floatingLabelText="Short introduction"
+              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}
+              floatingLabelFixed={true}
+              className="formcontainer"
+              fullWidth={true}/>
+              <ChipInput
+                onChange={(chips) => handleChange(chips)} // Chips inside textfield
+                filter={AutoComplete.fuzzyFilter} // Autocomplete
+                dataSource={subjectList} // Autocomplete (source of suggestions)
+                maxSearchResults={5} // Autocomplete (number of suggestions shown)
+                style={{margin: 10}} hintText="List the subjects you could teach about (keywords)"
+                floatingLabelText="Subjects" floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}
+                floatingLabelFixed={true}
+                className="formcontainer"
+                fullWidth={true}/>
+            <TextField
+              style={{margin: 10}}
+              hintText="Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?"
+              floatingLabelText="Lecture details (if possible)"
+              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}
+              floatingLabelFixed={true}
+              className="formcontainer"
+              multiLine={true}
+              rows={2}
+              rowsMax={4}
+              fullWidth={true}/>
           </div>
         );
     }
