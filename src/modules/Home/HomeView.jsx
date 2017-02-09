@@ -194,7 +194,6 @@ class Home extends Component {
           <FuturiceLogo/>
         </div>
         <div style={styles.secondInnerWrapper}>
-          <p>Testi</p>
         </div>
       </div>
     </div>
