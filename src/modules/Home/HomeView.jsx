@@ -16,6 +16,8 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
+import HundredLogo from '../../components/HundredLogo';
+import FuturiceLogo from '../../components/FuturiceLogo';
 
 
 
@@ -33,9 +35,17 @@ const styles = {
     alignItems: 'flex-end'
   },
   secondWrapper: {
+    height: '75vmin'
+  },
+  secondInnerWrapper: {
     background: '#cccccc',
     height: '70vmin',
     marginTop: '12em'
+  },
+  secondLogos:{
+    float: 'right',
+    marginTop: '5em',
+    marginRight: '10em'
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -173,7 +183,13 @@ const contentStyle = {margin: '0 16px'};
         </Card>
       </div>
       <div style={styles.secondWrapper}>
+        <div style={styles.secondLogos}>
+          <HundredLogo/>
+          <FuturiceLogo/>
+        </div>
+      <div style={styles.secondInnerWrapper}>
         <p>Testi</p>
+      </div>
       </div>
         <Dialog
           title="Dialog With Actions"

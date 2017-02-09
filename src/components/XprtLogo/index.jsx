@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import TextField from 'material-ui/TextField';
 import theme from '../../utils/theme'
 
 export default class XprtLogo extends Component {
