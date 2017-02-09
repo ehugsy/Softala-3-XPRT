@@ -17,75 +17,67 @@ import {
 import RaisedButton from 'material-ui/RaisedButton';
 
 
+
 const styles = {
   wrapper: {
     display: 'flex',
+    flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     padding: theme.spacing.desktopGutter,
+    marginTop:'15%'
+  },
+  innerWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-end'
   },
   smallHeader: {
     color: theme.palette.primary1Color,
   },
   cardTop: {
-    position: 'absolute',
-    right: '0',
+    display: 'block',
+    alignSelf: 'flex-end',
+    width: '50%',
     border: 'none',
     background: 'none',
     boxShadow: 'none',
-    width: '40%',
-    float: 'left',
     fontSize: '18px',
     fontWeight: '300',
-    margin: 'auto',
-    marginRight: '10%',
-    marginTop: '10%',
+    marginBottom: '5%'
   },
   cardLeft: {
-    position: 'absolute',
-    left: '0',
     border: 'none',
     backgroundColor: theme.palette.transparentColor,
     boxShadow: 'none',
-    width: '30%',
-    float: 'left',
     fontSize: '18px',
     fontWeight: '300',
-    margin: 'auto',
-    marginTop: '25%',
     textAlign: 'right',
-    marginLeft:'20%',
+    width: '40%',
+    marginLeft: '10%'
   },
   cardRight: {
-    position: 'absolute',
-    right: '0',
     border: 'none',
     backgroundColor: theme.palette.transparentColor,
     boxShadow: 'none',
-    width: '40%',
-    height: '300px',
-    float: 'right',
     fontSize: '18px',
     fontWeight: '300',
-    margin: 'auto',
-    marginTop: '25%',
-    marginRight: '5%',
-    paddingLeft: '75px',
-    marginLeft: '75px',
     borderLeft: '1px solid #cccccc',
-    paddingRight: '100px'
+    textAlign: 'left',
+    width: '40%',
+    marginLeft: '3em',
+    paddingLeft: '3em'
   },
   buttonStyle: {
     border: '1px solid #cccccc',
     padding: '15px',
     borderRadius: '20px',
-    marginTop: '10px',
-    lineHeight: '0.4em'
+    lineHeight: '0.4em',
+    margin: '0.2em'
   },
   buttonGold: {
     color: theme.palette.primary2Color,
   }
-
 };
 
 class Home extends Component {
@@ -190,6 +182,7 @@ const contentStyle = {margin: '0 16px'};
 
 
         </Card>
+        <div style={styles.innerWrapper}>
         <Card style={styles.cardLeft}>
           <p style={styles.smallHeader}>TEACHERS</p>
           <p>Download and install the app to browse and view the experts' profile. Easily inite experts to your classroom.</p>
@@ -202,6 +195,7 @@ const contentStyle = {margin: '0 16px'};
           <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
           <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
         </Card>
+      </div>
         <Dialog
           title="Dialog With Actions"
           actions={actions}
