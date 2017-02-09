@@ -41,6 +41,7 @@ const styles = {
     marginTop: '12em'
   },
   secondLogos:{
+    display:'flex',
     float: 'right',
     marginTop: '5em',
     marginRight: '10em'
