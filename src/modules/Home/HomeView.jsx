@@ -45,7 +45,8 @@ const styles = {
   secondLogos:{
     float: 'right',
     marginTop: '5em',
-    marginRight: '10em'
+    marginRight: '10em',
+    display: 'flex',
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -187,9 +188,8 @@ const contentStyle = {margin: '0 16px'};
           <HundredLogo/>
           <FuturiceLogo/>
         </div>
-      <div style={styles.secondInnerWrapper}>
-        <p>Testi</p>
-      </div>
+        <div style={styles.secondInnerWrapper}>
+        </div>
       </div>
         <Dialog
           title="Dialog With Actions"

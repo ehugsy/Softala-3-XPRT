@@ -4,6 +4,7 @@ import theme from '../../utils/theme'
 export default class HundredLogo extends Component {
   render (){
     return(
+      <div style={{marginRight:'1em'}}>
       <svg width="75px" height="15px" viewBox="0 0 121 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <defs>
               <polygon id="path-1" points="120.3097 -0.0004 0 -0.0004 0 23.7624 120.3097 23.7624 120.3097 -0.0004"></polygon>
@@ -17,6 +18,7 @@ export default class HundredLogo extends Component {
               </g>
           </g>
       </svg>
+      </div>
     )
   }
 }
