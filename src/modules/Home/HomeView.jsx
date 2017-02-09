@@ -9,11 +9,9 @@ import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
-import {
-  Step,
-  Stepper,
-  StepButton,
-} from 'material-ui/Stepper';
+import LoginModal from '../../components/LoginModal';
+import RegisterModal from '../../components/RegisterModal';
+
 import RaisedButton from 'material-ui/RaisedButton';
 
 
@@ -90,63 +88,53 @@ const styles = {
 
 class Home extends Component {
   state = {
-  stepIndex: 0,
-};
-
-handleNext = () => {
-  const {stepIndex} = this.state;
-  if (stepIndex < 2) {
-    this.setState({stepIndex: stepIndex + 1});
-  }
-};
-
-handlePrev = () => {
-  const {stepIndex} = this.state;
-  if (stepIndex > 0) {
-    this.setState({stepIndex: stepIndex - 1});
-  }
-};
-
-getStepContent(stepIndex) {
-  switch (stepIndex) {
-    case 0:
-      return 'Select campaign settings...';
-    case 1:
-      return 'What is an ad group anyways?';
-    case 2:
-      return 'This is the bit I really care about!';
-    default:
-      return 'You\'re a long way from home sonny jim!';
-  }
-}
-  state = {
-    open: false,
+    openRegister: false,
+    openLogin: false,
   };
 
-  handleOpen = () => {
-    this.setState({open: true});
+  handleOpenRegister = () => {
+    this.setState({openRegister: true});
   };
 
-  handleClose = () => {
-    this.setState({open: false});
+  handleCloseRegister = () => {
+    this.setState({openRegister: false});
+  };
+
+  handleOpenLogin = () => {
+    this.setState({openLogin: true});
+  };
+
+  handleCloseLogin = () => {
+    this.setState({openLogin: false});
   };
 
   render() {
-    const {stepIndex} = this.state;
-const contentStyle = {margin: '0 16px'};
 
-    const actions = [
+    const actionsRegister = [
       <FlatButton
         label="Cancel"
         primary={true}
-        onTouchTap={this.handleClose}
+        onTouchTap={this.handleCloseRegister}
       />,
       <FlatButton
         label="Submit"
         primary={true}
         disabled={true}
-        onTouchTap={this.handleClose}
+        onTouchTap={this.handleCloseRegister}
       />,
+    ];
+      const actionsLogin = [
+        <FlatButton
+          label="Cancel"
+          primary={true}
+          onTouchTap={this.handleCloseLogin}
+        />,
+        <FlatButton
+          label="Submit"
+          primary={true}
+          disabled={true}
+          onTouchTap={this.handleCloseLogin}
+        />,
     ];
     return(
       <div style={styles.wrapper}>
@@ -199,53 +187,27 @@ const contentStyle = {margin: '0 16px'};
         <Card style={styles.cardRight}>
           <p style={styles.smallHeader}>EXPERTS</p>
           <p>Sign up as an expert and  to share your skills for the  benefit of the future generation.</p>
-          <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
-          <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+          <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpenRegister}/><br />
+          <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpenLogin}/>
         </Card>
-        <Dialog
-          title="Dialog With Actions"
-          actions={actions}
+
+
+        <LoginModal
+          title='Login'
           modal={true}
-          open={this.state.open}
-        >
-          <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-        <Stepper linear={false} activeStep={stepIndex}>
-          <Step>
-            <StepButton onClick={() => this.setState({stepIndex: 0})}>
-              Select campaign settings
-            </StepButton>
-          </Step>
-          <Step>
-            <StepButton onClick={() => this.setState({stepIndex: 1})}>
-              Create an ad group
-            </StepButton>
-          </Step>
-          <Step>
-            <StepButton onClick={() => this.setState({stepIndex: 2})}>
-              Create an ad
-            </StepButton>
-          </Step>
-        </Stepper>
-        <div style={contentStyle}>
-          <p>{this.getStepContent(stepIndex)}</p>
-          <div style={{marginTop: 12}}>
-            <FlatButton
-              label="Back"
-              disabled={stepIndex === 0}
-              onTouchTap={this.handlePrev}
-              style={{marginRight: 12}}
-            />
-            <RaisedButton
-              label="Next"
-              disabled={stepIndex === 2}
-              primary={true}
-              onTouchTap={this.handleNext}
-            />
-          </div>
-        </div>
+          open={this.state.openLogin}
+          actions={actionsLogin}
+        />
+
+
+        <RegisterModal
+          title="Create an account"
+          actions={actionsRegister}
+          modal={true}
+          open={this.state.openRegister}
+        />
       </div>
-        </Dialog>
-      </div>
+
     );
   }
 }
