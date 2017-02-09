@@ -45,7 +45,9 @@ const styles = {
     color: theme.palette.primary2Color
   },
   underlineStyle: {
+    borderColor: theme.palette.primary2Color,
     color: theme.palette.primary2Color
+
   },
 };
 
