@@ -193,7 +193,7 @@ const contentStyle = {margin: '0 16px'};
         </Card>
         <Card style={styles.cardRight}>
           <p style={styles.smallHeader}>EXPERTS</p>
-          <p>Sign up as an expert and  to share your skills for the  benefit of the future generation.</p>
+          <p>Sign up as an expert and  to share your skills for the <br /> benefit of the future generation.</p>
           <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
           <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
         </Card>
