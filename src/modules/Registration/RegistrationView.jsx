@@ -17,7 +17,11 @@ import ExpandTransition from 'material-ui/internal/ExpandTransition';
 import TextField from 'material-ui/TextField';
 import theme from '../../utils/theme'
 import MyTextField from '../../components/MyTextField';
+
 import ChipInput from 'material-ui-chip-input';
+import AutoComplete from 'material-ui/AutoComplete';
+
+
 
 const styles = {
   wrapper: {
@@ -50,6 +54,19 @@ const styles = {
 
   },
 };
+
+// Source of suggestions for autocomplete
+// Hardcoded subjects here:
+const subjectList = [
+  'Liikunta',
+  'Äidinkieli',
+  'Matematiikka',
+  'Fysiikka',
+  'Kemia',
+  'Psykologia',
+  'Musiikki',
+  'Historia',
+];
 
 class HorizontalTransition extends Component {
   state = {
@@ -89,6 +106,8 @@ class HorizontalTransition extends Component {
     }
   };
 
+
+
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
@@ -127,7 +146,10 @@ class HorizontalTransition extends Component {
             className="formcontainer"
             fullWidth={true}/>
           <ChipInput
-            onChange={(chips) => handleChange(chips)}
+            onChange={(chips) => handleChange(chips)} // Chips inside textfield
+            filter={AutoComplete.fuzzyFilter} // Autocomplete
+            dataSource={subjectList} // Autocomplete (source of suggestions)
+            maxSearchResults={5} // Autocomplete (number of suggestions shown)
             style={{margin: 10}} hintText="List the subjects you could teach about (keywords)"
             floatingLabelText="Subjects" floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
             underlineFocusStyle={styles.underlineStyle}
