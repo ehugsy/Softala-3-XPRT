@@ -55,7 +55,7 @@ const styles = {
     textAlign: 'right',
     width: '40%',
     marginLeft: '10%',
-    height: '12em'
+    height: '220px'
   },
   cardRight: {
     border: 'none',
@@ -66,7 +66,7 @@ const styles = {
     borderLeft: '1px solid #cccccc',
     textAlign: 'left',
     width: '40%',
-    height: '12em',
+    height: '220px',
     marginLeft: '3em',
     paddingLeft: '3em'
   },
