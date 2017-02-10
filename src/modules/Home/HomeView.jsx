@@ -59,21 +59,20 @@ const styles = {
     color: theme.palette.primary1Color,
   },
   empty:{
-    flex: 1
+    flex: 1,
+    flexShrink: 0
   },
   bigText: {
     flex: 1,
     width: '50%',
-    border: 'none',
-    background: 'none',
-    boxShadow: 'none',
     fontSize: '18px',
     fontWeight: '300',
+    minWidth: '300px',
+    maxWidth: '50%',
+    flexGrow: 1,
+    flexBasis: 'auto'
   },
   leftText: {
-    border: 'none',
-    backgroundColor: theme.palette.transparentColor,
-    boxShadow: 'none',
     fontSize: '18px',
     fontWeight: '300',
     textAlign: 'right',
@@ -81,9 +80,6 @@ const styles = {
     flexBasis: '200px'
   },
   rightText: {
-    border: 'none',
-    backgroundColor: theme.palette.transparentColor,
-    boxShadow: 'none',
     fontSize: '18px',
     fontWeight: '300',
     borderLeft: '1px solid #333333',
