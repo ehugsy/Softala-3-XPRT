@@ -46,8 +46,8 @@ const styles = {
     display:'flex',
     flexDirection: 'column',
     justifyContent:'center',
-    paddingLeft:'150px',
-    paddingRight:'150px',
+    paddingLeft:'4%',
+    paddingRight:'4%',
     marginTop:'5%'
   },
   secondLogos:{
