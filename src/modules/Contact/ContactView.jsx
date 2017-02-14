@@ -98,12 +98,27 @@ const styles = {
     lineHeight: '0.4em',
     marginTop: '1em'
   },
+  transparentInput: {
+    backgroundColor: theme.palette.transparentColor,
+    borderColor: theme.palette.borderColor,
+    marginBottom: 10,
+    color: theme.palette.textColor,
+    width: '100%',
+    maxWidth: 350
+
+  },
   buttonGold: {
     color: theme.palette.primary2Color,
   }
+
 };
 
 class Contact extends Component {
+
+  handleSubmit(event) {
+  alert('A name was submitted: ' + this.input.value);
+  event.preventDefault();
+}
   render() {
 
 
@@ -132,7 +147,23 @@ class Contact extends Component {
             </p>
 
             <p>Contact us to hear more. * marks a required field</p>
+              <form onSubmit={this.handleSubmit}>
 
+
+                        <input style={styles.transparentInput} type="text" ref={(input) => this.input = input} value="Your name" />
+<br />
+
+                        <input style={styles.transparentInput} type="text" ref={(input) => this.input = input} value="Your email address "/>
+<br />
+
+                        <input style={styles.transparentInput} type="text" ref={(input) => this.input = input} value="Your email address " />
+<br />
+
+  <textarea style={styles.transparentInput}>
+    Your message *
+  </textarea><br />
+                      <input type="submit" value="Submit" />
+                    </form>
 
               </div>
         </div>
