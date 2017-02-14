@@ -132,9 +132,12 @@ const styles = {
   imageNumber: {
     color: theme.palette.primary2Color,
     margin: '0px',
+    fontWeight: '300'
   },
   textColor: {
     color: theme.palette.primary3Color,
+    fontSize: '16px',
+    fontWeight: '300'
   }
 };
 
