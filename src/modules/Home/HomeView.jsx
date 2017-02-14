@@ -111,6 +111,7 @@ const styles = {
   imageWrapper: {
     display: 'flex',
     flexDirection: 'row',
+    height: '100%'
   },
   mockImage: {
     width: '268.4px',
