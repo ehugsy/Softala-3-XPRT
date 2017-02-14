@@ -126,8 +126,8 @@ class About extends Component {
 
             <p style={styles.smallHeader}>EXPERTS</p>
             <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
-            <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpenRegister}/><br />
-            <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpenLogin}/>
+              <RegisterModal />
+              <LoginModal /><br />
             </div>
             <div style={styles.rightText}>
               <p>
