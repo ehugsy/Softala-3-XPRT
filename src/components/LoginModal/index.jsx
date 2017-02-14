@@ -2,11 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import theme from '../../utils/theme';
+import MyTextField from '../MyTextField';
 
 
 const styles = {
   buttonStyle: {
     border: '1px solid #555555',
+    margin: 5,
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
@@ -14,6 +16,11 @@ const styles = {
   },
   buttonGold: {
     color: theme.palette.primary2Color,
+  },
+  dialog: {
+    width: "100%",
+    maxWidth: "350",
+    textAlign: 'center'
   }
 }
 
@@ -53,11 +60,25 @@ class LoginModal extends Component {
         <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/>
 
         <Dialog
-          title='Login'
+          title='LOGIN'
+          titleStyle={{color: theme.palette.primary2Color, fontSize: 17}}
           modal={true}
           open={this.state.open}
-          actions={this.actions}>
-          <p>Jeejee</p>
+          contentStyle={styles.dialog}>
+          <div>
+            <MyTextField label="Username" />
+            <MyTextField label="Password" type="password"/>
+            <p style={{textAlign: 'left', fontSize: 13, color: theme.palette.primary2Color}}>Forgotten password?</p>
+            <FlatButton
+              label='Cancel'
+              style={styles.buttonStyle}
+              onTouchTap={this.handleClose}/>
+            <FlatButton
+              label='Login'
+              style={styles.buttonStyle}
+              primary={true}
+              onTouchTap={this.handleClose}/>
+          </div>
         </Dialog>
       </div>
     )

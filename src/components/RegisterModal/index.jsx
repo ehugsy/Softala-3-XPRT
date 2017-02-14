@@ -52,6 +52,7 @@ const styles = {
   buttonStyle: {
     border: '1px solid #555555',
     padding: '15px',
+    margin: 5,
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em'
@@ -62,6 +63,7 @@ const styles = {
   iconButton: {
     border: '1px solid #555555',
     padding: '6px',
+    margin: 5,
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em'
