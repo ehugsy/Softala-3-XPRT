@@ -77,7 +77,9 @@ const styles = {
     fontWeight: '300',
     textAlign: 'right',
     flex:5,
-    flexBasis: '200px'
+    flexBasis: '200px',
+    hyphens: 'auto',
+    height: '242px'
   },
   rightText: {
     fontSize: '18px',
@@ -88,7 +90,8 @@ const styles = {
     marginLeft: '2em',
     paddingLeft: '2em',
     flexBasis: '200px',
-    hyphens: 'auto'
+    hyphens: 'auto',
+    height: '242px'
   },
   buttonStyle: {
     border: '1px solid #555555',
