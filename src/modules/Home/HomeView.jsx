@@ -59,11 +59,11 @@ const styles = {
     color: theme.palette.primary1Color,
   },
   empty:{
-    flex: 5,
+    flex: 1,
     flexShrink: 0
   },
   bigText: {
-    flex: 4,
+    flex: 1,
     fontSize: '18px',
     fontWeight: '300',
     minWidth: '300px',
@@ -99,6 +99,29 @@ const styles = {
   },
   buttonGold: {
     color: theme.palette.primary2Color,
+  },
+  imageWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  mockImage: {
+    width: '268.4px',
+    height: '458.8px'
+  },
+  emptyImage: {
+    flex: 1
+  },
+  leftImage: {
+    flex: 2,
+    marginTop: '-12%',
+  },
+  centerImage: {
+    flex: 2,
+    marginTop: '-9%',
+  },
+  rightImage: {
+    flex: 2,
+    marginTop: '-6%',
   }
 };
 
@@ -200,6 +223,19 @@ class Home extends Component {
         </div>
         <div style={styles.secondWrapper}>
           <div style={styles.secondInnerWrapper}>
+            <div style={styles.imageWrapper}>
+              <div style={styles.emptyImage}></div>
+              <div style={styles.leftImage}>
+                <img src={'../../img/mockup1.png'} style={styles.mockImage} />
+              </div>
+              <div style={styles.centerImage}>
+                <img src={'../../img/mockup2.png'} style={styles.mockImage} />
+              </div>
+              <div style={styles.rightImage}>
+                <img src={'../../img/mockup3.png'} style={styles.mockImage} />
+              </div>
+              <div style={styles.emptyImage}></div>
+            </div>
           </div>
         </div>
       </div>
