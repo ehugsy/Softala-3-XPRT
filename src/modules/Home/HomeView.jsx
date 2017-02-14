@@ -36,7 +36,7 @@ const styles = {
   },
   secondInnerWrapper: {
     background: '#cccccc',
-    height: '70vmin',
+    height: '100vmin',
   },
   headerWrapper:{
     display:'flex',
@@ -114,14 +114,24 @@ const styles = {
   leftImage: {
     flex: 2,
     marginTop: '-12%',
+    textAlign: 'center'
   },
   centerImage: {
     flex: 2,
-    marginTop: '-9%',
+    marginTop: '-5%',
+    textAlign: 'center'
   },
   rightImage: {
     flex: 2,
-    marginTop: '-6%',
+    marginTop: '2%',
+    textAlign: 'center'
+  },
+  imageNumber: {
+    color: theme.palette.primary2Color,
+    margin: '0px',
+  },
+  textColor: {
+    color: theme.palette.primary3Color,
   }
 };
 
@@ -227,12 +237,30 @@ class Home extends Component {
               <div style={styles.emptyImage}></div>
               <div style={styles.leftImage}>
                 <img src={'../../img/mockup1.png'} style={styles.mockImage} />
+                <p style={styles.imageNumber}>01</p>
+                <p style={styles.textColor}>BACON IPSUM</p>
+                <p style={styles.textColor}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                  filet mignon ribeye hamburger spare ribs. Pork hamburger
+                  turkey tongue drumstick boudin ball tip beef ribs pancetta
+                  tail turducken pig chuck.</p>
               </div>
               <div style={styles.centerImage}>
                 <img src={'../../img/mockup2.png'} style={styles.mockImage} />
+                <p style={styles.imageNumber}>02</p>
+                <p style={styles.textColor}>BACON IPSUM</p>
+                <p style={styles.textColor}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                  filet mignon ribeye hamburger spare ribs. Pork hamburger
+                  turkey tongue drumstick boudin ball tip beef ribs pancetta
+                  tail turducken pig chuck.</p>
               </div>
               <div style={styles.rightImage}>
                 <img src={'../../img/mockup3.png'} style={styles.mockImage} />
+                <p style={styles.imageNumber}>03</p>
+                <p style={styles.textColor}>BACON IPSUM</p>
+                <p style={styles.textColor}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                  filet mignon ribeye hamburger spare ribs. Pork hamburger
+                  turkey tongue drumstick boudin ball tip beef ribs pancetta
+                  tail turducken pig chuck.</p>
               </div>
               <div style={styles.emptyImage}></div>
             </div>
