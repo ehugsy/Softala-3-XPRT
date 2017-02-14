@@ -62,9 +62,10 @@ class LoginModal extends Component {
         <Dialog
           title='LOGIN'
           titleStyle={{color: theme.palette.primary2Color, fontSize: 17}}
-          modal={true}
+          modal={false}
           open={this.state.open}
-          contentStyle={styles.dialog}>
+          contentStyle={styles.dialog}
+          onRequestClose={this.handleClose}>
           <div>
             <MyTextField label="Username" />
             <MyTextField label="Password" type="password"/>
