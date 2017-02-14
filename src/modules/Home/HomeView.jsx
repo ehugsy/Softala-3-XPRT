@@ -136,70 +136,12 @@ const styles = {
 };
 
 class Home extends Component {
-  state = {
-    openRegister: false,
-    openLogin: false,
-  };
-
-  handleOpenRegister = () => {
-    this.setState({openRegister: true});
-  };
-
-  handleCloseRegister = () => {
-    this.setState({openRegister: false});
-  };
-
-  handleOpenLogin = () => {
-    this.setState({openLogin: true});
-  };
-
-  handleCloseLogin = () => {
-    this.setState({openLogin: false});
-  };
 
   render() {
 
-    const actionsRegister = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleCloseRegister}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        disabled={true}
-        onTouchTap={this.handleCloseRegister}
-      />,
-    ];
-      const actionsLogin = [
-        <FlatButton
-          label="Cancel"
-          primary={true}
-          onTouchTap={this.handleCloseLogin}
-        />,
-        <FlatButton
-          label="Submit"
-          primary={true}
-          disabled={true}
-          onTouchTap={this.handleCloseLogin}
-        />,
-    ];
+
     return(
       <div style={styles.wrapper}>
-        <LoginModal
-          title='Login'
-          modal={true}
-          open={this.state.openLogin}
-          actions={actionsLogin}
-        />
-
-        <RegisterModal
-          actions={actionsRegister}
-          modal={true}
-          open={this.state.openRegister}
-        />
-
         <div style={styles.landingWrapper}>
           <div style={styles.headerWrapper}>
             <div style={styles.empty}></div>
@@ -221,9 +163,10 @@ class Home extends Component {
             <div style={styles.rightText}>
               <p style={styles.smallHeader}>EXPERTS</p>
               <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
-              <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpenRegister}/><br />
-              <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpenLogin}/>
-            </div>
+              <RegisterModal />
+              <LoginModal /><br />
+
+              </div>
           </div>
 
           <div style={styles.secondLogos}>

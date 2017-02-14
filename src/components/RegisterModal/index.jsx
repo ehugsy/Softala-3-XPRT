@@ -14,6 +14,7 @@ import Checkbox from 'material-ui/Checkbox';
 import TextField from 'material-ui/TextField';
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
+import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
 
 
 const styles = {
@@ -47,8 +48,24 @@ const styles = {
   underlineStyle: {
     borderColor: theme.palette.primary2Color,
     color: theme.palette.primary2Color
-
   },
+  buttonStyle: {
+    border: '1px solid #555555',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
+  buttonGold: {
+    color: theme.palette.primary2Color,
+  },
+  iconButton: {
+    border: '1px solid #555555',
+    padding: '6px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  }
 };
 
 const subjectList = [
@@ -65,8 +82,17 @@ const subjectList = [
 class RegisterModal extends Component {
 
   state = {
+    open: false,
     stepIndex: 0,
-  }
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false, stepIndex: 0});
+  };
 
   handleNext = () => {
     const {stepIndex} = this.state;
@@ -145,101 +171,57 @@ class RegisterModal extends Component {
           </div>
         );
     }
-  }
-
-  renderContent() {
-    const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px', overflow: 'hidden'};
-
-    if (finished) {
-      return (
-        <div style={contentStyle}>
-          <p>
-            <a
-              href="#"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({stepIndex: 0, finished: false});
-              }}
-            >
-              Click here
-            </a> to reset the example.
-          </p>
-        </div>
-      );
-    }
-
-    return (
-      <div style={contentStyle}>
-        <div>{this.getStepContent(stepIndex)}</div>
-        <div style={{marginTop: 24, marginBottom: 12}}>
-          <FlatButton
-            label={stepIndex === 0 ? 'Cancel' : 'Back'}
-            onTouchTap={this.handlePrev}
-            style={{marginRight: 12}}
-          />
-          <RaisedButton
-            label={stepIndex === 2 ? 'Finish' : 'Next'}
-            primary={true}
-            onTouchTap={this.handleNext}
-          />
-        </div>
-      </div>
-    );
-  }
+  };
 
   render() {
 
     const {stepIndex} = this.state;
 
     return(
+    <div>
+
+      <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
 
       <Dialog
-        title={this.props.title}
-        modal={this.props.modal}
-        open={this.props.open}
-        actions={this.props.actions}>
+        modal={true}
+        open={this.state.open}
+        actions={this.actions}>
 
         <div style={{width: '100%', maxWidth: 700, margin: 'auto', height: '100%'}}>
-      <Stepper activeStep={stepIndex}>
-        <Step>
-          <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>BASIC INFO</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>OCCUPATION</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>EXPERT PROFILE</StepLabel>
-        </Step>
-      </Stepper>
-      <div style={styles.contentStyle}>
-        <p>{this.getStepContent(stepIndex)}</p>
-        <div style={{marginTop: 12}}>
-          <FlatButton
-            label="Back"
-            disabled={stepIndex === 0}
-            onTouchTap={this.handlePrev}
-            style={{marginRight: 12}}
-          />
-          <RaisedButton
-            label="Next"
-            disabled={stepIndex === 2}
-            primary={true}
-            onTouchTap={this.handleNext}
-          />
+          <Stepper activeStep={stepIndex}>
+            <Step>
+              <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>BASIC INFO</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>OCCUPATION</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>EXPERT PROFILE</StepLabel>
+            </Step>
+          </Stepper>
+          <div style={styles.contentStyle}>
+            <p>{this.getStepContent(stepIndex)}</p>
+            <div style={{marginTop: 12}}>
+              <FlatButton
+                label="Cancel"
+                onTouchTap={this.handleClose}
+                style={styles.buttonStyle}
+              />
+              <FlatButton
+                label={stepIndex === 2 ? 'Finish' : 'Next'}
+                icon={stepIndex === 2 ? '' : <ArrowForward />}
+                labelPosition="before"
+                primary={stepIndex === 2}
+                onTouchTap={stepIndex === 2 ? this.handleClose : this.handleNext}
+                style={styles.iconButton}
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
       </Dialog>
+    </div>
     )
   }
 }
-
-RegisterModal.propTypes = {
-  modal: PropTypes.bool.isRequired,
-  open: PropTypes.bool.isRequired,
-  actions: PropTypes.array,
-  title: PropTypes.string,
-};
 
 export default RegisterModal;
