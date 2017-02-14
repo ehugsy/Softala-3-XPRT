@@ -5,34 +5,144 @@ import {
   CardTitle,
   CardMedia,
 } from 'material-ui/Card';
-
+import FlatButton from 'material-ui/FlatButton';
+import Dialog from 'material-ui/Dialog';
 import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
+import LoginModal from '../../components/LoginModal';
+import RegisterModal from '../../components/RegisterModal';
+
+import RaisedButton from 'material-ui/RaisedButton';
+import XprtLogo from '../../components/XprtLogo';
+import HundredLogo from '../../components/HundredLogo';
+import FuturiceLogo from '../../components/FuturiceLogo';
+
+const marginRight = '10em'
 
 const styles = {
+
   wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    padding: theme.spacing.desktopGutter,
+    color: theme.palette.textColor,
   },
+  teacherExpertWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  secondWrapper: {
+    height: '75vmin',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  secondInnerWrapper: {
+    background: '#cccccc',
+    height: '70vmin',
+  },
+  headerWrapper:{
+    display:'flex',
+  },
+  landingWrapper:{
+    minHeight: '100vh',
+    display:'flex',
+    flexDirection: 'column',
+    justifyContent:'center',
+    paddingLeft:'4%',
+    paddingRight:'4%',
+    marginTop:'5%'
+  },
+  secondLogos:{
+    display:'flex',
+    alignSelf:'flex-end',
+    marginTop: '5em',
+  },
+  smallHeader: {
+    color: theme.palette.primary1Color,
+  },
+  empty:{
+    flex: 1,
+    flexShrink: 0
+  },
+  bigText: {
+    flex: 1,
+    width: '50%',
+    fontSize: '18px',
+    fontWeight: '300',
+    minWidth: '300px',
+    maxWidth: '50%',
+    flexGrow: 1,
+    flexBasis: 'auto'
+  },
+  leftText: {
+    fontSize: '18px',
+    fontWeight: '300',
+    textAlign: 'right',
+    flex:5,
+    flexBasis: '200px'
+  },
+  rightText: {
+    fontSize: '18px',
+    fontWeight: '300',
+    borderLeft: '1px solid #333333',
+    textAlign: 'left',
+    flex:4,
+    marginLeft: '2em',
+    paddingLeft: '2em',
+    flexBasis: '200px'
+
+
+  },
+  buttonStyle: {
+    border: '1px solid #555555',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
+  buttonGold: {
+    color: theme.palette.primary2Color,
+  }
 };
 
 class Contact extends Component {
   render() {
+
+
     return(
       <div style={styles.wrapper}>
-        <Card>
-          <h1>Contact us</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc turpis leo, ultrices et mollis ac, eleifend ut ligula. Aenean porttitor ullamcorper urna, ac tincidunt justo hendrerit dapibus. Quisque dapibus posuere consequat. Pellentesque tristique, ex non rutrum consectetur, lacus nulla tempor odio, quis consequat diam ipsum quis erat.</p>
-          <p>Donec est ante, efficitur eget cursus id, viverra sit amet diam.</p>
-          <ul>
-            <li>Nulla facilisi.</li>
-            <li>Curabitur faucibus, nibh mollis porttitor mollis, tellus ligula blandit erat, sit amet tempor magna ligula vitae massa.</li>
-            <li>Sed turpis leo, sodales auctor ex quis, vehicula iaculis augue. Donec condimentum consequat augue, in bibendum nisl cursus vulputate. Aenean faucibus ex nec ligula euismod, et euismod magna eleifend.</li>
-          </ul>
-        </Card>
+      <div style={styles.landingWrapper}>
+        <div style={styles.headerWrapper}>
+          <div style={styles.empty}></div>
+          <div style={styles.bigText}>
+            <h1 style={styles.smallHeader}>Contact us</h1>
+          </div>
+        </div>
+
+        <div style={styles.teacherExpertWrapper}>
+          <div style={styles.leftText}>
+            <p style={styles.smallHeader}>XPRT</p>
+            <p>c/o HundrED <br />
+            Merikatu 9 <br />
+          00140 Helsinki
+            </p>
+            <p>info@xprt.fi</p>
+            </div>
+            <div style={styles.rightText}>
+              <p>
+              Xprt connect teachers and experts for the benefit of Finnish shool children. Arranging a visiting lecture from a professional expert has become easier.
+            </p>
+
+            <p>Contact us to hear more. * marks a required field</p>
+
+
+              </div>
+        </div>
+
+        <div style={styles.secondLogos}>
+          <HundredLogo/>
+          <FuturiceLogo/>
+        </div>
       </div>
+    </div>
     );
   }
 }
