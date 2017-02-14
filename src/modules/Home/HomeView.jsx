@@ -46,8 +46,8 @@ const styles = {
     display:'flex',
     flexDirection: 'column',
     justifyContent:'center',
-    paddingLeft:'4%',
-    paddingRight:'4%',
+    paddingLeft:'10%',
+    paddingRight:'10%',
     marginTop:'5%'
   },
   secondLogos:{
@@ -69,7 +69,8 @@ const styles = {
     minWidth: '300px',
     maxWidth: '50%',
     flexGrow: 1,
-    flexBasis: 'auto'
+    flexBasis: 'auto',
+    hyphens: 'auto'
   },
   leftText: {
     fontSize: '18px',
@@ -86,7 +87,8 @@ const styles = {
     flex:4,
     marginLeft: '2em',
     paddingLeft: '2em',
-    flexBasis: '200px'
+    flexBasis: '200px',
+    hyphens: 'auto'
   },
   buttonStyle: {
     border: '1px solid #555555',
