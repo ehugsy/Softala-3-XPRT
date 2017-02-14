@@ -46,8 +46,8 @@ const styles = {
     display:'flex',
     flexDirection: 'column',
     justifyContent:'center',
-    paddingLeft:'4%',
-    paddingRight:'4%',
+    paddingLeft:'10%',
+    paddingRight:'10%',
     marginTop:'5%'
   },
   secondLogos:{
@@ -64,13 +64,13 @@ const styles = {
   },
   bigText: {
     flex: 1,
-    width: '50%',
     fontSize: '18px',
     fontWeight: '300',
     minWidth: '300px',
     maxWidth: '50%',
     flexGrow: 1,
-    flexBasis: 'auto'
+    flexBasis: 'auto',
+    hyphens: 'auto'
   },
   leftText: {
     fontSize: '18px',
@@ -87,7 +87,8 @@ const styles = {
     flex:4,
     marginLeft: '2em',
     paddingLeft: '2em',
-    flexBasis: '200px'
+    flexBasis: '200px',
+    hyphens: 'auto'
   },
   buttonStyle: {
     border: '1px solid #555555',
@@ -99,6 +100,29 @@ const styles = {
   buttonGold: {
     color: theme.palette.primary2Color,
   },
+  imageWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  mockImage: {
+    width: '268.4px',
+    height: '458.8px'
+  },
+  emptyImage: {
+    flex: 1
+  },
+  leftImage: {
+    flex: 2,
+    marginTop: '-12%',
+  },
+  centerImage: {
+    flex: 2,
+    marginTop: '-9%',
+  },
+  rightImage: {
+    flex: 2,
+    marginTop: '-6%',
+  }
 };
 
 class Home extends Component {
@@ -142,6 +166,19 @@ class Home extends Component {
         </div>
         <div style={styles.secondWrapper}>
           <div style={styles.secondInnerWrapper}>
+            <div style={styles.imageWrapper}>
+              <div style={styles.emptyImage}></div>
+              <div style={styles.leftImage}>
+                <img src={'../../img/mockup1.png'} style={styles.mockImage} />
+              </div>
+              <div style={styles.centerImage}>
+                <img src={'../../img/mockup2.png'} style={styles.mockImage} />
+              </div>
+              <div style={styles.rightImage}>
+                <img src={'../../img/mockup3.png'} style={styles.mockImage} />
+              </div>
+              <div style={styles.emptyImage}></div>
+            </div>
           </div>
         </div>
       </div>

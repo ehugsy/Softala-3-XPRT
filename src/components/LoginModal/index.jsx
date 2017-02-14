@@ -1,27 +1,67 @@
 import React, { Component, PropTypes } from 'react';
 import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import theme from '../../utils/theme';
 
 
-class LoginModal extends Component {
-
-  render() {
-    return(
-      <Dialog
-        title={this.props.title}
-        modal={this.props.modal}
-        open={this.props.open}
-        actions={this.props.actions}>
-        <p>Jeejee</p>
-      </Dialog>
-    )
+const styles = {
+  buttonStyle: {
+    border: '1px solid #555555',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
+  buttonGold: {
+    color: theme.palette.primary2Color,
   }
 }
 
-LoginModal.propTypes = {
-  title: PropTypes.string,
-  modal: PropTypes.bool.isRequired,
-  open: PropTypes.bool.isRequired,
-  actions: PropTypes.array,
-};
+class LoginModal extends Component {
+
+  state = {
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
+  render() {
+
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        disabled={true}
+        onTouchTap={this.handleClose}
+      />,
+  ];
+
+    return(
+
+      <div>
+        <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/>
+
+        <Dialog
+          title='Login'
+          modal={true}
+          open={this.state.open}
+          actions={this.actions}>
+          <p>Jeejee</p>
+        </Dialog>
+      </div>
+    )
+  }
+}
 
 export default LoginModal;
