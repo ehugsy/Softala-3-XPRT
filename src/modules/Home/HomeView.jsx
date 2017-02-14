@@ -59,11 +59,11 @@ const styles = {
     color: theme.palette.primary1Color,
   },
   empty:{
-    flex: 1,
+    flex: 5,
     flexShrink: 0
   },
   bigText: {
-    flex: 1,
+    flex: 4,
     fontSize: '18px',
     fontWeight: '300',
     minWidth: '300px',
