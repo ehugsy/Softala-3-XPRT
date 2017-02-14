@@ -21,6 +21,21 @@ export default [{
   component: Home,
   icon: HomeIcon,
 }, {
+  path: '/contact',
+  name: 'ContactUs',
+  component: Contact,
+  icon: PreferencesIcon,
+}, {
+  path: '/about',
+  name: 'AboutXprt',
+  component: About,
+  icon: PreferencesIcon,
+},/*{
+  path: '/logout',
+  name: 'Logout',
+  component: Logout,
+  icon: LogoutIcon,
+  {
   path: '/preferences',
   name: 'Preferences',
   component: Preferences,
@@ -41,19 +56,5 @@ export default [{
   component: Login,
   icon: LoginIcon,
   seperator: true,
-}, {
-  path: '/contact',
-  name: 'ContactUs',
-  component: Contact,
-  icon: PreferencesIcon,
-}, {
-  path: '/about',
-  name: 'AboutXprt',
-  component: About,
-  icon: PreferencesIcon,
-},/*{
-  path: '/logout',
-  name: 'Logout',
-  component: Logout,
-  icon: LogoutIcon,
+  },
 }*/];
