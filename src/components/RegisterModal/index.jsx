@@ -65,6 +65,10 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em'
+  },
+  dialog: {
+    marginBottom: 0,
+    height: '1200',
   }
 };
 
@@ -185,9 +189,10 @@ class RegisterModal extends Component {
       <Dialog
         modal={true}
         open={this.state.open}
-        actions={this.actions}>
+        actions={this.actions}
+        autoScrollBodyContent={true}>
 
-        <div style={{width: '100%', maxWidth: 700, margin: 'auto', height: '100%'}}>
+        <div style={{width: '100%', maxWidth: 700, margin: 'auto', height: '100%', paddingBottom: 20}}>
           <Stepper activeStep={stepIndex}>
             <Step>
               <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>BASIC INFO</StepLabel>
