@@ -21,7 +21,7 @@ LoginModal.propTypes = {
   title: PropTypes.string,
   modal: PropTypes.bool.isRequired,
   open: PropTypes.bool.isRequired,
-  actions: PropTypes.string,
+  actions: PropTypes.array,
 };
 
 export default LoginModal;

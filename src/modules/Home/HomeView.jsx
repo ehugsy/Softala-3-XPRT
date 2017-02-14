@@ -179,7 +179,6 @@ class Home extends Component {
         />
 
         <RegisterModal
-          title="Create an account"
           actions={actionsRegister}
           modal={true}
           open={this.state.openRegister}
