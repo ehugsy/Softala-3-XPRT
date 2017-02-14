@@ -57,7 +57,7 @@ class LoginModal extends Component {
           modal={true}
           open={this.state.open}
           actions={this.actions}>
-          <p>Jeejee</p>
+          <div><a href="/login">LOGIN</a> modaliksi -> <a href="/myaccount">My Account</a></div>
         </Dialog>
       </div>
     )
