@@ -104,7 +104,8 @@ const styles = {
     marginBottom: 10,
     color: theme.palette.textColor,
     width: '100%',
-    maxWidth: 350
+    maxWidth: 350,
+    padding: 10
 
   },
   buttonGold: {
@@ -162,7 +163,7 @@ class Contact extends Component {
   <textarea style={styles.transparentInput}>
     Your message *
   </textarea><br />
-                      <input type="submit" value="Submit" />
+<FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonGold}/>
                     </form>
 
               </div>
