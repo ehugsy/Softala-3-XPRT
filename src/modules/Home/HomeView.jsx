@@ -144,15 +144,48 @@ const styles = {
     fontSize: '16px',
     fontWeight: '300'
   },
+  descriptionText: {
+    fontSize: '20px',
+    fontWeight: '300'
+  },
   firstRow: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '2%'
   },
   profilePicture: {
     borderRadius: '50%',
     width: '150px',
     height: '150px'
+  },
+  secondRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    textAlign: 'center',
+    margin: '0 auto',
+    width: '50%',
+  },
+  footerWrapper: {
+    height: '20vmin',
+    background: '#cccccc',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  footerLeft: {
+    marginLeft:'5%',
+    flex: 1
+  },
+  footerRight: {
+    flex: 1,
+    textAlign: 'right',
+    marginRight: '5%'
+  },
+  footerText: {
+    fontSize: '16px',
+    color: theme.palette.primary3Color
   }
 };
 
@@ -233,6 +266,24 @@ class Home extends Component {
         <div style={styles.thirdWrapper}>
           <div style={styles.firstRow}>
             <img src={'../../img/placeholder_profilepicture.png'} style={styles.profilePicture}/>
+          </div>
+          <div style={styles.secondRow}>
+            <p style={styles.descriptionText}>
+              "Bacon ipsum dolor amet short loin landjaeger tongue,
+              filet mignon ribeye hamburger spare ribs. Pork
+              hamburger turkey tongue drumstick boudin ball tip beef
+              ribs pancetta tail turducken pig chuck. Tongue shoulder
+              landjaeger short loin hamburger. Meatball alcatra ham hock ribeye.
+              Tenderloin ham swine picanha sausage."
+            </p>
+          </div>
+        </div>
+        <div style={styles.footerWrapper}>
+          <div style={styles.footerLeft}>
+            <XprtLogo />
+          </div>
+          <div style={styles.footerRight}>
+            <p style={styles.footerText}>TERMS OF SERVICE - PRIVACY POLICY</p>
           </div>
         </div>
       </div>
