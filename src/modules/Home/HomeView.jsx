@@ -30,13 +30,16 @@ const styles = {
     flexWrap: 'wrap',
   },
   secondWrapper: {
-    height: '75vmin',
+    height: '100vmin',
     display: 'flex',
     flexDirection: 'column',
   },
   secondInnerWrapper: {
     background: '#cccccc',
     height: '100vmin',
+  },
+  thirdWrapper: {
+    height: '50vmin',
   },
   headerWrapper:{
     display:'flex',
@@ -48,7 +51,9 @@ const styles = {
     justifyContent:'center',
     paddingLeft:'10%',
     paddingRight:'10%',
-    marginTop:'5%'
+    paddingTop:'5%',
+    backgroundImage: 'url("../../img/xprt-background.png")',
+    backgroundSize: 'cover',
   },
   secondLogos:{
     display:'flex',
@@ -138,6 +143,16 @@ const styles = {
     color: theme.palette.primary3Color,
     fontSize: '16px',
     fontWeight: '300'
+  },
+  firstRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  profilePicture: {
+    borderRadius: '50%',
+    width: '150px',
+    height: '150px'
   }
 };
 
@@ -213,6 +228,11 @@ class Home extends Component {
               </div>
               <div style={styles.emptyImage}></div>
             </div>
+          </div>
+        </div>
+        <div style={styles.thirdWrapper}>
+          <div style={styles.firstRow}>
+            <img src={'../../img/placeholder_profilepicture.png'} style={styles.profilePicture}/>
           </div>
         </div>
       </div>

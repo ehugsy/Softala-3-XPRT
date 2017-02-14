@@ -21,14 +21,14 @@ export default [{
   component: Home,
   icon: HomeIcon,
 }, {
-  path: '/contact',
-  name: 'ContactUs',
-  component: Contact,
-  icon: PreferencesIcon,
-}, {
   path: '/about',
   name: 'AboutXprt',
   component: About,
+  icon: PreferencesIcon,
+}, {
+  path: '/contact',
+  name: 'ContactUs',
+  component: Contact,
   icon: PreferencesIcon,
 },/*{
   path: '/logout',
