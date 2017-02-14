@@ -105,7 +105,8 @@ const styles = {
     color: theme.palette.textColor,
     width: '100%',
     maxWidth: 350,
-    padding: 10
+    padding: 10,
+    borderRadius: 5
 
   },
   buttonGold: {
@@ -141,6 +142,7 @@ class Contact extends Component {
           00140 Helsinki
             </p>
             <p>info@xprt.fi</p>
+            <FlatButton label="F" style={styles.buttonStyle}/>
             </div>
             <div style={styles.rightText}>
               <p>
@@ -151,19 +153,19 @@ class Contact extends Component {
               <form onSubmit={this.handleSubmit}>
 
 
-                        <input style={styles.transparentInput} type="text" ref={(input) => this.input = input} value="Your name" />
+                        <input style={styles.transparentInput} type="text" value="Your name *" />
 <br />
 
-                        <input style={styles.transparentInput} type="text" ref={(input) => this.input = input} value="Your email address "/>
+                        <input style={styles.transparentInput} type="text"  value="Your email address *"/>
 <br />
 
-                        <input style={styles.transparentInput} type="text" ref={(input) => this.input = input} value="Your email address " />
+                        <input style={styles.transparentInput} type="text" value="Your phone number " />
 <br />
 
   <textarea style={styles.transparentInput}>
     Your message *
   </textarea><br />
-<FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonGold}/>
+<FlatButton label="SUBMIT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
                     </form>
 
               </div>
