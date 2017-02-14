@@ -15,6 +15,7 @@ import TextField from 'material-ui/TextField';
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
 import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
+import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 
 
 const styles = {
@@ -210,14 +211,22 @@ class RegisterModal extends Component {
             <p>{this.getStepContent(stepIndex)}</p>
             <div style={{marginTop: 12}}>
               <FlatButton
-                label="Cancel"
+                label='Cancel'
                 onTouchTap={this.handleClose}
                 style={styles.buttonStyle}
               />
               <FlatButton
+                label='Back'
+                onTouchTap={this.handlePrev}
+                labelPosition='after'
+                icon={<ArrowBack />}
+                disabled={stepIndex === 0}
+                style={styles.iconButton}
+              />
+              <FlatButton
                 label={stepIndex === 2 ? 'Finish' : 'Next'}
                 icon={stepIndex === 2 ? '' : <ArrowForward />}
-                labelPosition="before"
+                labelPosition='before'
                 primary={stepIndex === 2}
                 onTouchTap={stepIndex === 2 ? this.handleClose : this.handleNext}
                 style={styles.iconButton}
