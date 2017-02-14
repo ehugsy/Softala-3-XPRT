@@ -64,7 +64,6 @@ const styles = {
   },
   bigText: {
     flex: 1,
-    width: '50%',
     fontSize: '18px',
     fontWeight: '300',
     minWidth: '300px',
@@ -88,8 +87,6 @@ const styles = {
     marginLeft: '2em',
     paddingLeft: '2em',
     flexBasis: '200px'
-
-
   },
   buttonStyle: {
     border: '1px solid #555555',
