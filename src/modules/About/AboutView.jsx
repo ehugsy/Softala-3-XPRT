@@ -40,44 +40,46 @@ const styles = {
   },
   headerWrapper:{
     display:'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   landingWrapper:{
-    minHeight: '100vh',
+    minHeight: '113vh',
     display:'flex',
     flexDirection: 'column',
     justifyContent:'center',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'5%'
-  },
-  secondLogos:{
-    display:'flex',
-    alignSelf:'flex-end',
-    marginTop: '5em',
+    marginTop:'10px'
   },
   smallHeader: {
     color: theme.palette.primary1Color,
   },
   empty:{
-    flex: 1,
-    flexShrink: 0
+    flex: 3,
+    flexBasis: '200px',
   },
   bigText: {
-    flex: 1,
-    width: '50%',
+    flex: 4,
     fontSize: '18px',
     fontWeight: '300',
-    minWidth: '300px',
-    maxWidth: '50%',
-    flexGrow: 1,
-    flexBasis: 'auto'
+    flexBasis: '200px',
+    marginLeft: '3em',
+    paddingLeft: '3em',
+  },
+
+  leftSpace: {
+    flex: 3,
+  },
+  rightSpace: {
+    flex:3,
   },
   leftText: {
     fontSize: '18px',
     fontWeight: '300',
     textAlign: 'right',
-    flex:5,
-    flexBasis: '200px'
+    flex:3,
+    flexBasis: '200px',
   },
   rightText: {
     fontSize: '18px',
@@ -85,11 +87,9 @@ const styles = {
     borderLeft: '1px solid #333333',
     textAlign: 'left',
     flex:4,
-    marginLeft: '2em',
-    paddingLeft: '2em',
-    flexBasis: '200px'
-
-
+    marginLeft: '3em',
+    paddingLeft: '3em',
+    flexBasis: '200px',
   },
   buttonStyle: {
     border: '1px solid #555555',
@@ -98,8 +98,31 @@ const styles = {
     lineHeight: '0.4em',
     marginTop: '1em'
   },
+  transparentInput: {
+    backgroundColor: theme.palette.transparentColor,
+    border: '1px solid #555555',
+    marginBottom: 10,
+    color: theme.palette.textColor,
+    width: '100%',
+    maxWidth: 350,
+    padding: 10,
+    borderRadius: 5
+
+  },
   buttonGold: {
     color: theme.palette.primary2Color,
+  },
+  buttonStyle: {
+    border: '1px solid #555555',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
+  iconButtonStyle: {
+    border: '1px solid #555555',
+    borderRadius: '50%',
+    marginLeft: 5
   }
 };
 
@@ -109,44 +132,45 @@ class About extends Component {
 
     return(
       <div style={styles.wrapper}>
-      <div style={styles.landingWrapper}>
-        <div style={styles.headerWrapper}>
-          <div style={styles.empty}></div>
-          <div style={styles.bigText}>
-            <h1 style={styles.smallHeader}>About</h1>
+        <div style={styles.landingWrapper}>
+          <div style={styles.headerWrapper}>
+            <div style={styles.leftSpace}></div>
+            <div style={styles.empty}></div>
+            <div style={styles.bigText}>
+              <h1 style={styles.smallHeader}>About</h1>
+            </div>
+            <div style={styles.rightSpace}></div>
           </div>
-        </div>
 
-        <div style={styles.teacherExpertWrapper}>
-          <div style={styles.leftText}>
-            <p style={styles.smallHeader}>TEACHERS</p>
-            <p>Download and install the app to browse and view the experts profile. Easily inite experts to your classroom.</p>
-            <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
-            <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
+          <div style={styles.teacherExpertWrapper}>
+            <div style={styles.leftSpace}></div>
+            <div style={styles.leftText}>
+              <p style={styles.smallHeader}>TEACHERS</p>
+              <p>Download and install the app to browse and view the experts profile. Easily inite experts to your classroom.</p>
+              <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
+              <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
 
-            <p style={styles.smallHeader}>EXPERTS</p>
-            <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
+              <p style={styles.smallHeader}>EXPERTS</p>
+              <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
               <RegisterModal />
               <LoginModal /><br />
             </div>
             <div style={styles.rightText}>
               <p>
-              Xprt connects teachers and experts for the benefit on Finnish school children. Arranging a visiting lecture from a professional expert has become easier
-            </p>
-            <p>
-              See Xprt in action.
-            </p>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
+                Xprt connects teachers and experts for the benefit on Finnish school children. Arranging a visiting lecture from a professional expert has become easier
+              </p>
+              <p>
+                See Xprt in action.
+              </p>
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
 
-              </div>
-        </div>
+            </div>
+            <div style={styles.rightSpace}></div>
+          </div>
 
-        <div style={styles.secondLogos}>
-          <HundredLogo/>
-          <FuturiceLogo/>
+
         </div>
       </div>
-    </div>
     );
   }
 }
