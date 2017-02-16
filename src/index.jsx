@@ -12,6 +12,8 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 
+import {StyleRoot} from 'radium';
+
 import { language, messages } from './utils/intl';
 
 import {
@@ -70,6 +72,7 @@ ReactDOM.render(
         key={language}
         messages={messages}
       >
+        <StyleRoot>
         <Router history={history}>
           <Route path='/login' component={Login}/>
           <Route path='/' component={App}>
@@ -83,6 +86,7 @@ ReactDOM.render(
           </Route>
           <Redirect from='*' to='/' />
         </Router>
+        </StyleRoot>
       </IntlProvider>
     </Provider>
   </MuiThemeProvider>,
