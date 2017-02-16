@@ -11,11 +11,14 @@ import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
 import LoginModal from '../../components/LoginModal';
 import RegisterModal from '../../components/RegisterModal';
+import IconButton from 'material-ui/IconButton';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
+import PreferencesIcon from 'material-ui/svg-icons/action/settings';
+import SearchIcon from 'material-ui/svg-icons/action/search';
 
 const marginRight = '10em'
 
@@ -40,9 +43,11 @@ const styles = {
   },
   headerWrapper:{
     display:'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   landingWrapper:{
-    minHeight: '100vh',
+    minHeight: '70vh',
     display:'flex',
     flexDirection: 'column',
     justifyContent:'center',
@@ -50,34 +55,34 @@ const styles = {
     paddingRight:'4%',
     marginTop:'5%'
   },
-  secondLogos:{
-    display:'flex',
-    alignSelf:'flex-end',
-    marginTop: '5em',
-  },
   smallHeader: {
     color: theme.palette.primary1Color,
   },
   empty:{
-    flex: 1,
-    flexShrink: 0
+    flex: 3,
+    flexBasis: '200px',
   },
   bigText: {
-    flex: 1,
-    width: '50%',
+    flex: 4,
     fontSize: '18px',
     fontWeight: '300',
-    minWidth: '300px',
-    maxWidth: '50%',
-    flexGrow: 1,
-    flexBasis: 'auto'
+    flexBasis: '200px',
+    marginLeft: '3em',
+    paddingLeft: '3em',
+  },
+
+  leftSpace: {
+    flex: 1,
+  },
+  rightSpace: {
+    flex:3,
   },
   leftText: {
     fontSize: '18px',
     fontWeight: '300',
     textAlign: 'right',
-    flex:5,
-    flexBasis: '200px'
+    flex:3,
+    flexBasis: '200px',
   },
   rightText: {
     fontSize: '18px',
@@ -85,11 +90,9 @@ const styles = {
     borderLeft: '1px solid #333333',
     textAlign: 'left',
     flex:4,
-    marginLeft: '2em',
-    paddingLeft: '2em',
-    flexBasis: '200px'
-
-
+    marginLeft: '3em',
+    paddingLeft: '3em',
+    flexBasis: '200px',
   },
   buttonStyle: {
     border: '1px solid #555555',
@@ -111,8 +114,12 @@ const styles = {
   },
   buttonGold: {
     color: theme.palette.primary2Color,
+  },
+  iconButtonStyle: {
+    border: '1px solid #555555',
+    borderRadius: '50%',
+    marginLeft: 5
   }
-
 };
 
 class Contact extends Component {
@@ -121,20 +128,22 @@ class Contact extends Component {
     alert('A name was submitted: ' + this.input.value);
     event.preventDefault();
   }
-  render() {
-
+  render() {  
 
     return(
       <div style={styles.wrapper}>
         <div style={styles.landingWrapper}>
           <div style={styles.headerWrapper}>
+            <div style={styles.leftSpace}></div>
             <div style={styles.empty}></div>
             <div style={styles.bigText}>
               <h1 style={styles.smallHeader}>Contact us</h1>
             </div>
+            <div style={styles.rightSpace}></div>
           </div>
 
           <div style={styles.teacherExpertWrapper}>
+            <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>XPRT</p>
               <p>c/o HundrED <br />
@@ -142,11 +151,16 @@ class Contact extends Component {
             00140 Helsinki
           </p>
           <p>info@xprt.fi</p>
-          <FlatButton label="F" style={styles.buttonStyle}/>
+          <IconButton style={styles.iconButtonStyle}>
+            <PreferencesIcon/>
+          </IconButton>
+          <IconButton style={styles.iconButtonStyle}>
+            <SearchIcon/>
+          </IconButton>
         </div>
         <div style={styles.rightText}>
           <p>
-            Xprt connect teachers and experts for the benefit of Finnish shool children. Arranging a visiting lecture from a professional expert has become easier.
+            Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
           </p>
 
           <p>Contact us to hear more. * marks a required field</p>
@@ -169,11 +183,7 @@ class Contact extends Component {
           </form>
 
         </div>
-      </div>
-
-      <div style={styles.secondLogos}>
-        <HundredLogo/>
-        <FuturiceLogo/>
+        <div style={styles.rightSpace}></div>
       </div>
     </div>
   </div>
