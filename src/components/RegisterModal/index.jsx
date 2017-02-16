@@ -164,7 +164,7 @@ class RegisterModal extends Component {
               filter={AutoComplete.fuzzyFilter} // Autocomplete
               dataSource={cityList} // Autocomplete (source of suggestions)
               maxSearchResults={5} // Autocomplete (number of suggestions shown)
-              style={{margin: 10}} hintText="List the subjects you could teach about (keywords)"
+              style={{margin: 10}} hintText="List the cities you could teach in"
               floatingLabelText="Supported locations" floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
               underlineFocusStyle={styles.underlineStyle}
               floatingLabelFixed={true}
