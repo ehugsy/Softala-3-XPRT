@@ -29,7 +29,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-end',
-    flexWrap: 'wrap',
+    flexWrap: 'no-wrap',
     '@media (max-width: 768px)': {
       flexDirection: 'column'
     },
