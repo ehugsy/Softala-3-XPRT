@@ -40,7 +40,7 @@ const styles = {
     alignSelf: 'center',
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
-    boxShadow: '1px 1px 5px black'
+    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
   },
   profilePicture: {
     borderRadius: '50%',
