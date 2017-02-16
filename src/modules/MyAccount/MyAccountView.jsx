@@ -6,7 +6,6 @@ import Paper from 'material-ui/Paper';
 import Checkbox from 'material-ui/Checkbox';
 import Avatar from 'material-ui/Avatar';
 
-
 import {
   Step,
   Stepper,

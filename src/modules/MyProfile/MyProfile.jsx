@@ -1,24 +1,29 @@
 import { Component } from 'react';
 import theme from '../../utils/theme';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
+import Avatar from 'material-ui/Avatar';
 
+import ChipInput from 'material-ui-chip-input';
+import AutoComplete from 'material-ui/AutoComplete';
 
 const styles = {
   firstWrapper: {
     paddingTop: '50px',
     paddingLeft: '50px',
     height: '50vmin',
+    color: theme.palette.textColor
   },
   secondWrapper: {
-    background: '#cccccc',
+    background: 'rgba(38,38,38,1)',
     display: 'flex',
     flexDirection: 'row',
-    height: '100vmin'
+    height: '100vmin',
+    color: theme.palette.textColor
   },
   leftDiv: {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    background: 'rgba(200,0,0,0.2)',
     height: '50vmin',
     marginTop:'-10%',
   },
@@ -33,13 +38,19 @@ const styles = {
   contentCard: {
     width: '90%',
     alignSelf: 'center',
-    background: '#cccccc',
+    background: 'rgba(68,68,68,1)',
+    padding: '10px',
     marginBottom: '2em',
+    color: theme.palette.primary1Color,
+    boxShadow: '1px 1px 5px black'
   },
   profilePicture: {
     borderRadius: '50%',
     width: '150px',
     height: '150px'
+  },
+  divTitle: {
+    paddingLeft: '20px',
   },
 };
 
@@ -55,12 +66,12 @@ class MyProfile extends Component {
 
         <div style={styles.secondWrapper}>
           <div style={styles.leftDiv}>
-            <h3>MY PROFILE</h3>
+            <h3 style={styles.divTitle}>MY PROFILE</h3>
             <div style={styles.contentCard}>
-              <p>Name: NAEMMEMEM</p>
-              <p>Phone: NAEMMEMEM</p>
-              <p>Email: NAEMMEMEM</p>
-              <p>Thiing: NAEMMEMEM</p>
+              <p>NAME:</p>
+              <p>PHONE:</p>
+              <p>E-MAIL:</p>
+              <p>SUPPORTED LOCATIONS:</p>
             </div>
             <div style={styles.contentCard}>
               <h3>OCCUPATION</h3>
