@@ -6,6 +6,7 @@ import MyAccount from '../modules/MyAccount';
 import Login from '../modules/Auth/Login';
 import Contact from '../modules/Contact';
 import About from '../modules/About';
+import MyProfile from '../modules/MyProfile';
 
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import PreferencesIcon from 'material-ui/svg-icons/action/settings';
@@ -30,7 +31,13 @@ export default [{
   name: 'ContactUs',
   component: Contact,
   icon: PreferencesIcon,
-},/*{
+},{
+  path: '/profile',
+  name: 'MyProfile',
+  component: MyProfile,
+  icon: PreferencesIcon,
+},
+/*{
   path: '/logout',
   name: 'Logout',
   component: Logout,
