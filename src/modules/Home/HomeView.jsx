@@ -94,6 +94,7 @@ const styles = {
     fontWeight: '300',
     textAlign: 'right',
     flex:5,
+    flexBasis: '200px',
     hyphens: 'auto',
     height: '242px',
     '@media (max-width: 768px)':{
@@ -105,6 +106,7 @@ const styles = {
     fontWeight: '300',
     textAlign: 'center',
     flex:4,
+    flexBasis: '200px',
     hyphens: 'auto',
     height: '242px',
     marginTop: '2em',
