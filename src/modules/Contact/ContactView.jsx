@@ -118,67 +118,67 @@ const styles = {
 class Contact extends Component {
 
   handleSubmit(event) {
-  alert('A name was submitted: ' + this.input.value);
-  event.preventDefault();
-}
+    alert('A name was submitted: ' + this.input.value);
+    event.preventDefault();
+  }
   render() {
 
 
     return(
       <div style={styles.wrapper}>
-      <div style={styles.landingWrapper}>
-        <div style={styles.headerWrapper}>
-          <div style={styles.empty}></div>
-          <div style={styles.bigText}>
-            <h1 style={styles.smallHeader}>Contact us</h1>
-          </div>
-        </div>
-
-        <div style={styles.teacherExpertWrapper}>
-          <div style={styles.leftText}>
-            <p style={styles.smallHeader}>XPRT</p>
-            <p>c/o HundrED <br />
-            Merikatu 9 <br />
-          00140 Helsinki
-            </p>
-            <p>info@xprt.fi</p>
-            <FlatButton label="F" style={styles.buttonStyle}/>
+        <div style={styles.landingWrapper}>
+          <div style={styles.headerWrapper}>
+            <div style={styles.empty}></div>
+            <div style={styles.bigText}>
+              <h1 style={styles.smallHeader}>Contact us</h1>
             </div>
-            <div style={styles.rightText}>
-              <p>
-              Xprt connect teachers and experts for the benefit of Finnish shool children. Arranging a visiting lecture from a professional expert has become easier.
-            </p>
+          </div>
 
-            <p>Contact us to hear more. * marks a required field</p>
-              <form onSubmit={this.handleSubmit}>
-
-
-                        <input style={styles.transparentInput} type="text" value="Your name *" />
-<br />
-
-                        <input style={styles.transparentInput} type="text"  value="Your email address *"/>
-<br />
-
-                        <input style={styles.transparentInput} type="text" value="Your phone number " />
-<br />
-
-  <textarea style={styles.transparentInput}>
-    Your message *
-  </textarea><br />
-<FlatButton label="SUBMIT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
-                    </form>
-
-              </div>
+          <div style={styles.teacherExpertWrapper}>
+            <div style={styles.leftText}>
+              <p style={styles.smallHeader}>XPRT</p>
+              <p>c/o HundrED <br />
+              Merikatu 9 <br />
+            00140 Helsinki
+          </p>
+          <p>info@xprt.fi</p>
+          <FlatButton label="F" style={styles.buttonStyle}/>
         </div>
+        <div style={styles.rightText}>
+          <p>
+            Xprt connect teachers and experts for the benefit of Finnish shool children. Arranging a visiting lecture from a professional expert has become easier.
+          </p>
 
-        <div style={styles.secondLogos}>
-          <HundredLogo/>
-          <FuturiceLogo/>
+          <p>Contact us to hear more. * marks a required field</p>
+          <form onSubmit={this.handleSubmit}>
+
+
+            <input style={styles.transparentInput} type="text" placeholder="Your name *" />
+            <br />
+
+            <input style={styles.transparentInput} type="text"  placeholder="Your email address *"/>
+            <br />
+
+            <input style={styles.transparentInput} type="text" placeholder="Your phone number"/>
+            <br />
+
+            <textarea style={styles.transparentInput} placeholder="Your message *">
+
+            </textarea><br />
+            <FlatButton label="SUBMIT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+          </form>
+
         </div>
       </div>
+
+      <div style={styles.secondLogos}>
+        <HundredLogo/>
+        <FuturiceLogo/>
+      </div>
     </div>
-    );
-  }
+  </div>
+);
+}
 }
 
 export default Contact;
