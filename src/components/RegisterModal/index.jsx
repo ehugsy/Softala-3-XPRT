@@ -16,32 +16,13 @@ import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
 import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
+import ExpandTransition from 'material-ui/internal/ExpandTransition';
 
 
 const styles = {
   contentStyle: {
     margin: '0 16px',
-  },
-  wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    textAlign: 'left',
-    padding: 0 // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2
-  },
-  header: {
-    textAlign: 'center',
-    padding: 0,
-    color: theme.palette.primary1Color,
-  },
-  button: {
-    height: 68
-  },
-  card: {
-    margin: 20, // TODO: How to get -> context.muiTheme.spacing.desktopGutter / 2,
-    flex: 1,
-    flexBasis: '450px',
-    maxWidth: '650px'
+    paddingBottom: 0,
   },
   floatingLabelFocusStyle: {
     color: theme.palette.primary2Color
@@ -50,7 +31,7 @@ const styles = {
     borderColor: theme.palette.primary2Color,
     color: theme.palette.primary2Color
   },
-  buttonStyle: {
+  button: {
     border: '1px solid #555555',
     padding: '15px',
     margin: 5,
@@ -62,16 +43,14 @@ const styles = {
     color: theme.palette.primary2Color,
   },
   iconButton: {
-    border: '1px solid #555555',
     padding: '6px',
-    margin: 5,
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-    marginTop: '1em'
   },
-  dialog: {
-    marginBottom: 0,
-    height: '1200',
+  dialogFixTop: {
+    marginTop: 0,
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'center',
+    width: '100%',
   }
 };
 
@@ -120,20 +99,18 @@ class RegisterModal extends Component {
       case 0:
         return (
           <div>
-            <MyTextField label="Name" />
-            <MyTextField label="Phone" />
-            <MyTextField label="Email" />
-            <MyTextField label="Password" type="password" />
-            <MyTextField label="Repeat password" type="password" />
+            <MyTextField label="Name" key={"name"} id='name'/>
+            <MyTextField label="Phone" key={"phone"} id='phone'/>
+            <MyTextField label="Email" key={"email"} id='email'/>
+            <MyTextField label="Password" type="password" key={"password"} id='password'/>
+            <MyTextField label="Repeat password" type="password" key={"repeatpassword"} id='repeatpassword'/>
           </div>
         );
       case 1:
         return (
           <div>
-            <MyTextField label="Company name" />
-            <br />
-            <MyTextField label="Title" />
-            <br /><br />
+            <MyTextField label="Company name" key={"companyName"} id='companyName'/>
+            <MyTextField label="Title" key={"title"} id='title'/>
             <Checkbox label="Office visit possible" style={styles.checkbox}/>
             <p>Check this box if you agree that teachers can come to your office with
                 a group of students
@@ -187,15 +164,17 @@ class RegisterModal extends Component {
     return(
     <div>
 
-      <FlatButton label="CREATE AN ACCOUNT" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
+      <FlatButton label="CREATE AN ACCOUNT" style={{...styles.button, ...styles.buttonGold}} onTouchTap={this.handleOpen}/><br />
 
       <Dialog
         modal={true}
         open={this.state.open}
         actions={this.actions}
-        autoScrollBodyContent={true}>
+        autoScrollBodyContent={true}
+        style={styles.dialogFixTop}
+        contentStyle={{minWidth: 700, marginLeft: 60}}
+        >
 
-        <div style={{width: '100%', maxWidth: 700, margin: 'auto', height: '100%', paddingBottom: 20}}>
           <Stepper activeStep={stepIndex}>
             <Step>
               <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>BASIC INFO</StepLabel>
@@ -207,13 +186,14 @@ class RegisterModal extends Component {
               <StepLabel style={{color: theme.palette.primary2Color, fontSize:'17px'}}>EXPERT PROFILE</StepLabel>
             </Step>
           </Stepper>
+
           <div style={styles.contentStyle}>
-            <p>{this.getStepContent(stepIndex)}</p>
+            {this.getStepContent(stepIndex)}
             <div style={{marginTop: 12}}>
               <FlatButton
                 label='Cancel'
                 onTouchTap={this.handleClose}
-                style={styles.buttonStyle}
+                style={styles.button}
               />
               <FlatButton
                 label='Back'
@@ -221,7 +201,7 @@ class RegisterModal extends Component {
                 labelPosition='after'
                 icon={<ArrowBack />}
                 disabled={stepIndex === 0}
-                style={styles.iconButton}
+                style={{...styles.button, ...styles.iconButton}}
               />
               <FlatButton
                 label={stepIndex === 2 ? 'Finish' : 'Next'}
@@ -229,11 +209,11 @@ class RegisterModal extends Component {
                 labelPosition='before'
                 primary={stepIndex === 2}
                 onTouchTap={stepIndex === 2 ? this.handleClose : this.handleNext}
-                style={styles.iconButton}
+                style={{...styles.button, ...styles.iconButton}}
               />
             </div>
           </div>
-        </div>
+
       </Dialog>
     </div>
     )
