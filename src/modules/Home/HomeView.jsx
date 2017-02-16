@@ -284,7 +284,7 @@ class Home extends Component {
             <XprtLogo />
           </div>
           <div style={styles.footerRight}>
-            <p style={styles.footerText}>TERMS OF SERVICE - PRIVACY POLICY</p>
+            <p style={styles.footerText}>TERMS OF SERVICE | PRIVACY POLICY</p>
           </div>
         </div>
       </div>
