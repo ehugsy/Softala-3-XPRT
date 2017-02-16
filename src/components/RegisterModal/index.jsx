@@ -46,7 +46,6 @@ const styles = {
     padding: '6px',
   },
   dialogFixTop: {
-    marginTop: 0,
     display: 'flex',
     flexFlow: 'row nowrap',
     justifyContent: 'center',
@@ -63,6 +62,12 @@ const subjectList = [
   'Psykologia',
   'Musiikki',
   'Historia',
+];
+
+const cityList = [
+  'Helsinki',
+  'Espoo',
+  'Vantaa',
 ];
 
 class RegisterModal extends Component {
@@ -111,10 +116,12 @@ class RegisterModal extends Component {
           <div>
             <MyTextField label="Company name" key={"companyName"} id='companyName'/>
             <MyTextField label="Title" key={"title"} id='title'/>
+            <br/><br/><br/>
             <Checkbox label="Office visit possible" style={styles.checkbox}/>
             <p>Check this box if you agree that teachers can come to your office with
                 a group of students
             </p>
+            <MyTextField label="Office address" key={"officeAddress"} id='officeAddress' disabled={true}/>
           </div>
         );
       case 2:
@@ -152,6 +159,17 @@ class RegisterModal extends Component {
             rows={2}
             rowsMax={4}
             fullWidth={true}/>
+            <ChipInput
+              onChange={(chips) => handleChange(chips)} // Chips inside textfield
+              filter={AutoComplete.fuzzyFilter} // Autocomplete
+              dataSource={cityList} // Autocomplete (source of suggestions)
+              maxSearchResults={5} // Autocomplete (number of suggestions shown)
+              style={{margin: 10}} hintText="List the subjects you could teach about (keywords)"
+              floatingLabelText="Supported locations" floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}
+              floatingLabelFixed={true}
+              className="formcontainer"
+              fullWidth={true}/>
           </div>
         );
     }
