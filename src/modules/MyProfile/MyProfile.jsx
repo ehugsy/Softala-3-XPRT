@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import theme from '../../utils/theme';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardText, CardActions, CardTitle, CardMedia, } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
+import FlatButton from 'material-ui/FlatButton';
 
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
@@ -62,7 +63,42 @@ const styles = {
     fontSize: '18px',
     fontWeight: '300',
     paddingLeft: '1em',
-  }
+  },
+  divTitle: {
+    paddingLeft: '20px',
+  },
+  buttonStyle: {
+    border: '1px solid #555555',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
+  buttonGold: {
+    color: theme.palette.primary2Color,
+  },
+  greenHeader: {
+    color: theme.palette.primary1Color,
+    fontSize: '16pt',
+  },
+  whiteHeader: {
+    fontSize: '16pt',
+  },
+  alignRight: {
+    textAlign: 'right',
+
+  },
+  p: {
+    fontSize: '14pt',
+  },
+  colorIndicatorYellow: {
+    borderTop: 'solid',
+    color: theme.palette.primary2Color,
+  },
+  colorIndicatorGreen: {
+    borderTop: 'solid',
+    color: theme.palette.primary1Color,
+  },
 };
 
 class MyProfile extends Component {
@@ -102,13 +138,88 @@ class MyProfile extends Component {
             </div>
           </div>
           <div style={styles.rightDiv}>
-            <p style={styles.mainDivTitle}>INVITATIONS</p>
-            <div style={styles.contentCard}>
-              Contents here
-            </div>
-          </div>
-        </div>
-      </div>
+              <h3 style={styles.divTitle}>INVITATIONS</h3>
+
+
+
+
+
+              <Card style={{...styles.contentCard, ...styles.colorIndicatorYellow}}>
+                <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
+                 avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+                 actAsExpander={true}
+                 showExpandableButton={true}
+               />
+          <CardText expandable={true}>
+            <p style={styles.greenHeader}>SCHOOL:</p>
+            <p style={styles.whiteHeader}>Name of school:</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.whiteHeader}>Subjects:</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.whiteHeader}>Educational stage:</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+
+            <p style={styles.greenHeader}>LECTURE:</p>
+            <p style={styles.whiteHeader}>Theme of the lecture:</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.whiteHeader}>Date of lecture: (option 1):</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.whiteHeader}>Date of lecture: (option 2):</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.whiteHeader}>Location:</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.whiteHeader}>Short description of the lecture:</p>
+            <p>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+
+            <div style={styles.alignRight}>
+          <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
+          <FlatButton expandable={true} label="ACCEPT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+</div>
+
+
+            </CardText>
+        </Card>
+
+        <h3 style={styles.divTitle}>UPCOMING:</h3>
+          <Card style={{...styles.contentCard, ...styles.colorIndicatorGreen}}>
+          <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
+           avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+           actAsExpander={true}
+           showExpandableButton={true}
+         />
+        <CardText expandable={true}>
+          <p style={styles.greenHeader}>SCHOOL:</p>
+          <p style={styles.whiteHeader}>Name of school:</p>
+          <p>Hyväksytyn keissin infot</p>
+        <div style={styles.alignRight}>
+      <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
+      <FlatButton expandable={true} label="ACCEPT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+</div>
+</CardText>
+</Card>
+
+
+
+        <h3 style={styles.divTitle}>DECLINED:</h3>
+          <Card style={styles.contentCard}>
+          <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
+           avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+           actAsExpander={true}
+           showExpandableButton={true}
+         />
+        <CardText expandable={true}>
+          <p style={styles.greenHeader}>SCHOOL:</p>
+          <p style={styles.whiteHeader}>Name of school:</p>
+          <p>Hylätyn keissin infot</p>
+        <div style={styles.alignRight}>
+      <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
+      <FlatButton expandable={true} label="ACCEPT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+</div>
+</CardText>
+</Card>
+</div>
+</div>
+</div>
     );
   }
 }

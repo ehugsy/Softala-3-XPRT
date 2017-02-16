@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import Radium from 'radium';
+
 import {
   Card,
   CardText,
@@ -28,11 +30,13 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'flex-end',
     flexWrap: 'wrap',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column'
+    },
   },
   secondWrapper: {
     height: '100vmin',
     display: 'flex',
-    flexDirection: 'column',
   },
   secondInnerWrapper: {
     background: '#cccccc',
@@ -65,17 +69,24 @@ const styles = {
   },
   empty:{
     flex: 1,
-    flexShrink: 0
+    flexShrink: 0,
+    '@media (max-width: 768px)':{
+      display:'none'
+    },
   },
   bigText: {
     flex: 1,
     fontSize: '18px',
     fontWeight: '300',
-    minWidth: '300px',
-    maxWidth: '50%',
     flexGrow: 1,
     flexBasis: 'auto',
-    hyphens: 'auto'
+    hyphens: 'auto',
+    alignSelf: 'center',
+    textAlign: 'center',
+    '@media (min-width: 768px)': {
+      minWidth: '300px',
+      maxWidth: '50%',
+    }
   },
   leftText: {
     fontSize: '18px',
@@ -84,19 +95,27 @@ const styles = {
     flex:5,
     flexBasis: '200px',
     hyphens: 'auto',
-    height: '242px'
+    height: '242px',
+    '@media (max-width: 768px)':{
+      textAlign: 'center',
+    },
   },
   rightText: {
     fontSize: '18px',
     fontWeight: '300',
-    borderLeft: '1px solid #333333',
-    textAlign: 'left',
+    textAlign: 'center',
     flex:4,
-    marginLeft: '2em',
-    paddingLeft: '2em',
     flexBasis: '200px',
     hyphens: 'auto',
-    height: '242px'
+    height: '242px',
+    marginTop: '2em',
+    '@media (min-width: 768px)': {
+      borderLeft: '1px solid #333333',
+      marginLeft: '2em',
+      paddingLeft: '2em',
+      marginTop: 0,
+      textAlign: 'left'
+    },
   },
   buttonStyle: {
     border: '1px solid #555555',
@@ -111,7 +130,7 @@ const styles = {
   imageWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    height: '100%'
+    height: '100%',
   },
   mockImage: {
     width: '268.4px',
@@ -187,10 +206,11 @@ const styles = {
   footerText: {
     fontSize: '16px',
     color: theme.palette.primary3Color
-  }
+  },
 };
 
-class Home extends Component {
+@Radium
+class Home extends Component  {
 
   render() {
 
@@ -199,10 +219,10 @@ class Home extends Component {
       <div style={styles.wrapper}>
         <div style={styles.landingWrapper}>
           <div style={styles.headerWrapper}>
-            <div style={styles.empty}></div>
+            <div style={styles.empty} />
             <div style={styles.bigText}>
               <XprtLogo />
-              <p>TEACH TOGETHER. GROW TOGETHER.</p>
+              <p style={styles.hoverButton}>TEACH TOGETHER. GROW TOGETHER.</p>
               <p>Xprt connects teachers and experts for the benefit of Finnish school children.
                 Arranging a visiting lecture from a professional expert has become easier.</p>
             </div>
