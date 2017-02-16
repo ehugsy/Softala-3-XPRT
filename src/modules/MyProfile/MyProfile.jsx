@@ -6,6 +6,9 @@ import FlatButton from 'material-ui/FlatButton';
 
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
+import Checkbox from 'material-ui/Checkbox';
+
+import Chip from 'material-ui/Chip';
 
 const styles = {
   firstWrapper: {
@@ -40,7 +43,9 @@ const styles = {
     alignSelf: 'center',
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
-    boxShadow: '1px 1px 5px black'
+    boxShadow: '1px 1px 5px black',
+    padding: '30px',
+
   },
   profilePicture: {
     borderRadius: '50%',
@@ -56,13 +61,13 @@ const styles = {
     color: theme.palette.primary1Color,
     fontSize: '18px',
     fontWeight: '300',
-    paddingLeft: '1em',
+
   },
   mainDivText: {
     color: theme.palette.textColor,
     fontSize: '18px',
     fontWeight: '300',
-    paddingLeft: '1em',
+
   },
   divTitle: {
     paddingLeft: '20px',
@@ -99,6 +104,27 @@ const styles = {
     borderTop: 'solid',
     color: theme.palette.primary1Color,
   },
+
+  chip: {
+    margin: 4,
+    backgroundColor: theme.palette.transparentColor,
+    border: '1px solid #eab94e',
+    padding: '1px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+},
+
+wrapper: {
+  display: 'flex',
+  flexWrap: 'wrap',
+},
+
+edit: {
+  float: 'right',
+  width: '15px',
+  height: '15px'
+}
+
 };
 
 class MyProfile extends Component {
@@ -115,6 +141,7 @@ class MyProfile extends Component {
           <div style={styles.leftDiv}>
             <p style={styles.mainDivTitle}>MY PROFILE</p>
             <div style={styles.contentCard}>
+              <img src={''} style={styles.edit}/>
               <p style={styles.mainDivTextTitle}>NAME:</p>
               <p style={styles.mainDivText}>Esko Esimerkki</p>
 
@@ -128,14 +155,34 @@ class MyProfile extends Component {
               <p style={styles.mainDivText}>Helsinki, Espoo</p>
 
             </div>
+
             <div style={styles.contentCard}>
+              <img src={''} style={styles.edit}/>
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
 
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
               <p style={styles.mainDivText}>CEO</p>
+              <Checkbox label="Office visit possible"
+                checked={true}
+                disabled={true}
+                style={styles.checkbox}/>
+            </div>
+
+            <div style={styles.contentCard}>
+              <img src={''} style={styles.edit}/>
+              <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
+              <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p style={styles.mainDivTextTitle}>SUBJECTS: </p>
+              <div style={styles.wrapper}>
+                <Chip style={styles.chip}>Text Chip </Chip>
+                <Chip style={styles.chip}>Text Chip </Chip>
+              </div>
+              <p style={styles.mainDivTextTitle}>LECTURE DETAILS: </p>
+              <p style={styles.mainDivText}>Sportmrt</p>
 
             </div>
+
           </div>
           <div style={styles.rightDiv}>
               <h3 style={styles.divTitle}>INVITATIONS</h3>
