@@ -29,7 +29,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-end',
-    flexWrap: 'wrap',
+    flexWrap: 'no-wrap',
     '@media (max-width: 768px)': {
       flexDirection: 'column'
     },
@@ -86,6 +86,7 @@ const styles = {
     '@media (min-width: 768px)': {
       minWidth: '300px',
       maxWidth: '50%',
+      textAlign: 'left',
     }
   },
   leftText: {
