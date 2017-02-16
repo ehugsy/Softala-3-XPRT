@@ -86,6 +86,7 @@ const styles = {
     '@media (min-width: 768px)': {
       minWidth: '300px',
       maxWidth: '50%',
+      textAlign: 'left',
     }
   },
   leftText: {
