@@ -100,7 +100,7 @@ const styles = {
   },
   transparentInput: {
     backgroundColor: theme.palette.transparentColor,
-    borderColor: theme.palette.borderColor,
+    border: '1px solid #555555',
     marginBottom: 10,
     color: theme.palette.textColor,
     width: '100%',
