@@ -47,13 +47,10 @@ const styles = {
     flexWrap: 'wrap',
   },
   landingWrapper:{
-    minHeight: '70vh',
-    display:'flex',
-    flexDirection: 'column',
-    justifyContent:'center',
+    minHeight: '100vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'5%'
+    marginTop:'200px'
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -72,7 +69,7 @@ const styles = {
   },
 
   leftSpace: {
-    flex: 1,
+    flex: 3,
   },
   rightSpace: {
     flex:3,
@@ -115,6 +112,13 @@ const styles = {
   buttonGold: {
     color: theme.palette.primary2Color,
   },
+  buttonStyle: {
+    border: '1px solid #555555',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
   iconButtonStyle: {
     border: '1px solid #555555',
     borderRadius: '50%',
@@ -128,7 +132,7 @@ class Contact extends Component {
     alert('A name was submitted: ' + this.input.value);
     event.preventDefault();
   }
-  render() {  
+  render() {
 
     return(
       <div style={styles.wrapper}>

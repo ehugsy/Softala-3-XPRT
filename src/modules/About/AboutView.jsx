@@ -44,13 +44,10 @@ const styles = {
     flexWrap: 'wrap',
   },
   landingWrapper:{
-    minHeight: '113vh',
-    display:'flex',
-    flexDirection: 'column',
-    justifyContent:'center',
+    minHeight: '100vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'10px'
+    marginTop:'200px'
   },
   smallHeader: {
     color: theme.palette.primary1Color,
