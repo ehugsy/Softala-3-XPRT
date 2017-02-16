@@ -123,6 +123,9 @@ const styles = {
     border: '1px solid #555555',
     borderRadius: '50%',
     marginLeft: 5
+  },
+  requiredText: {
+    color: '#999999'
   }
 };
 
@@ -167,7 +170,7 @@ class Contact extends Component {
             Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
           </p>
 
-          <p>Contact us to hear more. * marks a required field</p>
+          <p>Contact us to hear more. <span style={styles.requiredText}>* marks a required field</span></p>
           <form onSubmit={this.handleSubmit}>
 
 
