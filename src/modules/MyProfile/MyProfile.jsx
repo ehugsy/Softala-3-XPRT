@@ -31,7 +31,6 @@ const styles = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    background: 'rgba(0,0,250,0.2)',
     height: '50vmin',
     marginTop:'-10%',
   },
@@ -39,9 +38,7 @@ const styles = {
     width: '90%',
     alignSelf: 'center',
     background: 'rgba(68,68,68,1)',
-    padding: '10px',
     marginBottom: '2em',
-    color: theme.palette.primary1Color,
     boxShadow: '1px 1px 5px black'
   },
   profilePicture: {
@@ -49,9 +46,23 @@ const styles = {
     width: '150px',
     height: '150px'
   },
-  divTitle: {
-    paddingLeft: '20px',
+  mainDivTitle: {
+    paddingLeft: '2em',
+    fontSize: '18px',
+    color: theme.palette.textColor,
   },
+  mainDivTextTitle: {
+    color: theme.palette.primary1Color,
+    fontSize: '18px',
+    fontWeight: '300',
+    paddingLeft: '1em',
+  },
+  mainDivText: {
+    color: theme.palette.textColor,
+    fontSize: '18px',
+    fontWeight: '300',
+    paddingLeft: '1em',
+  }
 };
 
 class MyProfile extends Component {
@@ -66,20 +77,32 @@ class MyProfile extends Component {
 
         <div style={styles.secondWrapper}>
           <div style={styles.leftDiv}>
-            <h3 style={styles.divTitle}>MY PROFILE</h3>
+            <p style={styles.mainDivTitle}>MY PROFILE</p>
             <div style={styles.contentCard}>
-              <p>NAME:</p>
-              <p>PHONE:</p>
-              <p>E-MAIL:</p>
-              <p>SUPPORTED LOCATIONS:</p>
+              <p style={styles.mainDivTextTitle}>NAME:</p>
+              <p style={styles.mainDivText}>Esko Esimerkki</p>
+
+              <p style={styles.mainDivTextTitle}>PHONE:</p>
+              <p style={styles.mainDivText}>+358 45 23423434</p>
+
+              <p style={styles.mainDivTextTitle}>E-MAIL:</p>
+              <p style={styles.mainDivText}>esko.esimerkki@example.com</p>
+
+              <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
+              <p style={styles.mainDivText}>Helsinki, Espoo</p>
+
             </div>
             <div style={styles.contentCard}>
-              <h3>OCCUPATION</h3>
-              <p>Company name</p>
+              <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
+              <p style={styles.mainDivText}>Sportmrt</p>
+
+              <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
+              <p style={styles.mainDivText}>CEO</p>
+
             </div>
           </div>
           <div style={styles.rightDiv}>
-            <h3>Invitations</h3>
+            <p style={styles.mainDivTitle}>INVITATIONS</p>
             <div style={styles.contentCard}>
               Contents here
             </div>
