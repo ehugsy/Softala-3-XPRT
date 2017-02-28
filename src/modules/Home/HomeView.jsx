@@ -18,6 +18,7 @@ import PrivacyModal from '../../components/PrivacyModal';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
+import XprtLogoSmall from '../../components/XprtLogoSmall';
 import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
 
@@ -313,7 +314,7 @@ class Home extends Component  {
         </div>
         <div style={styles.footerWrapper}>
           <div style={styles.footerLeft}>
-            <XprtLogo />
+            <XprtLogoSmall />
           </div>
           <div style={styles.footerRight}>
             <TermsModal />
