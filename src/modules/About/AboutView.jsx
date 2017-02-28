@@ -64,7 +64,7 @@ const styles = {
   },
   bigHeader: {
     color: theme.palette.primary1Color,
-    fontWeight: 400,
+    fontWeight: 300,
   },
   empty:{
     flex: 3,
