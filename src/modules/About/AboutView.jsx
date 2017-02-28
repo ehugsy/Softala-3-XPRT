@@ -53,8 +53,15 @@ const styles = {
     paddingRight:'4%',
     marginTop:'200px'
   },
+  pText: {
+    color: '#CCCCCC',
+  },
   smallHeader: {
     color: theme.palette.primary1Color,
+  },
+  bigHeader: {
+    color: theme.palette.primary1Color,
+    fontWeight: 300,
   },
   empty:{
     flex: 3,
@@ -182,7 +189,7 @@ class About extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.empty}></div>
             <div style={styles.bigText}>
-              <h1 style={styles.smallHeader}>About</h1>
+              <h1 style={styles.bigHeader}>About</h1>
             </div>
             <div style={styles.rightSpace}></div>
           </div>
@@ -191,20 +198,20 @@ class About extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>TEACHERS</p>
-              <p>Download and install the app to browse and view the experts profile. Easily inite experts to your classroom.</p>
+              <p style={styles.pText}>Download and install the app to browse and view the experts profile. Easily inite experts to your classroom.</p>
               <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
               <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
 
               <p style={styles.smallHeader}>EXPERTS</p>
-              <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
+              <p style={styles.pText}>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
               <RegisterModal />
               <LoginModal /><br />
             </div>
             <div style={styles.rightText}>
-              <p>
+              <p style={styles.pText}>
                 Xprt connects teachers and experts for the benefit on Finnish school children. Arranging a visiting lecture from a professional expert has become easier
               </p>
-              <p>
+              <p style={styles.pText}>
                 See Xprt in action.
               </p>
               <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
