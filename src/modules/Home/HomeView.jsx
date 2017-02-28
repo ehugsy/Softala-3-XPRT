@@ -13,6 +13,9 @@ import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
 import LoginModal from '../../components/LoginModal';
 import RegisterModal from '../../components/RegisterModal';
+import TermsModal from '../../components/TermsModal';
+import PrivacyModal from '../../components/PrivacyModal';
+
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
@@ -202,11 +205,11 @@ const styles = {
   footerRight: {
     flex: 1,
     textAlign: 'right',
-    marginRight: '5%'
+    marginRight: '5%',
   },
   footerText: {
     fontSize: '16px',
-    color: theme.palette.primary3Color
+    color: theme.palette.primary3Color,
   },
 };
 
@@ -304,8 +307,9 @@ class Home extends Component  {
           <div style={styles.footerLeft}>
             <XprtLogo />
           </div>
-          <div style={styles.footerRight}>
-            <p style={styles.footerText}>TERMS OF SERVICE | PRIVACY POLICY</p>
+          <div style={styles.footerRight, styles.footerText}>
+            <TermsModal />
+            <PrivacyModal />
           </div>
         </div>
       </div>
