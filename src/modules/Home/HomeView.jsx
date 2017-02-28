@@ -16,6 +16,7 @@ import RegisterModal from '../../components/RegisterModal';
 import TermsModal from '../../components/TermsModal';
 import PrivacyModal from '../../components/PrivacyModal';
 
+
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
@@ -37,22 +38,15 @@ const styles = {
     },
   },
   secondWrapper: {
-    display: 'none',
-    '@media (min-width:768px)':{
-      height: '100vmin',
-      display: 'flex',
-    }
+    height: '750px',
+    display: 'flex',
   },
   secondInnerWrapper: {
     background: '#cccccc',
-    height: '100vmin',
+    height: '700px',
   },
   thirdWrapper: {
-    display: 'none',
-    '@media(min-width:768px)':{
-      height: '50vmin',
-      display:'block',
-    }
+    height: '350px',
   },
   headerWrapper:{
     display:'flex',
@@ -69,12 +63,9 @@ const styles = {
     backgroundSize: 'cover',
   },
   secondLogos:{
-    display: 'none',
-    '@media (min-width:768px)':{
-      display:'flex',
-      alignSelf:'flex-end',
-      marginTop: '5em',
-    },
+    display:'flex',
+    alignSelf:'flex-end',
+    marginTop: '5em',
   },
   smallHeader: {
     color: theme.palette.primary1Color,
