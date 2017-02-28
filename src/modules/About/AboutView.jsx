@@ -148,6 +148,26 @@ const styles = {
     border: '1px solid #555555',
     borderRadius: '50%',
     marginLeft: 5
+  },
+  footerWrapper: {
+    height: '20vmin',
+    background: '#cccccc',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  footerLeft: {
+    marginLeft:'5%',
+    flex: 1
+  },
+  footerRight: {
+    flex: 1,
+    textAlign: 'right',
+    marginRight: '5%'
+  },
+  footerText: {
+    fontSize: '16px',
+    color: theme.palette.primary3Color
   }
 };
 @Radium
@@ -195,6 +215,16 @@ class About extends Component {
 
 
         </div>
+
+        <div style={styles.footerWrapper}>
+          <div style={styles.footerLeft}>
+            <XprtLogo />
+          </div>
+          <div style={styles.footerRight}>
+            <p style={styles.footerText}>TERMS OF SERVICE | PRIVACY POLICY</p>
+          </div>
+        </div>
+
       </div>
     );
   }
