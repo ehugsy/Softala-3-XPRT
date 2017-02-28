@@ -2,8 +2,17 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Radium from 'radium';
 
+const styles = {
+  link: {
+    ':hover': {
+      cursor:'pointer'
+    }
+  }
+}
 
+@Radium
 export default class PrivacyModal extends React.Component {
   state = {
     open: false,
@@ -34,7 +43,7 @@ export default class PrivacyModal extends React.Component {
 
     return (
       <div>
-        <a label="Dialog" onTouchTap={this.handleOpen}>PRIVACY POLICY</a>
+        <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}>PRIVACY POLICY</a>
         <Dialog
           title="PRIVACY POLICY"
           actions={actions}

@@ -2,8 +2,16 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Radium from 'radium';
 
-
+const styles = {
+  link: {
+    ':hover': {
+      cursor:'pointer'
+    }
+  }
+}
+@Radium
 export default class TermsModal extends React.Component {
   state = {
     open: false,
@@ -34,7 +42,7 @@ export default class TermsModal extends React.Component {
 
     return (
       <div>
-        <a label="Dialog" onTouchTap={this.handleOpen}>TERMS OF SERVICE</a>
+        <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}>TERMS OF SERVICE</a>
         <Dialog
           title="TERMS OF SERVICE"
           actions={actions}
