@@ -51,7 +51,10 @@ const styles = {
     minHeight: '100vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'200px'
+    marginTop:'200px',
+    '@media (max-width: 768px)': {
+      marginTop: 70
+    },
   },
   pText: {
     color: '#CCCCCC',
@@ -161,7 +164,8 @@ const styles = {
     background: '#cccccc',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 30
   },
   footerLeft: {
     marginLeft:'5%',
