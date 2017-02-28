@@ -37,6 +37,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
   },
+  pText: {
+    color: '#CCCCCC',
+  },
   secondInnerWrapper: {
     background: '#cccccc',
     height: '70vmin',
@@ -54,6 +57,10 @@ const styles = {
   },
   smallHeader: {
     color: theme.palette.primary1Color,
+  },
+  bigHeader: {
+    color: theme.palette.primary1Color,
+    fontWeight: 300,
   },
   empty:{
     flex: 3,
@@ -112,13 +119,6 @@ const styles = {
   buttonGold: {
     color: theme.palette.primary2Color,
   },
-  buttonStyle: {
-    border: '1px solid #555555',
-    padding: '15px',
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-    marginTop: '1em'
-  },
   iconButtonStyle: {
     border: '1px solid #555555',
     borderRadius: '50%',
@@ -144,7 +144,7 @@ class Contact extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.empty}></div>
             <div style={styles.bigText}>
-              <h1 style={styles.smallHeader}>Contact us</h1>
+              <h1 style={styles.bigHeader}>Contact us</h1>
             </div>
             <div style={styles.rightSpace}></div>
           </div>
@@ -153,11 +153,11 @@ class Contact extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>XPRT</p>
-              <p>c/o HundrED <br />
+              <p style={styles.pText}>c/o HundrED <br />
               Merikatu 9 <br />
             00140 Helsinki
           </p>
-          <p>info@xprt.fi</p>
+          <p style={styles.pText}>info@xprt.fi</p>
           <IconButton style={styles.iconButtonStyle}>
             <PreferencesIcon/>
           </IconButton>
@@ -166,11 +166,11 @@ class Contact extends Component {
           </IconButton>
         </div>
         <div style={styles.rightText}>
-          <p>
+          <p style={styles.pText}>
             Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
           </p>
 
-          <p>Contact us to hear more. <span style={styles.requiredText}>* marks a required field</span></p>
+          <p style={styles.pText}>Contact us to hear more. <span style={styles.requiredText}>* marks a required field</span></p>
           <form onSubmit={this.handleSubmit}>
 
 
