@@ -9,6 +9,7 @@ const styles = {
   drawer: {
     backgroundColor:theme.palette.primary1ColorTransparent,
     color: theme.palette.menuTextColor,
+    marginLeft:'50px'
   }
 }
 
@@ -32,7 +33,6 @@ class MenuDrawer extends Component {
               <div key={index}>
                 {route.separator ? <Divider /> : null}
                 <MenuItem
-                  leftIcon={React.createElement(route.icon)}
                   style={{color: active ? theme.palette.menuTextColorActive : null}}
                   onTouchTap={() => {this.props.changeView(route.path)}}>
 
