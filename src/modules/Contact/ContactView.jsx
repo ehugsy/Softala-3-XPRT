@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Radium from 'radium';
 import {
   Card,
   CardText,
@@ -31,6 +32,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column'
+    },
   },
   secondWrapper: {
     height: '75vmin',
@@ -65,6 +69,9 @@ const styles = {
   empty:{
     flex: 3,
     flexBasis: '200px',
+    '@media (max-width: 768px)': {
+      display: 'none'
+    },
   },
   bigText: {
     flex: 4,
@@ -73,13 +80,24 @@ const styles = {
     flexBasis: '200px',
     marginLeft: '3em',
     paddingLeft: '3em',
+    '@media (max-width: 768px)': {
+      margin: 0,
+      padding: 0,
+      textAlign: 'center'
+    },
   },
 
   leftSpace: {
     flex: 3,
+    '@media (max-width: 768px)': {
+      display: 'none'
+    },
   },
   rightSpace: {
     flex:3,
+    '@media (max-width: 768px)': {
+      display: 'none'
+    },
   },
   leftText: {
     fontSize: '18px',
@@ -87,6 +105,9 @@ const styles = {
     textAlign: 'right',
     flex:3,
     flexBasis: '200px',
+    '@media (max-width: 768px)':{
+      textAlign: 'center',
+    },
   },
   rightText: {
     fontSize: '18px',
@@ -97,6 +118,12 @@ const styles = {
     marginLeft: '3em',
     paddingLeft: '3em',
     flexBasis: '200px',
+    '@media (max-width: 768px)':{
+      textAlign: 'center',
+      margin: 0,
+      padding: 0,
+      border: 'none'
+    },
   },
   buttonStyle: {
     border: '1px solid #555555',
@@ -126,9 +153,29 @@ const styles = {
   },
   requiredText: {
     color: '#999999'
+  },
+  footerWrapper: {
+    height: '20vmin',
+    background: '#cccccc',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  footerLeft: {
+    marginLeft:'5%',
+    flex: 1
+  },
+  footerRight: {
+    flex: 1,
+    textAlign: 'right',
+    marginRight: '5%'
+  },
+  footerText: {
+    fontSize: '16px',
+    color: theme.palette.primary3Color
   }
 };
-
+@Radium
 class Contact extends Component {
 
   handleSubmit(event) {
@@ -193,6 +240,16 @@ class Contact extends Component {
         <div style={styles.rightSpace}></div>
       </div>
     </div>
+
+    <div style={styles.footerWrapper}>
+      <div style={styles.footerLeft}>
+        <XprtLogo />
+      </div>
+      <div style={styles.footerRight}>
+        <p style={styles.footerText}>TERMS OF SERVICE | PRIVACY POLICY</p>
+      </div>
+    </div>
+
   </div>
 );
 }
