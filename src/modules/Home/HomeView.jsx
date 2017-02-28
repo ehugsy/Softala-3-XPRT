@@ -38,15 +38,15 @@ const styles = {
     },
   },
   secondWrapper: {
-    height: '100vmin',
+    height: '750px',
     display: 'flex',
   },
   secondInnerWrapper: {
     background: '#cccccc',
-    height: '100vmin',
+    height: '700px',
   },
   thirdWrapper: {
-    height: '50vmin',
+    height: '350px',
   },
   headerWrapper:{
     display:'flex',
