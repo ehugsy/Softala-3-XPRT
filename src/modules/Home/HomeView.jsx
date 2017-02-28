@@ -204,10 +204,9 @@ const styles = {
   },
   footerRight: {
     flex: 1,
+    flexDirection: 'row',
     textAlign: 'right',
     marginRight: '5%',
-  },
-  footerText: {
     fontSize: '16px',
     color: theme.palette.primary3Color,
   },
@@ -307,7 +306,7 @@ class Home extends Component  {
           <div style={styles.footerLeft}>
             <XprtLogo />
           </div>
-          <div style={styles.footerRight, styles.footerText}>
+          <div style={styles.footerRight}>
             <TermsModal />
             <PrivacyModal />
           </div>
