@@ -64,7 +64,7 @@ const styles = {
   },
   bigHeader: {
     color: theme.palette.primary1Color,
-    fontWeight: 300,
+    fontWeight: 400,
   },
   empty:{
     flex: 3,
@@ -127,7 +127,7 @@ const styles = {
     },
   },
   buttonStyle: {
-    border: '1px solid #555555',
+    border: '1px solid rgba(204, 204, 204, .34)',
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
