@@ -14,7 +14,7 @@ const styles = {
   firstWrapper: {
     paddingTop: '50px',
     paddingLeft: '50px',
-    height: '50vmin',
+    height: '60vmin',
     color: theme.palette.textColor
   },
   secondWrapper: {
