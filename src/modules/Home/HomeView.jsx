@@ -180,6 +180,7 @@ const styles = {
     textAlign: 'center',
     '@media (max-width: 769px)': {
       marginTop: '-5%',
+      top: '-5%',
     },
   },
   centerImage: {
