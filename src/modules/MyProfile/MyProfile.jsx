@@ -45,7 +45,10 @@ const styles = {
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
     padding: '30px',
-    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
+    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)',
+
+
+
 
 
   },
@@ -148,6 +151,7 @@ edit: {
 },
 
 
+
 };
 
 class MyProfile extends Component {
@@ -208,15 +212,23 @@ class MyProfile extends Component {
 
           </div>
           <div style={styles.rightDiv}>
-              <h3 style={styles.divTitle}>INVITATIONS</h3>
+              <h3 style={styles.divTitle}>INVITATIONS (1)</h3>
 
 
 
 
 
               <Card style={{...styles.contentCard, ...styles.colorIndicatorYellow}}>
-                <CardHeader  title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-                 avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+                <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
+                  titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
+
+                  subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+
+                  avatar='../../img/Arska.jpg'
+
+
+
+
                  actAsExpander={true}
                  showExpandableButton={true}
                />
@@ -250,10 +262,13 @@ class MyProfile extends Component {
             </CardText>
         </Card>
 
-        <h3 style={styles.divTitle}>UPCOMING:</h3>
+        <h3 style={styles.divTitle}>UPCOMING (1):</h3>
           <Card style={{...styles.contentCard, ...styles.colorIndicatorGreen}}>
           <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-           avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+            titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
+
+            subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+          avatar='../../img/Arska.jpg'
            actAsExpander={true}
            showExpandableButton={true}
          />
@@ -270,10 +285,13 @@ class MyProfile extends Component {
 
 
 
-        <h3 style={styles.divTitle}>DECLINED:</h3>
+        <h3 style={styles.divTitle}>DECLINED (1):</h3>
           <Card style={styles.contentCard}>
           <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-           avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+            titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
+
+            subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+           avatar='../../img/Arska.jpg'
            actAsExpander={true}
            showExpandableButton={true}
          />
