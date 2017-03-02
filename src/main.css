@@ -14,7 +14,9 @@ html {
 body {
   margin: 0;
   margin-left: 60px;
-
+}
+@media (max-width:769px){
+  body {margin-left: 0px;}
 }
 
 .formcontainer input:-webkit-autofill { -webkit-text-fill-color: green; -webkit-box-shadow: 0 0 0 1000px white inset; }

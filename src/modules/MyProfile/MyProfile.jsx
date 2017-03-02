@@ -45,7 +45,10 @@ const styles = {
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
     padding: '30px',
-    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
+    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)',
+
+
+
 
 
   },
@@ -83,7 +86,7 @@ const styles = {
   mainDivTextBold: {
     color: theme.palette.textColor,
     fontSize: '18px',
-    fontWeight: '500',
+    fontWeight: '450',
 
   },
   divTitle: {
@@ -148,6 +151,7 @@ edit: {
 },
 
 
+
 };
 
 class MyProfile extends Component {
@@ -208,38 +212,46 @@ class MyProfile extends Component {
 
           </div>
           <div style={styles.rightDiv}>
-              <h3 style={styles.divTitle}>INVITATIONS</h3>
+              <h3 style={styles.divTitle}>INVITATIONS (1)</h3>
 
 
 
 
 
               <Card style={{...styles.contentCard, ...styles.colorIndicatorYellow}}>
-                <CardHeader  title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-                 avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+                <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com"
+                  titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
+
+                  subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+
+                  avatar='../../img/Arska.jpg'
+
+
+
+
                  actAsExpander={true}
                  showExpandableButton={true}
                />
           <CardText expandable={true}>
             <p style={styles.mainDivTextTitle}>SCHOOL:</p>
             <p style={styles.mainDivTextBold}>Name of school:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>The Internationl School of Helsinki</p>
             <p style={styles.mainDivTextBold}>Subjects:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Mathematics, Physics</p>
             <p style={styles.mainDivTextBold}>Educational stage:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Upper Secondary School</p>
 
             <p style={styles.mainDivTextTitle}>LECTURE:</p>
             <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Making Numbers Cool</p>
             <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>12.03.2017</p>
             <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>14.03.2017</p>
             <p style={styles.mainDivTextBold}>Location:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Helskinki International School</p>
             <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Why mathematics should be considered cool and worth learning. Also Cookiees</p>
 
             <div style={styles.alignRight}>
           <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
@@ -250,10 +262,13 @@ class MyProfile extends Component {
             </CardText>
         </Card>
 
-        <h3 style={styles.divTitle}>UPCOMING:</h3>
+        <h3 style={styles.divTitle}>UPCOMING (1):</h3>
           <Card style={{...styles.contentCard, ...styles.colorIndicatorGreen}}>
           <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-           avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+            titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
+
+            subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+          avatar='../../img/Arska.jpg'
            actAsExpander={true}
            showExpandableButton={true}
          />
@@ -270,10 +285,13 @@ class MyProfile extends Component {
 
 
 
-        <h3 style={styles.divTitle}>DECLINED:</h3>
+        <h3 style={styles.divTitle}>DECLINED (1):</h3>
           <Card style={styles.contentCard}>
           <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-           avatar="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg"
+            titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
+
+            subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+           avatar='../../img/Arska.jpg'
            actAsExpander={true}
            showExpandableButton={true}
          />
