@@ -134,7 +134,7 @@ const styles = {
       margin: 0,
       padding: 0,
       borderLeft: 0,
-      borderBottom: '1px solid #333333',
+      borderBottom: '1px solid #CCCCCC',
       display: 'flex',
       flexDirection: 'column-reverse',
           flexBasis: '0px',
@@ -142,13 +142,7 @@ const styles = {
 
     },
   },
-  buttonStyle: {
-    border: '1px solid rgba(204, 204, 204, .34)',
-    padding: '15px',
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-    marginTop: '1em'
-  },
+
   transparentInput: {
     backgroundColor: theme.palette.transparentColor,
     border: '1px solid #555555',
@@ -168,7 +162,8 @@ const styles = {
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    marginTop: '1em'
+    marginTop: '1em',
+    
   },
   iconButtonStyle: {
     border: '1px solid #555555',
