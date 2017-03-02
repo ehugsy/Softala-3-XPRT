@@ -19,6 +19,7 @@ import PrivacyModal from '../../components/PrivacyModal';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
+import XprtLogoSmall from '../../components/XprtLogoSmall';
 import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
 
@@ -33,23 +34,34 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'flex-end',
     flexWrap: 'no-wrap',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       flexDirection: 'column'
     },
   },
   secondWrapper: {
     height: '750px',
     display: 'flex',
+    '@media (max-width:769px)': {
+      height: '100%',
+    },
   },
   secondInnerWrapper: {
     background: '#cccccc',
     height: '700px',
+    width: '100%',
+    '@media (max-width:769px)': {
+      height: '100%',
+    },
   },
   thirdWrapper: {
     height: '350px',
+    '@media (max-width: 769px)': {
+      height: '100%'
+    }
   },
   headerWrapper:{
     display:'flex',
+    fontWeight: '300'
   },
   landingWrapper:{
     minHeight: '100vh',
@@ -62,10 +74,20 @@ const styles = {
     backgroundImage: 'url("../../img/xprt-background.png")',
     backgroundSize: 'cover',
   },
+  topLogo: {
+    '@media (max-width: 769px)': {
+      marginTop: '50px',
+      marginBottom: '70px'
+    },
+  },
   secondLogos:{
     display:'flex',
     alignSelf:'flex-end',
     marginTop: '5em',
+    '@media (max-width: 769px)': {
+      alignSelf: 'center',
+      marginBottom: '3em'
+    }
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -73,7 +95,7 @@ const styles = {
   empty:{
     flex: 1,
     flexShrink: 0,
-    '@media (max-width: 768px)':{
+    '@media (max-width: 769px)':{
       display:'none'
     },
   },
@@ -86,7 +108,7 @@ const styles = {
     hyphens: 'auto',
     alignSelf: 'center',
     textAlign: 'center',
-    '@media (min-width: 768px)': {
+    '@media (min-width: 769px)': {
       minWidth: '300px',
       maxWidth: '50%',
       textAlign: 'left',
@@ -100,7 +122,7 @@ const styles = {
     flexBasis: '200px',
     hyphens: 'auto',
     height: '242px',
-    '@media (max-width: 768px)':{
+    '@media (max-width: 769px)':{
       textAlign: 'center',
     },
   },
@@ -113,7 +135,7 @@ const styles = {
     hyphens: 'auto',
     height: '242px',
     marginTop: '2em',
-    '@media (min-width: 768px)': {
+    '@media (min-width: 769px)': {
       borderLeft: '1px solid #333333',
       marginLeft: '2em',
       paddingLeft: '2em',
@@ -126,7 +148,7 @@ const styles = {
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    marginTop: '1em'
+    marginTop: '1em',
   },
   buttonGold: {
     color: theme.palette.primary2Color,
@@ -135,6 +157,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     height: '100%',
+    '@media (max-width:769px)': {
+      flexDirection: 'column',
+    },
   },
   mockImage: {
     width: '268.4px',
@@ -146,17 +171,26 @@ const styles = {
   leftImage: {
     flex: 2,
     marginTop: '-12%',
-    textAlign: 'center'
+    textAlign: 'center',
+    '@media (max-width: 769px)': {
+      marginTop: '-5%',
+    },
   },
   centerImage: {
     flex: 2,
     marginTop: '-5%',
-    textAlign: 'center'
+    textAlign: 'center',
+    '@media (max-width: 769px)': {
+      marginTop: '0',
+    },
   },
   rightImage: {
     flex: 2,
     marginTop: '2%',
-    textAlign: 'center'
+    textAlign: 'center',
+    '@media (max-width: 769px)': {
+      marginTop: '0',
+    },
   },
   imageNumber: {
     color: theme.palette.primary2Color,
@@ -167,6 +201,11 @@ const styles = {
     color: theme.palette.primary3Color,
     fontSize: '16px',
     fontWeight: '300'
+  },
+  imageDescription: {
+    '@media (max-width:769px)': {
+      display: 'none'
+    }
   },
   descriptionText: {
     fontSize: '20px',
@@ -190,6 +229,9 @@ const styles = {
     textAlign: 'center',
     margin: '0 auto',
     width: '50%',
+    '@media (max-width: 769px)': {
+      width: '90%'
+    }
   },
   footerWrapper: {
     height: '20vmin',
@@ -224,8 +266,10 @@ class Home extends Component  {
           <div style={styles.headerWrapper}>
             <div style={styles.empty} />
             <div style={styles.bigText}>
-              <XprtLogo />
-              <p style={styles.hoverButton}>TEACH TOGETHER. GROW TOGETHER.</p>
+              <div style={styles.topLogo}>
+                <XprtLogo/>
+              </div>
+              <p>TEACH TOGETHER. GROW TOGETHER.</p>
               <p>Xprt connects teachers and experts for the benefit of Finnish school children.
                 Arranging a visiting lecture from a professional expert has become easier.</p>
             </div>
@@ -260,7 +304,7 @@ class Home extends Component  {
                 <img src={'../../img/mockup1.png'} style={styles.mockImage} />
                 <p style={styles.imageNumber}>01</p>
                 <p style={styles.textColor}>BACON IPSUM</p>
-                <p style={styles.textColor}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                <p style={styles.textColor, styles.imageDescription}>Bacon ipsum dolor amet short loin landjaeger tongue,
                   filet mignon ribeye hamburger spare ribs. Pork hamburger
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
@@ -269,7 +313,7 @@ class Home extends Component  {
                 <img src={'../../img/mockup2.png'} style={styles.mockImage} />
                 <p style={styles.imageNumber}>02</p>
                 <p style={styles.textColor}>BACON IPSUM</p>
-                <p style={styles.textColor}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                <p style={styles.textColor, styles.imageDescription}>Bacon ipsum dolor amet short loin landjaeger tongue,
                   filet mignon ribeye hamburger spare ribs. Pork hamburger
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
@@ -278,7 +322,7 @@ class Home extends Component  {
                 <img src={'../../img/mockup3.png'} style={styles.mockImage} />
                 <p style={styles.imageNumber}>03</p>
                 <p style={styles.textColor}>BACON IPSUM</p>
-                <p style={styles.textColor}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                <p style={styles.textColor, styles.imageDescription}>Bacon ipsum dolor amet short loin landjaeger tongue,
                   filet mignon ribeye hamburger spare ribs. Pork hamburger
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
@@ -304,7 +348,7 @@ class Home extends Component  {
         </div>
         <div style={styles.footerWrapper}>
           <div style={styles.footerLeft}>
-            <XprtLogo />
+            <XprtLogoSmall />
           </div>
           <div style={styles.footerRight}>
             <TermsModal />

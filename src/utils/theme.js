@@ -25,7 +25,7 @@ module.exports = {
     accent1Color: Colors.white,
     accent2Color: Colors.white,
     accent3Color: Colors.white,
-    textColor: Colors.white,
+    textColor: '#CCCCCC',
     alternateTextColor: Colors.white,
     menuTextColor:'#08412A',
     menuTextColorActive:'#fff',

@@ -30,7 +30,7 @@ const styles = {
     flexDirection: 'row',
     flexWrap: 'wrap',
     '@media (max-width: 768px)': {
-      flexDirection: 'column'
+      flexDirection: 'column-reverse'
     },
   },
   secondWrapper: {
@@ -53,7 +53,7 @@ const styles = {
     paddingRight:'4%',
     marginTop:'200px',
     '@media (max-width: 768px)': {
-      marginTop: 70
+      marginTop: 10
     },
   },
   pText: {
@@ -61,10 +61,17 @@ const styles = {
   },
   smallHeader: {
     color: theme.palette.primary1Color,
+        letterSpacing: '4px',
   },
   bigHeader: {
     color: theme.palette.primary1Color,
-    fontWeight: 400,
+    fontWeight: 300,
+    '@media (max-width: 768px)': {
+          fontSize: 24,
+    },
+
+
+
   },
   empty:{
     flex: 3,
@@ -107,13 +114,16 @@ const styles = {
     flexBasis: '200px',
     '@media (max-width: 768px)':{
       textAlign: 'center',
+      fontSize: '16px',
     },
 
   },
   rightText: {
+
     fontSize: '18px',
     fontWeight: '300',
     borderLeft: '1px solid #333333',
+    borderBottom: 0,
     textAlign: 'left',
     flex:4,
     marginLeft: '3em',
@@ -123,7 +133,13 @@ const styles = {
       textAlign: 'center',
       margin: 0,
       padding: 0,
-      border: 'none'
+      borderLeft: 0,
+      borderBottom: '1px solid #333333',
+      display: 'flex',
+      flexDirection: 'column-reverse',
+          flexBasis: '0px',
+          fontSize: '16px',
+
     },
   },
   buttonStyle: {
@@ -179,6 +195,22 @@ const styles = {
   footerText: {
     fontSize: '16px',
     color: theme.palette.primary3Color
+  },
+  mobileHide: {
+    '@media (max-width: 768px)':{
+      display: 'none'
+    }
+  },
+  video: {
+    '@media (max-width: 768px)':{
+      display: 'none'
+    }
+  },
+
+  mobileVideo: {
+    '@media (min-width: 768px)':{
+      display: 'none'
+    }
   }
 };
 @Radium
@@ -188,7 +220,11 @@ class About extends Component {
 
     return(
       <div style={styles.wrapper}>
+        <div style={styles.mobileVideo}>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
+        </div>
         <div style={styles.landingWrapper}>
+
           <div style={styles.headerWrapper}>
             <div style={styles.leftSpace}></div>
             <div style={styles.empty}></div>
@@ -215,11 +251,12 @@ class About extends Component {
               <p style={styles.pText}>
                 Xprt connects teachers and experts for the benefit on Finnish school children. Arranging a visiting lecture from a professional expert has become easier
               </p>
-              <p style={styles.pText}>
+              <p style={{...styles.pText, ...styles.mobileHide}}>
                 See Xprt in action.
               </p>
+              <div style={styles.video}>
               <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
-
+              </div>
             </div>
             <div style={styles.rightSpace}></div>
           </div>
