@@ -20,6 +20,8 @@ import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
 import PreferencesIcon from 'material-ui/svg-icons/action/settings';
 import SearchIcon from 'material-ui/svg-icons/action/search';
+import FacebookIcon from '../../components/FacebookIcon';
+import TwitterIcon from '../../components/TwitterIcon';
 
 const marginRight = '10em'
 
@@ -89,7 +91,6 @@ const styles = {
       textAlign: 'center'
     },
   },
-
   leftSpace: {
     flex: 3,
     '@media (max-width: 768px)': {
@@ -149,11 +150,6 @@ const styles = {
   buttonGold: {
     color: theme.palette.primary2Color,
   },
-  iconButtonStyle: {
-    border: '1px solid #555555',
-    borderRadius: '50%',
-    marginLeft: 5
-  },
   requiredText: {
     color: '#999999'
   },
@@ -209,11 +205,11 @@ class Contact extends Component {
             00140 Helsinki
           </p>
           <p style={styles.pText}>info@xprt.fi</p>
-          <IconButton style={styles.iconButtonStyle}>
-            <PreferencesIcon/>
+          <IconButton>
+            <FacebookIcon/>
           </IconButton>
-          <IconButton style={styles.iconButtonStyle}>
-            <SearchIcon/>
+          <IconButton>
+            <TwitterIcon/>
           </IconButton>
         </div>
         <div style={styles.rightText}>
