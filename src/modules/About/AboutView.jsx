@@ -65,10 +65,13 @@ const styles = {
   },
   bigHeader: {
     color: theme.palette.primary1Color,
-    fontWeight: 400,
+    fontWeight: 300,
     '@media (max-width: 768px)': {
           fontSize: 24,
     },
+
+
+
   },
   empty:{
     flex: 3,

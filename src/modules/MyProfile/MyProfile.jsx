@@ -30,6 +30,7 @@ const styles = {
     flexDirection: 'column',
     height: '50vmin',
     marginTop:'-20%',
+    paddingLeft: '25px',
   },
   rightDiv: {
     display: 'flex',
@@ -68,8 +69,7 @@ const styles = {
     color: theme.palette.textColor,
     fontSize: '16px',
     fontWeight: '300',
-
-
+    marginTop: '-15px',
   },
 
   mainDivTextRight: {
