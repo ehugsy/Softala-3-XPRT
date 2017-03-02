@@ -18,8 +18,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
-import PreferencesIcon from 'material-ui/svg-icons/action/settings';
-import SearchIcon from 'material-ui/svg-icons/action/search';
 import FacebookIcon from '../../components/FacebookIcon';
 import TwitterIcon from '../../components/TwitterIcon';
 import TermsModal from '../../components/TermsModal';
@@ -38,7 +36,7 @@ const styles = {
     flexDirection: 'row',
     flexWrap: 'wrap',
     '@media (max-width: 768px)': {
-      flexDirection: 'column'
+      flexDirection: 'column-reverse'
     },
   },
   secondWrapper: {
@@ -114,6 +112,7 @@ const styles = {
     flexBasis: '200px',
     '@media (max-width: 768px)':{
       textAlign: 'center',
+            paddingTop: 30
     },
   },
   rightText: {
@@ -129,7 +128,9 @@ const styles = {
       textAlign: 'center',
       margin: 0,
       padding: 0,
-      border: 'none'
+      borderLeft: 0,
+      borderBottom: '1px solid rgba(204, 204, 204, .34)',
+      paddingBottom: 60
     },
   },
   buttonStyle: {
@@ -137,7 +138,7 @@ const styles = {
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    marginTop: '1em'
+    marginTop: '1em',
   },
   transparentInput: {
     backgroundColor: theme.palette.transparentColor,
@@ -146,12 +147,20 @@ const styles = {
     color: theme.palette.textColor,
     width: '100%',
     maxWidth: 350,
-    padding: 10,
-    borderRadius: 5
+    padding: '10px 0px 10px 10px',
+    borderRadius: 5,
+    '@media (max-width: 768px)': {
+      maxWidth: 768,
+      width: '100%',
+      borderRadius: 0
+    },
 
   },
   buttonGold: {
     color: theme.palette.primary2Color,
+    '@media (max-width: 768px)': {
+      width: '100%'
+    },
   },
   requiredText: {
     color: '#999999'
@@ -186,7 +195,13 @@ const styles = {
   footerText: {
     fontSize: '16px',
     color: theme.palette.primary3Color
+  },
+  mobileHide: {
+    '@media (max-width: 768px)':{
+      display: 'none'
+    }
   }
+
 };
 @Radium
 class Contact extends Component {
@@ -230,7 +245,7 @@ class Contact extends Component {
             Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
           </p>
 
-          <p style={styles.pText}>Contact us to hear more. <span style={styles.requiredText}>* marks a required field</span></p>
+          <p style={styles.pText}>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
           <form onSubmit={this.handleSubmit}>
 
 
@@ -248,7 +263,6 @@ class Contact extends Component {
             </textarea><br />
             <FlatButton label="SUBMIT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
           </form>
-
         </div>
         <div style={styles.rightSpace}></div>
       </div>
