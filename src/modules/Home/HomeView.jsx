@@ -60,8 +60,7 @@ const styles = {
     }
   },
   headerWrapper:{
-    display:'flex',
-    fontWeight: '300'
+    display:'flex'
   },
   landingWrapper:{
     minHeight: '100vh',
@@ -108,10 +107,17 @@ const styles = {
     hyphens: 'auto',
     alignSelf: 'center',
     textAlign: 'center',
+    borderBottom: '1px solid rgba(204,204,204,0.34)',
     '@media (min-width: 769px)': {
       minWidth: '300px',
       maxWidth: '50%',
       textAlign: 'left',
+      border: 'none'
+    }
+  },
+  mobileFont: {
+    '@media (max-width: 769px)':{
+      fontSize: '16px'
     }
   },
   leftText: {
@@ -209,7 +215,7 @@ const styles = {
   },
   descriptionText: {
     fontSize: '20px',
-    fontWeight: '300'
+    fontWeight: '300',
   },
   firstRow: {
     display: 'flex',
@@ -238,11 +244,18 @@ const styles = {
     background: '#cccccc',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 769px)': {
+      flexDirection: 'column',
+      height: '100%'
+    }
   },
   footerLeft: {
     marginLeft:'5%',
-    flex: 1
+    flex: 1,
+    '@media (max-width: 769px)': {
+      margin: 0
+    }
   },
   footerRight: {
     flex: 1,
@@ -251,6 +264,10 @@ const styles = {
     marginRight: '5%',
     fontSize: '16px',
     color: theme.palette.primary3Color,
+    '@media (max-width: 769px)': {
+      textAlign: 'center',
+      margin: 0
+    }
   },
 };
 
@@ -270,21 +287,21 @@ class Home extends Component  {
                 <XprtLogo/>
               </div>
               <p>TEACH TOGETHER. GROW TOGETHER.</p>
-              <p>Xprt connects teachers and experts for the benefit of Finnish school children.
+              <p style={styles.mobileFont}>Xprt connects teachers and experts for the benefit of Finnish school children.
                 Arranging a visiting lecture from a professional expert has become easier.</p>
             </div>
-          </div>
+            </div>
 
           <div style={styles.teacherExpertWrapper}>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>TEACHERS</p>
-              <p>Download and install the app to browse and view the experts' profile. Easily inite experts to your classroom.</p>
+              <p style={styles.mobileFont}>Download and install the app to browse and view the experts' profile. Easily inite experts to your classroom.</p>
               <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
               <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
             </div>
             <div style={styles.rightText}>
               <p style={styles.smallHeader}>EXPERTS</p>
-              <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
+              <p style={styles.mobileFont}>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
               <RegisterModal />
               <LoginModal /><br />
 
@@ -304,7 +321,7 @@ class Home extends Component  {
                 <img src={'../../img/mockup1.png'} style={styles.mockImage} />
                 <p style={styles.imageNumber}>01</p>
                 <p style={styles.textColor}>BACON IPSUM</p>
-                <p style={styles.textColor, styles.imageDescription}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                <p style={[styles.textColor, styles.imageDescription]}>Bacon ipsum dolor amet short loin landjaeger tongue,
                   filet mignon ribeye hamburger spare ribs. Pork hamburger
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
@@ -313,7 +330,7 @@ class Home extends Component  {
                 <img src={'../../img/mockup2.png'} style={styles.mockImage} />
                 <p style={styles.imageNumber}>02</p>
                 <p style={styles.textColor}>BACON IPSUM</p>
-                <p style={styles.textColor, styles.imageDescription}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                <p style={[styles.textColor, styles.imageDescription]}>Bacon ipsum dolor amet short loin landjaeger tongue,
                   filet mignon ribeye hamburger spare ribs. Pork hamburger
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
@@ -322,7 +339,7 @@ class Home extends Component  {
                 <img src={'../../img/mockup3.png'} style={styles.mockImage} />
                 <p style={styles.imageNumber}>03</p>
                 <p style={styles.textColor}>BACON IPSUM</p>
-                <p style={styles.textColor, styles.imageDescription}>Bacon ipsum dolor amet short loin landjaeger tongue,
+                <p style={[styles.textColor, styles.imageDescription]}>Bacon ipsum dolor amet short loin landjaeger tongue,
                   filet mignon ribeye hamburger spare ribs. Pork hamburger
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
@@ -336,7 +353,7 @@ class Home extends Component  {
             <img src={'../../img/placeholder_profilepicture.png'} style={styles.profilePicture}/>
           </div>
           <div style={styles.secondRow}>
-            <p style={styles.descriptionText}>
+            <p style={[styles.descriptionText, styles.mobileFont]}>
               "Bacon ipsum dolor amet short loin landjaeger tongue,
               filet mignon ribeye hamburger spare ribs. Pork
               hamburger turkey tongue drumstick boudin ball tip beef
