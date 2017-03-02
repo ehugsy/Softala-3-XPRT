@@ -86,7 +86,7 @@ const styles = {
   mainDivTextBold: {
     color: theme.palette.textColor,
     fontSize: '18px',
-    fontWeight: '500',
+    fontWeight: '450',
 
   },
   divTitle: {
@@ -219,7 +219,7 @@ class MyProfile extends Component {
 
 
               <Card style={{...styles.contentCard, ...styles.colorIndicatorYellow}}>
-                <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
+                <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com"
                   titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
 
                   subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
@@ -235,23 +235,23 @@ class MyProfile extends Component {
           <CardText expandable={true}>
             <p style={styles.mainDivTextTitle}>SCHOOL:</p>
             <p style={styles.mainDivTextBold}>Name of school:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>The Internationl School of Helsinki</p>
             <p style={styles.mainDivTextBold}>Subjects:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Mathematics, Physics</p>
             <p style={styles.mainDivTextBold}>Educational stage:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Upper Secondary School</p>
 
             <p style={styles.mainDivTextTitle}>LECTURE:</p>
             <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Making Numbers Cool</p>
             <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>12.03.2017</p>
             <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>14.03.2017</p>
             <p style={styles.mainDivTextBold}>Location:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Helskinki International School</p>
             <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
-            <p style={styles.mainDivTextRight}>Sivustontäytettä, höpinää, lorem ipsun :3 Sivustontäytettä, höpinää, lorem ipsun :3</p>
+            <p style={styles.mainDivTextRight}>Why mathematics should be considered cool and worth learning. Also Cookiees</p>
 
             <div style={styles.alignRight}>
           <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
