@@ -59,15 +59,19 @@ const styles = {
     paddingRight:'4%',
     marginTop:'200px',
     '@media (max-width: 768px)': {
-      marginTop: 70
+      marginTop: 10
     },
   },
   smallHeader: {
     color: theme.palette.primary1Color,
+    letterSpacing: '4px'
   },
   bigHeader: {
     color: theme.palette.primary1Color,
     fontWeight: 300,
+    '@media (max-width: 768px)': {
+          fontSize: 24,
+    },
   },
   empty:{
     flex: 3,
@@ -109,7 +113,8 @@ const styles = {
     flexBasis: '200px',
     '@media (max-width: 768px)':{
       textAlign: 'center',
-            paddingTop: 30
+      paddingTop: 30,
+      fontSize: '16px',
     },
   },
   rightText: {
@@ -127,7 +132,8 @@ const styles = {
       padding: 0,
       borderLeft: 0,
       borderBottom: '1px solid rgba(204, 204, 204, .34)',
-      paddingBottom: 60
+      paddingBottom: 60,
+      fontSize: '16px',
     },
   },
   buttonStyle: {
