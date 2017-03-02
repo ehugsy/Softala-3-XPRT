@@ -18,8 +18,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
-import PreferencesIcon from 'material-ui/svg-icons/action/settings';
-import SearchIcon from 'material-ui/svg-icons/action/search';
 import FacebookIcon from '../../components/FacebookIcon';
 import TwitterIcon from '../../components/TwitterIcon';
 

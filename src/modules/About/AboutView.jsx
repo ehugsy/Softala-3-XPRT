@@ -69,9 +69,6 @@ const styles = {
     '@media (max-width: 768px)': {
           fontSize: 24,
     },
-
-
-
   },
   empty:{
     flex: 3,
@@ -134,7 +131,7 @@ const styles = {
       margin: 0,
       padding: 0,
       borderLeft: 0,
-      borderBottom: '1px solid #CCCCCC',
+      borderBottom: '1px solid rgba(204, 204, 204, .34)',
       display: 'flex',
       flexDirection: 'column-reverse',
           flexBasis: '0px',
@@ -142,7 +139,13 @@ const styles = {
 
     },
   },
-
+  buttonStyle: {
+    border: '1px solid rgba(204, 204, 204, .34)',
+    padding: '15px',
+    borderRadius: '20px',
+    lineHeight: '0.4em',
+    marginTop: '1em'
+  },
   transparentInput: {
     backgroundColor: theme.palette.transparentColor,
     border: '1px solid #555555',
@@ -156,14 +159,6 @@ const styles = {
   },
   buttonGold: {
     color: theme.palette.primary2Color,
-  },
-  buttonStyle: {
-    border: '1px solid #555555',
-    padding: '15px',
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-    marginTop: '1em',
-    
   },
   iconButtonStyle: {
     border: '1px solid #555555',
@@ -216,7 +211,7 @@ class About extends Component {
     return(
       <div style={styles.wrapper}>
         <div style={styles.mobileVideo}>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
         </div>
         <div style={styles.landingWrapper}>
 
@@ -250,7 +245,7 @@ class About extends Component {
                 See Xprt in action.
               </p>
               <div style={styles.video}>
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
             <div style={styles.rightSpace}></div>

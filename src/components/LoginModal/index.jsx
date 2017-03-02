@@ -12,7 +12,6 @@ const styles = {
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    marginTop: '1em'
   },
   buttonGold: {
     color: theme.palette.primary2Color,
@@ -78,7 +77,9 @@ class LoginModal extends Component {
               label='Login'
               style={styles.buttonStyle}
               primary={true}
-              onTouchTap={this.handleClose}/>
+              onTouchTap={this.handleClose}
+              href="/profile"
+            />
           </div>
         </Dialog>
       </div>

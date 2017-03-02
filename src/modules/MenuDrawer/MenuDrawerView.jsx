@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { AppBar, Divider, Drawer, MenuItem } from 'material-ui';
+import Radium from 'radium';
+
 
 import routes from '../../utils/routes';
 import theme from '../../utils/theme';
@@ -14,24 +16,46 @@ const styles = {
   },
   appBar: {
     boxShadow: 'none',
+  },
+  leftNav: {
+    '@media (max-width:769px)': {
+      display: 'none',
+    },
+  },
+  topNav: {
+    '@media (min-width: 769px)': {
+      display: 'none'
+    }
   }
-}
+};
 
+@Radium
 class MenuDrawer extends Component {
   render() {
     return (
-      <Drawer
-        open={true}
-        docked={true}
-        width={60}
-        containerStyle={styles.drawer}
-        onRequestChange={() => this.props.closeDrawer()} >
+      <div>
+        <div style={styles.leftNav}>
+          <Drawer
+            open={true}
+            docked={true}
+            width={60}
+            containerStyle={styles.drawer}
+            onRequestChange={() => this.props.closeDrawer()} >
 
-        <AppBar
-          style={styles.appBar}
-          onLeftIconButtonTouchTap={() => this.props.toggleDrawer()} />
+            <AppBar
+              style={styles.appBar}
+              onLeftIconButtonTouchTap={() => this.props.toggleDrawer()} />
 
-      </Drawer>
+          </Drawer>
+        </div>
+        <div style={styles.topNav}>
+          <AppBar
+            style={styles.appBar}
+            onLeftIconButtonTouchTap={() => this.props.toggleDrawer()} />
+        </div>
+
+      </div>
+
     );
   }
 }

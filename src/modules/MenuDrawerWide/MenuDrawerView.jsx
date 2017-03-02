@@ -9,7 +9,7 @@ const styles = {
   drawer: {
     backgroundColor:theme.palette.primary1ColorTransparent,
     color: theme.palette.menuTextColor,
-    marginLeft:'50px'
+    paddingLeft:'50px'
   }
 }
 
