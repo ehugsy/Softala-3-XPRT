@@ -155,6 +155,7 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em',
+    margin: 5,
   },
   buttonGold: {
     color: theme.palette.primary2Color,
