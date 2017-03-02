@@ -22,6 +22,9 @@ import PreferencesIcon from 'material-ui/svg-icons/action/settings';
 import SearchIcon from 'material-ui/svg-icons/action/search';
 import FacebookIcon from '../../components/FacebookIcon';
 import TwitterIcon from '../../components/TwitterIcon';
+import TermsModal from '../../components/TermsModal';
+import PrivacyModal from '../../components/PrivacyModal';
+import XprtLogoSmall from '../../components/XprtLogoSmall';
 
 const marginRight = '10em'
 
@@ -163,12 +166,22 @@ const styles = {
   },
   footerLeft: {
     marginLeft:'5%',
-    flex: 1
+    flex: 1,
+    '@media (max-width: 769px)': {
+      margin: 0
+    }
   },
   footerRight: {
     flex: 1,
+    flexDirection: 'row',
     textAlign: 'right',
-    marginRight: '5%'
+    marginRight: '5%',
+    fontSize: '16px',
+    color: theme.palette.primary3Color,
+    '@media (max-width: 769px)': {
+      textAlign: 'center',
+      margin: 0
+    }
   },
   footerText: {
     fontSize: '16px',
@@ -243,10 +256,11 @@ class Contact extends Component {
 
     <div style={styles.footerWrapper}>
       <div style={styles.footerLeft}>
-        <XprtLogo />
+        <XprtLogoSmall />
       </div>
       <div style={styles.footerRight}>
-        <p style={styles.footerText}>TERMS OF SERVICE | PRIVACY POLICY</p>
+        <TermsModal />
+        <PrivacyModal />
       </div>
     </div>
 
