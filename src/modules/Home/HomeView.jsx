@@ -34,14 +34,14 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'flex-end',
     flexWrap: 'no-wrap',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       flexDirection: 'column'
     },
   },
   secondWrapper: {
     height: '750px',
     display: 'flex',
-    '@media (max-height:768px)': {
+    '@media (max-width:769px)': {
       height: '100%',
     },
   },
@@ -49,18 +49,19 @@ const styles = {
     background: '#cccccc',
     height: '700px',
     width: '100%',
-    '@media (max-height:768px)': {
+    '@media (max-width:769px)': {
       height: '100%',
     },
   },
   thirdWrapper: {
     height: '350px',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       height: '100%'
     }
   },
   headerWrapper:{
     display:'flex',
+    fontWeight: '300'
   },
   landingWrapper:{
     minHeight: '100vh',
@@ -74,7 +75,7 @@ const styles = {
     backgroundSize: 'cover',
   },
   topLogo: {
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       marginTop: '50px',
       marginBottom: '70px'
     },
@@ -83,7 +84,7 @@ const styles = {
     display:'flex',
     alignSelf:'flex-end',
     marginTop: '5em',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       alignSelf: 'center',
       marginBottom: '3em'
     }
@@ -94,7 +95,7 @@ const styles = {
   empty:{
     flex: 1,
     flexShrink: 0,
-    '@media (max-width: 768px)':{
+    '@media (max-width: 769px)':{
       display:'none'
     },
   },
@@ -107,7 +108,7 @@ const styles = {
     hyphens: 'auto',
     alignSelf: 'center',
     textAlign: 'center',
-    '@media (min-width: 768px)': {
+    '@media (min-width: 769px)': {
       minWidth: '300px',
       maxWidth: '50%',
       textAlign: 'left',
@@ -121,7 +122,7 @@ const styles = {
     flexBasis: '200px',
     hyphens: 'auto',
     height: '242px',
-    '@media (max-width: 768px)':{
+    '@media (max-width: 769px)':{
       textAlign: 'center',
     },
   },
@@ -134,7 +135,7 @@ const styles = {
     hyphens: 'auto',
     height: '242px',
     marginTop: '2em',
-    '@media (min-width: 768px)': {
+    '@media (min-width: 769px)': {
       borderLeft: '1px solid #333333',
       marginLeft: '2em',
       paddingLeft: '2em',
@@ -156,7 +157,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     height: '100%',
-    '@media (max-width:768px)': {
+    '@media (max-width:769px)': {
       flexDirection: 'column',
     },
   },
@@ -171,7 +172,7 @@ const styles = {
     flex: 2,
     marginTop: '-12%',
     textAlign: 'center',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       marginTop: '-5%',
     },
   },
@@ -179,7 +180,7 @@ const styles = {
     flex: 2,
     marginTop: '-5%',
     textAlign: 'center',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       marginTop: '0',
     },
   },
@@ -187,7 +188,7 @@ const styles = {
     flex: 2,
     marginTop: '2%',
     textAlign: 'center',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       marginTop: '0',
     },
   },
@@ -202,7 +203,7 @@ const styles = {
     fontWeight: '300'
   },
   imageDescription: {
-    '@media (max-width:768px)': {
+    '@media (max-width:769px)': {
       display: 'none'
     }
   },
@@ -228,7 +229,7 @@ const styles = {
     textAlign: 'center',
     margin: '0 auto',
     width: '50%',
-    '@media (max-width: 768px)': {
+    '@media (max-width: 769px)': {
       width: '90%'
     }
   },
