@@ -9,8 +9,12 @@ const styles = {
     ':hover': {
       cursor:'pointer'
     }
+  },
+  noborder: {
+    border: 0,
   }
 }
+
 @Radium
 export default class TermsModal extends React.Component {
   state = {
@@ -44,6 +48,8 @@ export default class TermsModal extends React.Component {
           autoScrollBodyContent={true}
           open={this.state.open}
           onRequestClose={this.handleClose}
+          titleStyle={styles.noborder}
+          actionsContainerStyle={styles.noborder}
         >
           Bacon ipsum dolor amet fatback shank beef ribs boudin landjaeger.
           Pig alcatra swine pancetta doner frankfurter. Tongue hamburger pork belly filet mignon tenderloin landjaeger turkey.
