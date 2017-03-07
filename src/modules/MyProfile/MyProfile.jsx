@@ -57,6 +57,7 @@ const styles = {
     width: '150px',
     height: '150px'
   },
+
   mainDivTitle: {
     paddingLeft: '2em',
     fontSize: '16px',
@@ -150,7 +151,22 @@ edit: {
   height: '24px'
 },
 
+/*
+Titlestyle & subtitleStyle are used to stylize
+contentcards on the right side of page
+*/
+titleStyle: {
+  fontSize:'18px',
+  fontWeight:'bold',
+  color:'#CCCCCC'
+},
 
+subtitleStyle: {
+  fontSize:'18px',
+  fontWeight:'bold',
+  textDecorationLine:'underline',
+  color:'#CCCCCC',
+  marginTop:'7px'}
 
 };
 
@@ -219,10 +235,11 @@ class MyProfile extends Component {
 
 
               <Card style={{...styles.contentCard, ...styles.colorIndicatorYellow}}>
-                <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com"
-                  titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
 
-                  subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+                <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com"
+
+                  titleStyle={{...styles.titleStyle}}
+                  subtitleStyle={{...styles.subtitleStyle}}
 
                   avatar='../../img/Arska.jpg'
 
@@ -265,9 +282,10 @@ class MyProfile extends Component {
         <h3 style={styles.divTitle}>UPCOMING (1):</h3>
           <Card style={{...styles.contentCard, ...styles.colorIndicatorGreen}}>
           <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-            titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
 
-            subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+            titleStyle={{...styles.titleStyle}}
+            subtitleStyle={{...styles.subtitleStyle}}
+
           avatar='../../img/Arska.jpg'
            actAsExpander={true}
            showExpandableButton={true}
@@ -288,9 +306,10 @@ class MyProfile extends Component {
         <h3 style={styles.divTitle}>DECLINED (1):</h3>
           <Card style={styles.contentCard}>
           <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-            titleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'color':'#CCCCCC'}}
 
-            subtitleStyle={{'fontSize':'18px', 'fontWeight':'bold', 'textDecorationLine':'underline', 'color':'#CCCCCC', 'marginTop':'7px'}}
+            titleStyle={{...styles.titleStyle}}
+            subtitleStyle={{...styles.subtitleStyle}}
+
            avatar='../../img/Arska.jpg'
            actAsExpander={true}
            showExpandableButton={true}

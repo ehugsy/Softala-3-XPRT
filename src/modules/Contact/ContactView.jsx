@@ -17,12 +17,9 @@ import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
-import FuturiceLogo from '../../components/FuturiceLogo';
 import FacebookIcon from '../../components/FacebookIcon';
 import TwitterIcon from '../../components/TwitterIcon';
-import TermsModal from '../../components/TermsModal';
-import PrivacyModal from '../../components/PrivacyModal';
-import XprtLogoSmall from '../../components/XprtLogoSmall';
+import Footer from '../../components/Footer';
 
 const marginRight = '10em'
 
@@ -39,18 +36,6 @@ const styles = {
       flexDirection: 'column-reverse'
     },
   },
-  secondWrapper: {
-    height: '75vmin',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  pText: {
-    color: '#CCCCCC',
-  },
-  secondInnerWrapper: {
-    background: '#cccccc',
-    height: '70vmin',
-  },
   headerWrapper:{
     display:'flex',
     flexDirection: 'row',
@@ -60,7 +45,7 @@ const styles = {
     minHeight: '100vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'200px',
+    marginTop:'20vmin',
     '@media (max-width: 768px)': {
       marginTop: 10
     },
@@ -145,77 +130,40 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em',
+    color: theme.palette.primary2Color,
   },
   transparentInput: {
     backgroundColor: theme.palette.transparentColor,
     border: '1px solid #555555',
     marginBottom: 10,
     color: theme.palette.textColor,
+    fontSize: 16,
     width: '100%',
     maxWidth: 350,
     padding: '10px 0px 10px 10px',
     borderRadius: 5,
+    fontFamily: ('Catamaran' : 'sans-serif'),
+    fontSize: 16,
     '@media (max-width: 768px)': {
       maxWidth: 768,
       width: '100%',
       borderRadius: 0
     },
-
-  },
-  buttonGold: {
-    color: theme.palette.primary2Color,
-    '@media (max-width: 768px)': {
-      width: '100%'
-    },
   },
   requiredText: {
     color: '#999999'
-  },
-  footerWrapper: {
-    height: '20vmin',
-    background: '#cccccc',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 30
-  },
-  footerLeft: {
-    marginLeft:'5%',
-    flex: 1,
-    '@media (max-width: 769px)': {
-      margin: 0
-    }
-  },
-  footerRight: {
-    flex: 1,
-    flexDirection: 'row',
-    textAlign: 'right',
-    marginRight: '5%',
-    fontSize: '16px',
-    color: theme.palette.primary3Color,
-    '@media (max-width: 769px)': {
-      textAlign: 'center',
-      margin: 0
-    }
-  },
-  footerText: {
-    fontSize: '16px',
-    color: theme.palette.primary3Color
   },
   mobileHide: {
     '@media (max-width: 768px)':{
       display: 'none'
     }
+  },
+  contactForm: {
+    paddingRight: 10
   }
-
 };
 @Radium
 class Contact extends Component {
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.input.value);
-    event.preventDefault();
-  }
   render() {
 
     return(
@@ -234,11 +182,11 @@ class Contact extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>XPRT</p>
-              <p style={styles.pText}>c/o HundrED <br />
+              <p>c/o HundrED <br />
               Merikatu 9 <br />
             00140 Helsinki
           </p>
-          <p style={styles.pText}>info@xprt.fi</p>
+          <p>info@xprt.fi</p>
           <IconButton>
             <FacebookIcon/>
           </IconButton>
@@ -247,46 +195,31 @@ class Contact extends Component {
           </IconButton>
         </div>
         <div style={styles.rightText}>
-          <p style={styles.pText}>
+          <p>
             Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
           </p>
 
-          <p style={styles.pText}>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
-          <form onSubmit={this.handleSubmit}>
-
+          <p>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
+          <form onSubmit={this.handleSubmit}style={styles.contactForm}>
 
             <input style={styles.transparentInput} type="text" placeholder="Your name *" />
             <br />
-
-            <input style={styles.transparentInput} type="text"  placeholder="Your email address *"/>
+            <input style={styles.transparentInput} type="text" placeholder="Your email address *"/>
             <br />
-
             <input style={styles.transparentInput} type="text" placeholder="Your phone number"/>
             <br />
-
             <textarea style={styles.transparentInput} placeholder="Your message *">
-
             </textarea><br />
-            <FlatButton label="SUBMIT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+            <FlatButton label="SUBMIT" style={styles.buttonStyle}/>
           </form>
         </div>
         <div style={styles.rightSpace}></div>
       </div>
     </div>
-
-    <div style={styles.footerWrapper}>
-      <div style={styles.footerLeft}>
-        <XprtLogoSmall />
-      </div>
-      <div style={styles.footerRight}>
-        <TermsModal />
-        <PrivacyModal />
-      </div>
-    </div>
-
+    <Footer />
   </div>
-);
-}
+  );
+  }
 }
 
 export default Contact;
