@@ -3,6 +3,7 @@ import theme from '../../utils/theme'
 import TermsModal from '../../components/TermsModal';
 import PrivacyModal from '../../components/PrivacyModal';
 import XprtLogoSmall from '../../components/XprtLogoSmall';
+import Radium from 'radium';
 
 const styles = {
   footerWrapper: {
@@ -38,6 +39,7 @@ const styles = {
   },
 };
 
+@Radium
 export default class Footer extends Component {
   render (){
     return(
