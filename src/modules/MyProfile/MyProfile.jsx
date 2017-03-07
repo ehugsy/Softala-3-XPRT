@@ -1,6 +1,13 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import theme from '../../utils/theme';
-import { Card, CardHeader, CardText, CardActions, CardTitle, CardMedia, } from 'material-ui/Card';
+import {
+  Card,
+  CardHeader,
+  CardText,
+  CardActions,
+  CardTitle,
+  CardMedia
+} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -11,6 +18,10 @@ import Checkbox from 'material-ui/Checkbox';
 import Chip from 'material-ui/Chip';
 
 const styles = {
+/*
+These first element change the outlook
+of the page overall
+*/
   firstWrapper: {
     paddingTop: '50px',
     paddingLeft: '50px',
@@ -24,20 +35,15 @@ const styles = {
     height: '100vmin',
     color: theme.palette.textColor
   },
-  leftDiv: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    height: '50vmin',
-    marginTop:'-20%',
-    paddingLeft: '25px',
+  profilePicture: {
+    borderRadius: '50%',
+    width: '150px',
+    height: '150px'
   },
-  rightDiv: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    height: '50vmin',
-    marginTop:'-20%',
+  mainDivTitle: {
+    paddingLeft: '2em',
+    fontSize: '16px',
+    color: theme.palette.textColor
   },
   contentCard: {
     width: '90%',
@@ -45,54 +51,60 @@ const styles = {
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
     padding: '30px',
-    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)',
-
-
-
-
-
+    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
   },
-  profilePicture: {
-    borderRadius: '50%',
-    width: '150px',
-    height: '150px'
-  },
-
-  mainDivTitle: {
-    paddingLeft: '2em',
-    fontSize: '16px',
-    color: theme.palette.textColor,
-  },
+  //Green titles for the page
   mainDivTextTitle: {
     color: theme.palette.primary1Color,
     fontSize: '16px',
-    fontWeight: '300',
-
+    fontWeight: '300'
   },
   mainDivText: {
     color: theme.palette.textColor,
     fontSize: '16px',
     fontWeight: '300',
-    marginTop: '-15px',
-  },
-
-  mainDivTextRight: {
-    color: theme.palette.textColor,
-    fontSize: '16px',
-    fontWeight: '300',
     marginTop: '-15px'
-
   },
-
+/*
+Next elements change the outlook of the left column.
+*/
+  leftDiv: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    height: '50vmin',
+    marginTop: '-20%',
+    paddingLeft: '25px'
+  },
+  //Styling for editing Pen on left column
+  editPen: {
+    float: 'right',
+    width: '24px',
+    height: '24px'
+  },
+  //Style for experts own subjects on left column
+  chip: {
+    margin: 4,
+    backgroundColor: theme.palette.transparentColor,
+    border: '1px solid #eab94e',
+    padding: '1px',
+    borderRadius: '20px',
+    lineHeight: '0.4em'
+  },
+/*
+Next elements change the outlook
+of the right column.
+*/
+rightDivTitle: {
+  paddingLeft: '20px'
+},
+//White headings
   mainDivTextBold: {
     color: theme.palette.textColor,
     fontSize: '18px',
-    fontWeight: '450',
-
+    fontWeight: '450'
   },
-  divTitle: {
-    paddingLeft: '20px',
-  },
+  //for decline/accept buttons
   buttonStyle: {
     border: '1px solid #555555',
     padding: '15px',
@@ -100,74 +112,50 @@ const styles = {
     lineHeight: '0.4em',
     marginTop: '1em'
   },
+  //color for accept-button
   buttonGold: {
-    color: theme.palette.primary2Color,
+    color: theme.palette.primary2Color
   },
-  greenHeader: {
-    color: theme.palette.primary1Color,
-    fontSize: '18px',
+  ButtonAlignRight: {
+    textAlign: 'right'
   },
-  whiteHeader: {
-    fontSize: '18px',
-
-
-
-
-  },
-  alignRight: {
-    textAlign: 'right',
-
-  },
-  p: {
-    fontSize: '14pt',
-
-  },
+//Yellow line for invitations that are not handled yet
   colorIndicatorYellow: {
     borderTop: 'solid',
-    color: theme.palette.primary2Color,
+    color: theme.palette.primary2Color
   },
+  //Green line for accpted invitations
   colorIndicatorGreen: {
     borderTop: 'solid',
-    color: theme.palette.primary1Color,
+    color: theme.palette.primary1Color
   },
-
-  chip: {
-    margin: 4,
-    backgroundColor: theme.palette.transparentColor,
-    border: '1px solid #eab94e',
-    padding: '1px',
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-},
-
-wrapper: {
-  display: 'flex',
-  flexWrap: 'wrap',
-},
-
-edit: {
-  float: 'right',
-  width: '24px',
-  height: '24px'
-},
-
-/*
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  rightDiv: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    height: '50vmin',
+    marginTop: '-20%'
+  },
+  /*
 Titlestyle & subtitleStyle are used to stylize
 contentcards on the right side of page
 */
-titleStyle: {
-  fontSize:'18px',
-  fontWeight:'bold',
-  color:'#CCCCCC'
-},
-
-subtitleStyle: {
-  fontSize:'18px',
-  fontWeight:'bold',
-  textDecorationLine:'underline',
-  color:'#CCCCCC',
-  marginTop:'7px'}
-
+  titleStyle: {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    color: '#CCCCCC'
+  },
+  subtitleStyle: {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
+    color: '#CCCCCC',
+    marginTop: '7px'
+  }
 };
 
 class MyProfile extends Component {
@@ -184,7 +172,8 @@ class MyProfile extends Component {
           <div style={styles.leftDiv}>
             <p style={styles.mainDivTitle}>MY PROFILE</p>
             <div style={styles.contentCard}>
-              <img src={'../../img/edit.png'} style={styles.edit}/>
+              <img src={'../../img/edit.png'} style={styles.editPen}/>
+
               <p style={styles.mainDivTextTitle}>NAME:</p>
               <p style={styles.mainDivText}>Esko Esimerkki</p>
 
@@ -196,137 +185,128 @@ class MyProfile extends Component {
 
               <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
               <p style={styles.mainDivText}>Helsinki, Espoo</p>
-
             </div>
 
             <div style={styles.contentCard}>
-              <img src={'../../img/edit.png'} style={styles.edit}/>
+              <img src={'../../img/edit.png'} style={styles.editPen}/>
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
-
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
               <p style={styles.mainDivText}>CEO</p>
-              <Checkbox label="Office visit possible"
-                checked={true}
-                disabled={true}
-                style={styles.checkbox}/>
+              <Checkbox label="Office visit possible" checked={true} disabled={true} style={styles.checkbox}/>
             </div>
 
             <div style={styles.contentCard}>
-              <img src={'../../img/edit.png'} style={styles.edit}/>
+              <img src={'../../img/edit.png'} style={styles.editPen}/>
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p style={styles.mainDivTextTitle}>SUBJECTS: </p>
+              <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
               <div style={styles.wrapper}>
-                <Chip style={styles.chip}>Text Chip </Chip>
-                <Chip style={styles.chip}>Text Chip </Chip>
+                <Chip style={styles.chip}>Text Chip
+                </Chip>
+                <Chip style={styles.chip}>Text Chip
+                </Chip>
               </div>
-              <p style={styles.mainDivTextTitle}>LECTURE DETAILS: </p>
+              <p style={styles.mainDivTextTitle}>LECTURE DETAILS:
+              </p>
               <p style={styles.mainDivText}>Sportmrt</p>
-
             </div>
-
           </div>
+
           <div style={styles.rightDiv}>
-              <h3 style={styles.divTitle}>INVITATIONS (1)</h3>
+            <h3 style={styles.rightDivTitle}>INVITATIONS (1)</h3>
+            <Card style={{
+              ...styles.contentCard,
+              ...styles.colorIndicatorYellow
+            }}>
+              <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
+                ...styles.titleStyle
+              }} subtitleStyle={{
+                ...styles.subtitleStyle
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60}/>} actAsExpander={true} showExpandableButton={true}/>
+              <CardText expandable={true}>
+                <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+                <p style={styles.mainDivTextBold}>Name of school:</p>
+                <p style={styles.mainDivText}>The Internationl School of Helsinki</p>
+                <p style={styles.mainDivTextBold}>Subjects:</p>
+                <p style={styles.mainDivText}>Mathematics, Physics</p>
+                <p style={styles.mainDivTextBold}>Educational stage:</p>
+                <p style={styles.mainDivText}>Upper Secondary School</p>
+                <p style={styles.mainDivTextTitle}>LECTURE:</p>
+                <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
+                <p style={styles.mainDivText}>Making Numbers Cool</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
+                <p style={styles.mainDivText}>12.03.2017</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
+                <p style={styles.mainDivText}>14.03.2017</p>
+                <p style={styles.mainDivTextBold}>Location:</p>
+                <p style={styles.mainDivText}>Helskinki International School</p>
+                <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
+                <p style={styles.mainDivText}>Why mathematics should be considered cool and worth learning. Also Cookiees</p>
 
+                <div style={styles.ButtonAlignRight}>
+                  <FlatButton expandable={true} label="DECLINE" style={{
+                    ...styles.buttonStyle
+                  }}/>
+                  <FlatButton expandable={true} label="ACCEPT" style={{
+                    ...styles.buttonStyle,
+                    ...styles.buttonGold
+                  }}/>
+                </div>
+              </CardText>
+            </Card>
 
+            <h3 style={styles.rightDivTitle}>UPCOMING (1):</h3>
+            <Card style={{
+              ...styles.contentCard,
+              ...styles.colorIndicatorGreen
+            }}>
+              <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
+                ...styles.titleStyle
+              }} subtitleStyle={{
+                ...styles.subtitleStyle
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60}/>} actAsExpander={true} showExpandableButton={true}/>
+              <CardText expandable={true}>
+                <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+                <p style={styles.mainDivTextBold}>Name of school:</p>
+                <p style={styles.mainDivText}>Hyväksytyn keissin infot</p>
+                <div style={styles.ButtonAlignRight}>
+                  <FlatButton expandable={true} label="DECLINE" style={{
+                    ...styles.buttonStyle
+                  }}/>
+                  <FlatButton expandable={true} label="ACCEPT" style={{
+                    ...styles.buttonStyle,
+                    ...styles.buttonGold
+                  }}/>
+                </div>
+              </CardText>
+            </Card>
 
-
-
-              <Card style={{...styles.contentCard, ...styles.colorIndicatorYellow}}>
-
-                <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com"
-
-                  titleStyle={{...styles.titleStyle}}
-                  subtitleStyle={{...styles.subtitleStyle}}
-
-                  avatar='../../img/Arska.jpg'
-
-
-
-
-                 actAsExpander={true}
-                 showExpandableButton={true}
-               />
-          <CardText expandable={true}>
-            <p style={styles.mainDivTextTitle}>SCHOOL:</p>
-            <p style={styles.mainDivTextBold}>Name of school:</p>
-            <p style={styles.mainDivTextRight}>The Internationl School of Helsinki</p>
-            <p style={styles.mainDivTextBold}>Subjects:</p>
-            <p style={styles.mainDivTextRight}>Mathematics, Physics</p>
-            <p style={styles.mainDivTextBold}>Educational stage:</p>
-            <p style={styles.mainDivTextRight}>Upper Secondary School</p>
-
-            <p style={styles.mainDivTextTitle}>LECTURE:</p>
-            <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
-            <p style={styles.mainDivTextRight}>Making Numbers Cool</p>
-            <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-            <p style={styles.mainDivTextRight}>12.03.2017</p>
-            <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-            <p style={styles.mainDivTextRight}>14.03.2017</p>
-            <p style={styles.mainDivTextBold}>Location:</p>
-            <p style={styles.mainDivTextRight}>Helskinki International School</p>
-            <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
-            <p style={styles.mainDivTextRight}>Why mathematics should be considered cool and worth learning. Also Cookiees</p>
-
-            <div style={styles.alignRight}>
-          <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
-          <FlatButton expandable={true} label="ACCEPT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
-</div>
-
-
-            </CardText>
-        </Card>
-
-        <h3 style={styles.divTitle}>UPCOMING (1):</h3>
-          <Card style={{...styles.contentCard, ...styles.colorIndicatorGreen}}>
-          <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-
-            titleStyle={{...styles.titleStyle}}
-            subtitleStyle={{...styles.subtitleStyle}}
-
-          avatar='../../img/Arska.jpg'
-           actAsExpander={true}
-           showExpandableButton={true}
-         />
-        <CardText expandable={true}>
-          <p style={styles.mainDivTextTitle}>SCHOOL:</p>
-          <p style={styles.mainDivTextBold}>Name of school:</p>
-          <p style={styles.mainDivTextRight}>Hyväksytyn keissin infot</p>
-        <div style={styles.alignRight}>
-      <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
-      <FlatButton expandable={true} label="ACCEPT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
-</div>
-</CardText>
-</Card>
-
-
-
-        <h3 style={styles.divTitle}>DECLINED (1):</h3>
-          <Card style={styles.contentCard}>
-          <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com"
-
-            titleStyle={{...styles.titleStyle}}
-            subtitleStyle={{...styles.subtitleStyle}}
-
-           avatar='../../img/Arska.jpg'
-           actAsExpander={true}
-           showExpandableButton={true}
-         />
-        <CardText expandable={true}>
-          <p style={styles.mainDivTextTitle}>SCHOOL:</p>
-          <p style={styles.mainDivTextBold}>Name of school:</p>
-          <p style={styles.mainDivTextRight}>Hylätyn keissin infot</p>
-        <div style={styles.alignRight}>
-      <FlatButton expandable={true} label="DECLINE" style={{...styles.buttonStyle}}/>
-      <FlatButton expandable={true} label="ACCEPT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
-</div>
-</CardText>
-</Card>
-</div>
-</div>
-</div>
+            <h3 style={styles.rightDivTitle}>DECLINED (1):</h3>
+            <Card style={styles.contentCard}>
+              <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
+                ...styles.titleStyle
+              }} subtitleStyle={{
+                ...styles.subtitleStyle
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60}/>} actAsExpander={true} showExpandableButton={true}/>
+              <CardText expandable={true}>
+                <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+                <p style={styles.mainDivTextBold}>Name of school:</p>
+                <p style={styles.mainDivText}>Hylätyn keissin infot</p>
+                <div style={styles.ButtonAlignRight}>
+                  <FlatButton expandable={true} label="DECLINE" style={{
+                    ...styles.buttonStyle
+                  }}/>
+                  <FlatButton expandable={true} label="ACCEPT" style={{
+                    ...styles.buttonStyle,
+                    ...styles.buttonGold
+                  }}/>
+                </div>
+              </CardText>
+            </Card>
+          </div>
+        </div>
+      </div>
     );
   }
 }
