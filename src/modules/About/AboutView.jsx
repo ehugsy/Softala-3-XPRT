@@ -60,7 +60,7 @@ const styles = {
     },
   },
   pText: {
-    color: '#CCCCCC',
+    color: theme.palette.textColor,
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -119,10 +119,9 @@ const styles = {
 
   },
   rightText: {
-
     fontSize: '18px',
     fontWeight: '300',
-    borderLeft: '1px solid #333333',
+    borderLeft: '1px solid rgba(204, 204, 204, .34)',
     borderBottom: 0,
     textAlign: 'left',
     flex:4,
@@ -137,9 +136,8 @@ const styles = {
       borderBottom: '1px solid rgba(204, 204, 204, .34)',
       display: 'flex',
       flexDirection: 'column-reverse',
-          flexBasis: '0px',
-          fontSize: '16px',
-
+      flexBasis: '0px',
+      fontSize: '16px',
     },
   },
   buttonStyle: {
@@ -148,25 +146,6 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em'
-  },
-  transparentInput: {
-    backgroundColor: theme.palette.transparentColor,
-    border: '1px solid #555555',
-    marginBottom: 10,
-    color: theme.palette.textColor,
-    width: '100%',
-    maxWidth: 350,
-    padding: 10,
-    borderRadius: 5
-
-  },
-  buttonGold: {
-    color: theme.palette.primary2Color,
-  },
-  iconButtonStyle: {
-    border: '1px solid #555555',
-    borderRadius: '50%',
-    marginLeft: 5
   },
   footerWrapper: {
     height: '20vmin',
@@ -205,12 +184,6 @@ const styles = {
       display: 'none'
     }
   },
-  video: {
-    '@media (max-width: 768px)':{
-      display: 'none'
-    }
-  },
-
   mobileVideo: {
     '@media (min-width: 768px)':{
       display: 'none'
@@ -221,6 +194,7 @@ const styles = {
     height: 315
   }
 };
+
 @Radium
 class About extends Component {
   render() {
@@ -262,7 +236,7 @@ class About extends Component {
               <p style={{...styles.pText, ...styles.mobileHide}}>
                 See Xprt in action.
               </p>
-              <div style={styles.video}>
+              <div style={styles.mobileHide}>
             <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
