@@ -18,7 +18,7 @@ const styles = {
     boxShadow: 'none',
   },
   leftNav: {
-    '@media (max-width:769px)': {
+    '@media (max-width:768px)': {
       display: 'none',
     },
   },

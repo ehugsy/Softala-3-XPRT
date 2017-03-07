@@ -34,6 +34,7 @@ const styles = {
     color: theme.palette.primary2Color,
   },
   dialogFixTop: {
+    zIndex: '99999',
     display: 'flex',
     flexFlow: 'row nowrap',
     justifyContent: 'center',
@@ -144,7 +145,7 @@ class RegisterModal extends Component {
       </Dialog>
       </MediaQuery>
 
-      <MediaQuery query='(max-width: 769px)'>
+      <MediaQuery query='(max-width: 768px)'>
       <Dialog
         modal={true}
         open={this.state.open}
