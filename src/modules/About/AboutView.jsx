@@ -51,7 +51,7 @@ const styles = {
     minHeight: '100vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'200px',
+    marginTop:'20vmin',
     '@media (max-width: 768px)': {
       marginTop: 10
     },
