@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Radium from 'radium';
+import Slider from 'react-slick';
 
 import {
   Card,
@@ -219,10 +220,10 @@ const styles = {
     fontWeight: '300',
   },
   firstRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: '2%'
+    minWidth: 0,
+    minHeight: 0,
+    margin: '0 auto',
+    width: '300px'
   },
   profilePicture: {
     borderRadius: '50%',
@@ -246,7 +247,9 @@ const styles = {
 class Home extends Component  {
 
   render() {
-
+    const settings = {
+      dots: true
+    }
 
     return(
       <div style={styles.wrapper}>
@@ -321,7 +324,11 @@ class Home extends Component  {
         </div>
         <div style={styles.thirdWrapper}>
           <div style={styles.firstRow}>
-            <img src={'../../img/placeholder_profilepicture.png'} style={styles.profilePicture}/>
+             <Slider {...settings}>
+      	       <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(100%)', margin:'0 auto'}}/></div>
+               <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(0%)', margin:'0 auto'}}/></div>
+               <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'contrast(500%)', margin:'0 auto'}}/></div>
+             </Slider>
           </div>
           <div style={styles.secondRow}>
             <p style={[styles.descriptionText, styles.mobileFont]}>
