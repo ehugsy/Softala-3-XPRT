@@ -164,11 +164,6 @@ const styles = {
 };
 @Radium
 class Contact extends Component {
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.input.value);
-    event.preventDefault();
-  }
   render() {
 
     return(
@@ -209,7 +204,7 @@ class Contact extends Component {
 
             <input style={styles.transparentInput} type="text" placeholder="Your name *" />
             <br />
-            <input style={styles.transparentInput} type="text"  placeholder="Your email address *"/>
+            <input style={styles.transparentInput} type="text" placeholder="Your email address *"/>
             <br />
             <input style={styles.transparentInput} type="text" placeholder="Your phone number"/>
             <br />
