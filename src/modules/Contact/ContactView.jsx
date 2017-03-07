@@ -206,6 +206,9 @@ const styles = {
     '@media (max-width: 768px)':{
       display: 'none'
     }
+  },
+  contactForm: {
+    paddingRight: 10
   }
 
 };
@@ -252,7 +255,7 @@ class Contact extends Component {
           </p>
 
           <p style={styles.pText}>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}style={styles.contactForm}>
 
 
             <input style={styles.transparentInput} type="text" placeholder="Your name *" />
