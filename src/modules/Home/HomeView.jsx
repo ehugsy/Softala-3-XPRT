@@ -15,11 +15,10 @@ import LoginModal from '../../components/LoginModal';
 import RegisterModal from '../../components/RegisterModal';
 import TermsModal from '../../components/TermsModal';
 import PrivacyModal from '../../components/PrivacyModal';
-
+import Footer from '../../components/Footer';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
-import XprtLogoSmall from '../../components/XprtLogoSmall';
 import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
 
@@ -241,36 +240,6 @@ const styles = {
       width: '90%'
     }
   },
-  footerWrapper: {
-    height: '20vmin',
-    background: '#cccccc',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    '@media (max-width: 769px)': {
-      flexDirection: 'column',
-      height: '100%'
-    }
-  },
-  footerLeft: {
-    marginLeft:'5%',
-    flex: 1,
-    '@media (max-width: 769px)': {
-      margin: 0
-    }
-  },
-  footerRight: {
-    flex: 1,
-    flexDirection: 'row',
-    textAlign: 'right',
-    marginRight: '5%',
-    fontSize: '16px',
-    color: theme.palette.primary3Color,
-    '@media (max-width: 769px)': {
-      textAlign: 'center',
-      margin: 0
-    }
-  },
 };
 
 @Radium
@@ -365,15 +334,7 @@ class Home extends Component  {
             </p>
           </div>
         </div>
-        <div style={styles.footerWrapper}>
-          <div style={styles.footerLeft}>
-            <XprtLogoSmall />
-          </div>
-          <div style={styles.footerRight}>
-            <TermsModal />
-            <PrivacyModal />
-          </div>
-        </div>
+        <Footer />
       </div>
     );
   }

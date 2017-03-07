@@ -16,10 +16,7 @@ import RegisterModal from '../../components/RegisterModal';
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
-import FuturiceLogo from '../../components/FuturiceLogo';
-import TermsModal from '../../components/TermsModal';
-import PrivacyModal from '../../components/PrivacyModal';
-import XprtLogoSmall from '../../components/XprtLogoSmall';
+import Footer from '../../components/Footer';
 
 const marginRight = '10em'
 
@@ -93,7 +90,6 @@ const styles = {
       textAlign: 'center'
     },
   },
-
   leftSpace: {
     flex: 3,
     '@media (max-width: 768px)': {
@@ -116,7 +112,6 @@ const styles = {
       textAlign: 'center',
       fontSize: '16px',
     },
-
   },
   rightText: {
     fontSize: '18px',
@@ -147,38 +142,6 @@ const styles = {
     lineHeight: '0.4em',
     marginTop: '1em'
   },
-  footerWrapper: {
-    height: '20vmin',
-    background: '#cccccc',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 30
-  },
-
-  footerLeft: {
-    marginLeft:'5%',
-    flex: 1,
-    '@media (max-width: 769px)': {
-      margin: 0
-    }
-  },
-  footerRight: {
-    flex: 1,
-    flexDirection: 'row',
-    textAlign: 'right',
-    marginRight: '5%',
-    fontSize: '16px',
-    color: theme.palette.primary3Color,
-    '@media (max-width: 769px)': {
-      textAlign: 'center',
-      margin: 0
-    }
-  },
-  footerText: {
-    fontSize: '16px',
-    color: theme.palette.primary3Color
-  },
   mobileHide: {
     '@media (max-width: 768px)':{
       display: 'none'
@@ -198,7 +161,6 @@ const styles = {
 @Radium
 class About extends Component {
   render() {
-
 
     return(
       <div style={styles.wrapper}>
@@ -242,20 +204,8 @@ class About extends Component {
             </div>
             <div style={styles.rightSpace}></div>
           </div>
-
-
         </div>
-
-        <div style={styles.footerWrapper}>
-          <div style={styles.footerLeft}>
-            <XprtLogoSmall />
-          </div>
-          <div style={styles.footerRight}>
-            <TermsModal />
-            <PrivacyModal />
-          </div>
-        </div>
-
+        <Footer />
       </div>
     );
   }
