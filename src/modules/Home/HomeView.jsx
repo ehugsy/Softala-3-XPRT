@@ -247,6 +247,11 @@ const styles = {
 class Home extends Component  {
 
   render() {
+    const settings = {
+      autoplay: true,
+      speed: 1000,
+      autoplaySpeed: 10000,
+        }
     return(
       <div style={styles.wrapper}>
         <div style={styles.landingWrapper}>
@@ -320,7 +325,7 @@ class Home extends Component  {
         </div>
         <div style={styles.thirdWrapper}>
           <div style={styles.firstRow}>
-             <Slider>
+             <Slider {...settings}>
       	       <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(100%)', margin:'0 auto'}}/></div>
                <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(0%)', margin:'0 auto'}}/></div>
                <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'contrast(500%)', margin:'0 auto'}}/></div>
