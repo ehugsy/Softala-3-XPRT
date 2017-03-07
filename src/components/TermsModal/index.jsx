@@ -41,6 +41,7 @@ export default class TermsModal extends React.Component {
           title="TERMS OF SERVICE"
           actions={actions}
           modal={false}
+          autoScrollBodyContent={true}
           open={this.state.open}
           onRequestClose={this.handleClose}
         >

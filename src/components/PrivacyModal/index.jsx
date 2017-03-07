@@ -42,6 +42,7 @@ export default class PrivacyModal extends React.Component {
           title="PRIVACY POLICY"
           actions={actions}
           modal={false}
+          autoScrollBodyContent={true}
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
