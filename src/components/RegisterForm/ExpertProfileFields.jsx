@@ -59,19 +59,36 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
     fullWidth={true}/>
 )*/
 
-const renderChipInput = ({ input, label, meta: { touched, error }, ...custom }) => (
+const renderChipInput = ({ input, label, hintText, meta: { touched, error }, ...custom }) => (
   <ChipInput
+
+    {...input}
+    value = { input.value || []}
+    onRequestAdd={(addedChip) => {
+      let values = input.value || [];
+      values = values.slice();
+      values.push(addedChip);
+      input.onChange(values);
+    }}
+    onRequestDelete={(deletedChip) => {
+      let values = input.value || [];
+      values = values.filter(v => v !== deletedChip);
+      input.onChange(values);
+    }}
+    onBlur={() => input.onBlur()}
+
     onChange={(chips) => handleChange(chips)} // Chips inside textfield
     filter={AutoComplete.fuzzyFilter} // Autocomplete
     maxSearchResults={5} // Autocomplete (number of suggestions shown)
+    hintText={hintText}
     floatingLabelText={label}
     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
     underlineFocusStyle={styles.underlineStyle}
     floatingLabelFixed={true}
     className='formcontainer'
     fullWidth={true}
-    {...input}
-    {...custom}/>
+    {...custom}
+    />
 )
 
 
