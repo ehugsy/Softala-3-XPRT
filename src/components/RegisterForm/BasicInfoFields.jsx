@@ -42,12 +42,13 @@ class BasicInfoFields extends Component {
     render() {
       return (
         <form onSubmit={this.props.handleSubmit}>
-          <Field name='name' component={renderTextField} label='Name' type='text'/>
-          <Field name='phone' component={renderTextField} label='Phone' type='text'/>
-          <Field name='email' component={renderTextField} label='Email' type='text'/>
-          <Field name='password' component={renderTextField} label='Password' type='password'/>
-          <Field name='repeatpassword' component={renderTextField} label='Repeat password' type='password'/>
-
+          <div style={{height:394}}>
+            <Field name='name' component={renderTextField} label='Name' type='text'/>
+            <Field name='phone' component={renderTextField} label='Phone' type='text'/>
+            <Field name='email' component={renderTextField} label='Email' type='text'/>
+            <Field name='password' component={renderTextField} label='Password' type='password'/>
+            <Field name='repeatpassword' component={renderTextField} label='Repeat password' type='password'/>
+          </div>
           <DialogButtons stepIndex={this.props.stepIndex} handleClose={this.props.handleClose} />
         </form>
     )

@@ -22,7 +22,7 @@ class DialogButtons extends Component {
 
     render() {
       return(
-      <div style={{marginTop: 12}}>
+      <div>
         <FlatButton
           label='Cancel'
           onTouchTap={this.props.handleClose}

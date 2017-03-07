@@ -41,6 +41,7 @@ class OccupationFields extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
+        <div style={{height:394}}>
           <Field
             name='companyName'
             label='Company name'
@@ -69,7 +70,7 @@ class OccupationFields extends Component {
             component={renderTextField}
             id='officeAddress'/>
           }
-
+          </div>
         <DialogButtons stepIndex={this.props.stepIndex} handlePrev={this.props.handlePrev} handleClose={this.props.handleClose} />
       </form>
     )

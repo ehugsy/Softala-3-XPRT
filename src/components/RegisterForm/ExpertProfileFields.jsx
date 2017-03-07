@@ -97,40 +97,42 @@ class ExpertProfileFields extends Component {
     render() {
       return (
         <form onSubmit={this.props.handleSubmit}>
-          <Field
-            name='shortIntroduction'
-            label='Short introduction'
-            component={renderTextField}
-            type='text'
-            hintText='Tell briefly about you, your expertise and experience'
-            floatingLabelFixed={true}/>
+          <div style={{height:394}}>
+            <Field
+              name='shortIntroduction'
+              label='Short introduction'
+              component={renderTextField}
+              type='text'
+              hintText='Tell briefly about you, your expertise and experience'
+              floatingLabelFixed={true}/>
 
-          <Field
-            name='subjects'
-            label='Subjects'
-            component={renderChipInput}
-            id='subjects'
-            dataSource={subjectList}
-            hintText='List of subjects you could teach about'/>
+            <Field
+              name='subjects'
+              label='Subjects'
+              component={renderChipInput}
+              id='subjects'
+              dataSource={subjectList}
+              hintText='List of subjects you could teach about'/>
 
-          <Field
-            name='lectureDetails'
-            label='Lecture details (if possible)'
-            component={renderTextField}
-            hintText='Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?'
-            floatingLabelFixed={true}
-            multiLine={true}
-            rows={2}
-            rowsMax={4}/>
+            <Field
+              name='lectureDetails'
+              label='Lecture details (if possible)'
+              component={renderTextField}
+              hintText='Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?'
+              floatingLabelFixed={true}
+              multiLine={true}
+              rows={2}
+              rowsMax={4}/>
 
-          <Field
-            name='supportedLocations'
-            label='Supported locations'
-            component={renderChipInput}
-            id='supportedLocations'
-            dataSource={cityList}
-            hintText='List the cities you could teach in'/>
+            <Field
+              name='supportedLocations'
+              label='Supported locations'
+              component={renderChipInput}
+              id='supportedLocations'
+              dataSource={cityList}
+              hintText='List the cities you could teach in'/>
 
+            </div>
           <DialogButtons stepIndex={this.props.stepIndex} handlePrev={this.props.handlePrev} handleClose={this.props.handleClose} />
         </form>
     )
