@@ -14,23 +14,8 @@ const styles = {
 
 class MyTextField extends Component {
 
-  constructor(props) {
-     super(props);
-
-     this.handleChange = this.handleChange.bind(this),
-     this.state = {
-       value: '',
-     };
-   }
-
-  handleChange = (event) => {
-    this.setState({
-      value: event.target.value,
-    });
-  };
-
   render() {
-    const { label, id, type } = this.props;
+    const { label, id, type, ...rest } = this.props;
 
     return (<TextField
       floatingLabelText={ label }
@@ -38,9 +23,8 @@ class MyTextField extends Component {
       underlineFocusStyle={styles.underlineStyle}
       type={ type }
       id={id}
-      value={this.state.value}
-      onChange={this.handleChange}
-      fullWidth={true} />
+      fullWidth={true}
+      {...rest} />
     );
   }
 }
