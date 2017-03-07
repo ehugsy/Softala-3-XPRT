@@ -46,6 +46,9 @@ const styles = {
     display:'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+      '@media (max-width: 768px)':{
+        display: 'none'
+      }
   },
   landingWrapper:{
     minHeight: '100vh',
@@ -144,15 +147,20 @@ const styles = {
       display: 'none'
     }
   },
-  mobileVideo: {
+  video: {
     '@media (min-width: 768px)':{
-      display: 'none'
+      order: '-1',
     }
   },
   videoSize: {
     width: '100%',
     height: 315
-  }
+  },
+  mobileShow: {
+    '@media (min-width: 768px)':{
+      display: 'none'
+    }
+  },
 };
 
 @Radium
@@ -161,9 +169,6 @@ class About extends Component {
 
     return(
       <div style={styles.wrapper}>
-        <div style={styles.mobileVideo}>
-          <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
-        </div>
         <div style={styles.landingWrapper}>
 
           <div style={styles.headerWrapper}>
@@ -195,8 +200,11 @@ class About extends Component {
               <p style={styles.mobileHide}>
                 See Xprt in action.
               </p>
-              <div style={styles.mobileHide}>
-            <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
+              <div style={styles.mobileShow}>
+                <h1 style={styles.bigHeader}>About</h1>
+              </div>
+              <div style={styles.video}>
+                <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
             <div style={styles.rightSpace}></div>
