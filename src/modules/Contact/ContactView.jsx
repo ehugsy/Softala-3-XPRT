@@ -148,10 +148,13 @@ const styles = {
     border: '1px solid #555555',
     marginBottom: 10,
     color: theme.palette.textColor,
+    fontSize: 16,
     width: '100%',
     maxWidth: 350,
     padding: '10px 0px 10px 10px',
     borderRadius: 5,
+    fontFamily: ('Catamaran' : 'sans-serif'),
+    fontSize: 16,
     '@media (max-width: 768px)': {
       maxWidth: 768,
       width: '100%',

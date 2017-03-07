@@ -174,6 +174,10 @@ const styles = {
     '@media (min-width: 768px)':{
       display: 'none'
     }
+  },
+  videoSize: {
+    width: '100%',
+    height: 315
   }
 };
 @Radium
@@ -183,7 +187,7 @@ class About extends Component {
     return(
       <div style={styles.wrapper}>
         <div style={styles.mobileVideo}>
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
+          <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
         </div>
         <div style={styles.landingWrapper}>
 
@@ -217,7 +221,7 @@ class About extends Component {
                 See Xprt in action.
               </p>
               <div style={styles.video}>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
+            <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
             <div style={styles.rightSpace}></div>
