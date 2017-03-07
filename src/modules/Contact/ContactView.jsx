@@ -36,18 +36,6 @@ const styles = {
       flexDirection: 'column-reverse'
     },
   },
-  secondWrapper: {
-    height: '75vmin',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  pText: {
-    color: '#CCCCCC',
-  },
-  secondInnerWrapper: {
-    background: '#cccccc',
-    height: '70vmin',
-  },
   headerWrapper:{
     display:'flex',
     flexDirection: 'row',
@@ -142,6 +130,7 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em',
+    color: theme.palette.primary2Color,
   },
   transparentInput: {
     backgroundColor: theme.palette.transparentColor,
@@ -159,12 +148,6 @@ const styles = {
       maxWidth: 768,
       width: '100%',
       borderRadius: 0
-    },
-  },
-  buttonGold: {
-    color: theme.palette.primary2Color,
-    '@media (max-width: 768px)': {
-      width: '100%'
     },
   },
   requiredText: {
@@ -204,11 +187,11 @@ class Contact extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>XPRT</p>
-              <p style={styles.pText}>c/o HundrED <br />
+              <p>c/o HundrED <br />
               Merikatu 9 <br />
             00140 Helsinki
           </p>
-          <p style={styles.pText}>info@xprt.fi</p>
+          <p>info@xprt.fi</p>
           <IconButton>
             <FacebookIcon/>
           </IconButton>
@@ -217,11 +200,11 @@ class Contact extends Component {
           </IconButton>
         </div>
         <div style={styles.rightText}>
-          <p style={styles.pText}>
+          <p>
             Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
           </p>
 
-          <p style={styles.pText}>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
+          <p>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
           <form onSubmit={this.handleSubmit}style={styles.contactForm}>
 
             <input style={styles.transparentInput} type="text" placeholder="Your name *" />
@@ -232,7 +215,7 @@ class Contact extends Component {
             <br />
             <textarea style={styles.transparentInput} placeholder="Your message *">
             </textarea><br />
-            <FlatButton label="SUBMIT" style={{...styles.buttonStyle, ...styles.buttonGold}}/>
+            <FlatButton label="SUBMIT" style={styles.buttonStyle}/>
           </form>
         </div>
         <div style={styles.rightSpace}></div>

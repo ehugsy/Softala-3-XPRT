@@ -51,13 +51,10 @@ const styles = {
     minHeight: '100vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'20vmin',
+    marginTop:'200px',
     '@media (max-width: 768px)': {
       marginTop: 10
     },
-  },
-  pText: {
-    color: theme.palette.textColor,
   },
   smallHeader: {
     color: theme.palette.primary1Color,
@@ -182,20 +179,20 @@ class About extends Component {
             <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>TEACHERS</p>
-              <p style={styles.pText}>Download and install the app to browse and view the experts profile. Easily inite experts to your classroom.</p>
+              <p>Download and install the app to browse and view the experts profile. Easily inite experts to your classroom.</p>
               <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
               <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
 
               <p style={styles.smallHeader}>EXPERTS</p>
-              <p style={styles.pText}>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
+              <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
               <RegisterModal />
               <LoginModal /><br />
             </div>
             <div style={styles.rightText}>
-              <p style={styles.pText}>
+              <p>
                 Xprt connects teachers and experts for the benefit on Finnish school children. Arranging a visiting lecture from a professional expert has become easier
               </p>
-              <p style={{...styles.pText, ...styles.mobileHide}}>
+              <p style={styles.mobileHide}>
                 See Xprt in action.
               </p>
               <div style={styles.mobileHide}>
