@@ -53,7 +53,7 @@ of the page overall
   //Green titles for the page
   mainDivTextTitle: {
     color: theme.palette.primary1Color,
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '300'
   },
   mainDivText: {
