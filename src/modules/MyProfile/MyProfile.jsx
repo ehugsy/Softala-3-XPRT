@@ -22,14 +22,14 @@ of the page overall
   firstWrapper: {
     paddingTop: '50px',
     paddingLeft: '50px',
-    height: '60vmin',
+    height: '360px',
     color: theme.palette.textColor
   },
   secondWrapper: {
     background: 'rgba(38,38,38,1)',
     display: 'flex',
     flexDirection: 'row',
-    height: '100vmin',
+    height: '800px',
     color: theme.palette.textColor
   },
   profilePicture: {
