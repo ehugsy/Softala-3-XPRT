@@ -39,11 +39,6 @@ of the page overall
     width: '150px',
     height: '150px'
   },
-  mainDivTitle: {
-    paddingLeft: '2em',
-    fontSize: '16px',
-    color: theme.palette.textColor
-  },
   contentCard: {
     width: '90%',
     alignSelf: 'center',
@@ -79,6 +74,10 @@ Next elements change the outlook of the left column.
     marginTop: '-20%',
     paddingLeft: '25px'
   },
+  //My profile -title on the left
+  mainDivTitle: {
+    fontSize: '18px',
+  },
   //Style for experts own subjects on left column
   chip: {
     margin: 4,
@@ -98,7 +97,15 @@ Next elements change the outlook
 of the right column.
 */
 rightDivTitle: {
-  paddingLeft: '20px'
+  paddingLeft: '30px'
+},
+rightDivTitleAccept:{
+  color: theme.palette.primary1Color,
+  paddingLeft: '30px'
+},
+rightDivTitleDecline:{
+  paddingLeft: '30px',
+  opacity: '0.34'
 },
 //White headings
   mainDivTextBold: {
@@ -258,7 +265,7 @@ class MyProfile extends Component {
               </CardText>
             </Card>
 
-            <h3 style={styles.rightDivTitle}>UPCOMING (1):</h3>
+            <h3 style={styles.rightDivTitleAccept}>UPCOMING (1):</h3>
             <Card style={{
               ...styles.contentCard,
               ...styles.colorIndicatorGreen
@@ -276,7 +283,7 @@ class MyProfile extends Component {
               </CardText>
             </Card>
 
-            <h3 style={styles.rightDivTitle}>DECLINED (1):</h3>
+            <h3 style={styles.rightDivTitleDecline}>DECLINED (1):</h3>
             <Card style={styles.contentCard}>
               <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
                 ...styles.titleStyle
