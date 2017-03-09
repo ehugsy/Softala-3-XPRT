@@ -51,10 +51,10 @@ const styles = {
       }
   },
   landingWrapper:{
-    minHeight: '100vh',
+    minHeight: '80vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'200px',
+    marginTop:'20vh',
     '@media (max-width: 768px)': {
       marginTop: 10
     },

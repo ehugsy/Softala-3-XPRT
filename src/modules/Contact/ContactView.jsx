@@ -42,10 +42,10 @@ const styles = {
     flexWrap: 'wrap',
   },
   landingWrapper:{
-    minHeight: '100vh',
+    minHeight: '80vh',
     paddingLeft:'4%',
     paddingRight:'4%',
-    marginTop:'20vmin',
+    marginTop:'20vh',
     '@media (max-width: 768px)': {
       marginTop: 10
     },
