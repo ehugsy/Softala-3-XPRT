@@ -18,6 +18,8 @@ const styles = {
   },
 }
 
+const required = value => value ? undefined : 'Required'
+
 const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
   <MyTextField
     floatingLabelText={label}
@@ -46,13 +48,15 @@ class OccupationFields extends Component {
             name='companyName'
             label='Company name'
             component={renderTextField}
-            id='companyName'/>
+            id='companyName'
+            validate={required}/>
 
           <Field
             name='title'
             label='Title'
             component={renderTextField}
-            id='title'/>
+            id='title'
+            validate={required}/>
 
           <Field
             name='officeVisitPossible'
@@ -71,7 +75,10 @@ class OccupationFields extends Component {
             id='officeAddress'/>
           }
           </div>
-        <DialogButtons stepIndex={this.props.stepIndex} handlePrev={this.props.handlePrev} handleClose={this.props.handleClose} />
+        <DialogButtons
+          stepIndex={this.props.stepIndex}
+          handlePrev={this.props.handlePrev}
+          handleCancel={this.props.handleCancel} />
       </form>
     )
   }

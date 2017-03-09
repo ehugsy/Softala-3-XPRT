@@ -10,6 +10,10 @@ const styles = {
     color: theme.palette.primary2Color,
     borderColor: theme.palette.primary2Color,
   },
+  errorStyle: {
+    position: 'absolute',
+    right: 0
+  }
 }
 
 class MyTextField extends Component {
@@ -21,6 +25,7 @@ class MyTextField extends Component {
       floatingLabelText={ label }
       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
       underlineFocusStyle={styles.underlineStyle}
+      errorStyle={styles.errorStyle}
       type={ type }
       id={id}
       fullWidth={true}

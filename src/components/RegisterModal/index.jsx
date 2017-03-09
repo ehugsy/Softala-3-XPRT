@@ -34,7 +34,7 @@ const styles = {
     color: theme.palette.primary2Color,
   },
   dialogFixTop: {
-    zIndex: '99999',
+    zIndex: '1302',
     display: 'flex',
     flexFlow: 'row nowrap',
     justifyContent: 'center',
@@ -63,11 +63,17 @@ class RegisterModal extends Component {
     this.setState({open: false, stepIndex: 0});
   };
 
+  handleCancel = () => {
+    this.setState({open: false, stepIndex: 0});
+  };
+
   handleNext = (values) => {
     const {stepIndex} = this.state;
     console.log(values)
     if (stepIndex < 2) {
       this.setState({stepIndex: stepIndex + 1});
+    } if (stepIndex === 2) {
+      this.setState({open: false, stepIndex: 0});
     }
   };
 
@@ -78,25 +84,26 @@ class RegisterModal extends Component {
     }
   };
 
-  handleSubmit(values) {
+  handleSubmit = (values) => {
     console.log(values);
-  }
+    this.setState({open: false, stepIndex: 0});
+  };
 
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
         return (
           <BasicInfoFields
-            onSubmit={this.handleNext}
             stepIndex={stepIndex}
-            handleClose={this.handleClose} />
+            onSubmit={this.handleNext}
+            handleCancel={this.handleCancel} />
         );
       case 1:
         return (
           <OccupationFields
-            onSubmit={this.handleNext}
             stepIndex={stepIndex}
-            handleClose={this.handleClose}
+            onSubmit={this.handleNext}
+            handleCancel={this.handleCancel}
             handlePrev={this.handlePrev}
             officeVisitPossible={false}/>
         );
@@ -104,7 +111,8 @@ class RegisterModal extends Component {
         return (
           <ExpertProfileFields
             stepIndex={stepIndex}
-            handleClose={this.handleClose}
+            onSubmit={this.handleNext}
+            handleCancel={this.handleCancel}
             handlePrev={this.handlePrev} />
         );
     }

@@ -59,7 +59,10 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
     fullWidth={true}/>
 )*/
 
-const renderChipInput = ({ input, label, hintText, meta: { touched, error }, ...custom }) => (
+const required = value => value ? undefined : 'Required';
+const chipRequired = value => value ? undefined : 'At least one chip'
+
+const renderChipInput = ({ input, label, hintText, dataSource, meta: { touched, error }, ...custom }) => (
   <ChipInput
 
     {...input}
@@ -87,6 +90,7 @@ const renderChipInput = ({ input, label, hintText, meta: { touched, error }, ...
     floatingLabelFixed={true}
     className='formcontainer'
     fullWidth={true}
+    dataSource={dataSource}
     {...custom}
     />
 )
@@ -104,7 +108,8 @@ class ExpertProfileFields extends Component {
               component={renderTextField}
               type='text'
               hintText='Tell briefly about you, your expertise and experience'
-              floatingLabelFixed={true}/>
+              floatingLabelFixed={true}
+              validate={required}/>
 
             <Field
               name='subjects'
@@ -112,7 +117,8 @@ class ExpertProfileFields extends Component {
               component={renderChipInput}
               id='subjects'
               dataSource={subjectList}
-              hintText='List of subjects you could teach about'/>
+              hintText='List of subjects you could teach about'
+              validate={chipRequired}/>
 
             <Field
               name='lectureDetails'
@@ -122,7 +128,8 @@ class ExpertProfileFields extends Component {
               floatingLabelFixed={true}
               multiLine={true}
               rows={2}
-              rowsMax={4}/>
+              rowsMax={4}
+              validate={required}/>
 
             <Field
               name='supportedLocations'
@@ -130,10 +137,15 @@ class ExpertProfileFields extends Component {
               component={renderChipInput}
               id='supportedLocations'
               dataSource={cityList}
-              hintText='List the cities you could teach in'/>
+              hintText='List the cities you could teach in'
+              validate={chipRequired}/>
 
             </div>
-          <DialogButtons stepIndex={this.props.stepIndex} handlePrev={this.props.handlePrev} handleClose={this.props.handleClose} />
+          <DialogButtons
+            stepIndex={this.props.stepIndex}
+            handlePrev={this.props.handlePrev}
+            handleCancel={this.props.handleCancel}
+            handleSubmit={this.props.handleSubmit} />
         </form>
     )
   }

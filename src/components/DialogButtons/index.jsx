@@ -25,7 +25,7 @@ class DialogButtons extends Component {
       <div>
         <FlatButton
           label='Cancel'
-          onTouchTap={this.props.handleClose}
+          onTouchTap={this.props.handleCancel}
           style={styles.button}
         />
         <FlatButton
@@ -42,16 +42,12 @@ class DialogButtons extends Component {
           icon={this.props.stepIndex === 2 ? '' : <ArrowForward />}
           labelPosition='before'
           primary={this.props.stepIndex === 2}
-          onTouchTap={this.props.stepIndex === 2 ? this.props.handleClose : this.props.handleNext}
+          onTouchTap={this.props.handleSubmit}
           style={{...styles.button, ...styles.iconButton}}
         />
       </div>
     )
   }
 }
-
-DialogButtons.PropTypes = {
-  stepIndex: PropTypes.number.isRequired
-};
 
 export default DialogButtons;

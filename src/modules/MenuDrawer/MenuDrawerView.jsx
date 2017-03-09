@@ -11,7 +11,7 @@ const styles = {
   drawer: {
     backgroundColor:theme.palette.primary1Color,
     color: theme.palette.textColor,
-    zIndex: '9999',
+    zIndex: '1301',
     boxShadow: 'none',
   },
   appBar: {
