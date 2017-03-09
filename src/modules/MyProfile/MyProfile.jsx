@@ -138,6 +138,8 @@ rightDivTitleDecline:{
 //Yellow line for invitations that are not handled yet
   colorIndicatorYellow: {
     borderTop: 'solid',
+    borderMargin:'#585858',
+    borderOffset:{height: 10},
     color: theme.palette.primary2Color
   },
   //Green line for accpted invitations
@@ -268,7 +270,7 @@ class MyProfile extends Component {
               </CardText>
             </Card>
 
-            <h3 style={styles.rightDivTitleAccept}>UPCOMING (1):</h3>
+            <h3 style={styles.rightDivTitleAccept}>UPCOMING (1)</h3>
             <Card style={{
               ...styles.contentCard,
               ...styles.colorIndicatorGreen
@@ -286,7 +288,7 @@ class MyProfile extends Component {
               </CardText>
             </Card>
 
-            <h3 style={styles.rightDivTitleDecline}>DECLINED (1):</h3>
+            <h3 style={styles.rightDivTitleDecline}>DECLINED (1)</h3>
             <Card style={styles.contentCard}>
               <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
                 ...styles.titleStyle
