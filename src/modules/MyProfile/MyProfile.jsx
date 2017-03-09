@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import theme from '../../utils/theme';
+import Radium from 'radium';
 import {
   Card,
   CardHeader,
@@ -7,6 +8,7 @@ import {
 } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
@@ -14,8 +16,8 @@ import Checkbox from 'material-ui/Checkbox';
 
 import Chip from 'material-ui/Chip';
 import MyProfileEditModal from '../../components/MyProfileEditModal';
-import MyProfileEditModalCompany from '../../components/MyProfileEditModalCompany';
-import MyProfileEditModalIntroduction from '../../components/MyProfileEditModalIntroduction';
+import Footer from '../Footer';
+
 
 const styles = {
 /*
@@ -24,16 +26,20 @@ of the page overall
 */
   firstWrapper: {
     paddingTop: '50px',
-    paddingLeft: '50px',
+    paddingLeft: '30px',
     height: '360px',
-    color: theme.palette.textColor
+    color: theme.palette.textColor,
+    '@media (max-width: 768px)':{
+      display: 'none'
+    }
   },
   secondWrapper: {
-    background: 'rgba(38,38,38,1)',
     display: 'flex',
     flexDirection: 'row',
-    height: '800px',
-    color: theme.palette.textColor
+    color: theme.palette.textColor,
+    '@media (max-width: 768px)': {
+      flexDirection: 'column-reverse'
+    },
   },
   profilePicture: {
     borderRadius: '50%',
@@ -44,8 +50,7 @@ of the page overall
     marginTop: '-10px',
   },
   contentCard: {
-    width: '90%',
-    alignSelf: 'center',
+    width: '100%',
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
     padding: '30px',
@@ -74,12 +79,18 @@ Next elements change the outlook of the left column.
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    height: '50vmin',
-    marginTop: '-20%',
-    paddingLeft: '25px'
+    marginTop: '-200px',
+    paddingLeft: '25px',
+    marginRight: 100,
+    alignSelf: 'flex-start',
+    '@media (max-width: 768px)': {
+      marginTop: 0,
+      marginRight: 85
+    },
   },
   //My profile -title on the left
   mainDivTitle: {
+    flex: 1,
     fontSize: '18px',
   },
   //Style for experts own subjects on left column
@@ -101,14 +112,14 @@ Next elements change the outlook
 of the right column.
 */
 rightDivTitle: {
-  paddingLeft: '30px'
+  //paddingLeft: '45px'
 },
 rightDivTitleAccept:{
   color: theme.palette.primary1Color,
-  paddingLeft: '30px'
+  //paddingLeft: '45px'
 },
 rightDivTitleDecline:{
-  paddingLeft: '30px',
+  //paddingLeft: '45px',
   opacity: '0.34'
 },
 //White headings
@@ -152,8 +163,12 @@ rightDivTitleDecline:{
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    height: '50vmin',
-    marginTop: '-20%'
+    marginTop: '-195px',
+    marginRight: 25,
+    '@media (max-width: 768px)': {
+      marginTop: 0,
+      marginLeft: 25
+    },
   },
   /*
 Titlestyle & subtitleStyle are used to stylize
@@ -170,9 +185,14 @@ contentcards on the right side of page
     textDecorationLine: 'underline',
     color: '#CCCCCC',
     marginTop: '7px'
-  }
+  },
+  mobileHide: {
+    '@media (max-width: 768px)':{
+      display: 'none'
+    }
+  },
 };
-
+@Radium
 class MyProfile extends Component {
 
   render() {
@@ -180,7 +200,7 @@ class MyProfile extends Component {
     return (
       <div>
         <div style={styles.firstWrapper}>
-          <img src={'../../img/placeholder_profilepicture.png'} style={styles.profilePicture}/>
+          <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture,...styles.mobileHide}}/>
         </div>
 
         <div style={styles.secondWrapper}>
@@ -203,7 +223,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <MyProfileEditModalCompany />
+              <MyProfileEditModal />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -212,7 +232,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <MyProfileEditModalIntroduction />
+              <MyProfileEditModal />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
@@ -307,6 +327,7 @@ class MyProfile extends Component {
             <div style={styles.emptyFooter} />
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
