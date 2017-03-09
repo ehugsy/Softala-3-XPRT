@@ -53,7 +53,7 @@ of the page overall
   //Green titles for the page
   mainDivTextTitle: {
     color: theme.palette.primary1Color,
-    fontSize: '16px',
+    fontSize: '18px',
     fontWeight: '300'
   },
   mainDivText: {
@@ -108,14 +108,18 @@ rightDivTitle: {
   },
   //for decline/accept buttons
   buttonStyle: {
-    border: '1px solid #555555',
-    padding: '15px',
-    borderRadius: '20px',
+    paddingTop: '25px',
+    paddingBottom: '27px',
+    paddingLeft: '20px',
+    paddingRight: '15px',
+    borderRadius: '40px',
     lineHeight: '0.4em',
-    marginTop: '1em'
+    marginTop: '1em',
+    fontSize: '18px',
   },
-  //color for accept-button
+  //color and border for accept-button
   buttonGold: {
+    border: '1px solid #CCCCCC',
     color: theme.palette.primary2Color
   },
   ButtonAlignRight: {
