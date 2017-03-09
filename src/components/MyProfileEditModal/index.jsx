@@ -5,6 +5,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Radium from 'radium';
 import theme from '../../utils/theme';
 
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+
+const formdata = {
+  name: 'Esko Esimerkki',
+  phone: '+358 45 23423434 ',
+  email: 'esko.esimerkki@example.com',
+  supportedLocations: 'Helsinki, Espoo',
+}
+
 const styles = {
   link: {
     ':hover': {
@@ -98,13 +108,13 @@ export default class PrivacyModal extends React.Component {
           <div style={styles.contentCard}>
             <form onSubmit={this.handleSubmit}style={styles.contactForm}>
               <p style={styles.mainDivTextTitle}>NAME:</p>
-              <input style={styles.transparentInput} type="text" placeholder="Esko Esimerkki" />
+              <input style={styles.transparentInput} type="text" placeholder={formdata.name} />
               <p style={styles.mainDivTextTitle}>PHONE:</p>
-              <input style={styles.transparentInput} type="text" placeholder="+358 45 23423434"/>
+              <input style={styles.transparentInput} type="text" placeholder={formdata.phone} />
               <p style={styles.mainDivTextTitle}>E-MAIL:</p>
-              <input style={styles.transparentInput} type="text" placeholder="esko.esimerkki@example.com"/>
+              <input style={styles.transparentInput} type="text" placeholder={formdata.email} />
               <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
-              <input style={styles.transparentInput} type="text" placeholder="Helsinki, Espoo"/>
+              <input style={styles.transparentInput} type="text" placeholder={formdata.supportedLocations} />
               <br />
             </form>
           </div>

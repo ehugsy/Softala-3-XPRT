@@ -17,6 +17,13 @@ import MyProfileEditModal from '../../components/MyProfileEditModal';
 import MyProfileEditModalCompany from '../../components/MyProfileEditModalCompany';
 import MyProfileEditModalIntroduction from '../../components/MyProfileEditModalIntroduction';
 
+const formdata = {
+  name: 'Esko Esimerkki',
+  phone: '+358 45 23423434 ',
+  email: 'esko.esimerkki@example.com',
+  supportedLocations: 'Helsinki, Espoo',
+}
+
 const styles = {
 /*
 These first element change the outlook
