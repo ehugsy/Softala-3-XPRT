@@ -88,6 +88,11 @@ Next elements change the outlook of the left column.
     borderRadius: '20px',
     lineHeight: '0.4em'
   },
+  //This wraps up subjects together next to each other
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
 /*
 Next elements change the outlook
 of the right column.
@@ -125,10 +130,6 @@ rightDivTitle: {
   colorIndicatorGreen: {
     borderTop: 'solid',
     color: theme.palette.primary1Color
-  },
-  wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap'
   },
   rightDiv: {
     display: 'flex',
