@@ -13,6 +13,8 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Checkbox from 'material-ui/Checkbox';
 
 import Chip from 'material-ui/Chip';
+import MyProfileEditModal from '../../components/MyProfileEditModal';
+
 
 const styles = {
 /*
@@ -72,12 +74,6 @@ Next elements change the outlook of the left column.
     height: '50vmin',
     marginTop: '-20%',
     paddingLeft: '25px'
-  },
-  //Styling for editing Pen on left column
-  editPen: {
-    float: 'right',
-    width: '24px',
-    height: '24px'
   },
   //Style for experts own subjects on left column
   chip: {
@@ -174,7 +170,7 @@ class MyProfile extends Component {
           <div style={styles.leftDiv}>
             <p style={styles.mainDivTitle}>MY PROFILE</p>
             <div style={styles.contentCard}>
-              <img src={'../../img/edit.png'} style={styles.editPen}/>
+              <MyProfileEditModal />
 
               <p style={styles.mainDivTextTitle}>NAME:</p>
               <p style={styles.mainDivText}>Esko Esimerkki</p>
@@ -190,7 +186,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <img src={'../../img/edit.png'} style={styles.editPen}/>
+              <MyProfileEditModal />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -199,7 +195,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <img src={'../../img/edit.png'} style={styles.editPen}/>
+              <MyProfileEditModal />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
