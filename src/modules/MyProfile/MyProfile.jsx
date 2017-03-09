@@ -197,16 +197,16 @@ class MyProfile extends Component {
               <MyProfileEditModal />
 
               <p style={styles.mainDivTextTitle}>NAME:</p>
-              <p style={styles.mainDivText}>Esko Esimerkki</p>
+              <p style={styles.mainDivText}>{formdata.name}</p>
 
               <p style={styles.mainDivTextTitle}>PHONE:</p>
-              <p style={styles.mainDivText}>+358 45 23423434</p>
+              <p style={styles.mainDivText}>{formdata.phone}</p>
 
               <p style={styles.mainDivTextTitle}>E-MAIL:</p>
-              <p style={styles.mainDivText}>esko.esimerkki@example.com</p>
+              <p style={styles.mainDivText}>{formdata.email}</p>
 
               <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
-              <p style={styles.mainDivText}>Helsinki, Espoo</p>
+              <p style={styles.mainDivText}>{formdata.supportedLocations}</p>
             </div>
 
             <div style={styles.contentCard}>
