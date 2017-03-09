@@ -223,7 +223,7 @@ const styles = {
     minWidth: 0,
     minHeight: 0,
     margin: '0 auto',
-    width: '300px'
+    width: '40%'
   },
   profilePicture: {
     borderRadius: '50%',
@@ -236,7 +236,7 @@ const styles = {
     justifyContent: 'center',
     textAlign: 'center',
     margin: '0 auto',
-    width: '50%',
+    width: '100%',
     '@media (max-width: 769px)': {
       width: '90%'
     }
@@ -326,20 +326,46 @@ class Home extends Component  {
         <div style={styles.thirdWrapper}>
           <div style={styles.firstRow}>
              <Slider {...settings}>
-      	       <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(100%)', margin:'0 auto'}}/></div>
-               <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(0%)', margin:'0 auto'}}/></div>
-               <div><img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'contrast(500%)', margin:'0 auto'}}/></div>
+      	      <div>
+                 <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(100%)', margin:'0 auto'}}/>
+                 <div style={styles.secondRow}>
+                   <p style={[styles.descriptionText, styles.mobileFont]}>
+                     "Bacon ipsum dolor amet short loin landjaeger tongue,
+                     filet mignon ribeye hamburger spare ribs. Pork
+                     hamburger turkey tongue drumstick boudin ball tip beef
+                     ribs pancetta tail turducken pig chuck. Tongue shoulder
+                     landjaeger short loin hamburger. Meatball alcatra ham hock ribeye.
+                     Tenderloin ham swine picanha sausage."
+                   </p>
+                 </div>
+              </div>
+              <div>
+                 <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'grayscale(0%)', margin:'0 auto'}}/>
+                 <div style={styles.secondRow}>
+                   <p style={[styles.descriptionText, styles.mobileFont]}>
+                     "Bacon ipsum dolor amet short loin landjaeger tongue,
+                     filet mignon ribeye hamburger spare ribs. Pork
+                     hamburger turkey tongue drumstick boudin ball tip beef
+                     ribs pancetta tail turducken pig chuck. Tongue shoulder
+                     landjaeger short loin hamburger. Meatball alcatra ham hock ribeye.
+                     Tenderloin ham swine picanha sausage."
+                   </p>
+                 </div>
+              </div>
+              <div>
+                 <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture, filter: 'contrast(1000%)', margin:'0 auto'}}/>
+                 <div style={styles.secondRow}>
+                   <p style={[styles.descriptionText, styles.mobileFont]}>
+                     "Bacon ipsum dolor amet short loin landjaeger tongue,
+                     filet mignon ribeye hamburger spare ribs. Pork
+                     hamburger turkey tongue drumstick boudin ball tip beef
+                     ribs pancetta tail turducken pig chuck. Tongue shoulder
+                     landjaeger short loin hamburger. Meatball alcatra ham hock ribeye.
+                     Tenderloin ham swine picanha sausage."
+                   </p>
+                 </div>
+               </div>
              </Slider>
-          </div>
-          <div style={styles.secondRow}>
-            <p style={[styles.descriptionText, styles.mobileFont]}>
-              "Bacon ipsum dolor amet short loin landjaeger tongue,
-              filet mignon ribeye hamburger spare ribs. Pork
-              hamburger turkey tongue drumstick boudin ball tip beef
-              ribs pancetta tail turducken pig chuck. Tongue shoulder
-              landjaeger short loin hamburger. Meatball alcatra ham hock ribeye.
-              Tenderloin ham swine picanha sausage."
-            </p>
           </div>
         </div>
         <Footer />
