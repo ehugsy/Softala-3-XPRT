@@ -14,7 +14,8 @@ import Checkbox from 'material-ui/Checkbox';
 
 import Chip from 'material-ui/Chip';
 import MyProfileEditModal from '../../components/MyProfileEditModal';
-
+import MyProfileEditModalCompany from '../../components/MyProfileEditModalCompany';
+import MyProfileEditModalIntroduction from '../../components/MyProfileEditModalIntroduction';
 
 const styles = {
 /*
@@ -202,7 +203,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <MyProfileEditModal />
+              <MyProfileEditModalCompany />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -211,7 +212,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <MyProfileEditModal />
+              <MyProfileEditModalIntroduction />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>

@@ -16,11 +16,6 @@ body {
   margin-left: 60px;
 }
 
-.profilePicture {
-  borderRadius: 50%,
-  width: 150px,
-  height: 150px
-}
 
 @media (max-width:769px){
   body {margin-left: 0px;}
