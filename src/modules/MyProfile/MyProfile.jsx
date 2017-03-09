@@ -39,6 +39,9 @@ of the page overall
     width: '150px',
     height: '150px'
   },
+  avatarStyle: {
+    marginTop: '-10px',
+  },
   contentCard: {
     width: '90%',
     alignSelf: 'center',
@@ -232,7 +235,7 @@ class MyProfile extends Component {
                 ...styles.titleStyle
               }} subtitleStyle={{
                 ...styles.subtitleStyle
-              }} avatar={<Avatar src='../../img/Arska.jpg' size={60}/>} actAsExpander={true} showExpandableButton={true}/>
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
                 <p style={styles.mainDivTextBold}>Name of school:</p>
@@ -274,7 +277,7 @@ class MyProfile extends Component {
                 ...styles.titleStyle
               }} subtitleStyle={{
                 ...styles.subtitleStyle
-              }} avatar={<Avatar src='../../img/Arska.jpg' size={60}/>} actAsExpander={true} showExpandableButton={true}/>
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
                 <p style={styles.mainDivTextBold}>Name of school:</p>
@@ -289,7 +292,7 @@ class MyProfile extends Component {
                 ...styles.titleStyle
               }} subtitleStyle={{
                 ...styles.subtitleStyle
-              }} avatar={<Avatar src='../../img/Arska.jpg' size={60}/>} actAsExpander={true} showExpandableButton={true}/>
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
                 <p style={styles.mainDivTextBold}>Name of school:</p>
