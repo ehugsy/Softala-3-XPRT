@@ -50,6 +50,10 @@ of the page overall
     padding: '30px',
     boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
   },
+  /*Adds a little space between the end of the page and the last card */
+  emptyFooter: {
+    paddingBottom:'1px',
+  },
   //Green titles for the page
   mainDivTextTitle: {
     color: theme.palette.primary1Color,
@@ -290,6 +294,8 @@ class MyProfile extends Component {
 
               </CardText>
             </Card>
+            {/* Adds a little space between the end of the page and the last card */}
+            <div style={styles.emptyFooter} />
           </div>
         </div>
       </div>
