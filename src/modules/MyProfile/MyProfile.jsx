@@ -4,9 +4,6 @@ import {
   Card,
   CardHeader,
   CardText,
-  CardActions,
-  CardTitle,
-  CardMedia
 } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
@@ -270,15 +267,7 @@ class MyProfile extends Component {
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
                 <p style={styles.mainDivTextBold}>Name of school:</p>
                 <p style={styles.mainDivText}>Hyväksytyn keissin infot</p>
-                <div style={styles.ButtonAlignRight}>
-                  <FlatButton expandable={true} label="DECLINE" style={{
-                    ...styles.buttonStyle
-                  }}/>
-                  <FlatButton expandable={true} label="ACCEPT" style={{
-                    ...styles.buttonStyle,
-                    ...styles.buttonGold
-                  }}/>
-                </div>
+
               </CardText>
             </Card>
 
@@ -293,15 +282,7 @@ class MyProfile extends Component {
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
                 <p style={styles.mainDivTextBold}>Name of school:</p>
                 <p style={styles.mainDivText}>Hylätyn keissin infot</p>
-                <div style={styles.ButtonAlignRight}>
-                  <FlatButton expandable={true} label="DECLINE" style={{
-                    ...styles.buttonStyle
-                  }}/>
-                  <FlatButton expandable={true} label="ACCEPT" style={{
-                    ...styles.buttonStyle,
-                    ...styles.buttonGold
-                  }}/>
-                </div>
+
               </CardText>
             </Card>
           </div>
