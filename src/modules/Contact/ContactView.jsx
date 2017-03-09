@@ -19,7 +19,7 @@ import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
 import FacebookIcon from '../../components/FacebookIcon';
 import TwitterIcon from '../../components/TwitterIcon';
-import Footer from '../../components/Footer';
+import Footer from '../Footer';
 
 const marginRight = '10em'
 

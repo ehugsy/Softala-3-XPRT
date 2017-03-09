@@ -16,7 +16,7 @@ import LoginModal from '../../components/LoginModal';
 import RegisterModal from '../../components/RegisterModal';
 import TermsModal from '../../components/TermsModal';
 import PrivacyModal from '../../components/PrivacyModal';
-import Footer from '../../components/Footer';
+import Footer from '../Footer';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';

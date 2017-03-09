@@ -16,7 +16,7 @@ import RegisterModal from '../../components/RegisterModal';
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
-import Footer from '../../components/Footer';
+import Footer from '../Footer';
 
 const marginRight = '10em'
 
