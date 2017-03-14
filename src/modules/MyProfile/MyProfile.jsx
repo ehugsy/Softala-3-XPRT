@@ -21,11 +21,17 @@ import MyProfileEditModalIntroduction from '../../components/MyProfileEditModalI
 import Footer from '../Footer';
 
 
-const formdata = {
+const myData = {
   name: 'Esko Esimerkki',
   phone: '+358 45 23423434 ',
   email: 'esko.esimerkki@example.com',
   supportedLocations: 'Helsinki, Espoo',
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: true,
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects: 'Subject1',
+  lectureDetails: 'Details about lecture',
 }
 
 const styles = {
@@ -235,16 +241,16 @@ class MyProfile extends Component {
               <MyProfileEditModal />
 
               <p style={styles.mainDivTextTitle}>NAME:</p>
-              <p style={styles.mainDivText}>{formdata.name}</p>
+              <p style={styles.mainDivText}>{myData.name}</p>
 
               <p style={styles.mainDivTextTitle}>PHONE:</p>
-              <p style={styles.mainDivText}>{formdata.phone}</p>
+              <p style={styles.mainDivText}>{myData.phone}</p>
 
               <p style={styles.mainDivTextTitle}>E-MAIL:</p>
-              <p style={styles.mainDivText}>{formdata.email}</p>
+              <p style={styles.mainDivText}>{myData.email}</p>
 
               <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
-              <p style={styles.mainDivText}>{formdata.supportedLocations}</p>
+              <p style={styles.mainDivText}>{myData.supportedLocations}</p>
             </div>
 
 
@@ -253,10 +259,10 @@ class MyProfile extends Component {
               <MyProfileEditModalCompany />
 
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
-              <p style={styles.mainDivText}>Sportmrt</p>
+              <p style={styles.mainDivText}>{myData.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
-              <p style={styles.mainDivText}>CEO</p>
-              <Checkbox label="Office visit possible" checked={true} disabled={true} style={styles.checkbox}/>
+              <p style={styles.mainDivText}>{myData.jobTitle}</p>
+              <Checkbox label="Office visit possible" checked={myData.officeVisit} disabled={true} style={styles.checkbox}/>
             </div>
 
 
@@ -264,17 +270,17 @@ class MyProfile extends Component {
               <MyProfileEditModalIntroduction />
 
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
-              <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p style={styles.mainDivText}>{myData.introduction}</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
               <div style={styles.wrapper}>
-                <Chip style={styles.chip}>Text Chip
+                <Chip style={styles.chip}>{myData.subjects}
                 </Chip>
-                <Chip style={styles.chip}>Text Chip
+                <Chip style={styles.chip}>{myData.subjects}
                 </Chip>
               </div>
               <p style={styles.mainDivTextTitle}>LECTURE DETAILS:
               </p>
-              <p style={styles.mainDivText}>Sportmrt</p>
+              <p style={styles.mainDivText}>{myData.lectureDetails}</p>
             </div>
           </div>
 
