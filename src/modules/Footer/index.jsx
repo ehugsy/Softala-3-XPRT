@@ -11,8 +11,8 @@ const styles = {
     background: '#cccccc',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 30
+    alignItems: 'center'
+
   },
   footerLeft: {
     marginLeft:'5%',

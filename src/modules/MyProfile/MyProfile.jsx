@@ -16,6 +16,8 @@ import Checkbox from 'material-ui/Checkbox';
 
 import Chip from 'material-ui/Chip';
 import MyProfileEditModal from '../../components/MyProfileEditModal';
+import MyProfileEditModalCompany from '../../components/MyProfileEditModalCompany';
+import MyProfileEditModalIntroduction from '../../components/MyProfileEditModalIntroduction';
 import Footer from '../Footer';
 
 
@@ -36,6 +38,9 @@ of the page overall
     paddingLeft: '30px',
     height: '360px',
     color: theme.palette.textColor,
+    backgroundImage:"url('../img/xprt-background.png')",
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
     '@media (max-width: 768px)':{
       display: 'none'
     }
@@ -44,6 +49,7 @@ of the page overall
     display: 'flex',
     flexDirection: 'row',
     color: theme.palette.textColor,
+    background:"#262626",
     '@media (max-width: 768px)': {
       flexDirection: 'column-reverse'
     },
@@ -66,6 +72,7 @@ of the page overall
   /*Adds a little space between the end of the page and the last card */
   emptyFooter: {
     paddingBottom:'1px',
+    background:"#262626",
   },
   //Green titles for the page
   mainDivTextTitle: {
@@ -230,7 +237,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <MyProfileEditModal />
+              <MyProfileEditModalCompany />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -239,7 +246,7 @@ class MyProfile extends Component {
             </div>
 
             <div style={styles.contentCard}>
-              <MyProfileEditModal />
+              <MyProfileEditModalIntroduction />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
