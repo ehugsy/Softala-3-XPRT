@@ -62,11 +62,18 @@ of the page overall
   avatarStyle: {
     marginTop: '-10px',
   },
-  contentCard: {
+  contentCardLeft: {
     width: '100%',
     background: 'rgba(68,68,68,1)',
     marginBottom: '2em',
     padding: '30px',
+    boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
+  },
+  contentCardRight: {
+    width: '100%',
+    background: 'rgba(68,68,68,1)',
+    marginBottom: '0em',
+    padding: '20px',
     boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
   },
   /*Adds a little space between the end of the page and the last card */
@@ -127,14 +134,18 @@ of the right column.
 */
 rightDivTitle: {
   //paddingLeft: '45px'
+  fontSize: '18px',
+  marginBottom: '12px',
 },
 rightDivTitleAccept:{
   color: theme.palette.primary1Color,
+  fontSize: '18px',
   //paddingLeft: '45px'
 },
 rightDivTitleDecline:{
   //paddingLeft: '45px',
-  opacity: '0.34'
+  opacity: '0.34',
+  fontSize: '18px',
 },
 //White headings
   mainDivTextBold: {
@@ -189,16 +200,16 @@ Titlestyle & subtitleStyle are used to stylize
 contentcards on the right side of page
 */
   titleStyle: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    color: '#CCCCCC'
+    fontSize: '16px',
+    color: theme.palette.textColor,
+    fontWeight: '300',
   },
   subtitleStyle: {
-    fontSize: '18px',
-    fontWeight: 'bold',
+    fontSize: '16px',
     textDecorationLine: 'underline',
-    color: '#CCCCCC',
-    marginTop: '7px'
+    color: theme.palette.textColor,
+    marginTop: '7px',
+    fontWeight: '300'
   },
   mobileHide: {
     '@media (max-width: 768px)':{
@@ -220,7 +231,7 @@ class MyProfile extends Component {
         <div style={styles.secondWrapper}>
           <div style={styles.leftDiv}>
             <p style={styles.mainDivTitle}>MY PROFILE</p>
-            <div style={styles.contentCard}>
+            <div style={styles.contentCardLeft}>
               <MyProfileEditModal />
 
               <p style={styles.mainDivTextTitle}>NAME:</p>
@@ -236,8 +247,13 @@ class MyProfile extends Component {
               <p style={styles.mainDivText}>{formdata.supportedLocations}</p>
             </div>
 
+<<<<<<< HEAD
             <div style={styles.contentCard}>
               <MyProfileEditModalCompany />
+=======
+            <div style={styles.contentCardLeft}>
+              <MyProfileEditModal />
+>>>>>>> ed27e6d3bd9fc7c9a5ad456da368066d4a4e0390
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -245,8 +261,13 @@ class MyProfile extends Component {
               <Checkbox label="Office visit possible" checked={true} disabled={true} style={styles.checkbox}/>
             </div>
 
+<<<<<<< HEAD
             <div style={styles.contentCard}>
               <MyProfileEditModalIntroduction />
+=======
+            <div style={styles.contentCardLeft}>
+              <MyProfileEditModal />
+>>>>>>> ed27e6d3bd9fc7c9a5ad456da368066d4a4e0390
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
@@ -263,9 +284,9 @@ class MyProfile extends Component {
           </div>
 
           <div style={styles.rightDiv}>
-            <h3 style={styles.rightDivTitle}>INVITATIONS (1)</h3>
+            <p style={styles.rightDivTitle}>INVITATIONS (1)</p>
             <Card style={{
-              ...styles.contentCard,
+              ...styles.contentCardRight,
               ...styles.colorIndicatorYellow
             }}>
               <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
@@ -305,9 +326,9 @@ class MyProfile extends Component {
               </CardText>
             </Card>
 
-            <h3 style={styles.rightDivTitleAccept}>UPCOMING (1)</h3>
+            <p style={styles.rightDivTitleAccept}>UPCOMING (1)</p>
             <Card style={{
-              ...styles.contentCard,
+              ...styles.contentCardRight,
               ...styles.colorIndicatorGreen
             }}>
               <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
@@ -323,8 +344,8 @@ class MyProfile extends Component {
               </CardText>
             </Card>
 
-            <h3 style={styles.rightDivTitleDecline}>DECLINED (1)</h3>
-            <Card style={styles.contentCard}>
+            <p style={styles.rightDivTitleDecline}>DECLINED (1)</p>
+            <Card style={styles.contentCardRight}>
               <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
                 ...styles.titleStyle
               }} subtitleStyle={{
