@@ -32,6 +32,20 @@ const myData = {
   lectureDetails: 'Details about lecture',
 }
 
+const lectureData1 = {
+  title: 'John McLecturer',
+  email: 'john.mclecturer@experts.com',
+  school: 'The Internationl School of Helsinki',
+  subject1: 'Mathematics',
+  subject2: 'Physics',
+  educationalStage: 'Upper Secondary School',
+  theme: 'Making Numbers Cool',
+  date1: '12.03.2017',
+  date2: '14.03.2017',
+  location: 'Helskinki International School',
+  description: 'Why mathematics should be considered cool and worth learning. Also Cookiees!',
+}
+
 const styles = {
 /*
 These first element change the outlook
@@ -72,7 +86,7 @@ of the page overall
   contentCardRight: {
     width: '100%',
     background: 'rgba(68,68,68,1)',
-    marginBottom: '0em',
+    marginBottom: '1em',
     padding: '20px',
     boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
   },
@@ -273,35 +287,76 @@ class MyProfile extends Component {
           </div>
 
           <div style={styles.rightDiv}>
-            <p style={styles.rightDivTitle}>INVITATIONS (1)</p>
+            <p style={styles.rightDivTitle}>INVITATIONS (2)</p>
             <Card style={{
               ...styles.contentCardRight,
               ...styles.colorIndicatorYellow
             }}>
-              <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
+              <CardHeader title={lectureData1.title} subtitle={lectureData1.email} titleStyle={{
                 ...styles.titleStyle
               }} subtitleStyle={{
                 ...styles.subtitleStyle
               }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
-                <p style={styles.mainDivTextBold}>Name of school:</p>
+                <p style={styles.mainDivTextBold}>{lectureData1.school}</p>
                 <p style={styles.mainDivText}>The Internationl School of Helsinki</p>
                 <p style={styles.mainDivTextBold}>Subjects:</p>
-                <p style={styles.mainDivText}>Mathematics, Physics</p>
+                <p style={styles.mainDivText}>{lectureData1.subject1}, {lectureData1.subject2}</p>
                 <p style={styles.mainDivTextBold}>Educational stage:</p>
-                <p style={styles.mainDivText}>Upper Secondary School</p>
+                <p style={styles.mainDivText}>{lectureData1.educationalStage}</p>
                 <p style={styles.mainDivTextTitle}>LECTURE:</p>
                 <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
-                <p style={styles.mainDivText}>Making Numbers Cool</p>
+                <p style={styles.mainDivText}>{lectureData1.theme}</p>
                 <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-                <p style={styles.mainDivText}>12.03.2017</p>
+                <p style={styles.mainDivText}>{lectureData1.date1}</p>
                 <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-                <p style={styles.mainDivText}>14.03.2017</p>
+                <p style={styles.mainDivText}>{lectureData1.date2}</p>
                 <p style={styles.mainDivTextBold}>Location:</p>
-                <p style={styles.mainDivText}>Helskinki International School</p>
+                <p style={styles.mainDivText}>{lectureData1.location}</p>
                 <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
-                <p style={styles.mainDivText}>Why mathematics should be considered cool and worth learning. Also Cookiees</p>
+                <p style={styles.mainDivText}>{lectureData1.description}</p>
+
+                <div style={styles.ButtonAlignRight}>
+                  <FlatButton expandable={true} label="DECLINE" style={{
+                    ...styles.buttonStyle
+                  }}/>
+                  <FlatButton expandable={true} label="ACCEPT" style={{
+                    ...styles.buttonStyle,
+                    ...styles.buttonGold
+                  }}/>
+                </div>
+              </CardText>
+            </Card>
+
+            <Card style={{
+              ...styles.contentCardRight,
+              ...styles.colorIndicatorYellow
+            }}>
+              <CardHeader title={lectureData1.title} subtitle={lectureData1.email} titleStyle={{
+                ...styles.titleStyle
+              }} subtitleStyle={{
+                ...styles.subtitleStyle
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+              <CardText expandable={true}>
+                <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+                <p style={styles.mainDivTextBold}>{lectureData1.school}</p>
+                <p style={styles.mainDivText}>The Internationl School of Helsinki</p>
+                <p style={styles.mainDivTextBold}>Subjects:</p>
+                <p style={styles.mainDivText}>{lectureData1.subject1}, {lectureData1.subject2}</p>
+                <p style={styles.mainDivTextBold}>Educational stage:</p>
+                <p style={styles.mainDivText}>{lectureData1.educationalStage}</p>
+                <p style={styles.mainDivTextTitle}>LECTURE:</p>
+                <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.theme}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
+                <p style={styles.mainDivText}>{lectureData1.date1}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
+                <p style={styles.mainDivText}>{lectureData1.date2}</p>
+                <p style={styles.mainDivTextBold}>Location:</p>
+                <p style={styles.mainDivText}>{lectureData1.location}</p>
+                <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.description}</p>
 
                 <div style={styles.ButtonAlignRight}>
                   <FlatButton expandable={true} label="DECLINE" style={{
@@ -320,7 +375,7 @@ class MyProfile extends Component {
               ...styles.contentCardRight,
               ...styles.colorIndicatorGreen
             }}>
-              <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
+              <CardHeader title={lectureData1.title} subtitle={lectureData1.theme + " " + lectureData1.date1 + " / " + lectureData1.date2} titleStyle={{
                 ...styles.titleStyle
               }} subtitleStyle={{
                 ...styles.subtitleStyle
@@ -335,7 +390,7 @@ class MyProfile extends Component {
 
             <p style={styles.rightDivTitleDecline}>DECLINED (1)</p>
             <Card style={styles.contentCardRight}>
-              <CardHeader title="Etunimi Sukunimi" subtitle="Sähköposti(at)email.com" titleStyle={{
+              <CardHeader title={lectureData1.title} subtitle={lectureData1.theme + " " + lectureData1.date1 + " / " + lectureData1.date2} titleStyle={{
                 ...styles.titleStyle
               }} subtitleStyle={{
                 ...styles.subtitleStyle
