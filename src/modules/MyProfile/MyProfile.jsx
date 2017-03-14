@@ -394,13 +394,28 @@ class MyProfile extends Component {
               }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
-                <p style={styles.mainDivTextBold}>Name of school:</p>
-                <p style={styles.mainDivText}>Hyväksytyn keissin infot</p>
+                <p style={styles.mainDivTextBold}>{lectureData1.school}</p>
+                <p style={styles.mainDivText}>The Internationl School of Helsinki</p>
+                <p style={styles.mainDivTextBold}>Subjects:</p>
+                <p style={styles.mainDivText}>{lectureData1.subject1}, {lectureData1.subject2}</p>
+                <p style={styles.mainDivTextBold}>Educational stage:</p>
+                <p style={styles.mainDivText}>{lectureData1.educationalStage}</p>
+                <p style={styles.mainDivTextTitle}>LECTURE:</p>
+                <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.theme}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
+                <p style={styles.mainDivText}>{lectureData1.date1}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
+                <p style={styles.mainDivText}>{lectureData1.date2}</p>
+                <p style={styles.mainDivTextBold}>Location:</p>
+                <p style={styles.mainDivText}>{lectureData1.location}</p>
+                <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.description}</p>
 
               </CardText>
             </Card>
 
-            <p style={styles.rightDivTitleDecline}>DECLINED (1)</p>
+            <p style={styles.rightDivTitleDecline}>DECLINED (2)</p>
             <Card style={styles.contentCardRight}>
               <CardHeader title={lectureData1.title} subtitle={lectureData1.theme + " " + lectureData1.date1 + " / " + lectureData1.date2} titleStyle={{
                 ...styles.titleStyle
@@ -409,9 +424,50 @@ class MyProfile extends Component {
               }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 <p style={styles.mainDivTextTitle}>SCHOOL:</p>
-                <p style={styles.mainDivTextBold}>Name of school:</p>
-                <p style={styles.mainDivText}>Hylätyn keissin infot</p>
-
+                <p style={styles.mainDivTextBold}>{lectureData1.school}</p>
+                <p style={styles.mainDivText}>The Internationl School of Helsinki</p>
+                <p style={styles.mainDivTextBold}>Subjects:</p>
+                <p style={styles.mainDivText}>{lectureData1.subject1}, {lectureData1.subject2}</p>
+                <p style={styles.mainDivTextBold}>Educational stage:</p>
+                <p style={styles.mainDivText}>{lectureData1.educationalStage}</p>
+                <p style={styles.mainDivTextTitle}>LECTURE:</p>
+                <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.theme}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
+                <p style={styles.mainDivText}>{lectureData1.date1}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
+                <p style={styles.mainDivText}>{lectureData1.date2}</p>
+                <p style={styles.mainDivTextBold}>Location:</p>
+                <p style={styles.mainDivText}>{lectureData1.location}</p>
+                <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.description}</p>
+              </CardText>
+            </Card>
+            <Card style={styles.contentCardRight}>
+              <CardHeader title={lectureData1.title} subtitle={lectureData1.theme + " " + lectureData1.date1 + " / " + lectureData1.date2} titleStyle={{
+                ...styles.titleStyle
+              }} subtitleStyle={{
+                ...styles.subtitleStyle
+              }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+              <CardText expandable={true}>
+                <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+                <p style={styles.mainDivTextBold}>{lectureData1.school}</p>
+                <p style={styles.mainDivText}>The Internationl School of Helsinki</p>
+                <p style={styles.mainDivTextBold}>Subjects:</p>
+                <p style={styles.mainDivText}>{lectureData1.subject1}, {lectureData1.subject2}</p>
+                <p style={styles.mainDivTextBold}>Educational stage:</p>
+                <p style={styles.mainDivText}>{lectureData1.educationalStage}</p>
+                <p style={styles.mainDivTextTitle}>LECTURE:</p>
+                <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.theme}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
+                <p style={styles.mainDivText}>{lectureData1.date1}</p>
+                <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
+                <p style={styles.mainDivText}>{lectureData1.date2}</p>
+                <p style={styles.mainDivTextBold}>Location:</p>
+                <p style={styles.mainDivText}>{lectureData1.location}</p>
+                <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
+                <p style={styles.mainDivText}>{lectureData1.description}</p>
               </CardText>
             </Card>
             {/* Adds a little space between the end of the page and the last card */}
