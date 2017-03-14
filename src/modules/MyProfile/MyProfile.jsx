@@ -474,7 +474,7 @@ class MyProfile extends Component {
             <div style={styles.emptyFooter} />
           </div>
         </div>
-        <Footer />
+
       </div>
     );
   }
