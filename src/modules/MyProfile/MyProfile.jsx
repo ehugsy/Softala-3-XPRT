@@ -247,13 +247,11 @@ class MyProfile extends Component {
               <p style={styles.mainDivText}>{formdata.supportedLocations}</p>
             </div>
 
-<<<<<<< HEAD
-            <div style={styles.contentCard}>
-              <MyProfileEditModalCompany />
-=======
+
+
             <div style={styles.contentCardLeft}>
-              <MyProfileEditModal />
->>>>>>> ed27e6d3bd9fc7c9a5ad456da368066d4a4e0390
+              <MyProfileEditModalCompany />
+
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>Sportmrt</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -261,13 +259,10 @@ class MyProfile extends Component {
               <Checkbox label="Office visit possible" checked={true} disabled={true} style={styles.checkbox}/>
             </div>
 
-<<<<<<< HEAD
-            <div style={styles.contentCard}>
-              <MyProfileEditModalIntroduction />
-=======
+
             <div style={styles.contentCardLeft}>
-              <MyProfileEditModal />
->>>>>>> ed27e6d3bd9fc7c9a5ad456da368066d4a4e0390
+              <MyProfileEditModalIntroduction />
+
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
