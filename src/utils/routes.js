@@ -7,7 +7,7 @@ import Login from '../modules/Auth/Login';
 import Contact from '../modules/Contact';
 import About from '../modules/About';
 import MyProfile from '../modules/MyProfile';
-
+import AdminView from '../modules/Admin';
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import PreferencesIcon from 'material-ui/svg-icons/action/settings';
 import LogoutIcon from 'material-ui/svg-icons/action/exit-to-app';
@@ -35,6 +35,11 @@ export default [{
   path: '/profile',
   name: 'MyProfile',
   component: MyProfile,
+  icon: PreferencesIcon,
+},{
+  path: '/adminview',
+  name: 'AdminView',
+  component: AdminView,
   icon: PreferencesIcon,
 },
 /*{
