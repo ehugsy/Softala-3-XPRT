@@ -38,16 +38,16 @@ const styles = {
    fontWeight: 400,
  },
  tabStyle: {
-  background: 'rgba(68,68,68,1)',
- },
- inkBarStyle: {
-color: theme.palette.primary2Color,
+  backgroundColor: 'rgba(68,68,68,1)',
 
- },
-underlineColor: {
-  color: theme.palette.primary2Color,
 
 },
+contentContainerStyle: {
+backgroundColor: 'rgba(68,68,68,1)'
+
+},
+
+
   wrapper: {
     color: theme.palette.textColor,
 
@@ -86,10 +86,7 @@ underlineColor: {
       marginTop: 10
     },
   },
-  smallHeader: {
-    color: theme.palette.primary1Color,
-        letterSpacing: '4px',
-  },
+
   bigHeader: {
     color: theme.palette.primary1Color,
     fontWeight: 300,
@@ -97,13 +94,8 @@ underlineColor: {
           fontSize: 24,
     },
   },
-  empty:{
-    flex: 3,
-    flexBasis: '200px',
-    '@media (max-width: 768px)': {
-      display: 'none'
-    },
-  },
+
+  // bigText is used in dropdown menu
   bigText: {
     flex: 4,
     fontSize: '18px',
@@ -354,7 +346,7 @@ class AdminView extends Component {
 
             </div>
 
-<Tabs>
+<Tabs tabItemContainerStyle={{...styles.contentContainerStyle}}>
     <Tab label="INVITATIONS" style={{...styles.tabStyle}} >
       <br></br>
       <div>
