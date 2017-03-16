@@ -16,6 +16,7 @@ import theme from '../../utils/theme';
 import HomeCard from '../../components/HomeCard';
 import LoginModal from '../../components/LoginModal';
 import RegisterModal from '../../components/RegisterModal';
+import TextField from 'material-ui/TextField';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
@@ -218,10 +219,11 @@ underlineColor: {
       borderLeft: 'solid',
       color: theme.palette.primary1Color
     },
-
-
-
+    cardMargin: {
+      marginBottom: 20
+    }
 };
+
 const searchList = [
   'pekka',
   'pertti',
@@ -233,6 +235,36 @@ const searchList = [
   'niki',
 ];
 
+let contacts = [{
+  name: 'Scott Sterling',
+  email: 'scott@gmail.com',
+  city: 'Helsinki'
+}, {
+  name: 'Tim Thomson',
+  email: 'tim@yahoo.com',
+  city: 'Tampere'
+}, {
+  name: 'Matilda Madison',
+  email: 'matilda@gmail.com',
+  city: 'Turku'
+}, {
+  name: 'Arska Schwarzenegger',
+  email: 'arska@gmail.com',
+  city: 'Oulu'
+}, {
+  name: 'Ensio Eimonen',
+  email: 'ensio@gmail.com',
+  city: 'Helsinki'
+}, {
+  name: 'Einari Nieminen',
+  email: 'einari@hotmail.com',
+  city: 'Tampere'
+}, {
+  name: 'Matti Meikäläinen',
+  email: 'matti@gmail.com',
+  city: 'Helsinki'
+}];
+
 
 @Radium
 class AdminView extends Component {
@@ -240,10 +272,49 @@ class AdminView extends Component {
  /* Gives sorting dropdown menu a default value. 1 = first value of options */
   constructor(props) {
     super(props);
-    this.state = {value: 1};}
+    this.state = {value: 1, search: ''};
+  }
+
+  updateSearch(event){
+    this.setState({search: event.target.value})
+  }
+
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
+
+    let filteredContacts = contacts.filter((contact) => {
+      const contactName = contact.name.toLowerCase();
+      const contactEmail = contact.email.toLowerCase();
+      //const contactCity = contact.city.toLowerCase();
+      const searchString = this.state.search.toLowerCase();
+
+      return contactName.indexOf(searchString) !== -1 ||
+        contactEmail.indexOf(searchString) !== -1
+        //||contactCity.indexOf(searchString) !== -1
+        ;
+    });
+
+    filteredContacts = filteredContacts.map((contact) => (
+      <div key={contact.name}>
+        <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
+          <CardHeader title={contact.name} subtitle={contact.email} titleStyle={{
+            ...styles.titleStyle}}
+           subtitleStyle={{
+            ...styles.subtitleStyle}}
+          avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}>
+
+        </CardHeader>
+
+            <CardText expandable={true}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            </CardText>
+          </Card>
+        </div>
+    ));
 
     return(
       <div style={styles.wrapper}>
@@ -270,18 +341,16 @@ class AdminView extends Component {
        <div style={styles.leftSpace}></div>
        <div style={styles.leftText}>
 
-                <ChipInput
-                onChange={(chips) => handleChange(chips)} // Chips inside textfield
-                filter={AutoComplete.fuzzyFilter} // Autocomplete
-                dataSource={searchList} // Autocomplete (source of suggestions)
-                maxSearchResults={5} // Autocomplete (number of suggestions shown)
-                style={{margin: 10}} hintText="Search for subjects, teachers, experts... (keywords)"
+                <TextField
+                onChange={this.updateSearch.bind(this)}
+                value={this.state.search}
+                style={{margin: 10}} hintText="Search for subjects, teachers, experts"
                 floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                 underlineFocusStyle={styles.underlineStyle}
                 floatingLabelFixed={true}
                 className="formcontainer"
                 fullWidth={true}/>
-              </div>
+        </div>
 
             </div>
 
@@ -289,47 +358,7 @@ class AdminView extends Component {
     <Tab label="INVITATIONS" style={{...styles.tabStyle}} >
       <br></br>
       <div>
-        <Card style={styles.colorIndicatorGreen}>
-          <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
-            ...styles.titleStyle}}
-           subtitleStyle={{
-            ...styles.subtitleStyle}}
-          avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
-            <CardText expandable={true}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-            </CardText>
-          </Card>
-<br></br>
-<Card style={styles.colorIndicatorYellow}>
-  <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
-    ...styles.titleStyle}}
-    subtitleStyle={{
-    ...styles.subtitleStyle}}
-    avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
-    <CardText expandable={true}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-    </CardText>
-  </Card>
-  <br></br>
-  <Card style={styles.colorIndicatorYellow}>
-    <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
-      ...styles.titleStyle}}
-      subtitleStyle={{
-      ...styles.subtitleStyle}}
-      avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
-      <CardText expandable={true}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-        Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-        Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-      </CardText>
-    </Card>
+        {filteredContacts}
       </div>
     </Tab>
 
