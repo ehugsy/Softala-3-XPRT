@@ -129,7 +129,7 @@ underlineColor: {
     },
   },
   leftText: {
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '300',
     textAlign: 'right',
     flex:3,
@@ -140,7 +140,7 @@ underlineColor: {
     },
   },
   rightText: {
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '300',
     borderLeft: '1px solid rgba(204, 204, 204, .34)',
     borderBottom: 0,
@@ -173,15 +173,7 @@ underlineColor: {
       display: 'none'
     }
   },
-  video: {
-    '@media (min-width: 768px)':{
-      order: '-1',
-    }
-  },
-  videoSize: {
-    width: '100%',
-    height: 315
-  },
+
   mobileShow: {
     '@media (min-width: 768px)':{
       display: 'none'
@@ -196,20 +188,23 @@ underlineColor: {
     boxShadow: '0px 2px 8px 1px rgba(0,0,0,0.16), 0 2px 8px 1px rgba(0,0,0,0.23)'
   },
   /*
-  Titlestyle & subtitleStyle are used to stylize
+  Titlestyle, subtitleStyle & avatarStyle are used to stylize
   contentcards on the right side of page
   */
   titleStyle: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    color: '#CCCCCC'
+    fontSize: '16px',
+    color: theme.palette.textColor,
+    fontWeight: '300',
   },
   subtitleStyle: {
-    fontSize: '18px',
-    fontWeight: 'bold',
+    fontSize: '16px',
     textDecorationLine: 'underline',
-    color: '#CCCCCC',
-    marginTop: '7px'
+    color: theme.palette.textColor,
+    marginTop: '7px',
+    fontWeight: '300'
+  },
+  avatarStyle: {
+    marginTop: '-5px',
   },
   //Yellow line for invitations that are not handled yet
     colorIndicatorYellow: {
