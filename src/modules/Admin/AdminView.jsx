@@ -208,14 +208,14 @@ underlineColor: {
   },
   //Yellow line for invitations that are not handled yet
     colorIndicatorYellow: {
-      borderTop: 'solid',
+      borderLeft: 'solid',
       borderMargin:'#585858',
       borderOffset:{height: 10},
       color: theme.palette.primary2Color
     },
     //Green line for accpted invitations
     colorIndicatorGreen: {
-      borderTop: 'solid',
+      borderLeft: 'solid',
       color: theme.palette.primary1Color
     },
 
@@ -291,10 +291,10 @@ class AdminView extends Component {
       <div>
         <Card style={styles.colorIndicatorGreen}>
           <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
-            ...styles.titleStyle
-          }} subtitleStyle={{
-            ...styles.subtitleStyle
-          }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+            ...styles.titleStyle}}
+           subtitleStyle={{
+            ...styles.subtitleStyle}}
+          avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
             <CardText expandable={true}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -305,10 +305,10 @@ class AdminView extends Component {
 <br></br>
 <Card style={styles.colorIndicatorYellow}>
   <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
-    ...styles.titleStyle
-  }} subtitleStyle={{
-    ...styles.subtitleStyle
-  }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+    ...styles.titleStyle}}
+    subtitleStyle={{
+    ...styles.subtitleStyle}}
+    avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
     <CardText expandable={true}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -319,10 +319,10 @@ class AdminView extends Component {
   <br></br>
   <Card style={styles.colorIndicatorYellow}>
     <CardHeader title="Esa Peltonen" subtitle="esapeltonen@email.com" titleStyle={{
-      ...styles.titleStyle
-    }} subtitleStyle={{
-      ...styles.subtitleStyle
-    }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+      ...styles.titleStyle}}
+      subtitleStyle={{
+      ...styles.subtitleStyle}}
+      avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
       <CardText expandable={true}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -339,10 +339,10 @@ class AdminView extends Component {
         <div>
           <Card style={styles.colorIndicatorYellow}>
             <CardHeader title="Hyväksytty hemmo" subtitle="hyväksytty@email.com" titleStyle={{
-              ...styles.titleStyle
-            }} subtitleStyle={{
-              ...styles.subtitleStyle
-            }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+              ...styles.titleStyle}}
+              subtitleStyle={{
+              ...styles.subtitleStyle}}
+              avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -353,10 +353,10 @@ class AdminView extends Component {
   <br></br>
   <Card style={styles.colorIndicatorYellow}>
     <CardHeader title="Hyväksytty hemmo" subtitle="hyväksytty@email.com" titleStyle={{
-      ...styles.titleStyle
-    }} subtitleStyle={{
-      ...styles.subtitleStyle
-    }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+      ...styles.titleStyle}}
+      subtitleStyle={{
+      ...styles.subtitleStyle}}
+      avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
       <CardText expandable={true}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -367,10 +367,10 @@ class AdminView extends Component {
     <br></br>
     <Card style={styles.colorIndicatorYellow}>
       <CardHeader title="Hyväksytty hemmo" subtitle="hyväksytty@email.com" titleStyle={{
-        ...styles.titleStyle
-      }} subtitleStyle={{
-        ...styles.subtitleStyle
-      }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+        ...styles.titleStyle}}
+        subtitleStyle={{
+        ...styles.subtitleStyle}}
+        avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -389,10 +389,10 @@ class AdminView extends Component {
         <div>
           <Card style={styles.colorIndicatorYellow}>
             <CardHeader title="Hylätty hemmo" subtitle="hylätty@email.com" titleStyle={{
-              ...styles.titleStyle
-            }} subtitleStyle={{
-              ...styles.subtitleStyle
-            }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+              ...styles.titleStyle}}
+              subtitleStyle={{
+              ...styles.subtitleStyle}}
+              avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
               <CardText expandable={true}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -403,10 +403,10 @@ class AdminView extends Component {
   <br></br>
   <Card style={styles.colorIndicatorYellow}>
     <CardHeader title="Hylätty hemmo" subtitle="hylätty@email.com" titleStyle={{
-      ...styles.titleStyle
-    }} subtitleStyle={{
-      ...styles.subtitleStyle
-    }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+      ...styles.titleStyle}}
+      subtitleStyle={{
+      ...styles.subtitleStyle}}
+      avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
       <CardText expandable={true}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -417,10 +417,10 @@ class AdminView extends Component {
     <br></br>
     <Card style={styles.colorIndicatorYellow}>
       <CardHeader title="Hylätty hemmo" subtitle="hylätty@email.com" titleStyle={{
-        ...styles.titleStyle
-      }} subtitleStyle={{
-        ...styles.subtitleStyle
-      }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+        ...styles.titleStyle}}
+        subtitleStyle={{
+        ...styles.subtitleStyle}}
+        avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
