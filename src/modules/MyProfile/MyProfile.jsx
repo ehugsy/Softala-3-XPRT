@@ -35,6 +35,8 @@ const myData = {
   introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
   subject1: 'Major Tom',
   subject2: 'Lalilulelo',
+  subject3: 'Liquid',
+  subject4: 'Snake',
   lectureDetails: 'Details about preferred lecture topics',
 }
 
@@ -290,6 +292,10 @@ class MyProfile extends Component {
                 <Chip style={styles.chip}>{myData.subject1}
                 </Chip>
                 <Chip style={styles.chip}>{myData.subject2}
+                </Chip>
+                <Chip style={styles.chip}>{myData.subject3}
+                </Chip>
+                <Chip style={styles.chip}>{myData.subject4}
                 </Chip>
               </div>
               <p style={styles.mainDivTextTitle}>LECTURE DETAILS:

@@ -26,9 +26,11 @@ import FuturiceLogo from '../../components/FuturiceLogo';
 const marginRight = '10em'
 
 const styles = {
+//color for default text
   wrapper: {
     color: theme.palette.textColor,
   },
+  //Wraps teachers|experts -part together
   teacherExpertWrapper: {
     display: 'flex',
     flexDirection: 'row',
@@ -38,6 +40,7 @@ const styles = {
       flexDirection: 'column'
     },
   },
+  //Wraps the lower part
   secondWrapper: {
     height: '750px',
     display: 'flex',
@@ -45,6 +48,7 @@ const styles = {
       height: '100%',
     },
   },
+  // wraps up the part were cellphone pics are located
   secondInnerWrapper: {
     background: '#cccccc',
     height: '700px',
@@ -53,6 +57,7 @@ const styles = {
       height: '100%',
     },
   },
+  //wraps up the carousel
   thirdWrapper: {
     height: '350px',
     '@media (max-width: 769px)': {
@@ -62,6 +67,7 @@ const styles = {
   headerWrapper:{
     display:'flex'
   },
+  //wrapping for whole page
   landingWrapper:{
     minHeight: '100vh',
     display:'flex',
@@ -79,6 +85,7 @@ const styles = {
       marginBottom: '70px'
     },
   },
+  //For Hundred & Futurice logos
   secondLogos:{
     display:'flex',
     alignSelf:'flex-end',
@@ -88,9 +95,11 @@ const styles = {
       marginBottom: '3em'
     }
   },
+  //For Teachers & Experts -logos
   smallHeader: {
     color: theme.palette.primary1Color,
   },
+  //Flexes Divs
   empty:{
     flex: 1,
     flexShrink: 0,
@@ -98,6 +107,7 @@ const styles = {
       display:'none'
     },
   },
+  //styling for text in the most top div
   bigText: {
     flex: 1,
     fontSize: '18px',
@@ -120,6 +130,7 @@ const styles = {
       fontSize: '16px'
     }
   },
+  //For Teachers -div
   leftText: {
     fontSize: '18px',
     fontWeight: '300',
@@ -132,6 +143,7 @@ const styles = {
       textAlign: 'center',
     },
   },
+  //for Experts -div
   rightText: {
     fontSize: '18px',
     fontWeight: '300',
@@ -168,6 +180,7 @@ const styles = {
       flexDirection: 'column',
     },
   },
+  //For images in the Carousel
   mockImage: {
     width: '268.4px',
     height: '458.8px'
@@ -175,6 +188,7 @@ const styles = {
   emptyImage: {
     flex: 1
   },
+  //Next 3 attributes affect The cellphone mockup pictures
   leftImage: {
     flex: 2,
     marginTop: '-12%',
@@ -225,11 +239,13 @@ const styles = {
     margin: '0 auto',
     width: '40%'
   },
+  //For Pics in The Carousel
   profilePicture: {
     borderRadius: '50%',
     width: '150px',
     height: '150px'
   },
+  //For text in Carousel
   secondRow: {
     display: 'flex',
     flexDirection: 'row',
@@ -319,7 +335,6 @@ class Home extends Component  {
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
               </div>
-              <div style={styles.emptyImage}></div>
             </div>
           </div>
         </div>
