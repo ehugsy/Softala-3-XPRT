@@ -21,7 +21,6 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
-import Footer from '../Footer';
 
 const marginRight = '10em'
 import ChipInput from 'material-ui-chip-input';
@@ -463,7 +462,6 @@ class AdminView extends Component {
 
 
         </div>
-        <Footer />
       </div>
     );
   }
