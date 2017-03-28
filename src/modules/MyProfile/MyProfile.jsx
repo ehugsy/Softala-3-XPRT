@@ -9,15 +9,13 @@ import {
 import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
 import Checkbox from 'material-ui/Checkbox';
-
 import Chip from 'material-ui/Chip';
-import MyProfileEditModal from '../../components/MyProfileEditModal';
 import MyProfileEditModalCompany from '../../components/MyProfileEditModalCompany';
-import MyProfileEditModalIntroduction from '../../components/MyProfileEditModalIntroduction';
+import EditBasicInfoModal from '../../components/MyProfileEditModals/EditBasicInfoModal';
+import EditExpertDetailsModal from '../../components/MyProfileEditModals/EditExpertDetailsModal';
 import Footer from '../Footer';
 
 {/*
@@ -40,7 +38,6 @@ const myData = {
   lectureDetails: 'Details about preferred lecture topics',
 }
 
-
 const lectureData1 = {
   title: 'John McLecturer',
   email: 'john.mclecturer@experts.com',
@@ -51,7 +48,7 @@ const lectureData1 = {
   theme: 'Making Numbers Cool',
   date1: '12.03.2017',
   date2: '14.03.2017',
-  location: 'Helskinki International School',
+  location: 'Helsinki International School',
   description: 'Why mathematics should be considered cool and worth learning. Also Cookiees!',
 }
 
@@ -260,7 +257,7 @@ class MyProfile extends Component {
               {/* Next div contains Basic info, like name*/}
             <div style={styles.contentCardLeft}>
               {/* This modal opens up editing window of profile's basic info*/}
-              <MyProfileEditModal />
+              <EditBasicInfoModal />
               <p style={styles.mainDivTextTitle}>NAME:</p>
               <p style={styles.mainDivText}>{myData.name}</p>
               <p style={styles.mainDivTextTitle}>PHONE:</p>
@@ -283,7 +280,7 @@ class MyProfile extends Component {
               {/* Contains short introductions, label, etc. */}
             <div style={styles.contentCardLeft}>
               {/*Opens editing modal*/}
-              <MyProfileEditModalIntroduction />
+              <EditExpertDetailsModal />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>{myData.introduction}</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
