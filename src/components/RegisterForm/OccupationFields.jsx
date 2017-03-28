@@ -3,7 +3,6 @@ import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import MyTextField from '../MyTextField';
 import Checkbox from 'material-ui/Checkbox';
-import MenuItem from 'material-ui/MenuItem';
 import theme from '../../utils/theme';
 import DialogButtons from '../DialogButtons';
 
@@ -35,7 +34,6 @@ const renderCheckbox = ({ input, label }) => (
     onCheck={input.onChange}
   />
 )
-
 
 
 class OccupationFields extends Component {

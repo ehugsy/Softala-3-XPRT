@@ -13,7 +13,7 @@ import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
 import Checkbox from 'material-ui/Checkbox';
 import Chip from 'material-ui/Chip';
-import MyProfileEditModalCompany from '../../components/MyProfileEditModalCompany';
+import EditCompanyDetailsModal from '../../components/MyProfileEditModals/EditCompanyDetailsModal';
 import EditBasicInfoModal from '../../components/MyProfileEditModals/EditBasicInfoModal';
 import EditExpertDetailsModal from '../../components/MyProfileEditModals/EditExpertDetailsModal';
 import Footer from '../Footer';
@@ -29,7 +29,7 @@ const myData = {
   supportedLocations: 'Helsinki, Espoo',
   company: 'Sportmrt',
   jobTitle: 'CEO',
-  officeVisit: true,
+  officeVisit: false,
   introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
   subject1: 'Major Tom',
   subject2: 'Lalilulelo',
@@ -270,7 +270,7 @@ class MyProfile extends Component {
               {/* next div contains company info */}
             <div style={styles.contentCardLeft}>
                 {/*Opens editing modal*/}
-              <MyProfileEditModalCompany />
+              <EditCompanyDetailsModal />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>{myData.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>

@@ -130,52 +130,51 @@ export default class ExperdDetailsModal extends React.Component {
             titleStyle={styles.noborder}
             actionsContainerStyle={styles.noborder}
           >
-            <div style={styles.contentCard}>
-              <form onSubmit={this.props.handleSubmit}>
-                <div>
-                  <Field
-                    name='introduction'
-                    validate={required}
-                    component={renderTextField}
-                    label='Short introduction'
-                    type='text'
-                    hintText={formdata.introduction}
-                    floatingLabelFixed={true}/>
+            <form onSubmit={this.props.handleSubmit}>
+              <div>
+                <Field
+                  name='introduction'
+                  validate={required}
+                  component={renderTextField}
+                  label='Short introduction'
+                  type='text'
+                  hintText={formdata.introduction}
+                  floatingLabelFixed={true}/>
 
-                  <Field
-                    name='subjects'
-                    label='Subjects'
-                    validate={required}
-                    component={renderChipInput}
-                    id='subjects'
-                    dataSource={subjectList}
-                    hintText={formdata.subjects}
-                    floatingLabelFixed={true} />
+                <Field
+                  name='subjects'
+                  label='Subjects'
+                  validate={required}
+                  component={renderChipInput}
+                  id='subjects'
+                  dataSource={subjectList}
+                  hintText={formdata.subjects}
+                  floatingLabelFixed={true} />
 
-                  <Field
-                    name='lectureDetails'
-                    validate={required}
-                    component={renderTextField}
-                    label='Lecture details'
-                    type='text'
-                    hintText={formdata.lectureDetails}
-                    floatingLabelFixed={true} />
+                <Field
+                  name='lectureDetails'
+                  validate={required}
+                  component={renderTextField}
+                  label='Lecture details'
+                  type='text'
+                  hintText={formdata.lectureDetails}
+                  floatingLabelFixed={true} />
 
-                </div>
-                <FlatButton
-                  label="Save"
-                  primary={true}
-                  onTouchTap={this.handleClose}
-                  style={styles.button}
-                />
-                <FlatButton
-                  label="Cancel"
-                  primary={true}
-                  onTouchTap={this.handleClose}
-                  style={styles.button}
-                />
-              </form>
-            </div>
+              </div>
+              <FlatButton
+                label="Save"
+                primary={true}
+                onTouchTap={this.handleClose}
+                style={styles.button}
+              />
+              <FlatButton
+                label="Cancel"
+                primary={true}
+                onTouchTap={this.handleClose}
+                style={styles.button}
+              />
+            </form>
+            
 
           </Dialog>
         </div>
