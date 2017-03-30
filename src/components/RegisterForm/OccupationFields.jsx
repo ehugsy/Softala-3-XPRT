@@ -6,17 +6,6 @@ import Checkbox from 'material-ui/Checkbox';
 import theme from '../../utils/theme';
 import DialogButtons from '../DialogButtons';
 
-
-const styles = {
-  floatingLabelFocusStyle: {
-    color: theme.palette.primary2Color
-  },
-  underlineStyle: {
-    color: theme.palette.primary2Color,
-    borderColor: theme.palette.primary2Color,
-  },
-}
-
 const required = value => value ? undefined : 'Required'
 
 const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
