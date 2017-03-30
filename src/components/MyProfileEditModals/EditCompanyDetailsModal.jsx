@@ -3,7 +3,6 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Radium from 'radium';
-import theme from '../../utils/theme';
 import Checkbox from 'material-ui/Checkbox';
 import OccupationFields from '../RegisterForm/OccupationFields';
 import { Field, reduxForm, formValueSelector } from 'redux-form';

@@ -4,7 +4,6 @@ import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import Radium from 'radium';
 import FlatButton from 'material-ui/FlatButton';
-import theme from '../../utils/theme';
 import Dialog from 'material-ui/Dialog';
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
