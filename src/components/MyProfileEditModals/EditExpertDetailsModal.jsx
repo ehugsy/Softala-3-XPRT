@@ -8,6 +8,7 @@ import theme from '../../utils/theme';
 import Dialog from 'material-ui/Dialog';
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
+import styles from './editModalStyles';
 
 const subjectList = [
   'Liikunta',
@@ -24,40 +25,6 @@ const formdata = {
   introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
   subjects: 'Major Tom, Lalilulelo, Liquid, Snake',
   lectureDetails: 'Details about lecture',
-}
-
-const styles = {
-  floatingLabelFocusStyle: {
-    color: theme.palette.primary2Color
-  },
-  underlineStyle: {
-    color: theme.palette.primary2Color,
-    borderColor: theme.palette.primary2Color,
-  },
-  button: {
-    border: '1px solid #555555',
-    padding: 15,
-    margin: 5,
-    borderRadius: 20,
-    lineHeight: '0.4em',
-    marginTop: '1em',
-    float: 'left',
-    color: theme.palette.textColor,
-  },
-  link: {
-    ':hover': {
-      cursor:'pointer'
-    }
-  },
-  noborder: {
-    border: 0,
-  },
-  //Styling for editing Pen on left column
-  editPen: {
-    float: 'right',
-    width: '24px',
-    height: '24px'
-  },
 }
 
 const required = value => value ? undefined : 'Required'
@@ -174,7 +141,7 @@ export default class ExperdDetailsModal extends React.Component {
                 style={styles.button}
               />
             </form>
-            
+
 
           </Dialog>
         </div>
