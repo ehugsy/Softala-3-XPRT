@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import MyTextField from '../MyTextField';
 import Checkbox from 'material-ui/Checkbox';
 import DialogButtons from '../DialogButtons';
+import styles from './registerFormStyles';
 
 const required = value => value ? undefined : 'Required'
 

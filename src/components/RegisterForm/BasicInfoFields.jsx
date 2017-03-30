@@ -4,6 +4,7 @@ import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import MenuItem from 'material-ui/MenuItem';
 import DialogButtons from '../DialogButtons';
+import styles from './registerFormStyles';
 
 /*const renderTextField = props => (
   <MyTextField

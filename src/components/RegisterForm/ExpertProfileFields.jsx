@@ -5,6 +5,7 @@ import ChipInput from 'material-ui-chip-input';
 import MenuItem from 'material-ui/MenuItem';
 import AutoComplete from 'material-ui/AutoComplete';
 import DialogButtons from '../DialogButtons';
+import styles from './registerFormStyles';
 
 const subjectList = [
   'Liikunta',
