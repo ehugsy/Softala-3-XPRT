@@ -2,21 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import FlatButton from 'material-ui/FlatButton';
 import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
-
-
-const styles = {
-  button: {
-    border: '1px solid #555555',
-    padding: 15,
-    margin: 5,
-    borderRadius: 20,
-    lineHeight: '0.4em',
-    marginTop: '1em'
-  },
-  iconButton: {
-    padding: '6px',
-  },
-}
+import styles from './buttonStyles';
 
 class DialogButtons extends Component {
 
