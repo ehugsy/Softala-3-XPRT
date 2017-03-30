@@ -4,7 +4,6 @@ import MyTextField from '../MyTextField';
 import ChipInput from 'material-ui-chip-input';
 import MenuItem from 'material-ui/MenuItem';
 import AutoComplete from 'material-ui/AutoComplete';
-import theme from '../../utils/theme';
 import DialogButtons from '../DialogButtons';
 
 const subjectList = [

@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form';
 import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import MenuItem from 'material-ui/MenuItem';
-import theme from '../../utils/theme';
 import DialogButtons from '../DialogButtons';
 
 /*const renderTextField = props => (
