@@ -18,8 +18,6 @@ import HundredLogo from '../../components/HundredLogo';
 import Footer from '../Footer';
 import styles from './aboutStyles';
 
-const marginRight = '10em'
-
 @Radium
 class About extends Component {
   render() {

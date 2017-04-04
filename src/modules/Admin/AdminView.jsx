@@ -21,7 +21,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
 
-const marginRight = '10em'
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
 import DropDownMenu from 'material-ui/DropDownMenu';

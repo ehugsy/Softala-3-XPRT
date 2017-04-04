@@ -21,8 +21,6 @@ import TwitterIcon from '../../components/TwitterIcon';
 import Footer from '../Footer';
 import styles from './contactStyles';
 
-const marginRight = '10em'
-
 @Radium
 class Contact extends Component {
   render() {

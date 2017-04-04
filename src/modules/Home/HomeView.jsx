@@ -23,8 +23,6 @@ import HundredLogo from '../../components/HundredLogo';
 import FuturiceLogo from '../../components/FuturiceLogo';
 import styles from './homeStyles';
 
-const marginRight = '10em'
-
 @Radium
 class Home extends Component  {
 
