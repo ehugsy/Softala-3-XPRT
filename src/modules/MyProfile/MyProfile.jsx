@@ -83,7 +83,6 @@ of the page overall
       }
     },
   },
-
   profilePicture: {
     borderRadius: '50%',
     width: '150px',

@@ -3,17 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Radium from 'radium';
-
-const styles = {
-  link: {
-    ':hover': {
-      cursor:'pointer'
-    }
-  },
-  noborder: {
-    border: 0,
-  }
-}
+import styles from './termsModalStyles';
 
 @Radium
 export default class TermsModal extends React.Component {
