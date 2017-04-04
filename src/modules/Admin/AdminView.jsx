@@ -124,39 +124,38 @@ class AdminView extends Component {
       <div style={styles.wrapper}>
 
         <div style={styles.landingWrapper}>
-          <div style={styles.headerWrapper}>
             <div style={styles.bigText}>
 
 
      <div style={styles.firstWrapper}>
 
-         <div style={styles.rightSpace}><h1 style={styles.bigHeader}>Admin panel</h1></div>
+             <div style={styles.rightSpace}><h1 style={styles.bigHeader}>Admin panel</h1></div>
 
 
-      <DropDownMenu value={this.state.value} onChange={this.handleChange} openImmediately={false}>
-       <MenuItem value={1} primaryText="WAITING FOR RESPONSE" />
-       <MenuItem value={2} primaryText="ACCEPTED" />
-       <MenuItem value={3} primaryText="DECLINED" />
-       <MenuItem value={4} primaryText="IGNORED" />
-       <MenuItem value={5} primaryText="placeholder" />
-     </DropDownMenu>
+          <DropDownMenu value={this.state.value} onChange={this.handleChange} openImmediately={false} >
+           <MenuItem value={1} primaryText="WAITING FOR RESPONSE" />
+           <MenuItem value={2} primaryText="ACCEPTED" />
+           <MenuItem value={3} primaryText="DECLINED" />
+           <MenuItem value={4} primaryText="IGNORED" />
+           <MenuItem value={5} primaryText="placeholder" />
+         </DropDownMenu>
 
 
-       <div style={styles.leftSpace}></div>
-       <div style={styles.leftText}>
+           <div style={styles.leftSpace}></div>
+           <div style={styles.leftText}>
 
-                <TextField
-                onChange={this.updateSearch.bind(this)}
-                value={this.state.search}
-                style={{margin: 10}} hintText="Search for subjects, teachers, experts"
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                floatingLabelFixed={true}
-                className="formcontainer"
-                fullWidth={true}/>
-        </div>
-
+                    <TextField
+                    onChange={this.updateSearch.bind(this)}
+                    value={this.state.search}
+                    style={{margin: 10}} hintText="Search for subjects, teachers, experts"
+                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                    underlineFocusStyle={styles.underlineStyle}
+                    floatingLabelFixed={true}
+                    className="formcontainer"
+                    fullWidth={true}/>
             </div>
+
+      </div>
 
 <Tabs tabItemContainerStyle={{...styles.contentContainerStyle}}>
     <Tab label="INVITATIONS" style={{...styles.tabStyle}} >
@@ -270,10 +269,6 @@ class AdminView extends Component {
   </Tabs>
 
             </div>
-
-          </div>
-
-
         </div>
       </div>
     );

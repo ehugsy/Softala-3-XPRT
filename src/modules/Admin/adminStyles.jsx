@@ -15,6 +15,20 @@ const styles = {
   },
   wrapper: {
     color: theme.palette.textColor,
+
+
+  },
+
+  landingWrapper:{
+    minHeight: '100vh',
+    paddingLeft:'4%',
+    paddingRight:'4%',
+    backgroundImage:"url('../img/xprt-background.png')",
+      backgroundSize: '2500px',
+      backgroundRepeat: 'no-repeat',
+    '@media (max-width: 768px)': {
+      marginTop: 10
+    },
   },
   firstWrapper: {
     display: 'flex',
@@ -24,32 +38,7 @@ const styles = {
       flexDirection: 'column-reverse'
     },
   },
-  secondWrapper: {
-    height: '75vmin',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  secondInnerWrapper: {
-    background: '#cccccc',
-    height: '70vmin',
-  },
-  headerWrapper:{
-    display:'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-      '@media (max-width: 768px)':{
-        display: 'none'
-      }
-  },
-  landingWrapper:{
-    minHeight: '80vh',
-    paddingLeft:'4%',
-    paddingRight:'4%',
-    marginTop:'20vh',
-    '@media (max-width: 768px)': {
-      marginTop: 10
-    },
-  },
+
   bigHeader: {
     color: theme.palette.primary1Color,
     fontWeight: 300,
