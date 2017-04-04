@@ -2,50 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import Dialog from 'material-ui/Dialog';
 import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
 import FlatButton from 'material-ui/FlatButton';
-import theme from '../../utils/theme';
 import BasicInfoFields from '../RegisterForm/BasicInfoFields';
 import OccupationFields from '../RegisterForm/OccupationFields';
 import ExpertProfileFields from '../RegisterForm/ExpertProfileFields';
 import Radium from 'radium';
 import MediaQuery from 'react-responsive';
-
-
-const styles = {
-  fieldsStyle: {
-    width: '100%',
-    minHeight: 450,
-  },
-  contentStyle: {
-    marginLeft: 60,
-    width: 708,
-  },
-  contentStyleResponsive: {
-    width: '98%',
-  },
-  button: {
-    border: '1px solid #555555',
-    padding: 15,
-    margin: 5,
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-    marginTop: '1em'
-  },
-  buttonGold: {
-    color: theme.palette.primary2Color,
-  },
-  dialogFixTop: {
-    zIndex: '1302',
-    display: 'flex',
-    flexFlow: 'row nowrap',
-    justifyContent: 'center',
-    width: '100%',
-    alignItems: 'baseline',
-  },
-  stepLabel: {
-    color: theme.palette.primary2Color,
-    fontSize: 17,
-  },
-};
+import styles from './registerModalStyles';
 
 @Radium
 class RegisterModal extends Component {
