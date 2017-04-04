@@ -131,7 +131,7 @@ class AdminView extends Component {
              <div style={styles.rightSpace}><h1 style={styles.bigHeader}>Admin panel</h1></div>
 
 
-          <DropDownMenu value={this.state.value} onChange={this.handleChange} openImmediately={false} >
+          <DropDownMenu value={this.state.value} onChange={this.handleChange} openImmediately={false} style={styles.DropDownMenu}>
            <MenuItem value={1} primaryText="WAITING FOR RESPONSE" />
            <MenuItem value={2} primaryText="ACCEPTED" />
            <MenuItem value={3} primaryText="DECLINED" />

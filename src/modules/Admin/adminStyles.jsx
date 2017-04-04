@@ -105,6 +105,13 @@ const styles = {
       fontSize: '16px',
     },
   },
+
+  DropDownMenu: {
+    width: '250px',
+    
+
+  },
+
   buttonStyle: {
     border: '1px solid rgba(204, 204, 204, .34)',
     padding: '15px',
