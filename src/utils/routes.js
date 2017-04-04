@@ -2,7 +2,6 @@ import Home from '../modules/Home';
 import Preferences from '../modules/Preferences';
 import Logout from '../modules/Auth/Logout';
 import Registration from '../modules/Registration';
-import MyAccount from '../modules/MyAccount';
 import Login from '../modules/Auth/Login';
 import Contact from '../modules/Contact';
 import About from '../modules/About';
