@@ -13,6 +13,7 @@ of the page overall
     backgroundImage:"url('../img/xprt-background.png')",
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
+    textAlign: 'left',
     '@media (max-width: 768px)':{
       display: 'none'
     }
@@ -36,6 +37,7 @@ of the page overall
     width: '150px',
     height: '150px'
   },
+
   /*Adds a little space between the end of the page and the last card */
   emptyFooter: {
     paddingBottom:'1px',

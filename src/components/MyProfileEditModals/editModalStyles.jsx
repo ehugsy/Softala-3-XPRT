@@ -26,9 +26,27 @@ const styles = {
   noborder: {
     border: 0,
   },
+  editProfilePicture: {
+    borderRadius: '50%',
+    width: '200px',
+    height: '200px'
+  },
+  editPictureWindow: {
+    height: '300px',
+    textAlign: 'center',
+  },
+
+
   //Styling for editing Pen on left column
   editPen: {
     float: 'right',
+    width: '24px',
+    height: '24px'
+  },
+  editPenLeft: {
+    float: 'left',
+    marginLeft: '150px',
+    marginTop: '-32px',
     width: '24px',
     height: '24px'
   },
