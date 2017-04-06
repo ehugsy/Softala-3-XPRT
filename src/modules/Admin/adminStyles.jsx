@@ -34,6 +34,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginBottom: 20,
     '@media (max-width: 768px)': {
       flexDirection: 'column-reverse'
     },
@@ -83,6 +84,10 @@ const styles = {
       fontSize: '16px',
     },
   },
+  fullSearchBar: {
+    fontSize: '16px',
+    fontWeight: '300',
+  },
   rightText: {
     fontSize: '16px',
     fontWeight: '300',
@@ -108,7 +113,7 @@ const styles = {
 
   DropDownMenu: {
     width: '250px',
-    
+
 
   },
 
@@ -168,8 +173,48 @@ const styles = {
       color: theme.palette.primary1Color
     },
     cardMargin: {
-      marginBottom: 20
+      marginBottom: 20,
+    },
+    parent: {
+      fontSize: '16px',
+      color: theme.palette.textColor,
+      fontWeight: '300',
+      display: 'flex',
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'stretch',
+      '@media (min-width: 768px)':{
+        flexWrap:'nowrap',
+      },
+    },
+    left: {
+      order: 1,
+      //background: 'red',
+      flexBasis: '100%',
+    },
+    middle: {
+      order: 2,
+      //background: 'blue',
+      flexBasis: '100%'
+    },
+    right: {
+      order: 3,
+      //background: 'green',
+      flexBasis: '100%',
+    },
+    boldText: {
+      fontWeight: 'bold'
+    },
+    cardHeaderStyle: {
+      fontSize: '16px',
+      color: theme.palette.textColor,
+      fontWeight: '300',
+    },
+    header3top: {
+      marginTop: 0,
     }
+
 };
 
 module.exports = styles;
