@@ -15,6 +15,7 @@ import Chip from 'material-ui/Chip';
 import EditCompanyDetailsModal from '../../components/MyProfileEditModals/EditCompanyDetailsModal';
 import EditBasicInfoModal from '../../components/MyProfileEditModals/EditBasicInfoModal';
 import EditExpertDetailsModal from '../../components/MyProfileEditModals/EditExpertDetailsModal';
+import EditPictureModal from '../../components/MyProfileEditModals/EditPictureModal';
 import Footer from '../Footer';
 import styles from './myProfileStyles';
 
@@ -62,6 +63,7 @@ class MyProfile extends Component {
         <div style={styles.firstWrapper}>
           {/* Profile Picture */}
           <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture,...styles.mobileHide}}/>
+          <EditPictureModal />
         </div>
 
         <div style={styles.secondWrapper}>
