@@ -80,10 +80,89 @@ let lectures = [
      {option1: '12.03.2017',
      option2: '14.03.2017'}
    ],
-   location: 'Helsinki International School',
+   location: 'Mannerheimintie 500, Helsinki',
    description: 'Why mathematics should be considered cool and worth learning. Also Cookiees',
    status: 'accepted',
    responseDate: '22.11.2016'
+},
+{
+  from: [
+    {name: 'Tim Thomson',
+    email: 'tim@yahoo.com'}
+  ],
+  to: [
+    {name: 'Ensio Eimonen',
+    email: 'ensio@gmail.com'}
+  ],
+  datesent: '06.04.2016',
+  school: 'Haaga-Helia ammattikorkeakoulu',
+  subjects:[
+    'Java',
+    'PHP',
+    'NodeJS'
+  ],
+  educationalstage: 'Upper Secondary School',
+  lecturetheme: 'Back-End choises',
+  dateoflecture:[
+    {option1: '12.05.2017',
+    option2: '14.05.2017'}
+  ],
+  location: 'Ratapihantie 13, Helsinki',
+  description: 'Pros and cons of back-end coding languages',
+  status: 'waiting',
+  responseDate: ''
+},
+{
+  from: [
+    {name: 'Matilda Madison',
+    email: 'matilda@gmail.com'}
+  ],
+  to: [
+    {name: 'Tyson Traveller',
+    email: 'tyson@hotmail.com'}
+  ],
+  datesent: '10.04.2016',
+  school: 'Aalto yliopisto',
+  subjects:[
+    'Travelling',
+    'Guidance'
+  ],
+  educationalstage: 'University',
+  lecturetheme: 'New opportunities for a travel guide',
+  dateoflecture:[
+    {option1: '15.05.2017',
+    option2: '20.05.2017'}
+  ],
+  location: 'Yliopistotie 20, Helsinki',
+  description: 'Travelling in Africa is getting popular and it is giving more opportunities for travel guides',
+  status: 'waiting',
+  responseDate: ''
+},
+{
+  from: [
+    {name: 'Einari Nieminen',
+    email: 'einari@hotmail.com'}
+  ],
+  to: [
+    {name: 'Scott Sterling',
+    email: 'scott@gmail.com'}
+  ],
+  datesent: '06.12.2016',
+  school: 'Rovaniemen lukio',
+  subjects:[
+    'Animals',
+    'Breeding'
+  ],
+  educationalstage: 'High School',
+  lecturetheme: 'Reindeer breeding',
+  dateoflecture:[
+    {option1: '12.03.2017',
+    option2: '14.03.2017'}
+  ],
+  location: 'Porokuja 50, Rovaniemi',
+  description: 'Things you need to know about reindeer breeding',
+  status: 'declined',
+  responseDate: '07.12.2016'
 },
 {
    from: [
@@ -106,7 +185,7 @@ let lectures = [
      {option1: '22.03.2017',
      option2: '16.04.2017'}
    ],
-   location: 'Ratapihantie 13',
+   location: 'Ratapihantie 13, Helsinki',
    description: 'We make a little web application together with React',
    status: 'ignored',
    resposeDate: ''
