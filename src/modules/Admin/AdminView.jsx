@@ -108,7 +108,7 @@ let lectures = [
     option2: '14.05.2017'}
   ],
   location: 'Ratapihantie 13, Helsinki',
-  description: 'Pros and cons of back-end coding languages',
+  description: 'Pros and cons about back-end coding languages',
   status: 'waiting',
   responseDate: ''
 },
@@ -232,6 +232,21 @@ class AdminView extends Component {
       && (lectureStatus === stateValue || stateValue === 'all');
     });
 
+    function SubjectList(props){
+  const subjects = props.subjects;
+  const length = subjects.length;
+  const list = subjects.map((subjects, i) => {
+    if (length === i+1) {
+      return <span>{subjects}</span>
+    } else {
+      return <span>{subjects}, </span>
+    }
+  });
+  return (
+    <p>{list}</p>
+  )
+}
+
     filteredLectures = filteredLectures.map((lecture) => (
       <div key={lecture.lecturetheme}>
         <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
@@ -269,7 +284,7 @@ class AdminView extends Component {
                     {lecture.school}
                   </p>
                   <p><span style={styles.boldText}>Subjects:</span><br/>
-                  {lecture.subjects}
+                  <SubjectList subjects={lecture.subjects}/>
                   </p>
                   <p><span style={styles.boldText}>Educational stage:</span><br/>
                   {lecture.educationalstage}
