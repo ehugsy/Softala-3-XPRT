@@ -213,6 +213,24 @@ const styles = {
     },
     header3top: {
       marginTop: 0,
+    },
+    accepted: {
+      backgroundColor: theme.palette.primary1Color,
+      padding: '5px',
+      borderRadius: '20px',
+      lineHeight: '0.4em'
+    },
+    declined: {
+      backgroundColor: '#8A0808',
+      padding: '5px',
+      borderRadius: '20px',
+      lineHeight: '0.4em'
+    },
+    ignored: {
+      backgroundColor: '#8A0808',
+      padding: '5px',
+      borderRadius: '20px',
+      lineHeight: '0.4em'
     }
 
 };

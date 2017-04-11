@@ -81,7 +81,9 @@ let lectures = [
      option2: '14.03.2017'}
    ],
    location: 'Helsinki International School',
-   description: 'Why mathematics should be considered cool and worth learning. Also Cookiees'
+   description: 'Why mathematics should be considered cool and worth learning. Also Cookiees',
+   status: 'accepted',
+   responseDate: '22.11.2016'
 },
 {
    from: [
@@ -105,7 +107,9 @@ let lectures = [
      option2: '16.04.2017'}
    ],
    location: 'Ratapihantie 13',
-   description: 'We make a little web application together with React'
+   description: 'We make a little web application together with React',
+   status: 'ignored',
+   resposeDate: ''
 }];
 
 
@@ -115,7 +119,7 @@ class AdminView extends Component {
   /* Gives sorting dropdown menu a default value. 1 = first value of options */
   constructor(props) {
     super(props);
-    this.state = {value: 1, lectureSearch: '', userSearch: ''};
+    this.state = {value: 'all', lectureSearch: '', userSearch: ''};
   }
 
   updateLectureSearch(event){
@@ -134,13 +138,19 @@ class AdminView extends Component {
       const lectureName = lecture.lecturetheme.toLowerCase();
       const expertName = lecture.to[0].name.toLowerCase();
       const teacherName = lecture.from[0].name.toLowerCase();
+      const expertEmail = lecture.to[0].email.toLowerCase();
+      const teacherEmail = lecture.from[0].email.toLowerCase();
+      const lectureStatus = lecture.status;
       //const contactCity = contact.city.toLowerCase();
       const searchString = this.state.lectureSearch.toLowerCase();
+      const stateValue = this.state.value;
 
-      return lectureName.indexOf(searchString) !== -1 ||
+      return (lectureName.indexOf(searchString) !== -1 ||
       expertName.indexOf(searchString) !== -1
       || teacherName.indexOf(searchString) !== -1
-      ;
+      || expertEmail.indexOf(searchString) !== -1
+      || teacherEmail.indexOf(searchString) !== -1)
+      && (lectureStatus === stateValue || stateValue === 'all');
     });
 
     filteredLectures = filteredLectures.map((lecture) => (
@@ -162,7 +172,12 @@ class AdminView extends Component {
                   </div>
                   <div style={styles.right}>
                     <h3 style={styles.header3top}>Date sent:</h3>
-                    <p>{lecture.datesent}</p>
+
+                    <p>{lecture.datesent}<br />
+                    {lecture.status} {lecture.responseDate}
+                    </p>
+
+
                   </div>
                 </div>
 
@@ -174,7 +189,7 @@ class AdminView extends Component {
                     <p><span style={styles.boldText}>Name of school:</span><br/>
                     {lecture.school}
                   </p>
-                  <p><span style={styles.boldText}>Subejcts:</span><br/>
+                  <p><span style={styles.boldText}>Subjects:</span><br/>
                   {lecture.subjects}
                   </p>
                   <p><span style={styles.boldText}>Educational stage:</span><br/>
@@ -271,11 +286,11 @@ class AdminView extends Component {
                   <div style={styles.firstWrapper}>
 
                     <DropDownMenu value={this.state.value} onChange={this.handleChange} openImmediately={false} style={styles.DropDownMenu}>
-                      <MenuItem value={1} primaryText="WAITING FOR RESPONSE" />
-                      <MenuItem value={2} primaryText="ACCEPTED" />
-                      <MenuItem value={3} primaryText="DECLINED" />
-                      <MenuItem value={4} primaryText="IGNORED" />
-                      <MenuItem value={5} primaryText="placeholder" />
+                      <MenuItem value={'all'} primaryText="ALL" />
+                      <MenuItem value={'waiting'} primaryText="WAITING FOR RESPONSE" />
+                      <MenuItem value={'accepted'} primaryText="ACCEPTED" />
+                      <MenuItem value={'declined'} primaryText="DECLINED" />
+                      <MenuItem value={'ignored'} primaryText="IGNORED" />
                     </DropDownMenu>
                     <div style={styles.leftSpace}></div>
                     <div style={styles.leftText}>
