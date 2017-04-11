@@ -35,12 +35,20 @@ export default [{
   name: 'MyProfile',
   component: MyProfile,
   icon: PreferencesIcon,
+  hideWhenScope: [null],
 },{
   path: '/adminview',
   name: 'AdminView',
   component: AdminView,
   icon: PreferencesIcon,
-},
+  hideWhenScope: [null, "user"],
+},{
+  path: '/logout',
+  name: 'Logout',
+  component: Logout,
+  icon: LogoutIcon,
+  hideWhenScope: [null],
+}
 /*{
   path: '/logout',
   name: 'Logout',

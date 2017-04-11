@@ -4,6 +4,8 @@ import { AppBar, Divider, Drawer, MenuItem } from 'material-ui';
 
 import routes from '../../utils/routes';
 import theme from '../../utils/theme';
+import isArray from 'lodash/isArray';
+import { connect } from 'react-redux';
 
 const styles = {
   drawer: {
@@ -29,6 +31,10 @@ class MenuDrawer extends Component {
               active = true;
             }
 
+            if (isArray(route.hideWhenScope) && route.hideWhenScope.includes(this.props.scope)) {
+              return null;
+            }
+
             return(
               <div key={index}>
                 {route.separator ? <Divider /> : null}
@@ -47,4 +53,9 @@ class MenuDrawer extends Component {
   }
 }
 
-export default MenuDrawer;
+export default connect (
+ (state, ownProps) => ({
+   scope: state.auth.data.decoded && state.auth.data.decoded.scope,
+ })
+
+)(MenuDrawer);

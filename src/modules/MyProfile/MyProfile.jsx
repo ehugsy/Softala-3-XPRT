@@ -60,7 +60,7 @@ class MyProfile extends Component {
 
     return (
       <div>
-        <div style={styles.firstWrapper}>
+        <div style={styles.firstWrapper} onClick={EditPictureModal}>
           {/* Profile Picture */}
           <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture,...styles.mobileHide}}/>
           <EditPictureModal />

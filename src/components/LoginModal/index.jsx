@@ -3,6 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import MyTextField from '../MyTextField';
 import theme from '../../utils/theme';
+import rest from '../../services/rest';
 
 const styles = {
   buttonStyle: {
@@ -35,6 +36,8 @@ class LoginModal extends Component {
 
   state = {
     open: false,
+    email: '',
+    password: '',
   };
 
   handleOpen = () => {
@@ -45,21 +48,17 @@ class LoginModal extends Component {
     this.setState({open: false});
   };
 
-  render() {
+  handleSubmit = () => {
+    this.props.doLogin({email: this.state.email, password: this.state.password});
+  };
 
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        disabled={true}
-        onTouchTap={this.handleClose}
-      />,
-  ];
+  handleChange = (event, field) => {
+    this.setState({
+      [field]: event.target.value,
+    })
+  };
+
+  render() {
 
     return(
 
@@ -74,8 +73,18 @@ class LoginModal extends Component {
           contentStyle={styles.dialog}
           onRequestClose={this.handleClose}>
           <div>
-            <MyTextField label="Username" />
-            <MyTextField label="Password" type="password"/>
+            <MyTextField label="Email"
+                value={this.state.email}
+                onChange={event => {
+                  this.handleChange(event, 'email');
+                }}
+            />
+            <MyTextField label="Password" type="password"
+                value={this.state.password}
+                onChange={event => {
+                  this.handleChange(event, 'password');
+                }}
+            />
             <p style={{textAlign: 'left', fontSize: 13, color: theme.palette.primary2Color}}>Forgotten password?</p>
             <FlatButton
               label='Cancel'
@@ -85,8 +94,7 @@ class LoginModal extends Component {
               label='Login'
               style={styles.LoginButtonStyle}
               primary={true}
-              onTouchTap={this.handleClose}
-              href="/profile"
+              onTouchTap={this.handleSubmit}
             />
           </div>
         </Dialog>

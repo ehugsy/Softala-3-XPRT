@@ -2,6 +2,7 @@ import 'isomorphic-fetch';
 import reduxApi, { transformers } from 'redux-api';
 import adapterFetch from 'redux-api/lib/adapters/fetch';
 import config from 'config';
+import jwt from 'jwt-decode';
 
 import {
   getAuthenticationToken,
@@ -11,14 +12,17 @@ import {
 // Endpoint configurations
 const rest = reduxApi({
   auth: {
-    url: `${config.API_ROOT}/admins/authenticate`,
+    url: `${config.API_ROOT}/users/authenticate`,
     transformer: (data = {
       token: getAuthenticationToken()
     }) => {
       if (data.token) {
         setAuthenticationToken(data.token);
       }
-      return data;
+      return {
+        ...data,
+        decoded: data.token && jwt(data.token)
+      };
     },
     options: {
       method: 'POST'

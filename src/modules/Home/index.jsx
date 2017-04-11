@@ -8,6 +8,9 @@ export default connect(
   (dispatch) => ({
     getExperts() {
       dispatch(rest.actions.experts());
+    },
+    doLogin(creds) {
+      dispatch(rest.actions.auth({}, { body: JSON.stringify(creds) }));
     }
   })
 )(HomeView);

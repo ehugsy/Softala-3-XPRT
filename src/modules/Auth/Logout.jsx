@@ -10,7 +10,7 @@ export default connect(
       clearAuthenticationToken();
 
       // reload app
-      location.reload();
+      location.pathname = '/';
     }
   })
 )(LogoutView);
