@@ -117,7 +117,7 @@ let users = [{
   lectureDetails: 'Details about preferred lecture topics'
 }, {
   userType: 'Teacher',
-  name: 'Ensio Eimonen',
+  name: 'Jukka Eimonen',
   email: 'ensio@gmail.com',
   city: 'Helsinki',
   phone: '+358 45 23423434',
@@ -135,15 +135,44 @@ let users = [{
   ],
   lectureDetails: 'Details about preferred lecture topics'
 }, {
-  userType: 'Expert',
-  name: 'Einari Nieminen',
-  email: 'einari@hotmail.com',
-  city: 'Tampere'
+  userType: 'Teacher',
+  name: 'Seppo Eimonen',
+  email: 'ensio@gmail.com',
+  city: 'Helsinki',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Mikkeli',
+    'Pietari',
+    'Kouvola'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'yes',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Travelling',
+    'Guidance'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
 }, {
-  userType: 'Expert',
-  name: 'Matti Meikäläinen',
-  email: 'matti@gmail.com',
-  city: 'Helsinki'
+  userType: 'Teacher',
+  name: 'Teppo Eimonen',
+  email: 'ensio@gmail.com',
+  city: 'Helsinki',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Turku',
+    'Alastaro'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'yes',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Travelling',
+    'Guidance'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
 }];
 
 let lectures = [
@@ -430,13 +459,17 @@ return (
           const contactName = user.name.toLowerCase();
           const contactEmail = user.email.toLowerCase();
           const contactType = user.userType.toLowerCase();
+          const supportedLocationsList = user.supportedLocations.toString().toLowerCase();
+          const subjectsList = user.subjects.toString().toLowerCase();
           //const contactCity = contact.city.toLowerCase();
           const searchString = this.state.userSearch.toLowerCase();
 
 
           return contactName.indexOf(searchString) !== -1 ||
           contactEmail.indexOf(searchString) !== -1 ||
-          contactType.indexOf(searchString) !== -1
+          contactType.indexOf(searchString) !== -1 ||
+          subjectsList.indexOf(searchString) !== -1 ||
+          supportedLocationsList.indexOf(searchString) !== -1
           //||contactCity.indexOf(searchString) !== -1
           ;
         });
