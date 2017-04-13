@@ -148,12 +148,11 @@ const styles = {
   */
   titleStyle: {
     fontSize: '16px',
-    color: theme.palette.textColor,
+    color: theme.palette.primary2Color,
     fontWeight: '300',
   },
   subtitleStyle: {
     fontSize: '16px',
-    textDecorationLine: 'underline',
     color: theme.palette.textColor,
     marginTop: '7px',
     fontWeight: '300'

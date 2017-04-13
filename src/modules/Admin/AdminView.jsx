@@ -29,30 +29,118 @@ import MenuItem from 'material-ui/MenuItem';
 import styles from './adminStyles';
 
 let users = [{
+  userType: 'Expert',
   name: 'Scott Sterling',
   email: 'scott@gmail.com',
-  city: 'Helsinki'
+  city: 'Helsinki',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Helsinki',
+    'Espoo',
+    'Vantaa'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'yes',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Java',
+    'PHP',
+    'NodeJS',
+    'Coding'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
+
 }, {
+  userType: 'Expert',
   name: 'Tim Thomson',
   email: 'tim@yahoo.com',
-  city: 'Tampere'
+  city: 'Tampere',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Helsinki',
+    'Espoo',
+    'Vantaa'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'yes',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Mathematics',
+    'Physics'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
 }, {
+  userType: 'Teacher',
   name: 'Matilda Madison',
   email: 'matilda@gmail.com',
-  city: 'Turku'
+  city: 'Turku',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Rovaniemi',
+    'Kemi',
+    'Kuusamo',
+    'Oulu'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'no',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Major Tom',
+    'Lalilulelo',
+    'Liquid',
+    'Snake'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
 }, {
+  userType: 'Expert',
   name: 'Arska Schwarzenegger',
   email: 'arska@gmail.com',
-  city: 'Oulu'
+  city: 'Oulu',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Helsinki',
+    'Espoo'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'no',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Major Tom',
+    'Lalilulelo',
+    'Liquid',
+    'Snake'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
 }, {
+  userType: 'Teacher',
   name: 'Ensio Eimonen',
   email: 'ensio@gmail.com',
-  city: 'Helsinki'
+  city: 'Helsinki',
+  phone: '+358 45 23423434',
+  supportedLocations:[
+    'Helsinki',
+    'Espoo'
+  ],
+  company: 'Sportmrt',
+  jobTitle: 'CEO',
+  officeVisit: 'yes',
+  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
+  subjects:[
+    'Travelling',
+    'Guidance'
+  ],
+  lectureDetails: 'Details about preferred lecture topics'
 }, {
+  userType: 'Expert',
   name: 'Einari Nieminen',
   email: 'einari@hotmail.com',
   city: 'Tampere'
 }, {
+  userType: 'Expert',
   name: 'Matti Meikäläinen',
   email: 'matti@gmail.com',
   city: 'Helsinki'
@@ -256,6 +344,21 @@ class AdminView extends Component {
   )
 }
 
+function CityList(props){
+const cities = props.cities;
+const length = cities.length;
+const list = cities.map((cities, i) => {
+if (length === i+1) {
+  return <span>{cities}</span>
+} else {
+  return <span>{cities}, </span>
+}
+});
+return (
+<span>{list}</span>
+)
+}
+
     filteredLectures = filteredLectures.map((lecture) => (
       <div key={lecture.lecturetheme}>
         <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
@@ -326,11 +429,14 @@ class AdminView extends Component {
         let filteredUsers = users.filter((user) => {
           const contactName = user.name.toLowerCase();
           const contactEmail = user.email.toLowerCase();
+          const contactType = user.userType.toLowerCase();
           //const contactCity = contact.city.toLowerCase();
           const searchString = this.state.userSearch.toLowerCase();
 
+
           return contactName.indexOf(searchString) !== -1 ||
-          contactEmail.indexOf(searchString) !== -1
+          contactEmail.indexOf(searchString) !== -1 ||
+          contactType.indexOf(searchString) !== -1
           //||contactCity.indexOf(searchString) !== -1
           ;
         });
@@ -338,7 +444,7 @@ class AdminView extends Component {
         filteredUsers = filteredUsers.map((user) => (
           <div key={user.name}>
             <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
-              <CardHeader title={user.name} subtitle={user.email} titleStyle={{
+              <CardHeader title={user.name} subtitle={user.userType} titleStyle={{
                   ...styles.titleStyle}}
                   subtitleStyle={{
                     ...styles.subtitleStyle}}
@@ -347,10 +453,46 @@ class AdminView extends Component {
                   </CardHeader>
 
                   <CardText expandable={true}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                    Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                    Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                    <div style={styles.parent}>
+                      <div style={styles.left}>
+                        <p>
+                          <strong>Email:</strong><br />
+                          {user.email}
+                        </p>
+                        <p>
+                          <strong>Phone number:</strong><br />
+                          {user.phone}
+                        </p>
+                        <p>
+                          <strong>Location:</strong><br />
+                          <SubjectList subjects={user.supportedLocations}/>
+                        </p>
+                        <p>
+                          <strong>Company:</strong><br />
+                          {user.company}
+                        </p>
+                        </div>
+                        <div style={styles.middle}>
+                        <p>
+                          <strong>Job title:</strong><br />
+                          {user.jobTitle}
+                        </p>
+                        <p>
+                          <strong>Office visit possible:</strong><br />
+                          {user.officeVisit}
+                        </p>
+                        <p>
+                          <strong>Introduction</strong><br />
+                          {user.introduction}
+                        </p>
+                        <p>
+                          <strong>Subjects:</strong><br />
+                          <SubjectList subjects={user.subjects}/>
+                        </p>
+                    </div>
+                    <div style={styles.right}>
+                    </div>
+                    </div>
                   </CardText>
                 </Card>
               </div>
