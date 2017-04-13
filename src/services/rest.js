@@ -28,6 +28,12 @@ const rest = reduxApi({
       method: 'POST'
     }
   },
+
+  register: {
+    url: `${config.API_ROOT}/users`,
+    crud: true,  
+  }
+
   // Add more API endpoints here! Examples below:
 
   /*
