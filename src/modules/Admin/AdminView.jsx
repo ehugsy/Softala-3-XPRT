@@ -99,7 +99,8 @@ let lectures = [
   subjects:[
     'Java',
     'PHP',
-    'NodeJS'
+    'NodeJS',
+    'Coding'
   ],
   educationalstage: 'Upper Secondary School',
   lecturetheme: 'Back-End choises',
@@ -177,7 +178,8 @@ let lectures = [
    school: 'Haaga-Helia ammattikorkeakoulu',
    subjects:[
      'React',
-     'Git'
+     'Git',
+     'Coding'
    ],
    educationalstage: 'Upper Secondary School',
    lecturetheme: 'Basics of using React and Git',
@@ -219,6 +221,10 @@ class AdminView extends Component {
       const teacherName = lecture.from[0].name.toLowerCase();
       const expertEmail = lecture.to[0].email.toLowerCase();
       const teacherEmail = lecture.from[0].email.toLowerCase();
+      const schoolName = lecture.school.toLowerCase();
+      const location = lecture.location.toLowerCase();
+      const subjectsList = lecture.subjects.toString().toLowerCase();
+
       const lectureStatus = lecture.status;
       //const contactCity = contact.city.toLowerCase();
       const searchString = this.state.lectureSearch.toLowerCase();
@@ -228,7 +234,10 @@ class AdminView extends Component {
       expertName.indexOf(searchString) !== -1
       || teacherName.indexOf(searchString) !== -1
       || expertEmail.indexOf(searchString) !== -1
-      || teacherEmail.indexOf(searchString) !== -1)
+      || teacherEmail.indexOf(searchString) !== -1
+      || schoolName.indexOf(searchString) !== -1
+      || location.indexOf(searchString) !== -1
+      || subjectsList.indexOf(searchString) !== -1)
       && (lectureStatus === stateValue || stateValue === 'all');
     });
 
@@ -243,7 +252,7 @@ class AdminView extends Component {
     }
   });
   return (
-    <p>{list}</p>
+    <span>{list}</span>
   )
 }
 
@@ -364,7 +373,7 @@ class AdminView extends Component {
                             onChange={this.updateUserSearch.bind(this)}
                             value={this.state.userSearch}
                             style={styles.fullSearchBar}
-                            hintText="Search for subjects, teachers, experts"
+                            hintText="Search for experts and teachers"
                             floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                             underlineFocusStyle={styles.underlineStyle}
                             floatingLabelFixed={true}
@@ -391,7 +400,7 @@ class AdminView extends Component {
                       <TextField
                         onChange={this.updateLectureSearch.bind(this)}
                         value={this.state.lectureSearch}
-                        hintText="Search for subjects, teachers, experts"
+                        hintText="Search for lecture, location, school etc."
                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                         underlineFocusStyle={styles.underlineStyle}
                         floatingLabelFixed={true}
