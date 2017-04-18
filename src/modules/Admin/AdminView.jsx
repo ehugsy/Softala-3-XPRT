@@ -317,7 +317,7 @@ class AdminView extends Component {
   /* Gives sorting dropdown menu a default value. 1 = first value of options */
   constructor(props) {
     super(props);
-    this.state = {value: 'all', lectureSearch: '', userSearch: ''};
+    this.state = {userValue: 'all', lectureValue: 'all', lectureSearch: '', userSearch: ''};
   }
 
   updateLectureSearch(event){
@@ -328,7 +328,8 @@ class AdminView extends Component {
     this.setState({userSearch: event.target.value})
   }
 
-  handleChange = (event, index, value) => this.setState({value});
+  lectureHandleChange = (event, index, lectureValue) => this.setState({lectureValue});
+  userHandleChange = (event, index, userValue) => this.setState({userValue});
 
   render() {
 
@@ -345,7 +346,7 @@ class AdminView extends Component {
       const lectureStatus = lecture.status;
       //const contactCity = contact.city.toLowerCase();
       const searchString = this.state.lectureSearch.toLowerCase();
-      const stateValue = this.state.value;
+      const stateValue = this.state.lectureValue;
 
       return (lectureName.indexOf(searchString) !== -1 ||
       expertName.indexOf(searchString) !== -1
@@ -463,13 +464,15 @@ return (
           const subjectsList = user.subjects.toString().toLowerCase();
           //const contactCity = contact.city.toLowerCase();
           const searchString = this.state.userSearch.toLowerCase();
+          const userType = user.userType;
+          const stateValue = this.state.userValue;
 
-
-          return contactName.indexOf(searchString) !== -1 ||
+          return (contactName.indexOf(searchString) !== -1 ||
           contactEmail.indexOf(searchString) !== -1 ||
           contactType.indexOf(searchString) !== -1 ||
           subjectsList.indexOf(searchString) !== -1 ||
-          supportedLocationsList.indexOf(searchString) !== -1
+          supportedLocationsList.indexOf(searchString) !== -1)
+          && (userType === stateValue || stateValue === 'all');
           //||contactCity.indexOf(searchString) !== -1
           ;
         });
@@ -543,18 +546,25 @@ return (
                   <div>
                     <br></br>
                       <div style={styles.firstWrapper}>
-                        <div style={styles.leftSpace}></div>
-                          <TextField
-                            onChange={this.updateUserSearch.bind(this)}
-                            value={this.state.userSearch}
-                            style={styles.fullSearchBar}
-                            hintText="Search for experts and teachers"
-                            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                            underlineFocusStyle={styles.underlineStyle}
-                            floatingLabelFixed={true}
-                            className="formcontainer"
-                            fullWidth={true}/>
 
+                        <DropDownMenu value={this.state.userValue} onChange={this.userHandleChange} openImmediately={false} style={styles.DropDownMenu}>
+                          <MenuItem value={'all'} primaryText="ALL" />
+                          <MenuItem value={'Expert'} primaryText="EXPERTS" />
+                          <MenuItem value={'Teacher'} primaryText="TEACHERS" />
+                        </DropDownMenu>
+                        <div style={styles.leftSpace}></div>
+                          <div style={styles.leftText}>
+                            <TextField
+                              onChange={this.updateUserSearch.bind(this)}
+                              value={this.state.userSearch}
+                              style={styles.fullSearchBar}
+                              hintText="Search for experts and teachers"
+                              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                              underlineFocusStyle={styles.underlineStyle}
+                              floatingLabelFixed={true}
+                              className="formcontainer"
+                              fullWidth={true}/>
+                        </div>
                       </div>
                       {filteredUsers}
                   </div>
@@ -563,7 +573,7 @@ return (
                   <br></br>
                   <div style={styles.firstWrapper}>
 
-                    <DropDownMenu value={this.state.value} onChange={this.handleChange} openImmediately={false} style={styles.DropDownMenu}>
+                    <DropDownMenu value={this.state.lectureValue} onChange={this.lectureHandleChange} openImmediately={false} style={styles.DropDownMenu}>
                       <MenuItem value={'all'} primaryText="ALL" />
                       <MenuItem value={'waiting'} primaryText="WAITING FOR RESPONSE" />
                       <MenuItem value={'accepted'} primaryText="ACCEPTED" />
