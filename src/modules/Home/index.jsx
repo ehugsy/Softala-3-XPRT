@@ -13,7 +13,11 @@ export default connect(
       dispatch(rest.actions.auth({}, { body: JSON.stringify(creds) }));
     },
     doRegister(user) {
-      dispatch(rest.actions.register.post({}, { body: JSON.stringify({name: user.name, email: user.email, password: user.password, description: user.description, title: user.title, address: user.address, phone: user.phone, locale: 'fi'}) }));
-    } // TODO: doRegister dispatch missing isExpert and 'area: user.area, subjects: user.subjects' because convert to json is required for these two in backend
+      dispatch(rest.actions.register.post({}, { body: JSON.stringify(
+        {name: user.name, email: user.email, password: user.password, description: user.shortIntroduction,
+          title: user.title, address: user.officeAddress, phone: user.phone, locale: 'fi', subjects: user.subjects,
+        area: user.supportedLocations})
+         }));
+    } // TODO: Missing fields CompanyName
   })
 )(HomeView);
