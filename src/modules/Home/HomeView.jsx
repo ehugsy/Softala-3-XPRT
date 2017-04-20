@@ -99,6 +99,7 @@ class Home extends Component  {
                   turkey tongue drumstick boudin ball tip beef ribs pancetta
                   tail turducken pig chuck.</p>
               </div>
+              <div style={styles.emptyImage}></div>
             </div>
           </div>
         </div>
