@@ -299,7 +299,7 @@ let lectures = [
      'Coding'
    ],
    educationalstage: 'Upper Secondary School',
-   lecturetheme: 'Basics of using React and Git',
+   lecturetheme: 'Lets code',
    dateoflecture:[
      {option1: '22.03.2017',
      option2: '16.04.2017'}
@@ -307,6 +307,60 @@ let lectures = [
    location: 'Ratapihantie 13, Helsinki',
    description: 'We make a little web application together with React',
    status: 'ignored',
+   resposeDate: ''
+},
+{
+   from: [
+     {name: 'Matti Meikäläinen',
+     email: 'mattimeikäläinen@gmail.com'}
+   ],
+   to: [
+     {name: 'Teuvo Teikäläinen',
+     email: 'teuvoteikalainen@gmail.com'}
+   ],
+   datesent: '11.11.2016',
+   school: 'Haaga-Helia ammattikorkeakoulu',
+   subjects:[
+     'React',
+     'Git',
+     'Coding'
+   ],
+   educationalstage: 'Upper Secondary School',
+   lecturetheme: 'Basics of using React and Git',
+   dateoflecture:[
+     {option1: '22.03.2017',
+     option2: '16.04.2017'}
+   ],
+   location: 'Ratapihantie 13, Helsinki',
+   description: 'We make a little web application together with React',
+   status: 'held',
+   resposeDate: ''
+},
+{
+   from: [
+     {name: 'Matti Meikäläinen',
+     email: 'mattimeikäläinen@gmail.com'}
+   ],
+   to: [
+     {name: 'Teuvo Teikäläinen',
+     email: 'teuvoteikalainen@gmail.com'}
+   ],
+   datesent: '11.11.2016',
+   school: 'Haaga-Helia ammattikorkeakoulu',
+   subjects:[
+     'React',
+     'Git',
+     'Coding'
+   ],
+   educationalstage: 'Upper Secondary School',
+   lecturetheme: 'Coding lecture',
+   dateoflecture:[
+     {option1: '22.03.2017',
+     option2: '16.04.2017'}
+   ],
+   location: 'Ratapihantie 13, Helsinki',
+   description: 'We make a little web application together with React',
+   status: 'held',
    resposeDate: ''
 }];
 
@@ -579,6 +633,7 @@ return (
                       <MenuItem value={'accepted'} primaryText="ACCEPTED" />
                       <MenuItem value={'declined'} primaryText="DECLINED" />
                       <MenuItem value={'ignored'} primaryText="IGNORED" />
+                      <MenuItem value={'held'} primaryText="HELD" />
                     </DropDownMenu>
                     <div style={styles.leftSpace}></div>
                     <div style={styles.leftText}>
