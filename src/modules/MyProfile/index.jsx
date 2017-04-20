@@ -4,10 +4,13 @@ import MyProfile from './MyProfile';
 import rest from '../../services/rest';
 
 export default connect(
-  (state) => ({}),
+  (state) => ({
+    profile: state.profile,
+  }),
   (dispatch) => ({
-    getExperts() {
-      dispatch(rest.actions.experts());
+    refresh() {
+      dispatch(rest.actions.profile());
+      // dispatch(rest.actions.invitations());
     }
   })
 )(MyProfile);

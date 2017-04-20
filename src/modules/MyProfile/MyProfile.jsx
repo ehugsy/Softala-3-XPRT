@@ -46,6 +46,7 @@ import styles from './myProfileStyles';
     lectureDetails: 'Details about preferred lecture topics'
   }
 
+
   let lectures = [
    {
      name: 'Esa Peltonen',
@@ -133,7 +134,13 @@ import styles from './myProfileStyles';
 @Radium
 class MyProfile extends Component {
 
+  componentDidMount() {
+    this.props.refresh();
+  }
+
   render() {
+    let expert = this.props.profile.data;
+    console.log(expert);
 
     function LocationsList(props) {
       const locations = props.locations;
@@ -308,7 +315,7 @@ class MyProfile extends Component {
       <div>
         <div style={styles.firstWrapper} onClick={EditPictureModal}>
           {/* Profile Picture */}
-          <img src={'../../img/placeholder_profilepicture.png'} style={{...styles.profilePicture,...styles.mobileHide}}/>
+          <img src={expert.imageUrl} style={{...styles.profilePicture,...styles.mobileHide}}/>
           <EditPictureModal />
         </div>
 
@@ -321,11 +328,11 @@ class MyProfile extends Component {
               {/* This modal opens up editing window of profile's basic info*/}
               <EditBasicInfoModal />
               <p style={styles.mainDivTextTitle}>NAME:</p>
-              <p style={styles.mainDivText}>{user.name}</p>
+              <p style={styles.mainDivText}>{expert.name}</p>
               <p style={styles.mainDivTextTitle}>PHONE:</p>
-              <p style={styles.mainDivText}>{user.phone}</p>
+              <p style={styles.mainDivText}>{expert.phone}</p>
               <p style={styles.mainDivTextTitle}>E-MAIL:</p>
-              <p style={styles.mainDivText}>{user.email}</p>
+              <p style={styles.mainDivText}>{expert.email}</p>
               <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
               <LocationsList locations={user.supportedLocations}/>
             </div>
@@ -336,7 +343,7 @@ class MyProfile extends Component {
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>{user.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
-              <p style={styles.mainDivText}>{user.jobTitle}</p>
+              <p style={styles.mainDivText}>{expert.title}</p>
               <Checkbox label="Office visit possible" checked={user.officeVisit} disabled={true} style={styles.checkbox}/>
             </div>
               {/* Contains short introductions, label, etc. */}
@@ -344,7 +351,7 @@ class MyProfile extends Component {
               {/*Opens editing modal*/}
               <EditExpertDetailsModal />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
-              <p style={styles.mainDivText}>{user.introduction}</p>
+              <p style={styles.mainDivText}>{expert.description}</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
               {/*Next div wraps subjects chips close todether*/}
               <SubjectChips subjects={user.subjects}/>

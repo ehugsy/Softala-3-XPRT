@@ -28,6 +28,14 @@ const rest = reduxApi({
       method: 'POST'
     }
   },
+  profile: {
+    url: `${config.API_ROOT}/experts/1`,
+    crud: true,
+  },
+  invitations: {
+    url: `${config.API_ROOT}/invitations`,
+    crud: true,
+  }
   // Add more API endpoints here! Examples below:
 
   /*
