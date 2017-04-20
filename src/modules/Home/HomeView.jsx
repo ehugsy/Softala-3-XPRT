@@ -56,8 +56,10 @@ class Home extends Component  {
             </div>
             <div style={styles.rightText}>
               <p style={styles.smallHeader}>EXPERTS</p>
+
               <p style={styles.mobileFont}>Sign up as an expert and  to share your skills<br /> for the benefit of the future generation.</p>
-              <RegisterModal />
+              <RegisterModal doRegister={this.props.doRegister}/>
+
               <LoginModal doLogin={this.props.doLogin}/><br />
 
               </div>

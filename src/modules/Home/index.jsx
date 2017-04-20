@@ -11,6 +11,13 @@ export default connect(
     },
     doLogin(creds) {
       dispatch(rest.actions.auth({}, { body: JSON.stringify(creds) }));
-    }
+    },
+    doRegister(user) {
+      dispatch(rest.actions.register.post({}, { body: JSON.stringify(
+        {name: user.name, email: user.email, password: user.password, description: user.shortIntroduction, isExpert: true,
+          title: user.title, address: user.officeAddress, phone: user.phone, company: user.companyName, locale: 'fi', subjects: user.subjects,
+        area: user.supportedLocations})
+         }));
+    } // TODO: Missing fields CompanyName
   })
 )(HomeView);
