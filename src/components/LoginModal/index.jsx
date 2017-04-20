@@ -1,36 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import { connect } from 'react-redux';
 import MyTextField from '../MyTextField';
 import theme from '../../utils/theme';
 import rest from '../../services/rest';
+import styles from './loginModalStyles';
 
-const styles = {
-  buttonStyle: {
-    border: '1px solid #555555',
-    margin: 5,
-    padding: '15px',
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-    marginTop: '1em'
-
-  },
-  LoginButtonStyle: {
-    border: '1px solid #555555',
-    margin: 5,
-    padding: '15px',
-    borderRadius: '20px',
-    lineHeight: '0.4em',
-  },
-  buttonGold: {
-    color: theme.palette.primary2Color,
-  },
-  dialog: {
-    width: "100%",
-    maxWidth: "350",
-    textAlign: 'center'
-  }
-}
 
 class LoginModal extends Component {
 
@@ -50,6 +26,8 @@ class LoginModal extends Component {
 
   handleSubmit = () => {
     this.props.doLogin({email: this.state.email, password: this.state.password});
+    console.log(this.props.auth)
+    if(this.props.auth.data.token) {this.handleClose()}
   };
 
   handleChange = (event, field) => {
@@ -59,6 +37,8 @@ class LoginModal extends Component {
   };
 
   render() {
+    const { auth } = this.props;
+    const errMsg = this.props.auth.error && this.props.auth.error.message;
 
     return(
 
@@ -72,7 +52,7 @@ class LoginModal extends Component {
           open={this.state.open}
           contentStyle={styles.dialog}
           onRequestClose={this.handleClose}>
-          <div>
+          <form>
             <MyTextField label="Email"
                 value={this.state.email}
                 onChange={event => {
@@ -86,6 +66,7 @@ class LoginModal extends Component {
                 }}
             />
             <p style={{textAlign: 'left', fontSize: 13, color: theme.palette.primary2Color}}>Forgotten password?</p>
+            {errMsg}
             <FlatButton
               label='Cancel'
               style={styles.buttonStyle}
@@ -96,11 +77,16 @@ class LoginModal extends Component {
               primary={true}
               onTouchTap={this.handleSubmit}
             />
-          </div>
+          </form>
         </Dialog>
       </div>
     )
   }
 }
 
-export default LoginModal;
+export default connect(
+  (state) => ({
+    auth: state.auth,
+  }),
+  (dispatch) => ({}),
+)(LoginModal);
