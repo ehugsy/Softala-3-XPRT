@@ -31,7 +31,6 @@ class RegisterModal extends Component {
 
   handleNext = (values) => {
     const {stepIndex} = this.state;
-    console.log(values)
     if (stepIndex < 2) {
       this.setState({stepIndex: stepIndex + 1});
     } if (stepIndex === 2) {
@@ -48,6 +47,7 @@ class RegisterModal extends Component {
 
   handleSubmit = (values) => {
     console.log(values);
+    this.props.doRegister(values);
     this.setState({open: false, stepIndex: 0});
   };
 
@@ -73,7 +73,7 @@ class RegisterModal extends Component {
         return (
           <ExpertProfileFields
             stepIndex={stepIndex}
-            onSubmit={this.handleNext}
+            onSubmit={this.handleSubmit}
             handleCancel={this.handleCancel}
             handlePrev={this.handlePrev} />
         );
