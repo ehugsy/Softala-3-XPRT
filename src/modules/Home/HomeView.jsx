@@ -50,13 +50,13 @@ class Home extends Component  {
           <div style={styles.teacherExpertWrapper}>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>TEACHERS</p>
-              <p style={styles.mobileFont}>Download and install the app to browse and view the experts' profile. Easily inite experts to your classroom.</p>
+              <p style={styles.mobileFont}>Download and install the app to browse and view the experts'<br /> profile. Easily inite experts to your classroom.</p>
               <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
               <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
             </div>
             <div style={styles.rightText}>
               <p style={styles.smallHeader}>EXPERTS</p>
-              <p style={styles.mobileFont}>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
+              <p style={styles.mobileFont}>Sign up as an expert and  to share your skills<br /> for the benefit of the future generation.</p>
               <RegisterModal />
               <LoginModal doLogin={this.props.doLogin}/><br />
 
