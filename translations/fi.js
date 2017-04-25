@@ -8,5 +8,6 @@ export default {
   MyAccount: 'Omat tiedot',
   ContactUs: 'OTA YHTEYTTÄ',
   AboutXprt: 'Tietoa XPRT:stä',
-  MyProfile: 'Oma profiili'
+  MyProfile: 'Oma profiili',
+  AdminView: 'Admin näkymä',
 };
