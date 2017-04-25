@@ -20,164 +20,69 @@ import EditPictureModal from '../../components/MyProfileEditModals/EditPictureMo
 import Footer from '../Footer';
 import styles from './myProfileStyles';
 
-{/*
-  Next two constructors contain
-  Mocup-data for this page
-  */}
-  let user = {
-    name: 'Scott Sterling',
-    email: 'scott@gmail.com',
-    city: 'Helsinki',
-    phone: '+358 45 23423434',
-    supportedLocations:[
-      'Helsinki',
-      'Espoo',
-      'Vantaa'
-    ],
-    company: 'Sportmrt',
-    jobTitle: 'CEO',
-    officeVisit: true,
-    introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-    subjects:[
-      'Java',
-      'PHP',
-      'NodeJS',
-      'Coding'
-    ],
-    lectureDetails: 'Details about preferred lecture topics'
+function LocationsList(props) {
+  const locations = props.locations;
+  if (!locations) {
+    return null;
   }
 
+  const length = locations.length;
+  const list = locations.map((location, i) => {
+    if (length === i + 1) {
+      return <span>{location}</span>;
+    } else {
+      return <span>{location}, </span>;
+    }
+  });
+  return (
+    <p style={styles.mainDivText}>{list}</p>
+  );
+}
 
-  let lectures = [
-   {
-     name: 'Esa Peltonen',
-     email: 'esapeltonen@gmail.com',
-     datesent: '10.11.2016',
-     school: 'The International School of Helsinki',
-     subjects:[
-       'Mathematics',
-       'Physics'
-     ],
-     educationalstage: 'Upper Secondary School',
-     lecturetheme: 'Making Numbers Cool',
-     dateoflecture:[
-       {option1: '12.03.2017',
-       option2: '14.03.2017'}
-     ],
-     location: 'Mannerheimintie 500, Helsinki',
-     description: 'Why mathematics should be considered cool and worth learning. Also Cookiees',
-     status: 'accepted',
-     responseDate: '22.11.2016'
-  },
-  {
-    name: 'Tim Thomson',
-    email: 'tim@yahoo.com',
-    datesent: '06.04.2016',
-    school: 'Haaga-Helia ammattikorkeakoulu',
-    subjects:[
-      'Java',
-      'PHP',
-      'NodeJS',
-      'Coding'
-    ],
-    educationalstage: 'Upper Secondary School',
-    lecturetheme: 'Back-End choises',
-    dateoflecture:[
-      {option1: '12.05.2017',
-      option2: '14.05.2017'}
-    ],
-    location: 'Ratapihantie 13, Helsinki',
-    description: 'Pros and cons about back-end coding languages',
-    status: 'waiting',
-    responseDate: ''
-  },
-  {
-    name: 'Matilda Madison',
-    email: 'matilda@gmail.com',
-    datesent: '10.04.2016',
-    school: 'Aalto yliopisto',
-    subjects:[
-      'Travelling',
-      'Guidance'
-    ],
-    educationalstage: 'University',
-    lecturetheme: 'New opportunities for a travel guide',
-    dateoflecture:[
-      {option1: '15.05.2017',
-      option2: '20.05.2017'}
-    ],
-    location: 'Yliopistotie 20, Helsinki',
-    description: 'Travelling in Africa is getting popular and it is giving more opportunities for travel guides',
-    status: 'waiting',
-    responseDate: ''
-  },
-  {
-    name: 'Einari Nieminen',
-    email: 'einari@hotmail.com',
-    datesent: '06.12.2016',
-    school: 'Rovaniemen lukio',
-    subjects:[
-      'Animals',
-      'Breeding'
-    ],
-    educationalstage: 'High School',
-    lecturetheme: 'Reindeer breeding',
-    dateoflecture:[
-      {option1: '12.03.2017',
-      option2: '14.03.2017'}
-    ],
-    location: 'Porokuja 50, Rovaniemi',
-    description: 'Things you need to know about reindeer breeding',
-    status: 'declined',
-    responseDate: '07.12.2016'
-  }];
+function SubjectChips(props) {
+  const subjects = props.subjects;
+  if (!subjects) {
+    return null;
+  }
+
+  const list = subjects.map((subject) =>
+  <Chip style={styles.chip}>{subject}</Chip>
+  );
+  return (
+    <div style={styles.wrapper}>{list}</div>
+  );
+}
+
+function SubjectList(props){
+  const subjects = props.subjects;
+  const length = subjects.length;
+  const list = subjects.map((subjects, i) => {
+    if (length === i+1) {
+      return <span>{subjects}</span>
+    } else {
+      return <span>{subjects}, </span>
+    }
+  });
+  return (
+    <span>{list}</span>
+  )
+}
 
 @Radium
-class MyProfile extends Component {
-
+export default class MyProfile extends Component {
   componentDidMount() {
     this.props.refresh();
-    console.log("refresh");
   }
 
   render() {
     let expert = this.props.profile.data;
     let loading = this.props.profile.loading;
 
-    if (loading) {
-      return (
-        <CircularProgress />
-      )
+    if (!expert || loading) {
+      return <CircularProgress />;
     }
 
-    console.log(expert);
-    console.log(loading);
-
-    function LocationsList(props) {
-      console.log(props);
-      const locations = props.locations;
-      const length = locations.length;
-      const list = locations.map((location, i) => {
-        if (length === i + 1) {
-          return <span>{location}</span>;
-        } else {
-          return <span>{location}, </span>;
-        }
-      });
-      return (
-        <p style={styles.mainDivText}>{list}</p>
-      );
-    }
-
-    function SubjectChips(props) {
-      const subjects = props.subjects;
-      const list = subjects.map((subject) =>
-      <Chip style={styles.chip}>{subject}</Chip>
-      );
-      return (
-        <div style={styles.wrapper}>{list}</div>
-      );
-    }
+    const lectures = [];
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
@@ -196,21 +101,6 @@ class MyProfile extends Component {
 
       return status === 'declined';
     });
-
-    function SubjectList(props){
-      const subjects = props.subjects;
-      const length = subjects.length;
-      const list = subjects.map((subjects, i) => {
-        if (length === i+1) {
-          return <span>{subjects}</span>
-        } else {
-          return <span>{subjects}, </span>
-        }
-      });
-      return (
-        <span>{list}</span>
-      )
-    }
 
     invitations = invitations.map((lecture) => (
       <Card style={{
@@ -355,7 +245,7 @@ class MyProfile extends Component {
               <p style={styles.mainDivText}>{expert.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
               <p style={styles.mainDivText}>{expert.title}</p>
-              <Checkbox label="Office visit possible" checked={user.officeVisit} disabled={true} style={styles.checkbox}/>
+              <Checkbox label="Office visit possible" checked={expert.officeVisit} disabled={true} style={styles.checkbox}/>
             </div>
               {/* Contains short introductions, label, etc. */}
             <div style={styles.contentCardLeft}>
@@ -365,7 +255,7 @@ class MyProfile extends Component {
               <p style={styles.mainDivText}>{expert.description}</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>
               {/*Next div wraps subjects chips close todether*/}
-              <SubjectChips subjects={user.subjects}/>
+              <SubjectChips subjects={expert.subjects}/>
               <p style={styles.mainDivTextTitle}>LECTURE DETAILS:
               </p>
               <p style={styles.mainDivText}>{expert.lectureDetails}</p>
@@ -392,4 +282,3 @@ class MyProfile extends Component {
     );
   }
 }
-export default MyProfile;
