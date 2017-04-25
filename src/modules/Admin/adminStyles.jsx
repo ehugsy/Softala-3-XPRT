@@ -200,6 +200,7 @@ const styles = {
     },
     right: {
       order: 3,
+      paddingRight: '50px',
       //background: 'green',
       flexBasis: '100%',
     },

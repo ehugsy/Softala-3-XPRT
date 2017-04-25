@@ -27,7 +27,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import styles from './adminStyles';
-
+import EditModal from '../../components/AdminEdit/EditModal';
 let users = [{
   userType: 'Expert',
   name: 'Scott Sterling',
@@ -534,7 +534,7 @@ return (
         filteredUsers = filteredUsers.map((user) => (
           <div key={user.name}>
             <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
-              <CardHeader title={user.name} subtitle={user.userType} titleStyle={{
+              <CardHeader title={user.name} subtitle={user.userType}  text={user.email} titleStyle={{
                   ...styles.titleStyle}}
                   subtitleStyle={{
                     ...styles.subtitleStyle}}
@@ -580,7 +580,9 @@ return (
                           <SubjectList subjects={user.subjects}/>
                         </p>
                     </div>
+
                     <div style={styles.right}>
+                      <EditModal />
                     </div>
                     </div>
                   </CardText>
