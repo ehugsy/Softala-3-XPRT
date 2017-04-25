@@ -2,15 +2,22 @@ import { connect } from 'react-redux';
 
 import HomeView from './HomeView';
 import rest from '../../services/rest';
+import { push } from 'react-router-redux'
+
 
 export default connect(
-  (state) => ({}),
+  (state) => ({
+    isLoggedIn:!!state.auth.data.token,
+  }),
   (dispatch) => ({
     getExperts() {
       dispatch(rest.actions.experts());
     },
-    doLogin(creds) {
-      dispatch(rest.actions.auth({}, { body: JSON.stringify(creds) }));
+    changeView(view) {
+      dispatch(push(view.toLowerCase()));
+    },
+    doLogin(creds, callback) {
+      dispatch(rest.actions.auth({}, { body: JSON.stringify(creds) }, callback));
     },
     doRegister(user) {
       dispatch(rest.actions.register.post({}, { body: JSON.stringify(
