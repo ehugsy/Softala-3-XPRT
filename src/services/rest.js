@@ -36,7 +36,7 @@ const rest = reduxApi({
   invitations: {
     url: `${config.API_ROOT}/invitations`,
     crud: true,
-  }
+  },
   register: {
     url: `${config.API_ROOT}/users`,
     crud: true,
