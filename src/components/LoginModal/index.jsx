@@ -6,7 +6,7 @@ import MyTextField from '../MyTextField';
 import theme from '../../utils/theme';
 import rest from '../../services/rest';
 import styles from './loginModalStyles';
-
+import { push } from 'react-router-redux'
 
 class LoginModal extends Component {
 
@@ -25,9 +25,12 @@ class LoginModal extends Component {
   };
 
   handleSubmit = () => {
-    this.props.doLogin({email: this.state.email, password: this.state.password});
-    console.log(this.props.auth)
-    if(this.props.auth.data.token) {this.handleClose()}
+    this.props.doLogin({email: this.state.email, password: this.state.password}, (err) => {
+      if (!err){
+        this.handleClose();
+        this.props.changeView('/profile');
+      }
+    });
   };
 
   handleChange = (event, field) => {
@@ -44,7 +47,6 @@ class LoginModal extends Component {
 
       <div>
         <FlatButton label="LOGIN" style={{...styles.buttonStyle, ...styles.buttonGold}} onTouchTap={this.handleOpen}/>
-
         <Dialog
           title='LOGIN'
           titleStyle={{color: theme.palette.primary2Color, fontSize: 17}}
@@ -88,5 +90,9 @@ export default connect(
   (state) => ({
     auth: state.auth,
   }),
-  (dispatch) => ({}),
+  (dispatch) => ({
+    changeView(view) {
+      dispatch(push(view.toLowerCase()));
+    },
+  }),
 )(LoginModal);
