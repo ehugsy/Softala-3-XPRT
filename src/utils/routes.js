@@ -21,6 +21,12 @@ export default [{
   component: Home,
   icon: HomeIcon,
 }, {
+  path: '/profile',
+  name: 'MyProfile',
+  component: MyProfile,
+  icon: AccountCircle,
+  hideWhenScope: [null],
+},{
   path: '/about',
   name: 'AboutXprt',
   component: About,
@@ -30,12 +36,6 @@ export default [{
   name: 'ContactUs',
   component: Contact,
   icon: PreferencesIcon,
-},{
-  path: '/profile',
-  name: 'MyProfile',
-  component: MyProfile,
-  icon: PreferencesIcon,
-  hideWhenScope: [null],
 },{
   path: '/adminview',
   name: 'AdminView',

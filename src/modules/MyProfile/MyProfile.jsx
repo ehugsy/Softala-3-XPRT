@@ -12,6 +12,7 @@ import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
 import Checkbox from 'material-ui/Checkbox';
 import Chip from 'material-ui/Chip';
+import CircularProgress from 'material-ui/CircularProgress';
 import EditCompanyDetailsModal from '../../components/MyProfileEditModals/EditCompanyDetailsModal';
 import EditBasicInfoModal from '../../components/MyProfileEditModals/EditBasicInfoModal';
 import EditExpertDetailsModal from '../../components/MyProfileEditModals/EditExpertDetailsModal';
@@ -136,13 +137,24 @@ class MyProfile extends Component {
 
   componentDidMount() {
     this.props.refresh();
+    console.log("refresh");
   }
 
   render() {
     let expert = this.props.profile.data;
+    let loading = this.props.profile.loading;
+
+    if (loading) {
+      return (
+        <CircularProgress />
+      )
+    }
+
     console.log(expert);
+    console.log(loading);
 
     function LocationsList(props) {
+      console.log(props);
       const locations = props.locations;
       const length = locations.length;
       const list = locations.map((location, i) => {
@@ -310,7 +322,6 @@ class MyProfile extends Component {
       </Card>
     ));
 
-
     return (
       <div>
         <div style={styles.firstWrapper} onClick={EditPictureModal}>
@@ -334,14 +345,14 @@ class MyProfile extends Component {
               <p style={styles.mainDivTextTitle}>E-MAIL:</p>
               <p style={styles.mainDivText}>{expert.email}</p>
               <p style={styles.mainDivTextTitle}>SUPPORTED LOCATIONS:</p>
-              <LocationsList locations={user.supportedLocations}/>
+              <LocationsList locations={expert.area}/>
             </div>
               {/* next div contains company info */}
             <div style={styles.contentCardLeft}>
                 {/*Opens editing modal*/}
               <EditCompanyDetailsModal />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
-              <p style={styles.mainDivText}>{user.company}</p>
+              <p style={styles.mainDivText}>{expert.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
               <p style={styles.mainDivText}>{expert.title}</p>
               <Checkbox label="Office visit possible" checked={user.officeVisit} disabled={true} style={styles.checkbox}/>
@@ -357,7 +368,7 @@ class MyProfile extends Component {
               <SubjectChips subjects={user.subjects}/>
               <p style={styles.mainDivTextTitle}>LECTURE DETAILS:
               </p>
-              <p style={styles.mainDivText}>{user.lectureDetails}</p>
+              <p style={styles.mainDivText}>{expert.lectureDetails}</p>
             </div>
             {/*End of left column*/}
           </div>

@@ -30,7 +30,7 @@ const rest = reduxApi({
   },
 
   profile: {
-    url: `${config.API_ROOT}/experts/1`,
+    url: `${config.API_ROOT}/users/me`,
     crud: true,
   },
   invitations: {
