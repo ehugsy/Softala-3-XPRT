@@ -59,7 +59,7 @@ class About extends Component {
                 <h1 style={styles.bigHeader}>About</h1>
               </div>
               <div style={styles.video}>
-                <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameborder="0" allowfullscreen></iframe>
+                <iframe style={styles.videoSize} src="https://www.youtube.com/embed/niGGKthoCNQ" frameBorder="0" allowFullScreen></iframe>
               </div>
             </div>
             <div style={styles.rightSpace}></div>
