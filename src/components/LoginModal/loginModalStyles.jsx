@@ -22,7 +22,7 @@ const styles = {
   },
   dialog: {
     width: "100%",
-    maxWidth: "350",
+    maxWidth: "350px",
     textAlign: 'center'
   }
 }

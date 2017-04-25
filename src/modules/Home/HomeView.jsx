@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import Radium from 'radium';
 import Slider from 'react-slick';
-
 import {
   Card,
   CardText,
@@ -31,7 +30,7 @@ class Home extends Component  {
       autoplay: true,
       speed: 1000,
       autoplaySpeed: 10000,
-        }
+    }
     return(
       <div style={styles.wrapper}>
         <div style={styles.landingWrapper}>
@@ -58,10 +57,16 @@ class Home extends Component  {
               <p style={styles.smallHeader}>EXPERTS</p>
 
               <p style={styles.mobileFont}>Sign up as an expert and  to share your skills<br /> for the benefit of the future generation.</p>
-              <RegisterModal doRegister={this.props.doRegister}/>
+              {this.props.isLoggedIn ?
+                <FlatButton label="MY PROFILE" style={styles.buttonStyle} onTouchTap={()=>this.props.changeView('/profile')}/>
+                :
+                <div>
+                  <RegisterModal doRegister={this.props.doRegister}/>
+                  <LoginModal doLogin={this.props.doLogin}/>
+                </div>
 
-              <LoginModal doLogin={this.props.doLogin}/><br />
-
+              }
+              <br />
               </div>
           </div>
 
