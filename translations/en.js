@@ -8,5 +8,6 @@ export default {
   MyAccount: 'MY ACCOUNT',
   ContactUs: 'CONTACT US',
   AboutXprt: 'ABOUT XPRT',
-  MyProfile: 'MY PROFILE'
+  MyProfile: 'MY PROFILE',
+  AdminView: 'ADMIN VIEW',
 };

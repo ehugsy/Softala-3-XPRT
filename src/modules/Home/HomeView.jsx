@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import Radium from 'radium';
 import Slider from 'react-slick';
-
 import {
   Card,
   CardText,
@@ -31,7 +30,7 @@ class Home extends Component  {
       autoplay: true,
       speed: 1000,
       autoplaySpeed: 10000,
-        }
+    }
     return(
       <div style={styles.wrapper}>
         <div style={styles.landingWrapper}>
