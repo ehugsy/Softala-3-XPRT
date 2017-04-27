@@ -70,7 +70,7 @@ export default class EditPictureModal extends React.Component {
     if (imagePreviewUrl) {
       $imagePreview = (<img style={styles.editProfilePicture} src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<div className="previewText">Please select a profile picture</div>);
+      $imagePreview = (<div style={styles.editProfilePicture}>Please select a profile picture</div>);
     }
 
     return (
@@ -81,6 +81,7 @@ export default class EditPictureModal extends React.Component {
       <div>
         <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}><img src={'../../img/edit.png'} style={styles.editPenLeft}/></a>
         <Dialog
+          title="Choose your avatar"
           modal={false}
           autoScrollBodyContent={true}
           open={this.state.open}
@@ -88,22 +89,35 @@ export default class EditPictureModal extends React.Component {
           titleStyle={styles.noborder}
           actionsContainerStyle={styles.noborder}
         >
-          <div style={{...styles.contentCard, ...styles.editPictureWindow}}>
+          <div style={styles.editPictureWindow}>
             <form onSubmit={this.props.handleSubmit}>
 
 
                     <form onSubmit={(e)=>this._handleSubmit(e)}>
+                      <div className="imgPreview" style={styles.imgPreview}>
+                        {$imagePreview}
+                      </div>
 
-                      <input className="fileInput"
-                        type="file"
-                        onChange={(e)=>this._handleImageChange(e)} />
-                      <button className="submitButton"
-                        type="submit"
-                        onClick={(e)=>this._handleSubmit(e)}>Upload Image</button>
+                      <div style={styles.buttonArea}>
+                        <FlatButton
+                          label="Choose an Image"
+                          labelPosition="before"
+                          style={styles.button}
+                          containerElement="label"
+                        >
+                          <input type="file" style={styles.uploadInput}
+                            onChange={(e)=>this._handleImageChange(e)}/>
+                        </FlatButton>
+                        <FlatButton
+                          label="Submit"
+                          labelPosition="before"
+                          style={styles.button}
+                          containerElement="label"
+                          onClick={(e)=>this._handleSubmit(e)}
+                        />
+                      </div>
                     </form>
-                    <div className="imgPreview">
-                      {$imagePreview}
-                    </div>
+
 
 
 

@@ -14,6 +14,7 @@ const styles = {
     }
   },
   button: {
+    width: '12em',
     border: '1px solid #555555',
     padding: 15,
     margin: 5,
@@ -29,10 +30,14 @@ const styles = {
   editProfilePicture: {
     borderRadius: '50%',
     width: '200px',
-    height: '200px'
+    height: '200px',
+  },
+  imgPreview: {
+    height: 200,
+    margin: 0,
   },
   editPictureWindow: {
-    height: '300px',
+    height: '100%',
     textAlign: 'center',
   },
 
@@ -81,6 +86,17 @@ const styles = {
     color: theme.palette.primary1Color,
     fontSize: '16px',
     fontWeight: '300'
+  },
+  uploadInput: {
+    cursor: 'pointer',
+    width: '100%',
+    display: 'none',
+  },
+  buttonArea: {
+    width: '100%',
+    display: 'flex',
+    flexFlow: ' nowrap',
+    justifyContent: 'space-around',
   },
 }
 
