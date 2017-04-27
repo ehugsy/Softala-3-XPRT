@@ -111,7 +111,7 @@ class ExpertProfileFields extends Component {
 
             <Field
               name='lectureDetails'
-              label='Lecture details (if possible)'
+              label='Lecture details'
               component={renderTextField}
               hintText='Preferred topic in mind? Presentation or interactive? Most suitable for which ages? Any special equipment needed?'
               floatingLabelFixed={true}

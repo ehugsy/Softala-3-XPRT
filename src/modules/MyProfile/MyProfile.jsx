@@ -258,7 +258,7 @@ export default class MyProfile extends Component {
               <SubjectChips subjects={expert.subjects}/>
               <p style={styles.mainDivTextTitle}>LECTURE DETAILS:
               </p>
-              <p style={styles.mainDivText}>{expert.lectureDetails}</p>
+              <p style={styles.mainDivText}>{expert.details}</p>
             </div>
             {/*End of left column*/}
           </div>
