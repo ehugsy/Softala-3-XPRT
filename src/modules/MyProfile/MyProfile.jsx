@@ -68,6 +68,23 @@ function SubjectList(props){
   )
 }
 
+function OfficeVisit(props){
+    if (!props.address) {
+      return (
+          <Checkbox label="Office visit possible" checked={false} disabled={true} style={styles.checkbox}/>
+      );
+    } else {
+      return (
+        <div>
+          <p style={styles.mainDivTextTitle}>OFFICE ADDRESS:</p>
+          <p style={styles.mainDivText}>{props.address}</p>
+          <p><Checkbox label="Office visit possible" checked={true} disabled={true} style={styles.checkbox}/></p>
+        </div>
+      );
+    }
+
+}
+
 @Radium
 export default class MyProfile extends Component {
   componentDidMount() {
@@ -245,7 +262,9 @@ export default class MyProfile extends Component {
               <p style={styles.mainDivText}>{expert.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
               <p style={styles.mainDivText}>{expert.title}</p>
-              <Checkbox label="Office visit possible" checked={expert.officeVisit} disabled={true} style={styles.checkbox}/>
+
+              <OfficeVisit address={expert.address}/>
+
             </div>
               {/* Contains short introductions, label, etc. */}
             <div style={styles.contentCardLeft}>
