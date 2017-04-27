@@ -466,8 +466,6 @@ return (
                     <p>{lecture.datesent}<br />
                     {lecture.status} {lecture.responseDate}
                     </p>
-
-
                   </div>
                 </div>
 
@@ -534,11 +532,23 @@ return (
         filteredUsers = filteredUsers.map((user) => (
           <div key={user.name}>
             <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
-              <CardHeader title={user.name} subtitle={user.userType}  text={user.email} titleStyle={{
-                  ...styles.titleStyle}}
-                  subtitleStyle={{
-                    ...styles.subtitleStyle}}
-                    avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}>
+              <CardHeader actAsExpander={true} showExpandableButton={true}>
+
+
+                    <div style={styles.parent}>
+                      <div style={{...styles.left, ...styles.sameLine}}>
+                        <Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />
+                       <p style ={styles.titleStyle}>{user.name}</p>
+                      </div>
+                      <div style={styles.middle}>
+
+                            <p>{user.email}</p>
+                      </div>
+                      <div style={styles.right}>
+
+                           <p>{user.phone}</p>
+                     </div>
+                  </div>
 
                   </CardHeader>
 
