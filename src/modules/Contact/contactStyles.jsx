@@ -127,6 +127,9 @@ const styles = {
       borderRadius: 0
     },
   },
+  errorInput: {
+    borderColor: 'red',
+  },
   requiredText: {
     color: '#999999'
   },

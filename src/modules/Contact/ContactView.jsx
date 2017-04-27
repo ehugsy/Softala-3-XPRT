@@ -6,7 +6,6 @@ import {
   CardTitle,
   CardMedia,
 } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import HomeCard from '../../components/HomeCard';
 import LoginModal from '../../components/LoginModal';
@@ -20,6 +19,10 @@ import FacebookIcon from '../../components/FacebookIcon';
 import TwitterIcon from '../../components/TwitterIcon';
 import Footer from '../Footer';
 import styles from './contactStyles';
+import ContactForm from './ContactForm';
+import ContactSubmit from './ContactSubmit';
+
+
 
 @Radium
 class Contact extends Component {
@@ -59,18 +62,9 @@ class Contact extends Component {
           </p>
 
           <p>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
-          <form onSubmit={this.handleSubmit}style={styles.contactForm}>
 
-            <input style={styles.transparentInput} type="text" placeholder="Your name *" />
-            <br />
-            <input style={styles.transparentInput} type="text" placeholder="Your email address *"/>
-            <br />
-            <input style={styles.transparentInput} type="text" placeholder="Your phone number"/>
-            <br />
-            <textarea style={styles.transparentInput} placeholder="Your message *">
-            </textarea><br />
-            <FlatButton label="SUBMIT" style={styles.buttonStyle}/>
-          </form>
+          <ContactForm onSubmit={ContactSubmit}/>
+
         </div>
         <div style={styles.rightSpace}></div>
       </div>
