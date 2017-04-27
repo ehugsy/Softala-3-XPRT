@@ -45,8 +45,15 @@ class About extends Component {
 
               <p style={styles.smallHeader}>EXPERTS</p>
               <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
-              <RegisterModal />
-              <LoginModal /><br />
+              {this.props.isLoggedIn ?
+                <FlatButton label="MY PROFILE" style={styles.buttonStyle} onTouchTap={()=>this.props.changeView('/profile')}/>
+                :
+                <div>
+                  <RegisterModal doRegister={this.props.doRegister}/>
+                  <LoginModal doLogin={this.props.doLogin}/>
+                </div>
+
+              }
             </div>
             <div style={styles.rightText}>
               <p>
