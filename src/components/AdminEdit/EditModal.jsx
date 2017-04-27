@@ -178,51 +178,51 @@ export default class BasicInfoModal extends React.Component {
                         hintText={formdata.title}
                         floatingLabelFixed={true}/>
 
-                        <Field
-                          name='officeVisitPossible'
-                          id='officeVisitPossible'
-                          component={renderCheckbox}
-                          label='Office visit possible'
-                          value='checked'/>
+                      <Field
+                        name='officeVisitPossible'
+                        id='officeVisitPossible'
+                        component={renderCheckbox}
+                        label='Office visit possible'
+                        value='checked'/>
 
                         <p>Check this box if you agree that teachers can come to your office with
                             a group of students</p>
 
-                        {this.props.officeVisitPossible &&
+                      {this.props.officeVisitPossible &&
+                          <Field
+                            name='officeAddress'
+                            label='Office address'
+                            component={renderTextField}
+                            id='officeAddress'
+                            floatingLabelFixed={true}/>
+                          }
+                          <Field
+                            name='introduction'
+                            validate={required}
+                            component={renderTextField}
+                            label='Short introduction'
+                            type='text'
+                            hintText={formdata.introduction}
+                            floatingLabelFixed={true}/>
+
                             <Field
-                              name='officeAddress'
-                              label='Office address'
-                              component={renderTextField}
-                              id='officeAddress'
-                              floatingLabelFixed={true}/>
-                            }
-                            <Field
-                              name='introduction'
+                              name='subjects'
+                              label='Subjects'
                               validate={required}
-                              component={renderTextField}
-                              label='Short introduction'
-                              type='text'
-                              hintText={formdata.introduction}
-                              floatingLabelFixed={true}/>
+                              component={renderChipInput}
+                              id='subjects'
+                              dataSource={subjectList}
+                              hintText={formdata.subjects}
+                              floatingLabelFixed={true} />
 
                               <Field
-                                name='subjects'
-                                label='Subjects'
+                                name='lectureDetails'
                                 validate={required}
-                                component={renderChipInput}
-                                id='subjects'
-                                dataSource={subjectList}
-                                hintText={formdata.subjects}
+                                component={renderTextField}
+                                label='Lecture details'
+                                type='text'
+                                hintText={formdata.lectureDetails}
                                 floatingLabelFixed={true} />
-
-                                <Field
-                                  name='lectureDetails'
-                                  validate={required}
-                                  component={renderTextField}
-                                  label='Lecture details'
-                                  type='text'
-                                  hintText={formdata.lectureDetails}
-                                  floatingLabelFixed={true} />
                 </div>
                 <FlatButton
                   label="Save"

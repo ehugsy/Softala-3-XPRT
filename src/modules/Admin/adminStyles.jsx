@@ -30,6 +30,11 @@ const styles = {
       marginTop: 10
     },
   },
+  sameLine: {
+    display: 'flex',
+    flexDirection: 'row',
+
+  },
   firstWrapper: {
     display: 'flex',
     flexDirection: 'row',
@@ -150,12 +155,14 @@ const styles = {
     fontSize: '16px',
     color: theme.palette.primary2Color,
     fontWeight: '300',
+    paddingLeft:'15px'
   },
   subtitleStyle: {
     fontSize: '16px',
     color: theme.palette.textColor,
     marginTop: '7px',
     fontWeight: '300'
+
   },
   avatarStyle: {
     marginTop: '-5px',
