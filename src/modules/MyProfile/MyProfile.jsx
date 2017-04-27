@@ -244,7 +244,7 @@ export default class MyProfile extends Component {
               {/* Next div contains Basic info, like name*/}
             <div style={styles.contentCardLeft}>
               {/* This modal opens up editing window of profile's basic info*/}
-              <EditBasicInfoModal />
+              <EditBasicInfoModal expert={expert} />
               <p style={styles.mainDivTextTitle}>NAME:</p>
               <p style={styles.mainDivText}>{expert.name}</p>
               <p style={styles.mainDivTextTitle}>PHONE:</p>
@@ -257,7 +257,7 @@ export default class MyProfile extends Component {
               {/* next div contains company info */}
             <div style={styles.contentCardLeft}>
                 {/*Opens editing modal*/}
-              <EditCompanyDetailsModal />
+              <EditCompanyDetailsModal expert={expert} />
               <p style={styles.mainDivTextTitle}>COMPANY NAME:</p>
               <p style={styles.mainDivText}>{expert.company}</p>
               <p style={styles.mainDivTextTitle}>JOB TITLE:</p>
@@ -269,7 +269,7 @@ export default class MyProfile extends Component {
               {/* Contains short introductions, label, etc. */}
             <div style={styles.contentCardLeft}>
               {/*Opens editing modal*/}
-              <EditExpertDetailsModal />
+              <EditExpertDetailsModal expert={expert} />
               <p style={styles.mainDivTextTitle}>SHORT INTRODUCTION:</p>
               <p style={styles.mainDivText}>{expert.description}</p>
               <p style={styles.mainDivTextTitle}>SUBJECTS:</p>

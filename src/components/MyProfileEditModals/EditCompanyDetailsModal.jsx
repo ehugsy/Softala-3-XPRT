@@ -81,7 +81,7 @@ export default class EditCompanyDetailsModal extends React.Component {
                 component={renderTextField}
                 id='companyName'
                 validate={required}
-                hintText={formdata.companyName}
+                hintText={this.props.expert.company}
                 floatingLabelFixed={true}/>
 
               <Field
@@ -90,7 +90,7 @@ export default class EditCompanyDetailsModal extends React.Component {
                 component={renderTextField}
                 id='title'
                 validate={required}
-                hintText={formdata.title}
+                hintText={this.props.expert.title}
                 floatingLabelFixed={true}/>
 
               <Field
