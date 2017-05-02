@@ -5,24 +5,26 @@ import styles from './contactStyles';
 
 
 const required = value => value ? undefined : 'Required'
+const email = value =>
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
+  'Invalid email address' : undefined
+
+  // TODO Validate max lengths etc. http://redux-form.com/6.6.3/examples/fieldLevelValidation/
 
 const renderTextField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
-    {touched && error ?
+    {touched && error &&
+        <span style={styles.errorText}>{error}</span>
+      }
       <input
         {...input}
         placeholder={label}
         type={type}
-        style={{...styles.transparentInput,...styles.errorInput}}
+
+        style={touched && error ?
+        {...styles.transparentInput,...styles.errorInput} :
+        styles.transparentInput}
       />
-      :
-      <input
-        {...input}
-        placeholder={label}
-        type={type}
-        style={styles.transparentInput}
-      />
-    }
   </div>
 )
 
@@ -44,7 +46,7 @@ const ContactForm = (props) => {
         name="email"
         type="text"
         label="Your email address *"
-        validate={required}
+        validate={[required, email]}
         component={renderTextField}
       />
 

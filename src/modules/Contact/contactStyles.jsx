@@ -114,7 +114,6 @@ const styles = {
     border: '1px solid #555555',
     marginBottom: 10,
     color: theme.palette.textColor,
-    fontSize: 16,
     width: '100%',
     maxWidth: 350,
     padding: '10px 0px 10px 10px',
@@ -130,8 +129,10 @@ const styles = {
   errorInput: {
     borderColor: 'red',
   },
-  requiredText: {
-    color: '#999999'
+  errorText: {
+    fontFamily: ('Catamaran' : 'sans-serif'),
+    fontSize: 12,
+    marginBottom: 20,
   },
   mobileHide: {
     '@media (max-width: 768px)':{
