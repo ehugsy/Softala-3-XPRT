@@ -71,6 +71,7 @@ const renderChipInput = ({ input, label, hintText, dataSource, meta: { touched, 
 
 @Radium
 export default class BasicInfoModal extends React.Component {
+
   state = {
     open: false,
   };
@@ -83,8 +84,8 @@ export default class BasicInfoModal extends React.Component {
     this.setState({open: false});
   };
 
-
     render() {
+
       return (
         <div>
           <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}><img src={'../../img/edit.png'} style={styles.editPen}/></a>
@@ -105,7 +106,7 @@ export default class BasicInfoModal extends React.Component {
                     component={renderTextField}
                     label='Name'
                     type='text'
-                    hintText={formdata.name}
+                    hintText={this.props.expert.name}
                     floatingLabelFixed={true}/>
 
                   <Field
@@ -113,7 +114,7 @@ export default class BasicInfoModal extends React.Component {
                     validate={required}
                     component={renderTextField}
                     label='Phone' type='text'
-                    hintText={formdata.phone}
+                    hintText={this.props.expert.phone}
                     floatingLabelFixed={true} />
 
                   <Field
@@ -121,7 +122,7 @@ export default class BasicInfoModal extends React.Component {
                     validate={[required, email]}
                     component={renderTextField}
                     label='Email' type='text'
-                    hintText={formdata.email}
+                    hintText={this.props.expert.email}
                     floatingLabelFixed={true} />
 
                   <Field
@@ -130,7 +131,7 @@ export default class BasicInfoModal extends React.Component {
                     component={renderChipInput}
                     id='supportedLocations'
                     dataSource={cityList}
-                    hintText={formdata.supportedLocations}
+                    hintText={this.props.expert.area}
                     floatingLabelFixed={true} />
 
                 </div>

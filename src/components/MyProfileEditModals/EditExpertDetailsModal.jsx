@@ -104,7 +104,7 @@ export default class ExperdDetailsModal extends React.Component {
                   component={renderTextField}
                   label='Short introduction'
                   type='text'
-                  hintText={formdata.introduction}
+                  hintText={this.props.expert.description}
                   floatingLabelFixed={true}/>
 
                 <Field
@@ -114,7 +114,7 @@ export default class ExperdDetailsModal extends React.Component {
                   component={renderChipInput}
                   id='subjects'
                   dataSource={subjectList}
-                  hintText={formdata.subjects}
+                  hintText={this.props.expert.subjects}
                   floatingLabelFixed={true} />
 
                 <Field
@@ -123,7 +123,7 @@ export default class ExperdDetailsModal extends React.Component {
                   component={renderTextField}
                   label='Lecture details'
                   type='text'
-                  hintText={formdata.lectureDetails}
+                  hintText={this.props.expert.details}
                   floatingLabelFixed={true} />
 
               </div>
