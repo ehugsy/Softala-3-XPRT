@@ -10,20 +10,6 @@ import AutoComplete from 'material-ui/AutoComplete';
 import styles from './editModalStyles';
 
 
-
-const required = value => value ? undefined : 'Required'
-
-const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
-  <MyTextField
-    floatingLabelText={label}
-    errorText={touched && error}
-    {...input}
-    {...custom}
-  />
-)
-
-
-
 @Radium
 export default class EditPictureModal extends React.Component {
   constructor(props) {
@@ -74,10 +60,6 @@ export default class EditPictureModal extends React.Component {
     }
 
     return (
-
-
-
-
       <div>
         <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}><img src={'../../img/edit.png'} style={styles.editPenLeft}/></a>
         <Dialog
@@ -91,55 +73,30 @@ export default class EditPictureModal extends React.Component {
         >
           <div style={styles.editPictureWindow}>
             <form onSubmit={this.props.handleSubmit}>
+              <form onSubmit={(e)=>this._handleSubmit(e)}>
+                <div className="imgPreview" style={styles.imgPreview}>
+                  {$imagePreview}
+                </div>
 
-
-                    <form onSubmit={(e)=>this._handleSubmit(e)}>
-                      <div className="imgPreview" style={styles.imgPreview}>
-                        {$imagePreview}
-                      </div>
-
-                      <div style={styles.buttonArea}>
-                        <FlatButton
-                          label="Choose an Image"
-                          labelPosition="before"
-                          style={styles.button}
-                          containerElement="label"
-                        >
-                          <input type="file" style={styles.uploadInput}
-                            onChange={(e)=>this._handleImageChange(e)}/>
-                        </FlatButton>
-                        <FlatButton
-                          label="Submit"
-                          labelPosition="before"
-                          style={styles.button}
-                          containerElement="label"
-                          onClick={(e)=>this._handleSubmit(e)}
-                        />
-                      </div>
-                    </form>
-
-
-
-
-              {/* <FlatButton
-                className="fileInput"
-                type="file"
-                onChange={(e)=>this._handleImageChange(e)}
-                label="Browse..."
-                primary={true}
-                onTouchTap={this.handleClose}
-                style={styles.button}
-              />
-              <FlatButton
-                className="submitButton"
-                type="submit"
-                onClick={(e)=>this._handleSubmit(e)}
-                label="Upload"
-                primary={true}
-                onTouchTap={this.handleClose}
-                style={styles.button}
-              /> */}
-
+                <div style={styles.buttonArea}>
+                  <FlatButton
+                    label="Choose an Image"
+                    labelPosition="before"
+                    style={styles.button}
+                    containerElement="label"
+                  >
+                    <input type="file" style={styles.uploadInput}
+                      onChange={(e)=>this._handleImageChange(e)}/>
+                  </FlatButton>
+                  <FlatButton
+                    label="Submit"
+                    labelPosition="before"
+                    style={styles.button}
+                    containerElement="label"
+                    onClick={(e)=>this._handleSubmit(e)}
+                  />
+                </div>
+              </form>
             </form>
           </div>
 
