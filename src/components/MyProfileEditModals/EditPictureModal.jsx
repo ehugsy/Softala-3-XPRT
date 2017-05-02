@@ -29,10 +29,8 @@ export default class EditPictureModal extends React.Component {
     };
 
   _handleSubmit(e) {
-    // e.preventDefault();
-    // TODO: do something with -> this.state.file
-    this.props.doEdit(e);
     console.log('handle uploading-', this.state.file);
+    this.props.doEdit(e);
   }
 
   _handleImageChange(e) {
@@ -74,7 +72,7 @@ export default class EditPictureModal extends React.Component {
         >
           <div style={styles.editPictureWindow}>
             <form onSubmit={this.props.handleSubmit}>
-              <form onSubmit={(e)=>this._handleSubmit(e)}>
+              <form name='image' onSubmit={(e)=>this._handleSubmit(e)}>
                 <div className="imgPreview" style={styles.imgPreview}>
                   {$imagePreview}
                 </div>

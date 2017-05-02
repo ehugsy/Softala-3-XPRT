@@ -12,9 +12,9 @@ export default connect(
       dispatch(rest.actions.profile());
       // dispatch(rest.actions.invitations());
     },
-    doEdit(user) {
+    doEdit(file) {
       dispatch(rest.actions.profile.post({}, { body: JSON.stringify(
-        {image: user.image})
+        {image: file.image})
       }));
     },
   })
