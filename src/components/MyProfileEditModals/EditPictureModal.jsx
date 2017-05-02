@@ -29,8 +29,9 @@ export default class EditPictureModal extends React.Component {
     };
 
   _handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     // TODO: do something with -> this.state.file
+    this.props.doEdit(e);
     console.log('handle uploading-', this.state.file);
   }
 

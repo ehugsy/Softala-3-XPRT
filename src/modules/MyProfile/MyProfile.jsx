@@ -231,10 +231,10 @@ export default class MyProfile extends Component {
 
     return (
       <div>
-        <div style={styles.firstWrapper} onClick={EditPictureModal}>
+        <div style={styles.firstWrapper}>
           {/* Profile Picture */}
           <img src={expert.imageUrl} style={{...styles.profilePicture,...styles.mobileHide}}/>
-          <EditPictureModal />
+          <EditPictureModal doEdit={this.props.doEdit}/>
         </div>
 
         <div style={styles.secondWrapper}>

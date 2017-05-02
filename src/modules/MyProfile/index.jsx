@@ -11,6 +11,11 @@ export default connect(
     refresh() {
       dispatch(rest.actions.profile());
       // dispatch(rest.actions.invitations());
-    }
+    },
+    doEdit(user) {
+      dispatch(rest.actions.profile.post({}, { body: JSON.stringify(
+        {image: user.image})
+      }));
+    },
   })
 )(MyProfile);
