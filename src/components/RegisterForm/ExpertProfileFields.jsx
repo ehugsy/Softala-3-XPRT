@@ -86,10 +86,16 @@ const renderChipInput = ({ input, label, hintText, dataSource, meta: { touched, 
 
 
 class ExpertProfileFields extends Component {
-
+/*This prevents enter from closing the registration window*/
+  onKeyPress(event) {
+      if (event.which === 13 /* Enter */) {
+        event.preventDefault();
+      }
+  }
     render() {
       return (
-        <form onSubmit={this.props.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}
+          onKeyPress={this.onKeyPress}>
           <div style={{height:394}}>
             <Field
               name='shortIntroduction'
