@@ -97,14 +97,17 @@ export default class MyProfile extends Component {
     let loading = this.props.profile.loading;
     let lectures = this.props.lectures.data;
 
-    console.log(this.props.profile.data);
-    console.log(this.props.lectures.data);
-
     if (!expert || loading) {
-      return <CircularProgress />;
+      return <div style={{
+        textAlign: 'left',
+        display: 'flex',
+        justifyContent: 'center',
+        paddingTop: '200px',
+      }}>
+        <CircularProgress />
+      </div>;
     }
 
-    // const lectures = [];
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
@@ -186,7 +189,7 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
           <p style={styles.mainDivText}>{lecture.name} ({lecture.email})</p>
-          <p style={styles.mainDivTextBold}>Name of school</p>
+          <p style={styles.mainDivTextBold}>School name:</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
           <p style={styles.mainDivText}><SubjectList subjects={lecture.subjects}/></p>
@@ -219,7 +222,7 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
           <p style={styles.mainDivText}>{lecture.name} ({lecture.email})</p>
-          <p style={styles.mainDivTextBold}>Name of school:</p>
+          <p style={styles.mainDivTextBold}>School name:</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
           <p style={styles.mainDivText}><SubjectList subjects={lecture.subjects}/></p>
