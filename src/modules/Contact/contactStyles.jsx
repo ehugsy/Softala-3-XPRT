@@ -107,6 +107,7 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em',
+    marginBottom: '1em',
     color: theme.palette.primary2Color,
   },
   transparentInput: {
