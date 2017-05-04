@@ -37,6 +37,11 @@ const rest = reduxApi({
     url: `${config.API_ROOT}/invitations`,
     crud: true,
   },
+  lectures: {
+    url: `${config.API_ROOT}/lectures/me`,
+    transformer: transformers.array,
+    crud: true,
+  },
   register: {
     url: `${config.API_ROOT}/users`,
     crud: true,

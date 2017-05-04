@@ -46,7 +46,6 @@ class RegisterModal extends Component {
   };
 
   handleSubmit = (values) => {
-    console.log(values);
     this.props.doRegister(values);
     this.setState({open: false, stepIndex: 0});
   };

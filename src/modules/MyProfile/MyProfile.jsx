@@ -84,6 +84,7 @@ function OfficeVisit(props){
     }
 
 }
+// {lecture.dateoflecture[0].option2}
 
 @Radium
 export default class MyProfile extends Component {
@@ -94,17 +95,21 @@ export default class MyProfile extends Component {
   render() {
     let expert = this.props.profile.data;
     let loading = this.props.profile.loading;
+    let lectures = this.props.lectures.data;
+
+    console.log(this.props.profile.data);
+    console.log(this.props.lectures.data);
 
     if (!expert || loading) {
       return <CircularProgress />;
     }
 
-    const lectures = [];
+    // const lectures = [];
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
 
-      return status === 'waiting';
+      return status === 'pending';
     });
 
     let accepted = lectures.filter((lecture) => {
@@ -116,7 +121,7 @@ export default class MyProfile extends Component {
     let declined = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
 
-      return status === 'declined';
+      return status === 'rejected';
     });
 
     invitations = invitations.map((lecture) => (
@@ -128,7 +133,7 @@ export default class MyProfile extends Component {
           */
         ...styles.colorIndicatorYellow
       }}>
-        <CardHeader title={lecture.name} subtitle={lecture.email} titleStyle={{
+        <CardHeader title={lecture.title} subtitle={lecture.email} titleStyle={{
           ...styles.titleStyle
         }} subtitleStyle={{
           ...styles.subtitleStyle
@@ -145,9 +150,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateoflecture[0].option1}</p>
+          <p style={styles.mainDivText}> </p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateoflecture[0].option2}</p>
+          <p style={styles.mainDivText}> </p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -170,7 +175,7 @@ export default class MyProfile extends Component {
         ...styles.contentCardRight,
         ...styles.colorIndicatorGreen
       }}>
-        <CardHeader title={lecture.name} subtitle={lecture.lecturetheme} titleStyle={{
+        <CardHeader title={lecture.title} subtitle={lecture.lecturetheme} titleStyle={{
           ...styles.titleStyle
         }} subtitleStyle={{
           ...styles.subtitleStyle
@@ -187,9 +192,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateoflecture[0].option1}</p>
+          <p style={styles.mainDivText}> </p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateoflecture[0].option2}</p>
+          <p style={styles.mainDivText}> </p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -201,7 +206,7 @@ export default class MyProfile extends Component {
 
     declined = declined.map((lecture) => (
       <Card style={styles.contentCardRight}>
-        <CardHeader title={lecture.name} subtitle={lecture.lecturetheme} titleStyle={{
+        <CardHeader title={lecture.title} subtitle={lecture.lecturetheme} titleStyle={{
           ...styles.titleStyle
         }} subtitleStyle={{
           ...styles.subtitleStyle
@@ -218,9 +223,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateoflecture[0].option1}</p>
+          <p style={styles.mainDivText}> </p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateoflecture[0].option2}</p>
+          <p style={styles.mainDivText}> </p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -231,10 +236,10 @@ export default class MyProfile extends Component {
 
     return (
       <div>
-        <div style={styles.firstWrapper} onClick={EditPictureModal}>
+        <div style={styles.firstWrapper}>
           {/* Profile Picture */}
           <img src={expert.imageUrl} style={{...styles.profilePicture,...styles.mobileHide}}/>
-          <EditPictureModal />
+          <EditPictureModal doEdit={this.props.doEdit}/>
         </div>
 
         <div style={styles.secondWrapper}>
