@@ -97,14 +97,10 @@ export default class MyProfile extends Component {
     let loading = this.props.profile.loading;
     let lectures = this.props.lectures.data;
 
-    console.log(this.props.profile.data);
-    console.log(this.props.lectures.data);
-
     if (!expert || loading) {
       return <CircularProgress />;
     }
 
-    // const lectures = [];
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
