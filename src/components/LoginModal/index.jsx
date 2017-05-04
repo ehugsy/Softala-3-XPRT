@@ -26,6 +26,7 @@ class LoginModal extends Component {
       email: '',
       password: '',
     });
+    this.props.clearLogin()
   };
 
   handleSubmit = (event) => {
@@ -101,5 +102,8 @@ export default connect(
     changeView(view) {
       dispatch(push(view.toLowerCase()));
     },
+    clearLogin() {
+      dispatch(rest.actions.auth.reset());
+    }
   }),
 )(LoginModal);
