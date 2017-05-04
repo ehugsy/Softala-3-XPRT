@@ -21,6 +21,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import XprtLogo from '../../components/XprtLogo';
 import HundredLogo from '../../components/HundredLogo';
 import SearchIcon from 'material-ui/svg-icons/action/search'
+import CircularProgress from 'material-ui/CircularProgress';
 
 import ChipInput from 'material-ui-chip-input';
 import AutoComplete from 'material-ui/AutoComplete';
@@ -28,152 +29,6 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import styles from './adminStyles';
 import EditModal from '../../components/AdminEdit/EditModal';
-let users = [{
-  userType: 'Expert',
-  name: 'Scott Sterling',
-  email: 'scott@gmail.com',
-  city: 'Helsinki',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Helsinki',
-    'Espoo',
-    'Vantaa'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'yes',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Java',
-    'PHP',
-    'NodeJS',
-    'Coding'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-
-}, {
-  userType: 'Expert',
-  name: 'Tim Thomson',
-  email: 'tim@yahoo.com',
-  city: 'Tampere',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Helsinki',
-    'Espoo',
-    'Vantaa'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'yes',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Mathematics',
-    'Physics'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-}, {
-  userType: 'Teacher',
-  name: 'Matilda Madison',
-  email: 'matilda@gmail.com',
-  city: 'Turku',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Rovaniemi',
-    'Kemi',
-    'Kuusamo',
-    'Oulu'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'no',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Major Tom',
-    'Lalilulelo',
-    'Liquid',
-    'Snake'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-}, {
-  userType: 'Expert',
-  name: 'Arska Schwarzenegger',
-  email: 'arska@gmail.com',
-  city: 'Oulu',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Helsinki',
-    'Espoo'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'no',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Major Tom',
-    'Lalilulelo',
-    'Liquid',
-    'Snake'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-}, {
-  userType: 'Teacher',
-  name: 'Jukka Eimonen',
-  email: 'ensio@gmail.com',
-  city: 'Helsinki',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Helsinki',
-    'Espoo'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'yes',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Travelling',
-    'Guidance'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-}, {
-  userType: 'Teacher',
-  name: 'Seppo Eimonen',
-  email: 'ensio@gmail.com',
-  city: 'Helsinki',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Mikkeli',
-    'Pietari',
-    'Kouvola'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'yes',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Travelling',
-    'Guidance'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-}, {
-  userType: 'Teacher',
-  name: 'Teppo Eimonen',
-  email: 'ensio@gmail.com',
-  city: 'Helsinki',
-  phone: '+358 45 23423434',
-  supportedLocations:[
-    'Turku',
-    'Alastaro'
-  ],
-  company: 'Sportmrt',
-  jobTitle: 'CEO',
-  officeVisit: 'yes',
-  introduction: 'Short introduction about expert. I can do this and that and tell cool jokes about Scrum etc.',
-  subjects:[
-    'Travelling',
-    'Guidance'
-  ],
-  lectureDetails: 'Details about preferred lecture topics'
-}];
 
 let lectures = [
  {
@@ -368,6 +223,10 @@ let lectures = [
 @Radium
 class AdminView extends Component {
 
+  componentDidMount() {
+    this.props.refresh();
+  }
+
   /* Gives sorting dropdown menu a default value. 1 = first value of options */
   constructor(props) {
     super(props);
@@ -386,6 +245,13 @@ class AdminView extends Component {
   userHandleChange = (event, index, userValue) => this.setState({userValue});
 
   render() {
+
+    let users = this.props.users.data;
+    let loading = this.props.users.loading;
+
+    if (!users || loading) {
+      return <CircularProgress />;
+    }
 
     let filteredLectures = lectures.filter((lecture) => {
       const lectureName = lecture.lecturetheme.toLowerCase();
@@ -413,35 +279,36 @@ class AdminView extends Component {
       && (lectureStatus === stateValue || stateValue === 'all');
     });
 
-    function SubjectList(props){
-  const subjects = props.subjects;
-  const length = subjects.length;
-  const list = subjects.map((subjects, i) => {
-    if (length === i+1) {
-      return <span>{subjects}</span>
-    } else {
-      return <span>{subjects}, </span>
+    function List(props){
+      const values = props.values;
+      if (!values) {
+        return null;
+      }
+      const length = values.length;
+      const list = values.map((value, i) => {
+        if (length === i+1) {
+          return <span key={value}>{value}</span>
+        } else {
+          return <span key={value}>{value}, </span>
+        }
+      });
+      return (
+        <span>{list}</span>
+      )
     }
-  });
-  return (
-    <span>{list}</span>
-  )
-}
 
-function CityList(props){
-const cities = props.cities;
-const length = cities.length;
-const list = cities.map((cities, i) => {
-if (length === i+1) {
-  return <span>{cities}</span>
-} else {
-  return <span>{cities}, </span>
-}
-});
-return (
-<span>{list}</span>
-)
-}
+    function OfficeVisit(props){
+        if (!props.address) {
+          return (
+              <span>Office visit not possible</span>
+          );
+        } else {
+          return (
+            <span>{props.address}</span>
+          );
+        }
+
+    }
 
     filteredLectures = filteredLectures.map((lecture) => (
       <div key={lecture.lecturetheme}>
@@ -478,7 +345,7 @@ return (
                     {lecture.school}
                   </p>
                   <p><span style={styles.boldText}>Subjects:</span><br/>
-                  <SubjectList subjects={lecture.subjects}/>
+                  <List values={lecture.subjects}/>
                   </p>
                   <p><span style={styles.boldText}>Educational stage:</span><br/>
                   {lecture.educationalstage}
@@ -511,20 +378,25 @@ return (
         let filteredUsers = users.filter((user) => {
           const contactName = user.name.toLowerCase();
           const contactEmail = user.email.toLowerCase();
-          const contactType = user.userType.toLowerCase();
-          const supportedLocationsList = user.supportedLocations.toString().toLowerCase();
+          let userType = '';
+          if (user.isExpert && user.isTeacher) {
+            userType = 'expertteacher';
+          } else if (user.isTeacher) {
+            userType = 'teacher';
+          } else if (user.isExpert) {
+            userType = 'expert';
+          }
+          const supportedLocationsList = user.area.toString().toLowerCase();
           const subjectsList = user.subjects.toString().toLowerCase();
           //const contactCity = contact.city.toLowerCase();
           const searchString = this.state.userSearch.toLowerCase();
-          const userType = user.userType;
           const stateValue = this.state.userValue;
 
           return (contactName.indexOf(searchString) !== -1 ||
           contactEmail.indexOf(searchString) !== -1 ||
-          contactType.indexOf(searchString) !== -1 ||
           subjectsList.indexOf(searchString) !== -1 ||
           supportedLocationsList.indexOf(searchString) !== -1)
-          && (userType === stateValue || stateValue === 'all');
+          && (userType.indexOf(stateValue) || stateValue === 'all');
           //||contactCity.indexOf(searchString) !== -1
           ;
         });
@@ -537,7 +409,7 @@ return (
 
                     <div style={styles.parent}>
                       <div style={{...styles.left, ...styles.sameLine}}>
-                        <Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />
+                        <Avatar src={user.imageUrl} size={60} style={styles.avatarStyle} />
                        <p style ={styles.titleStyle}>{user.name}</p>
                       </div>
                       <div style={styles.middle}>
@@ -565,7 +437,7 @@ return (
                         </p>
                         <p>
                           <strong>Location:</strong><br />
-                          <SubjectList subjects={user.supportedLocations}/>
+                          <List values={user.area}/>
                         </p>
                         <p>
                           <strong>Company:</strong><br />
@@ -575,19 +447,19 @@ return (
                         <div style={styles.middle}>
                         <p>
                           <strong>Job title:</strong><br />
-                          {user.jobTitle}
+                          {user.title}
                         </p>
                         <p>
-                          <strong>Office visit possible:</strong><br />
-                          {user.officeVisit}
+                          <strong>Office address:</strong><br />
+                          <OfficeVisit address={user.address}/>
                         </p>
                         <p>
                           <strong>Introduction</strong><br />
-                          {user.introduction}
+                          {user.description}
                         </p>
                         <p>
                           <strong>Subjects:</strong><br />
-                          <SubjectList subjects={user.subjects}/>
+                          <List values={user.subjects}/>
                         </p>
                     </div>
 
@@ -615,8 +487,8 @@ return (
 
                         <DropDownMenu value={this.state.userValue} onChange={this.userHandleChange} openImmediately={false} style={styles.DropDownMenu}>
                           <MenuItem value={'all'} primaryText="ALL" />
-                          <MenuItem value={'Expert'} primaryText="EXPERTS" />
-                          <MenuItem value={'Teacher'} primaryText="TEACHERS" />
+                          <MenuItem value={'expert'} primaryText="EXPERTS" />
+                          <MenuItem value={'teacher'} primaryText="TEACHERS" />
                         </DropDownMenu>
                         <div style={styles.leftSpace}></div>
                           <div style={styles.leftText}>
