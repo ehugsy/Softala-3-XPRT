@@ -30,6 +30,13 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
   />
 )
 
+const validate = values => {
+  const errors = {}
+  if (values.password !== values.repeatpassword) {
+    errors.repeatpassword = 'Passwords must match'
+  }
+  return errors;
+}
 
 class BasicInfoFields extends Component {
   /*This prevents enter from closing the registration window*/
@@ -59,6 +66,7 @@ class BasicInfoFields extends Component {
 
 BasicInfoFields = reduxForm({
   form: 'registerForm',
+  validate,
   destroyOnUnmount: false,
 })(BasicInfoFields)
 
