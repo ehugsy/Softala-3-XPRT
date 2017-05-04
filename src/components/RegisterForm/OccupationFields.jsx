@@ -6,8 +6,6 @@ import Checkbox from 'material-ui/Checkbox';
 import DialogButtons from '../DialogButtons';
 import styles from './registerFormStyles';
 
-const required = value => value ? undefined : 'Required'
-
 const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
   <MyTextField
     floatingLabelText={label}
@@ -41,15 +39,13 @@ class OccupationFields extends Component {
             name='companyName'
             label='Company name'
             component={renderTextField}
-            id='companyName'
-            validate={required}/>
+            id='companyName'/>
 
           <Field
             name='title'
             label='Title'
             component={renderTextField}
-            id='title'
-            validate={required}/>
+            id='title'/>
 
           <Field
             name='officeVisitPossible'
