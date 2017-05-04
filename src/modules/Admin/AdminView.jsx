@@ -222,7 +222,7 @@ let lectures = [
 
 @Radium
 class AdminView extends Component {
-
+  
   componentDidMount() {
     this.props.refresh();
   }
@@ -232,16 +232,17 @@ class AdminView extends Component {
     super(props);
     this.state = {userValue: 'all', lectureValue: 'all', lectureSearch: '', userSearch: ''};
   }
-
+//triggered when user types on textfield
   updateLectureSearch(event){
     this.setState({lectureSearch: event.target.value})
   }
-
+//triggered when user types on textfield
   updateUserSearch(event){
     this.setState({userSearch: event.target.value})
   }
-
+//triggered when dropdown is selected
   lectureHandleChange = (event, index, lectureValue) => this.setState({lectureValue});
+  //triggered when dropdown is selected
   userHandleChange = (event, index, userValue) => this.setState({userValue});
 
   render() {
@@ -250,10 +251,12 @@ class AdminView extends Component {
     let lecturess = this.props.adminLectures.data;
     let loading = this.props.users.loading;
 
+    // shows the circular loading animation until users and lectures are loaded
     if (!users || !lecturess || loading) {
       return <CircularProgress />;
     }
 
+    // this function checks if any of lecture data mathches with search and makes an array of the matching data
     let filteredLectures = lecturess.filter((lecture) => {
       const lectureName = lecture.lecturetheme.toLowerCase();
       //const expertName = lecture.name.toLowerCase();
@@ -269,6 +272,7 @@ class AdminView extends Component {
       const searchString = this.state.lectureSearch.toLowerCase();
       const stateValue = this.state.lectureValue;
 
+      //returns if any data matches with the search, also checks if user wants to see all lectures or for example held lectures
       return (lectureName.indexOf(searchString) !== -1
       //|| expertName.indexOf(searchString) !== -1
       || teacherName.indexOf(searchString) !== -1
@@ -280,24 +284,28 @@ class AdminView extends Component {
       && (lectureStatus === stateValue || stateValue === 'all');
     });
 
+    // this function loops trough arrays inside object
     function List(props){
       const values = props.values;
       if (!values) {
         return null;
       }
       const length = values.length;
+      // if object has an array, this function loops through array and adds "," after each item
       const list = values.map((value, i) => {
         if (length === i+1) {
           return <span key={value}>{value}</span>
-        } else {
+        }
+        else {
           return <span key={value}>{value}, </span>
         }
       });
+      // returns for example: Helsinki, Vantaa, Espoo
       return (
         <span>{list}</span>
       )
     }
-
+    // if there isn't address, this function returns text "Office visit not possible"
     function OfficeVisit(props){
         if (!props.address) {
           return (
@@ -308,9 +316,8 @@ class AdminView extends Component {
             <span>{props.address}</span>
           );
         }
-
     }
-
+    // loops trough every lecture and prints all information of a lecture and returns an expandable div
     filteredLectures = filteredLectures.map((lecture) => (
       <div key={lecture.lecturetheme}>
         <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
@@ -375,7 +382,7 @@ class AdminView extends Component {
           </Card>
         </div>
       ));
-
+      // this function checks if any of user data mathches with search and makes an array of the matching data
         let filteredUsers = users.filter((user) => {
           const contactName = user.name.toLowerCase();
           const contactEmail = user.email.toLowerCase();
@@ -402,6 +409,7 @@ class AdminView extends Component {
           ;
         });
 
+        // loops trough every user and prints all information of a lecture and returns an expandable div
         filteredUsers = filteredUsers.map((user) => (
           <div key={user.name}>
             <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
