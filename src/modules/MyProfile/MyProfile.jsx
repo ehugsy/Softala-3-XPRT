@@ -140,6 +140,8 @@ export default class MyProfile extends Component {
         }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+          <p style={styles.mainDivTextBold}>Teacher:</p>
+          <p style={styles.mainDivText}>{lecture.name}</p>
           <p style={styles.mainDivTextBold}>School name:</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
@@ -182,6 +184,8 @@ export default class MyProfile extends Component {
         }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+          <p style={styles.mainDivTextBold}>Teacher:</p>
+          <p style={styles.mainDivText}>{lecture.name} ({lecture.email})</p>
           <p style={styles.mainDivTextBold}>Name of school</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
@@ -213,6 +217,8 @@ export default class MyProfile extends Component {
         }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+          <p style={styles.mainDivTextBold}>Teacher:</p>
+          <p style={styles.mainDivText}>{lecture.name} ({lecture.email})</p>
           <p style={styles.mainDivTextBold}>Name of school:</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
