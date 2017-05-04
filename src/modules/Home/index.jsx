@@ -25,6 +25,6 @@ export default connect(
           title: user.title, address: user.officeAddress, phone: user.phone, company: user.companyName, locale: 'fi', subjects: user.subjects,
         area: user.supportedLocations})
          }));
-    } // TODO: Missing fields CompanyName
+    }
   })
 )(HomeView);

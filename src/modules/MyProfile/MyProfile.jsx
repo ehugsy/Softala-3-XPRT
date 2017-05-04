@@ -94,12 +94,16 @@ export default class MyProfile extends Component {
   render() {
     let expert = this.props.profile.data;
     let loading = this.props.profile.loading;
+    let lectures = this.props.lectures.data;
+
+    console.log(this.props.profile.data);
+    console.log(this.props);
 
     if (!expert || loading) {
       return <CircularProgress />;
     }
 
-    const lectures = [];
+    // const lectures = [];
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
@@ -231,10 +235,10 @@ export default class MyProfile extends Component {
 
     return (
       <div>
-        <div style={styles.firstWrapper} onClick={EditPictureModal}>
+        <div style={styles.firstWrapper}>
           {/* Profile Picture */}
           <img src={expert.imageUrl} style={{...styles.profilePicture,...styles.mobileHide}}/>
-          <EditPictureModal />
+          <EditPictureModal doEdit={this.props.doEdit}/>
         </div>
 
         <div style={styles.secondWrapper}>
