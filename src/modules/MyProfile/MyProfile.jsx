@@ -192,9 +192,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}> </p>
+          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}> </p>
+          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -223,9 +223,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}> </p>
+          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}> </p>
+          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
