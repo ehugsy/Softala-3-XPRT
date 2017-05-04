@@ -186,7 +186,7 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
           <p style={styles.mainDivText}>{lecture.name} ({lecture.email})</p>
-          <p style={styles.mainDivTextBold}>Name of school</p>
+          <p style={styles.mainDivTextBold}>School name:</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
           <p style={styles.mainDivText}><SubjectList subjects={lecture.subjects}/></p>
@@ -219,7 +219,7 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextTitle}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
           <p style={styles.mainDivText}>{lecture.name} ({lecture.email})</p>
-          <p style={styles.mainDivTextBold}>Name of school:</p>
+          <p style={styles.mainDivTextBold}>School name:</p>
           <p style={styles.mainDivText}>{lecture.school}</p>
           <p style={styles.mainDivTextBold}>Subjects:</p>
           <p style={styles.mainDivText}><SubjectList subjects={lecture.subjects}/></p>
