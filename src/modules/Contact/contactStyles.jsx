@@ -107,6 +107,7 @@ const styles = {
     borderRadius: '20px',
     lineHeight: '0.4em',
     marginTop: '1em',
+    marginBottom: '1em',
     color: theme.palette.primary2Color,
   },
   transparentInput: {
@@ -132,7 +133,7 @@ const styles = {
   errorText: {
     fontFamily: ('Catamaran' : 'sans-serif'),
     fontSize: 12,
-    marginBottom: 20,
+    margin: 0,
   },
   mobileHide: {
     '@media (max-width: 768px)':{
@@ -141,7 +142,7 @@ const styles = {
   },
   contactForm: {
     paddingRight: 10
-  }
+  },
 };
 
 module.exports = styles;

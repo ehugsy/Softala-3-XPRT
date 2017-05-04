@@ -43,7 +43,7 @@ class About extends Component {
               <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
               <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
 
-              <p style={styles.smallHeader}>EXPERTS</p>
+              <p style={styles.smallHeaderUnder}>EXPERTS</p>
               <p>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
               {this.props.isLoggedIn ?
                 <FlatButton label="MY PROFILE" style={styles.buttonStyle} onTouchTap={()=>this.props.changeView('/profile')}/>

@@ -30,12 +30,25 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
   />
 )
 
+const validate = values => {
+  const errors = {}
+  if (values.password !== values.repeatpassword) {
+    errors.repeatpassword = 'Passwords must match'
+  }
+  return errors;
+}
 
 class BasicInfoFields extends Component {
-
-    render() {
-      return (
-        <form onSubmit={this.props.handleSubmit}>
+  /*This prevents enter from closing the registration window*/
+    onKeyPress(event) {
+        if (event.which === 13 /* Enter */) {
+          event.preventDefault();
+        }
+    }
+      render() {
+        return (
+          <form onSubmit={this.props.handleSubmit}
+            onKeyPress={this.onKeyPress}>
           <div style={{height:394}}>
             <Field name='name' validate={required} component={renderTextField} label='Name' type='text'/>
             <Field name='phone' validate={required} component={renderTextField} label='Phone' type='text'/>
@@ -53,6 +66,7 @@ class BasicInfoFields extends Component {
 
 BasicInfoFields = reduxForm({
   form: 'registerForm',
+  validate,
   destroyOnUnmount: false,
 })(BasicInfoFields)
 

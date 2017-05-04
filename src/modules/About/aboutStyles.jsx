@@ -43,6 +43,11 @@ const styles = {
     color: theme.palette.primary1Color,
         letterSpacing: '4px',
   },
+  smallHeaderUnder: {
+    color: theme.palette.primary1Color,
+        letterSpacing: '4px',
+        marginTop: '10%',
+  },
   bigHeader: {
     color: theme.palette.primary1Color,
     fontWeight: 300,

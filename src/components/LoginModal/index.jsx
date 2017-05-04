@@ -21,13 +21,17 @@ class LoginModal extends Component {
   };
 
   handleClose = () => {
-    this.setState({open: false});
+    this.setState({
+      open: false,
+      email: '',
+      password: '',
+    });
   };
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
     this.props.doLogin({email: this.state.email, password: this.state.password}, (err) => {
       if (!err){
-        this.handleClose();
         this.props.changeView('/profile');
       }
     });
@@ -54,26 +58,29 @@ class LoginModal extends Component {
           open={this.state.open}
           contentStyle={styles.dialog}
           onRequestClose={this.handleClose}>
-          <form>
+          <form
+            onSubmit={this.handleSubmit}>
             <MyTextField label="Email"
-                value={this.state.email}
-                onChange={event => {
-                  this.handleChange(event, 'email');
-                }}
+              value={this.state.email}
+              onChange={event => {
+                this.handleChange(event, 'email');
+              }}
             />
             <MyTextField label="Password" type="password"
-                value={this.state.password}
-                onChange={event => {
-                  this.handleChange(event, 'password');
-                }}
+              value={this.state.password}
+              onChange={event => {
+                this.handleChange(event, 'password');
+              }}
             />
             <p style={{textAlign: 'left', fontSize: 13, color: theme.palette.primary2Color}}>Forgotten password?</p>
             {errMsg}
             <FlatButton
+              type='button'
               label='Cancel'
               style={styles.buttonStyle}
               onTouchTap={this.handleClose}/>
             <FlatButton
+              type='submit'
               label='Login'
               style={styles.LoginButtonStyle}
               primary={true}
