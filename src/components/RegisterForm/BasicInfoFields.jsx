@@ -32,10 +32,16 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
 
 
 class BasicInfoFields extends Component {
-
-    render() {
-      return (
-        <form onSubmit={this.props.handleSubmit}>
+  /*This prevents enter from closing the registration window*/
+    onKeyPress(event) {
+        if (event.which === 13 /* Enter */) {
+          event.preventDefault();
+        }
+    }
+      render() {
+        return (
+          <form onSubmit={this.props.handleSubmit}
+            onKeyPress={this.onKeyPress}>
           <div style={{height:394}}>
             <Field name='name' validate={required} component={renderTextField} label='Name' type='text'/>
             <Field name='phone' validate={required} component={renderTextField} label='Phone' type='text'/>
