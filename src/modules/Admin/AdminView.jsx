@@ -247,18 +247,19 @@ class AdminView extends Component {
   render() {
 
     let users = this.props.users.data;
+    let lecturess = this.props.adminLectures.data;
     let loading = this.props.users.loading;
 
-    if (!users || loading) {
+    if (!users || !lecturess || loading) {
       return <CircularProgress />;
     }
 
-    let filteredLectures = lectures.filter((lecture) => {
+    let filteredLectures = lecturess.filter((lecture) => {
       const lectureName = lecture.lecturetheme.toLowerCase();
-      const expertName = lecture.to[0].name.toLowerCase();
-      const teacherName = lecture.from[0].name.toLowerCase();
-      const expertEmail = lecture.to[0].email.toLowerCase();
-      const teacherEmail = lecture.from[0].email.toLowerCase();
+      //const expertName = lecture.name.toLowerCase();
+      const teacherName = lecture.name.toLowerCase();
+      //const expertEmail = lecture.to[0].email.toLowerCase();
+      const teacherEmail = lecture.email.toLowerCase();
       const schoolName = lecture.school.toLowerCase();
       const location = lecture.location.toLowerCase();
       const subjectsList = lecture.subjects.toString().toLowerCase();
@@ -268,10 +269,10 @@ class AdminView extends Component {
       const searchString = this.state.lectureSearch.toLowerCase();
       const stateValue = this.state.lectureValue;
 
-      return (lectureName.indexOf(searchString) !== -1 ||
-      expertName.indexOf(searchString) !== -1
+      return (lectureName.indexOf(searchString) !== -1
+      //|| expertName.indexOf(searchString) !== -1
       || teacherName.indexOf(searchString) !== -1
-      || expertEmail.indexOf(searchString) !== -1
+      //|| expertEmail.indexOf(searchString) !== -1
       || teacherEmail.indexOf(searchString) !== -1
       || schoolName.indexOf(searchString) !== -1
       || location.indexOf(searchString) !== -1
@@ -317,21 +318,21 @@ class AdminView extends Component {
                 <div style={styles.parent}>
                   <div style={styles.left}>
                     <h3 style={styles.header3top}>From:</h3>
-                    <p>{lecture.from[0].name}<br/>
-                    {lecture.from[0].email}
+                    <p>{lecture.name}<br/>
+                    {lecture.email}
                     </p>
                   </div>
                   <div style={styles.middle}>
                     <h3 style={styles.header3top}>To:</h3>
-                    <p>{lecture.to[0].name}<br/>
-                    {lecture.to[0].email}
+                    <p>TBA<br/>
+                    TBA
                     </p>
                   </div>
                   <div style={styles.right}>
                     <h3 style={styles.header3top}>Date sent:</h3>
 
                     <p>{lecture.datesent}<br />
-                    {lecture.status} {lecture.responseDate}
+                    {lecture.status} {lecture.statusDate}
                     </p>
                   </div>
                 </div>
@@ -356,10 +357,10 @@ class AdminView extends Component {
                   {lecture.lecturetheme}
                   </p>
                   <p><span style={styles.boldText}>Date of lecture: (option1)</span><br/>
-                  {lecture.dateoflecture[0].option1}
+                  {lecture.dateOption1}
                   </p>
                   <p><span style={styles.boldText}>Date of lecture: (option2)</span><br/>
-                  {lecture.dateoflecture[0].option2}
+                  {lecture.dateOption2}
                   </p>
                   <p><span style={styles.boldText}>Location:</span><br/>
                   {lecture.location}
@@ -513,9 +514,9 @@ class AdminView extends Component {
 
                     <DropDownMenu value={this.state.lectureValue} onChange={this.lectureHandleChange} openImmediately={false} style={styles.DropDownMenu}>
                       <MenuItem value={'all'} primaryText="ALL" />
-                      <MenuItem value={'waiting'} primaryText="WAITING FOR RESPONSE" />
+                      <MenuItem value={'pending'} primaryText="WAITING FOR RESPONSE" />
                       <MenuItem value={'accepted'} primaryText="ACCEPTED" />
-                      <MenuItem value={'declined'} primaryText="DECLINED" />
+                      <MenuItem value={'rejected'} primaryText="DECLINED" />
                       <MenuItem value={'ignored'} primaryText="IGNORED" />
                       <MenuItem value={'held'} primaryText="HELD" />
                     </DropDownMenu>
