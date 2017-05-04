@@ -7,8 +7,8 @@ const styles = {
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    marginTop: '1em'
-
+    marginTop: '1em',
+    marginBottom: '2em',
   },
   LoginButtonStyle: {
     border: '1px solid #555555',
