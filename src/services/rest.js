@@ -40,7 +40,12 @@ const rest = reduxApi({
   register: {
     url: `${config.API_ROOT}/users`,
     crud: true,
-  }
+  },
+  users: {
+    url: `${config.API_ROOT}/users`,
+    transformer: transformers.array,
+    crud: true,
+  },
 
   // Add more API endpoints here! Examples below:
 

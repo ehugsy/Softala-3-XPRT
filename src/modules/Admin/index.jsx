@@ -4,10 +4,12 @@ import AdminView from './AdminView';
 import rest from '../../services/rest';
 
 export default connect(
-  (state) => ({}),
+  (state) => ({
+    users: state.users,
+  }),
   (dispatch) => ({
-    getExperts() {
-      dispatch(rest.actions.experts());
+    refresh() {
+      dispatch(rest.actions.users());
     }
   })
 )(AdminView);
