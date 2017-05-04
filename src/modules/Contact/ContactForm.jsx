@@ -14,13 +14,28 @@ const email = value =>
 const renderTextField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     {touched && error &&
-        <span style={styles.errorText}>{error}</span>
+        <p style={styles.errorText}>{error}</p>
       }
       <input
         {...input}
         placeholder={label}
         type={type}
+        style={touched && error ?
+        {...styles.transparentInput,...styles.errorInput} :
+        styles.transparentInput}
+      />
+  </div>
+)
 
+const renderTextArea = ({ input, label, type, meta: { touched, error, warning } }) => (
+  <div>
+    {touched && error &&
+        <p style={styles.errorText}>{error}</p>
+      }
+      <textarea
+        {...input}
+        placeholder={label}
+        type={type}
         style={touched && error ?
         {...styles.transparentInput,...styles.errorInput} :
         styles.transparentInput}
@@ -61,7 +76,7 @@ const ContactForm = (props) => {
         name="message"
         label="Your message *"
         validate={required}
-        component={renderTextField}
+        component={renderTextArea}
       />
       <FlatButton type="submit" label="SUBMIT" style={styles.buttonStyle}/>
     </form>
