@@ -101,7 +101,14 @@ export default class MyProfile extends Component {
     console.log(this.props.lectures.data);
 
     if (!expert || loading) {
-      return <CircularProgress />;
+      return <div style={{
+        textAlign: 'left',
+        display: 'flex',
+        justifyContent: 'center',
+        paddingTop: '200px',
+      }}>
+        <CircularProgress />
+      </div>;
     }
 
     // const lectures = [];
