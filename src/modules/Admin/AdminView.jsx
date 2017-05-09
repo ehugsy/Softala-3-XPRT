@@ -69,24 +69,23 @@ class AdminView extends Component {
     // this function checks if any of lecture data mathches with search and makes an array of the matching data
     let filteredLectures = lectures.filter((lecture) => {
       const lectureName = lecture.lecturetheme.toLowerCase();
-      //const expertName = lecture.name.toLowerCase();
-      const teacherName = lecture.name.toLowerCase();
-      //const expertEmail = lecture.to[0].email.toLowerCase();
-      const teacherEmail = lecture.email.toLowerCase();
-      const schoolName = lecture.school.toLowerCase();
-      const location = lecture.location.toLowerCase();
+      const expertName = lecture.ExpertName.toLowerCase();
+      const teacherName = lecture.TeacherName.toLowerCase();
+      const expertEmail = lecture.ExpertEmail.toLowerCase();
+      const teacherEmail = lecture.TeacherEmail.toLowerCase();
+      const schoolName = lecture.TeacherSchool.toLowerCase();
+      const location = lecture.TeacherAddress.toLowerCase();
       const subjectsList = lecture.subjects.toString().toLowerCase();
 
       const lectureStatus = lecture.status;
-      //const contactCity = contact.city.toLowerCase();
       const searchString = this.state.lectureSearch.toLowerCase();
       const stateValue = this.state.lectureValue;
 
       //returns if any data matches with the search, also checks if user wants to see all lectures or for example held lectures
       return (lectureName.indexOf(searchString) !== -1
-      //|| expertName.indexOf(searchString) !== -1
+      || expertName.indexOf(searchString) !== -1
       || teacherName.indexOf(searchString) !== -1
-      //|| expertEmail.indexOf(searchString) !== -1
+      || expertEmail.indexOf(searchString) !== -1
       || teacherEmail.indexOf(searchString) !== -1
       || schoolName.indexOf(searchString) !== -1
       || location.indexOf(searchString) !== -1
@@ -161,19 +160,18 @@ class AdminView extends Component {
                 <div style={styles.parent}>
                   <div style={styles.left}>
                     <h3 style={styles.header3top}>From:</h3>
-                    <p>{lecture.name}<br/>
-                    {lecture.email}
+                    <p>{lecture.TeacherName}<br/>
+                    {lecture.TeacherEmail}
                     </p>
                   </div>
                   <div style={styles.middle}>
                     <h3 style={styles.header3top}>To:</h3>
-                    <p>TBA<br/>
-                    TBA
+                    <p>{lecture.ExpertName}<br/>
+                    {lecture.ExpertEmail}
                     </p>
                   </div>
                   <div style={styles.right}>
                     <h3 style={styles.header3top}>Date sent:</h3>
-
                     <p><DateFormat date={lecture.datesent}/><br />
                     <StatusDate status={lecture.status} date={lecture.statusDate}/>
                     </p>
@@ -186,7 +184,7 @@ class AdminView extends Component {
                 <div style={styles.parent}>
                   <div style={styles.left}>
                     <p><span style={styles.boldText}>School name:</span><br/>
-                    {lecture.school}
+                    {lecture.TeacherSchool}
                   </p>
                   <p><span style={styles.boldText}>Subjects:</span><br/>
                   <List values={lecture.subjects}/>
@@ -206,7 +204,7 @@ class AdminView extends Component {
                   <DateFormat date={lecture.dateOption2}/>
                   </p>
                   <p><span style={styles.boldText}>Location:</span><br/>
-                  {lecture.location}
+                  {lecture.TeacherAddress}
                   </p>
                   <p><span style={styles.boldText}>Short description:</span><br/>
                   {lecture.description}
@@ -294,10 +292,12 @@ class AdminView extends Component {
                           <strong>Job title:</strong><br />
                           {user.title}
                         </p>
+                      {user.officeVisit &&
                         <p>
                           <strong>Office address:</strong><br />
                           <OfficeVisit address={user.address}/>
                         </p>
+                      }
                         <p>
                           <strong>Introduction</strong><br />
                           {user.description}
@@ -309,7 +309,7 @@ class AdminView extends Component {
                     </div>
 
                     <div style={styles.right}>
-                      <EditModal />
+                      <EditModal user={user} />
                     </div>
                     </div>
                   </CardText>
