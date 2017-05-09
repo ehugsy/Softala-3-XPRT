@@ -102,9 +102,9 @@ export default class MyProfile extends Component {
   };
 
   handleInvite = (id, status) => {
-    console.log(id);
-    console.log(status);
-    this.props.editInvitation(id, status);
+    this.props.editInvitation(id, status, () => {
+      this.props.refresh();
+    });
   };
 
   render() {

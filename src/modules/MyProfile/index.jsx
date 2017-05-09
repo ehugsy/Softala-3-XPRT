@@ -13,10 +13,10 @@ export default connect(
       dispatch(rest.actions.profile());
       dispatch(rest.actions.expertLectures());
     },
-    editInvitation(lectureId, status){
+    editInvitation(lectureId, status, cb){
       dispatch(rest.actions.invitations.post({ lectureId }, { body: JSON.stringify(
         {status: status}
-      )}));
+      )}, cb));
     },
     editProfile(data) {
       dispatch(rest.actions.profile.post({}, { body: JSON.stringify(
