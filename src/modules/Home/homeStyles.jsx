@@ -136,6 +136,10 @@ const styles = {
       textAlign: 'left'
     },
   },
+  //For Teachers & Experts -divs
+  homeText: {
+    minHeight: '130px',
+    },
   buttonStyle: {
     border: '1px solid #555555',
     padding: '15px',

@@ -48,15 +48,21 @@ class Home extends Component  {
 
           <div style={styles.teacherExpertWrapper}>
             <div style={styles.leftText}>
+            <div style={styles.homeText}>
               <p style={styles.smallHeader}>TEACHERS</p>
               <p style={styles.mobileFont}>Download and install the app to browse and view the experts' profile. Easily inite experts to your classroom.</p>
+            </div>
+            <div>
               <FlatButton label="DOWNLOAD FOR IPHONE" style={styles.buttonStyle}/><br />
               <FlatButton label="DOWNLOAD FOR ANDROID" style={styles.buttonStyle}/>
             </div>
+            </div>
             <div style={styles.rightText}>
+            <div style={styles.homeText}>
               <p style={styles.smallHeader}>EXPERTS</p>
 
               <p style={styles.mobileFont}>Sign up as an expert and  to share your skills for the benefit of the future generation.</p>
+            </div>
               {this.props.isLoggedIn ?
                 <FlatButton label="MY PROFILE" style={styles.buttonStyle} onTouchTap={()=>this.props.changeView('/profile')}/>
                 :
