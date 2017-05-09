@@ -82,17 +82,33 @@ function OfficeVisit(props){
         </div>
       );
     }
-
 }
-// {lecture.dateoflecture[0].option2}
+
+//makes dates be in format dd.mm.yyyy
+function DateFormat(props) {
+  let date = props.date;
+  let day = date.slice(8,10);
+  let month = date.slice(5,7);
+  let year = date.slice(0, 4);
+  return (
+    <span>{day}.{month}.{year}</span>
+    );
+}
 
 @Radium
 export default class MyProfile extends Component {
   componentDidMount() {
     this.props.refresh();
-  }
+  };
+
+  handleInvite = (id, status) => {
+    console.log(id);
+    console.log(status);
+    this.props.editInvitation(id, status);
+  };
 
   render() {
+
     let expert = this.props.profile.data;
     let loading = this.props.profile.loading;
     let lectures = this.props.lectures.data;
@@ -107,7 +123,6 @@ export default class MyProfile extends Component {
         <CircularProgress />
       </div>;
     }
-
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
@@ -155,18 +170,18 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption1}/></p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption2}/></p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.description}</p>
           <div style={styles.ButtonAlignRight}>
-            <FlatButton expandable={true} label="DECLINE" style={{
+            <FlatButton onTouchTap={() => this.handleInvite(lecture.id, 'rejected')} expandable={true} label="DECLINE" style={{
               ...styles.buttonStyle
             }}/>
-            <FlatButton expandable={true} label="ACCEPT" style={{
+            <FlatButton onTouchTap={() => this.handleInvite(lecture.id, 'accepted')} expandable={true} label="ACCEPT" style={{
               ...styles.buttonStyle,
               ...styles.buttonGold
             }}/>
@@ -199,9 +214,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption1}/></p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption2}/></p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -232,9 +247,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption1}/></p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption2}/></p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>

@@ -34,7 +34,7 @@ const rest = reduxApi({
     crud: true,
   },
   invitations: {
-    url: `${config.API_ROOT}/invitations`,
+    url: `${config.API_ROOT}/invitations/:lectureId`,
     crud: true,
   },
   expertLectures: {
@@ -43,7 +43,7 @@ const rest = reduxApi({
     crud: true,
   },
   adminLectures: {
-    url: `${config.API_ROOT}/admin/lectures`,
+    url: `${config.API_ROOT}/lectures`,
     transformer: transformers.array,
     crud: true,
   },
