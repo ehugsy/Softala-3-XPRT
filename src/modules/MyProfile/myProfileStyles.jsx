@@ -24,7 +24,7 @@ of the page overall
     color: theme.palette.textColor,
     background:"#262626",
     '@media (max-width: 768px)': {
-      flexDirection: 'column-reverse'
+      flexDirection: 'column'
     },
     mobileHide: {
       '@media (max-width: 768px)':{
@@ -65,7 +65,6 @@ Next elements change the outlook of the left column.
     marginTop: '-200px',
     paddingLeft: '25px',
     marginRight: 100,
-    alignSelf: 'flex-start',
     '@media (max-width: 768px)': {
       marginTop: 0,
       marginRight: 85
@@ -80,7 +79,6 @@ Next elements change the outlook of the left column.
   },
   //My profile -title on the left
   mainDivTitle: {
-    flex: 1,
     fontSize: '18px',
   },
   //Style for experts own subjects on left column
