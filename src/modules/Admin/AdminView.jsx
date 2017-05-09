@@ -312,10 +312,12 @@ class AdminView extends Component {
                           <strong>Job title:</strong><br />
                           {user.title}
                         </p>
+                      {user.officeVisit &&
                         <p>
                           <strong>Office address:</strong><br />
                           <OfficeVisit address={user.address}/>
                         </p>
+                      }
                         <p>
                           <strong>Introduction</strong><br />
                           {user.description}
@@ -327,7 +329,7 @@ class AdminView extends Component {
                     </div>
 
                     <div style={styles.right}>
-                      <EditModal />
+                      <EditModal user={user} />
                     </div>
                     </div>
                   </CardText>

@@ -82,17 +82,22 @@ function OfficeVisit(props){
         </div>
       );
     }
-
 }
-// {lecture.dateoflecture[0].option2}
 
 @Radium
 export default class MyProfile extends Component {
   componentDidMount() {
     this.props.refresh();
-  }
+  };
+
+  handleInvite = (id, status) => {
+    console.log(id);
+    console.log(status);
+    this.props.editInvitation(id, status);
+  };
 
   render() {
+
     let expert = this.props.profile.data;
     let loading = this.props.profile.loading;
     let lectures = this.props.lectures.data;
@@ -107,7 +112,6 @@ export default class MyProfile extends Component {
         <CircularProgress />
       </div>;
     }
-
 
     let invitations = lectures.filter((lecture) => {
       const status = lecture.status.toLowerCase();
@@ -163,10 +167,10 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.description}</p>
           <div style={styles.ButtonAlignRight}>
-            <FlatButton expandable={true} label="DECLINE" style={{
+            <FlatButton onTouchTap={() => this.handleInvite(lecture.id, 'rejected')} expandable={true} label="DECLINE" style={{
               ...styles.buttonStyle
             }}/>
-            <FlatButton expandable={true} label="ACCEPT" style={{
+            <FlatButton onTouchTap={() => this.handleInvite(lecture.id, 'accepted')} expandable={true} label="ACCEPT" style={{
               ...styles.buttonStyle,
               ...styles.buttonGold
             }}/>
