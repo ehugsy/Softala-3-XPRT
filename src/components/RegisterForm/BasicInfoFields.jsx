@@ -22,7 +22,7 @@ const email = value =>
   'Invalid email address' : undefined
 
   const tel = value =>
-    value && !/^\d{10}$/.test(value) ?
+    value && !/^\d{8,10}$/.test(value) ?
     'Invalid phone number' : undefined
 
     const name = value =>
