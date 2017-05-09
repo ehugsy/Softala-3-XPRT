@@ -52,7 +52,7 @@ const rest = reduxApi({
     crud: true,
   },
   adminLectures: {
-    url: `${config.API_ROOT}/lectures/me`,
+    url: `${config.API_ROOT}/lectures`,
     transformer: transformers.array,
     crud: true,
   },
