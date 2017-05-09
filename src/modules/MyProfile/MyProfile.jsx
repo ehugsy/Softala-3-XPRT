@@ -84,6 +84,17 @@ function OfficeVisit(props){
     }
 }
 
+//makes dates be in format dd.mm.yyyy
+function DateFormat(props) {
+  let date = props.date;
+  let day = date.slice(8,10);
+  let month = date.slice(5,7);
+  let year = date.slice(0, 4);
+  return (
+    <span>{day}.{month}.{year}</span>
+    );
+}
+
 @Radium
 export default class MyProfile extends Component {
   componentDidMount() {
@@ -159,9 +170,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption1}/></p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption2}/></p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -203,9 +214,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption1}/></p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption2}/></p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
@@ -236,9 +247,9 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption1}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption1}/></p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 2):</p>
-          <p style={styles.mainDivText}>{lecture.dateOption2}</p>
+          <p style={styles.mainDivText}><DateFormat date={lecture.dateOption2}/></p>
           <p style={styles.mainDivTextBold}>Location:</p>
           <p style={styles.mainDivText}>{lecture.location}</p>
           <p style={styles.mainDivTextBold}>Short description of the lecture:</p>
