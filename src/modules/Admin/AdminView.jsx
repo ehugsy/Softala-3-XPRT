@@ -129,7 +129,7 @@ class AdminView extends Component {
       }
 
     //makes dates be in format dd.mm.yyyy
-    function DateFormat(props){
+    function DateFormat(props) {
       let date = props.date;
       let day = date.slice(8,10);
       let month = date.slice(5,7);
@@ -137,6 +137,20 @@ class AdminView extends Component {
       return (
         <span>{day}.{month}.{year}</span>
         );
+    }
+
+    //if lecture status is 'pending' statusDate is not shown
+    function StatusDate(props) {
+      let date = props.date;
+      let status = props.status;
+      let day = date.slice(8,10);
+      let month = date.slice(5,7);
+      let year = date.slice(0, 4)
+      if (status === 'pending') {
+        return <span>{status}</span>;
+      } else {
+        return <span>{status} {day}.{month}.{year}</span>;
+        }
     }
 
     // loops trough every lecture and prints all information of a lecture and returns an expandable div
@@ -161,7 +175,7 @@ class AdminView extends Component {
                     <h3 style={styles.header3top}>Date sent:</h3>
 
                     <p><DateFormat date={lecture.datesent}/><br />
-                    {lecture.status} <DateFormat date={lecture.statusDate}/>
+                    <StatusDate status={lecture.status} date={lecture.statusDate}/>
                     </p>
                   </div>
                 </div>
