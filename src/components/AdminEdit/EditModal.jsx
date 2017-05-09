@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import Radium from 'radium';
@@ -97,7 +98,7 @@ const renderChipInput = ({ input, label, hintText, dataSource, meta: { touched, 
 )
 
 @Radium
-export default class BasicInfoModal extends React.Component {
+class AdminEditModal extends Component {
   state = {
     open: false,
   };
@@ -110,8 +111,8 @@ export default class BasicInfoModal extends React.Component {
     this.setState({open: false});
   };
 
-
     render() {
+      const { officeVisit } = this.props
       return (
         <div>
           <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}><img src={'../../img/edit.png'} style={styles.editPen}/></a>
@@ -132,97 +133,98 @@ export default class BasicInfoModal extends React.Component {
                     component={renderTextField}
                     label='Name'
                     type='text'
-                    hintText={formdata.name}
-                    floatingLabelFixed={true}/>
+                    floatingLabelFixed={true}
+                  />
 
                   <Field
                     name='phone'
                     validate={required}
                     component={renderTextField}
                     label='Phone' type='text'
-                    hintText={formdata.phone}
-                    floatingLabelFixed={true} />
+                    floatingLabelFixed={true}
+                  />
 
                   <Field
                     name='email'
                     validate={[required, email]}
                     component={renderTextField}
                     label='Email' type='text'
-                    hintText={formdata.email}
-                    floatingLabelFixed={true} />
+                    floatingLabelFixed={true}
+                  />
 
                   <Field
-                    name='supportedLocations'
+                    name='area'
                     label='Supported locations'
                     component={renderChipInput}
                     id='supportedLocations'
                     dataSource={cityList}
-                    hintText={formdata.supportedLocations}
-                    floatingLabelFixed={true} />
+                    floatingLabelFixed={true}
+                  />
 
-                    <Field
-                      name='companyName'
-                      label='Company name'
-                      component={renderTextField}
-                      id='companyName'
-                      validate={required}
-                      hintText={formdata.companyName}
-                      floatingLabelFixed={true}/>
+                  <Field
+                    name='company'
+                    label='Company name'
+                    component={renderTextField}
+                    id='companyName'
+                    validate={required}
+                    floatingLabelFixed={true}
+                  />
 
-                      <Field
-                        name='title'
-                        label='Title'
-                        component={renderTextField}
-                        id='title'
-                        validate={required}
-                        hintText={formdata.title}
-                        floatingLabelFixed={true}/>
+                  <Field
+                    name='title'
+                    label='Title'
+                    component={renderTextField}
+                    id='title'
+                    validate={required}
+                    floatingLabelFixed={true}
+                  />
 
-                      <Field
-                        name='officeVisitPossible'
-                        id='officeVisitPossible'
-                        component={renderCheckbox}
-                        label='Office visit possible'
-                        value='checked'/>
+                  <Field
+                    name='officeVisit'
+                    id='officeVisitPossible'
+                    component={renderCheckbox}
+                    label='Office visit possible'
+                  />
 
-                        <p>Check this box if you agree that teachers can come to your office with
-                            a group of students</p>
+                  <p>Check this box if you agree that teachers can come to your office with
+                      a group of students</p>
 
-                      {this.props.officeVisitPossible &&
-                          <Field
-                            name='officeAddress'
-                            label='Office address'
-                            component={renderTextField}
-                            id='officeAddress'
-                            floatingLabelFixed={true}/>
-                          }
-                          <Field
-                            name='introduction'
-                            validate={required}
-                            component={renderTextField}
-                            label='Short introduction'
-                            type='text'
-                            hintText={formdata.introduction}
-                            floatingLabelFixed={true}/>
+                  {officeVisit &&
+                  <Field
+                    name='address'
+                    label='Office address'
+                    component={renderTextField}
+                    id='officeAddress'
+                    floatingLabelFixed={true}
+                  />}
 
-                            <Field
-                              name='subjects'
-                              label='Subjects'
-                              validate={required}
-                              component={renderChipInput}
-                              id='subjects'
-                              dataSource={subjectList}
-                              hintText={formdata.subjects}
-                              floatingLabelFixed={true} />
+                  <Field
+                    name='description'
+                    validate={required}
+                    component={renderTextField}
+                    label='Short introduction'
+                    type='text'
+                    floatingLabelFixed={true}
+                  />
 
-                              <Field
-                                name='lectureDetails'
-                                validate={required}
-                                component={renderTextField}
-                                label='Lecture details'
-                                type='text'
-                                hintText={formdata.lectureDetails}
-                                floatingLabelFixed={true} />
+                  <Field
+                    name='subjects'
+                    label='Subjects'
+                    validate={required}
+                    component={renderChipInput}
+                    id='subjects'
+                    dataSource={subjectList}
+                    floatingLabelFixed={true}
+                  />
+
+                  <Field
+                    name='details'
+                    validate={required}
+                    component={renderTextField}
+                    label='Lecture details'
+                    type='text'
+                    floatingLabelFixed={true}
+                  />
                 </div>
                 <FlatButton
                   label="Save"
@@ -245,7 +247,27 @@ export default class BasicInfoModal extends React.Component {
   }
 }
 
-BasicInfoModal = reduxForm({
+AdminEditModal = reduxForm({
   form: 'myProfileEditForm',
-  destroyOnUnmount: false,
-})(BasicInfoModal)
+  destroyOnUnmount: true,
+  enableReinitialize: true,
+})(AdminEditModal)
+
+AdminEditModal = connect(
+  (state, ownProps) => ({
+    initialValues: ownProps.user,
+  }),
+)(AdminEditModal)
+
+const selector = formValueSelector('myProfileEditForm')
+AdminEditModal = connect(
+  state => {
+    const officeVisit = selector(state, 'officeVisit')
+    return {
+      officeVisit,
+    }
+  }
+)(AdminEditModal)
+
+
+export default AdminEditModal;
