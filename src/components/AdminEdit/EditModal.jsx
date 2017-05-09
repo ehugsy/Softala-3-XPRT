@@ -57,10 +57,11 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
     {...custom}
   />
 )
-const renderCheckbox = ({ input, label }) => (
+const renderCheckbox = ({ input, label, style }) => (
   <Checkbox label={label}
     checked={input.value ? true : false}
     onCheck={input.onChange}
+    style={style}
   />
 )
 
@@ -166,7 +167,6 @@ class AdminEditModal extends Component {
                     label='Company name'
                     component={renderTextField}
                     id='companyName'
-                    validate={required}
                     floatingLabelFixed={true}
                   />
 
@@ -175,7 +175,6 @@ class AdminEditModal extends Component {
                     label='Title'
                     component={renderTextField}
                     id='title'
-                    validate={required}
                     floatingLabelFixed={true}
                   />
 
@@ -184,6 +183,7 @@ class AdminEditModal extends Component {
                     id='officeVisitPossible'
                     component={renderCheckbox}
                     label='Office visit possible'
+                    style={{marginTop:20}}
                   />
 
                   <p>Check this box if you agree that teachers can come to your office with
