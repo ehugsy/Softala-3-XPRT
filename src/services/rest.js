@@ -37,8 +37,13 @@ const rest = reduxApi({
     url: `${config.API_ROOT}/invitations`,
     crud: true,
   },
-  lectures: {
-    url: `${config.API_ROOT}/lectures/me`,
+  expertLectures: {
+    url: `${config.API_ROOT}/expert/lectures`,
+    transformer: transformers.array,
+    crud: true,
+  },
+  adminLectures: {
+    url: `${config.API_ROOT}/lectures`,
     transformer: transformers.array,
     crud: true,
   },
@@ -51,12 +56,6 @@ const rest = reduxApi({
     transformer: transformers.array,
     crud: true,
   },
-  adminLectures: {
-    url: `${config.API_ROOT}/lectures/me`,
-    transformer: transformers.array,
-    crud: true,
-  },
-
   // Add more API endpoints here! Examples below:
 
   /*

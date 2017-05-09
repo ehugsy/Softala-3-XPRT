@@ -6,14 +6,14 @@ import rest from '../../services/rest';
 export default connect(
   (state) => ({
     profile: state.profile,
-    lectures: state.lectures,
+    lectures: state.expertLectures,
   }),
   (dispatch) => ({
     refresh() {
       dispatch(rest.actions.profile());
-      dispatch(rest.actions.lectures());
+      dispatch(rest.actions.expertLectures());
     },
-    doEdit(file) {
+    editProfile(data) {
       dispatch(rest.actions.profile.post({}, { body: JSON.stringify(
         {image: file.image})
       }));

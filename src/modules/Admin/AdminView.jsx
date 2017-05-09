@@ -30,196 +30,6 @@ import MenuItem from 'material-ui/MenuItem';
 import styles from './adminStyles';
 import EditModal from '../../components/AdminEdit/EditModal';
 
-let lectures = [
- {
-   from: [
-     {name: 'Esa Peltonen',
-     email: 'esapeltonen@gmail.com'}
-   ],
-   to: [
-     {name: 'Arnold Schwarzenegger',
-     email: 'arska@gmail.com'}
-   ],
-   datesent: '10.11.2016',
-   school: 'The International School of Helsinki',
-   subjects:[
-     'Mathematics',
-     'Physics'
-   ],
-   educationalstage: 'Upper Secondary School',
-   lecturetheme: 'Making Numbers Cool',
-   dateoflecture:[
-     {option1: '12.03.2017',
-     option2: '14.03.2017'}
-   ],
-   location: 'Mannerheimintie 500, Helsinki',
-   description: 'Why mathematics should be considered cool and worth learning. Also Cookiees',
-   status: 'accepted',
-   responseDate: '22.11.2016'
-},
-{
-  from: [
-    {name: 'Tim Thomson',
-    email: 'tim@yahoo.com'}
-  ],
-  to: [
-    {name: 'Ensio Eimonen',
-    email: 'ensio@gmail.com'}
-  ],
-  datesent: '06.04.2016',
-  school: 'Haaga-Helia ammattikorkeakoulu',
-  subjects:[
-    'Java',
-    'PHP',
-    'NodeJS',
-    'Coding'
-  ],
-  educationalstage: 'Upper Secondary School',
-  lecturetheme: 'Back-End choises',
-  dateoflecture:[
-    {option1: '12.05.2017',
-    option2: '14.05.2017'}
-  ],
-  location: 'Ratapihantie 13, Helsinki',
-  description: 'Pros and cons about back-end coding languages',
-  status: 'waiting',
-  responseDate: ''
-},
-{
-  from: [
-    {name: 'Matilda Madison',
-    email: 'matilda@gmail.com'}
-  ],
-  to: [
-    {name: 'Tyson Traveller',
-    email: 'tyson@hotmail.com'}
-  ],
-  datesent: '10.04.2016',
-  school: 'Aalto yliopisto',
-  subjects:[
-    'Travelling',
-    'Guidance'
-  ],
-  educationalstage: 'University',
-  lecturetheme: 'New opportunities for a travel guide',
-  dateoflecture:[
-    {option1: '15.05.2017',
-    option2: '20.05.2017'}
-  ],
-  location: 'Yliopistotie 20, Helsinki',
-  description: 'Travelling in Africa is getting popular and it is giving more opportunities for travel guides',
-  status: 'waiting',
-  responseDate: ''
-},
-{
-  from: [
-    {name: 'Einari Nieminen',
-    email: 'einari@hotmail.com'}
-  ],
-  to: [
-    {name: 'Scott Sterling',
-    email: 'scott@gmail.com'}
-  ],
-  datesent: '06.12.2016',
-  school: 'Rovaniemen lukio',
-  subjects:[
-    'Animals',
-    'Breeding'
-  ],
-  educationalstage: 'High School',
-  lecturetheme: 'Reindeer breeding',
-  dateoflecture:[
-    {option1: '12.03.2017',
-    option2: '14.03.2017'}
-  ],
-  location: 'Porokuja 50, Rovaniemi',
-  description: 'Things you need to know about reindeer breeding',
-  status: 'declined',
-  responseDate: '07.12.2016'
-},
-{
-   from: [
-     {name: 'Matti Meikäläinen',
-     email: 'mattimeikäläinen@gmail.com'}
-   ],
-   to: [
-     {name: 'Teuvo Teikäläinen',
-     email: 'teuvoteikalainen@gmail.com'}
-   ],
-   datesent: '11.11.2016',
-   school: 'Haaga-Helia ammattikorkeakoulu',
-   subjects:[
-     'React',
-     'Git',
-     'Coding'
-   ],
-   educationalstage: 'Upper Secondary School',
-   lecturetheme: 'Lets code',
-   dateoflecture:[
-     {option1: '22.03.2017',
-     option2: '16.04.2017'}
-   ],
-   location: 'Ratapihantie 13, Helsinki',
-   description: 'We make a little web application together with React',
-   status: 'ignored',
-   resposeDate: ''
-},
-{
-   from: [
-     {name: 'Matti Meikäläinen',
-     email: 'mattimeikäläinen@gmail.com'}
-   ],
-   to: [
-     {name: 'Teuvo Teikäläinen',
-     email: 'teuvoteikalainen@gmail.com'}
-   ],
-   datesent: '11.11.2016',
-   school: 'Haaga-Helia ammattikorkeakoulu',
-   subjects:[
-     'React',
-     'Git',
-     'Coding'
-   ],
-   educationalstage: 'Upper Secondary School',
-   lecturetheme: 'Basics of using React and Git',
-   dateoflecture:[
-     {option1: '22.03.2017',
-     option2: '16.04.2017'}
-   ],
-   location: 'Ratapihantie 13, Helsinki',
-   description: 'We make a little web application together with React',
-   status: 'held',
-   resposeDate: ''
-},
-{
-   from: [
-     {name: 'Matti Meikäläinen',
-     email: 'mattimeikäläinen@gmail.com'}
-   ],
-   to: [
-     {name: 'Teuvo Teikäläinen',
-     email: 'teuvoteikalainen@gmail.com'}
-   ],
-   datesent: '11.11.2016',
-   school: 'Haaga-Helia ammattikorkeakoulu',
-   subjects:[
-     'React',
-     'Git',
-     'Coding'
-   ],
-   educationalstage: 'Upper Secondary School',
-   lecturetheme: 'Coding lecture',
-   dateoflecture:[
-     {option1: '22.03.2017',
-     option2: '16.04.2017'}
-   ],
-   location: 'Ratapihantie 13, Helsinki',
-   description: 'We make a little web application together with React',
-   status: 'held',
-   resposeDate: ''
-}];
-
-
 @Radium
 class AdminView extends Component {
 
@@ -227,52 +37,55 @@ class AdminView extends Component {
     this.props.refresh();
   }
 
-  /* Gives sorting dropdown menu a default value. 1 = first value of options */
+  // Gives sorting dropdown menu a default value. 1 = first value of options
   constructor(props) {
     super(props);
     this.state = {userValue: 'all', lectureValue: 'all', lectureSearch: '', userSearch: ''};
   }
-
+//triggered when user types on textfield
   updateLectureSearch(event){
     this.setState({lectureSearch: event.target.value})
   }
-
+//triggered when user types on textfield
   updateUserSearch(event){
     this.setState({userSearch: event.target.value})
   }
-
+//triggered when dropdown is selected
   lectureHandleChange = (event, index, lectureValue) => this.setState({lectureValue});
+  //triggered when dropdown is selected
   userHandleChange = (event, index, userValue) => this.setState({userValue});
 
   render() {
 
     let users = this.props.users.data;
-    let lecturess = this.props.adminLectures.data;
+    let lectures = this.props.adminLectures.data;
     let loading = this.props.users.loading;
 
-    if (!users || !lecturess || loading) {
+    // shows the circular loading animation until users and lectures are loaded
+    if (!users || !lectures || loading) {
       return <CircularProgress />;
     }
 
-    let filteredLectures = lecturess.filter((lecture) => {
+    // this function checks if any of lecture data mathches with search and makes an array of the matching data
+    let filteredLectures = lectures.filter((lecture) => {
       const lectureName = lecture.lecturetheme.toLowerCase();
-      //const expertName = lecture.name.toLowerCase();
-      const teacherName = lecture.name.toLowerCase();
-      //const expertEmail = lecture.to[0].email.toLowerCase();
-      const teacherEmail = lecture.email.toLowerCase();
-      const schoolName = lecture.school.toLowerCase();
-      const location = lecture.location.toLowerCase();
+      const expertName = lecture.ExpertName.toLowerCase();
+      const teacherName = lecture.TeacherName.toLowerCase();
+      const expertEmail = lecture.ExpertEmail.toLowerCase();
+      const teacherEmail = lecture.TeacherEmail.toLowerCase();
+      const schoolName = lecture.TeacherSchool.toLowerCase();
+      const location = lecture.TeacherAddress.toLowerCase();
       const subjectsList = lecture.subjects.toString().toLowerCase();
 
       const lectureStatus = lecture.status;
-      //const contactCity = contact.city.toLowerCase();
       const searchString = this.state.lectureSearch.toLowerCase();
       const stateValue = this.state.lectureValue;
 
+      //returns if any data matches with the search, also checks if user wants to see all lectures or for example held lectures
       return (lectureName.indexOf(searchString) !== -1
-      //|| expertName.indexOf(searchString) !== -1
+      || expertName.indexOf(searchString) !== -1
       || teacherName.indexOf(searchString) !== -1
-      //|| expertEmail.indexOf(searchString) !== -1
+      || expertEmail.indexOf(searchString) !== -1
       || teacherEmail.indexOf(searchString) !== -1
       || schoolName.indexOf(searchString) !== -1
       || location.indexOf(searchString) !== -1
@@ -280,24 +93,28 @@ class AdminView extends Component {
       && (lectureStatus === stateValue || stateValue === 'all');
     });
 
+    // this function loops trough arrays inside object
     function List(props){
       const values = props.values;
       if (!values) {
         return null;
       }
       const length = values.length;
+      // if object has an array, this function loops through array and adds "," after each item
       const list = values.map((value, i) => {
         if (length === i+1) {
           return <span key={value}>{value}</span>
-        } else {
+        }
+        else {
           return <span key={value}>{value}, </span>
         }
       });
+      // returns for example: Helsinki, Vantaa, Espoo
       return (
         <span>{list}</span>
       )
     }
-
+    // if there isn't address, this function returns text "Office visit not possible"
     function OfficeVisit(props){
         if (!props.address) {
           return (
@@ -308,9 +125,34 @@ class AdminView extends Component {
             <span>{props.address}</span>
           );
         }
+      }
 
+    //makes dates be in format dd.mm.yyyy
+    function DateFormat(props) {
+      let date = props.date;
+      let day = date.slice(8,10);
+      let month = date.slice(5,7);
+      let year = date.slice(0, 4);
+      return (
+        <span>{day}.{month}.{year}</span>
+        );
     }
 
+    //if lecture status is 'pending' statusDate is not shown
+    function StatusDate(props) {
+      let date = props.date;
+      let status = props.status;
+      let day = date.slice(8,10);
+      let month = date.slice(5,7);
+      let year = date.slice(0, 4)
+      if (status === 'pending') {
+        return <span>{status}</span>;
+      } else {
+        return <span>{status} {day}.{month}.{year}</span>;
+        }
+    }
+
+    // loops trough every lecture and prints all information of a lecture and returns an expandable div
     filteredLectures = filteredLectures.map((lecture) => (
       <div key={lecture.lecturetheme}>
         <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
@@ -318,21 +160,20 @@ class AdminView extends Component {
                 <div style={styles.parent}>
                   <div style={styles.left}>
                     <h3 style={styles.header3top}>From:</h3>
-                    <p>{lecture.name}<br/>
-                    {lecture.email}
+                    <p>{lecture.TeacherName}<br/>
+                    {lecture.TeacherEmail}
                     </p>
                   </div>
                   <div style={styles.middle}>
                     <h3 style={styles.header3top}>To:</h3>
-                    <p>TBA<br/>
-                    TBA
+                    <p>{lecture.ExpertName}<br/>
+                    {lecture.ExpertEmail}
                     </p>
                   </div>
                   <div style={styles.right}>
                     <h3 style={styles.header3top}>Date sent:</h3>
-
-                    <p>{lecture.datesent}<br />
-                    {lecture.status} {lecture.statusDate}
+                    <p><DateFormat date={lecture.datesent}/><br />
+                    <StatusDate status={lecture.status} date={lecture.statusDate}/>
                     </p>
                   </div>
                 </div>
@@ -342,8 +183,8 @@ class AdminView extends Component {
               <CardText expandable={true}>
                 <div style={styles.parent}>
                   <div style={styles.left}>
-                    <p><span style={styles.boldText}>Name of school:</span><br/>
-                    {lecture.school}
+                    <p><span style={styles.boldText}>School name:</span><br/>
+                    {lecture.TeacherSchool}
                   </p>
                   <p><span style={styles.boldText}>Subjects:</span><br/>
                   <List values={lecture.subjects}/>
@@ -353,17 +194,17 @@ class AdminView extends Component {
                   </p>
                 </div>
                 <div style={styles.middle}>
-                  <p><span style={styles.boldText}>Theme of the lecture:</span><br/>
+                  <p><span style={styles.boldText}>Lecture theme:</span><br/>
                   {lecture.lecturetheme}
                   </p>
                   <p><span style={styles.boldText}>Date of lecture: (option1)</span><br/>
-                  {lecture.dateOption1}
+                  <DateFormat date={lecture.dateOption1}/>
                   </p>
                   <p><span style={styles.boldText}>Date of lecture: (option2)</span><br/>
-                  {lecture.dateOption2}
+                  <DateFormat date={lecture.dateOption2}/>
                   </p>
                   <p><span style={styles.boldText}>Location:</span><br/>
-                  {lecture.location}
+                  {lecture.TeacherAddress}
                   </p>
                   <p><span style={styles.boldText}>Short description:</span><br/>
                   {lecture.description}
@@ -375,7 +216,7 @@ class AdminView extends Component {
           </Card>
         </div>
       ));
-
+      // this function checks if any of user data mathches with search and makes an array of the matching data
         let filteredUsers = users.filter((user) => {
           const contactName = user.name.toLowerCase();
           const contactEmail = user.email.toLowerCase();
@@ -402,6 +243,7 @@ class AdminView extends Component {
           ;
         });
 
+        // loops trough every user and prints all information of a lecture and returns an expandable div
         filteredUsers = filteredUsers.map((user) => (
           <div key={user.name}>
             <Card style={{...styles.colorIndicatorGreen,...styles.cardMargin}}>
