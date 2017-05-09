@@ -77,9 +77,21 @@ class AdminView extends Component {
       const location = lecture.TeacherAddress.toLowerCase();
       const subjectsList = lecture.subjects.toString().toLowerCase();
 
-      const lectureStatus = lecture.status;
+      let lectureStatus = lecture.status;
       const searchString = this.state.lectureSearch.toLowerCase();
       const stateValue = this.state.lectureValue;
+      const msPerDay = 1000 * 60 * 60 * 24;
+
+      // if 'not answered' is selected from dropdown menu, calculates days
+      // between today and datesent, if days >= 14 changes lectureStatus to ignored 
+      if (stateValue === 'ignored' && lectureStatus === 'pending') {
+        let datesent = new Date(lecture.datesent);
+        const today = new Date();
+        const days = dateDiffInDays(today, datesent, msPerDay);
+        if (days >= 14) {
+          lectureStatus = 'ignored';
+        }
+      }
 
       //returns if any data matches with the search, also checks if user wants to see all lectures or for example held lectures
       return (lectureName.indexOf(searchString) !== -1
@@ -92,6 +104,14 @@ class AdminView extends Component {
       || subjectsList.indexOf(searchString) !== -1)
       && (lectureStatus === stateValue || stateValue === 'all');
     });
+
+    // counts date difference between two dates
+    function dateDiffInDays(today, datesent, msPerDay) {
+      // Discard the time and time-zone information
+      let utc1 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+      let utc2 = Date.UTC(datesent.getFullYear(), datesent.getMonth(), datesent.getDate());
+      return Math.floor((utc1 - utc2) / msPerDay);
+    }
 
     // this function loops trough arrays inside object
     function List(props){
@@ -356,11 +376,10 @@ class AdminView extends Component {
 
                     <DropDownMenu value={this.state.lectureValue} onChange={this.lectureHandleChange} openImmediately={false} style={styles.DropDownMenu}>
                       <MenuItem value={'all'} primaryText="ALL" />
-                      <MenuItem value={'pending'} primaryText="WAITING FOR RESPONSE" />
+                      <MenuItem value={'pending'} primaryText="PENDING" />
                       <MenuItem value={'accepted'} primaryText="ACCEPTED" />
-                      <MenuItem value={'rejected'} primaryText="DECLINED" />
-                      <MenuItem value={'ignored'} primaryText="IGNORED" />
-                      <MenuItem value={'held'} primaryText="HELD" />
+                      <MenuItem value={'rejected'} primaryText="REJECTED" />
+                      <MenuItem value={'ignored'} primaryText="NOT ANSWERED" />
                     </DropDownMenu>
                     <div style={styles.leftSpace}></div>
                     <div style={styles.leftText}>
