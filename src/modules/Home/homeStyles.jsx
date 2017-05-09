@@ -147,6 +147,7 @@ const styles = {
     lineHeight: '0.4em',
     marginTop: '1em',
     margin: 5,
+    width: '235px',
   },
   buttonGold: {
     color: theme.palette.primary2Color,
