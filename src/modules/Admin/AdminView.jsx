@@ -55,6 +55,12 @@ class AdminView extends Component {
   //triggered when dropdown is selected
   userHandleChange = (event, index, userValue) => this.setState({userValue});
 
+  handleEdit = (values) => {
+    this.props.editProfile(values.id, values, () => {
+      this.props.refresh();
+    });
+  }
+
   render() {
 
     let users = this.props.users.data;
@@ -83,7 +89,7 @@ class AdminView extends Component {
       const msPerDay = 1000 * 60 * 60 * 24;
 
       // if 'not answered' is selected from dropdown menu, calculates days
-      // between today and datesent, if days >= 14 changes lectureStatus to ignored 
+      // between today and datesent, if days >= 14 changes lectureStatus to ignored
       if (stateValue === 'ignored' && lectureStatus === 'pending') {
         let datesent = new Date(lecture.datesent);
         const today = new Date();
@@ -329,7 +335,7 @@ class AdminView extends Component {
                     </div>
 
                     <div style={styles.right}>
-                      <EditModal user={user} />
+                      <EditModal onSubmit={this.handleEdit} user={user} />
                     </div>
                     </div>
                   </CardText>
