@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import Radium from 'radium';
@@ -15,12 +16,6 @@ const cityList = [
   'Vantaa',
 ];
 
-const formdata = {
-  name: 'Esko Esimerkki',
-  phone: '+358 45 23423434 ',
-  email: 'esko.esimerkki@example.com',
-  supportedLocations: 'Helsinki, Espoo',
-}
 const required = value => value ? undefined : 'Required'
 
 const email = value =>
@@ -70,7 +65,7 @@ const renderChipInput = ({ input, label, hintText, dataSource, meta: { touched, 
 )
 
 @Radium
-export default class BasicInfoModal extends React.Component {
+class BasicInfoModal extends Component {
 
   state = {
     open: false,
@@ -106,7 +101,6 @@ export default class BasicInfoModal extends React.Component {
                     component={renderTextField}
                     label='Name'
                     type='text'
-                    hintText={this.props.expert.name}
                     floatingLabelFixed={true}/>
 
                   <Field
@@ -114,7 +108,6 @@ export default class BasicInfoModal extends React.Component {
                     validate={required}
                     component={renderTextField}
                     label='Phone' type='text'
-                    hintText={this.props.expert.phone}
                     floatingLabelFixed={true} />
 
                   <Field
@@ -122,16 +115,14 @@ export default class BasicInfoModal extends React.Component {
                     validate={[required, email]}
                     component={renderTextField}
                     label='Email' type='text'
-                    hintText={this.props.expert.email}
                     floatingLabelFixed={true} />
 
                   <Field
-                    name='supportedLocations'
+                    name='area'
                     label='Supported locations'
                     component={renderChipInput}
                     id='supportedLocations'
                     dataSource={cityList}
-                    hintText={this.props.expert.area}
                     floatingLabelFixed={true} />
 
                 </div>
@@ -159,4 +150,13 @@ export default class BasicInfoModal extends React.Component {
 BasicInfoModal = reduxForm({
   form: 'myProfileEditForm',
   destroyOnUnmount: false,
+  enableReinitialize: true,
 })(BasicInfoModal)
+
+BasicInfoModal = connect(
+  (state, ownProps) => ({
+    initialValues: ownProps.expert,
+  }),
+)(BasicInfoModal)
+
+export default BasicInfoModal;

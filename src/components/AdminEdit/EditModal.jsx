@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import Radium from 'radium';
@@ -113,7 +113,6 @@ class AdminEditModal extends Component {
   };
 
     render() {
-      const { officeVisit } = this.props
       return (
         <div>
           <a style={styles.link} label="Dialog" onTouchTap={this.handleOpen}><img src={'../../img/edit.png'} style={styles.editPen}/></a>
@@ -189,7 +188,7 @@ class AdminEditModal extends Component {
                   <p>Check this box if you agree that teachers can come to your office with
                       a group of students</p>
 
-                  {officeVisit &&
+                  {this.props.officeVisit &&
                   <Field
                     name='address'
                     label='Office address'

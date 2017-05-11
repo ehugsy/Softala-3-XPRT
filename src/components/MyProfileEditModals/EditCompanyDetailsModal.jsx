@@ -48,6 +48,10 @@ export default class EditCompanyDetailsModal extends React.Component {
     this.setState({open: false});
   };
 
+  handleLog = () => {
+    console.log(this.props)
+  }
+
   render() {
     const actions = [
       <FlatButton
@@ -74,14 +78,13 @@ export default class EditCompanyDetailsModal extends React.Component {
           actionsContainerStyle={styles.noborder}>
 
           <form onSubmit={this.props.handleSubmit}>
+            <button type="button" onClick={this.handleLog}>log</button>
             <div>
               <Field
-                name='companyName'
+                name='company'
                 label='Company name'
                 component={renderTextField}
                 id='companyName'
-                validate={required}
-                hintText={this.props.expert.company}
                 floatingLabelFixed={true}/>
 
               <Field
@@ -89,23 +92,21 @@ export default class EditCompanyDetailsModal extends React.Component {
                 label='Title'
                 component={renderTextField}
                 id='title'
-                validate={required}
-                hintText={this.props.expert.title}
                 floatingLabelFixed={true}/>
 
               <Field
-                name='officeVisitPossible'
+                name='officeVisit'
                 id='officeVisitPossible'
                 component={renderCheckbox}
                 label='Office visit possible'
-                value='checked'/>
+              />
 
               <p>Check this box if you agree that teachers can come to your office with
                   a group of students</p>
 
               {this.props.officeVisitPossible &&
               <Field
-                name='officeAddress'
+                name='address'
                 label='Office address'
                 component={renderTextField}
                 id='officeAddress'
@@ -135,13 +136,19 @@ export default class EditCompanyDetailsModal extends React.Component {
 EditCompanyDetailsModal = reduxForm({
   form: 'companyDetailsForm',
   destroyOnUnmount: false,
+  enableReinitialize: true,
 })(EditCompanyDetailsModal)
+
+EditCompanyDetailsModal = connect(
+  (state, ownProps) => ({
+    initialValues: ownProps.expert,
+  }),
+)(EditCompanyDetailsModal)
 
 const selector = formValueSelector('companyDetailsForm')
 EditCompanyDetailsModal = connect(
   state => {
-    // can select values individually
-    const officeVisitPossible = selector(state, 'officeVisitPossible')
+    const officeVisitPossible = selector(state, 'officeVisit')
     return {
       officeVisitPossible,
     }

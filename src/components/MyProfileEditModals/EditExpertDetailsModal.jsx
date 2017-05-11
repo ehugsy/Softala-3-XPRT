@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import MyTextField from '../MyTextField';
 import Radium from 'radium';
@@ -99,12 +100,11 @@ export default class ExperdDetailsModal extends React.Component {
             <form onSubmit={this.props.handleSubmit}>
               <div>
                 <Field
-                  name='introduction'
+                  name='description'
                   validate={required}
                   component={renderTextField}
                   label='Short introduction'
                   type='text'
-                  hintText={this.props.expert.description}
                   floatingLabelFixed={true}/>
 
                 <Field
@@ -114,16 +114,14 @@ export default class ExperdDetailsModal extends React.Component {
                   component={renderChipInput}
                   id='subjects'
                   dataSource={subjectList}
-                  hintText={this.props.expert.subjects}
                   floatingLabelFixed={true} />
 
                 <Field
-                  name='lectureDetails'
+                  name='details'
                   validate={required}
                   component={renderTextField}
                   label='Lecture details'
                   type='text'
-                  hintText={this.props.expert.details}
                   floatingLabelFixed={true} />
 
               </div>
@@ -151,4 +149,11 @@ export default class ExperdDetailsModal extends React.Component {
 ExperdDetailsModal = reduxForm({
   form: 'expertDetailsEditForm',
   destroyOnUnmount: false,
+  enableReinitialize: true,
 })(ExperdDetailsModal)
+
+ExperdDetailsModal = connect(
+  (state, ownProps) => ({
+    initialValues: ownProps.expert,
+  }),
+)(ExperdDetailsModal)
