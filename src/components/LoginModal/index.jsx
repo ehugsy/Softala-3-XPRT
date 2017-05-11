@@ -38,6 +38,11 @@ class LoginModal extends Component {
     });
   };
 
+  handleForgottenPassword = (event) => {
+    event.preventDefault();
+    this.props.changeView('/contact');
+  }
+
   handleChange = (event, field) => {
     this.setState({
       [field]: event.target.value,
@@ -73,7 +78,12 @@ class LoginModal extends Component {
                 this.handleChange(event, 'password');
               }}
             />
-            <p style={{textAlign: 'left', fontSize: 13, color: theme.palette.primary2Color}}>Forgotten password?</p>
+            <FlatButton
+              labelStyle={{fontSize: 13, color: theme.palette.primary2Color}}
+              label='Forgotten password?'
+              hoverColor='#444444'
+              onTouchTap={this.handleForgottenPassword}
+            />
             {errMsg}
             <FlatButton
               type='button'
