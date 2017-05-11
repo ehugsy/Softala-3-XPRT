@@ -83,7 +83,7 @@ class AdminView extends Component {
       const msPerDay = 1000 * 60 * 60 * 24;
 
       // if 'not answered' is selected from dropdown menu, calculates days
-      // between today and datesent, if days >= 14 changes lectureStatus to ignored 
+      // between today and datesent, if days >= 14 changes lectureStatus to ignored
       if (stateValue === 'ignored' && lectureStatus === 'pending') {
         let datesent = new Date(lecture.datesent);
         const today = new Date();
