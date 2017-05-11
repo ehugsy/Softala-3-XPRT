@@ -52,16 +52,15 @@ const ContactForm = (props) => {
       <Field
         name="name"
         type="text"
-        label="Your name *"
-        validate={required}
+        label="Your name"
         component={renderTextField}
       />
 
       <Field
         name="email"
         type="text"
-        label="Your email address *"
-        validate={[required, email]}
+        label="Your email address"
+        validate={email}
         component={renderTextField}
       />
 
@@ -73,7 +72,7 @@ const ContactForm = (props) => {
       />
 
       <Field
-        name="message"
+        name="text"
         label="Your message *"
         validate={required}
         component={renderTextArea}

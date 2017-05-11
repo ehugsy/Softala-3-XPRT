@@ -20,14 +20,16 @@ import TwitterIcon from '../../components/TwitterIcon';
 import Footer from '../Footer';
 import styles from './contactStyles';
 import ContactForm from './ContactForm';
-import ContactSubmit from './ContactSubmit';
 
 
 
 @Radium
 class Contact extends Component {
-  render() {
+  state = {
+    feedbackSent: false,
+  }
 
+  render() {
     return(
       <div style={styles.wrapper}>
         <div style={styles.landingWrapper}>
@@ -56,16 +58,28 @@ class Contact extends Component {
             <TwitterIcon/>
           </IconButton>
         </div>
-        <div style={styles.rightText}>
-          <p>
-            Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
-          </p>
+        { !this.state.feedbackSent ? (
+          <div style={styles.rightText}>
+            <p>
+              Xprt connects teachers and experts for the benefit of Finnish school children. Arranging a visiting lecture from a professional expert has become easier.
+            </p>
 
-          <p>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
+            <p>Contact us to hear more. <span style={{...styles.requiredText, ...styles.mobileHide}}>* marks a required field</span></p>
 
-          <ContactForm onSubmit={ContactSubmit}/>
+            <ContactForm onSubmit={(fields) => {
+              this.props.submitFeedback(fields, err => {
+                if (!err) {
+                  this.setState({ feedbackSent: true });
+                }
+              });
+            }}/>
 
-        </div>
+          </div>
+        ) : (
+          <div style={styles.rightText}>
+            Thank you for sending feedback to HundrED!
+          </div>
+        )}
         <div style={styles.rightSpace}></div>
       </div>
     </div>
