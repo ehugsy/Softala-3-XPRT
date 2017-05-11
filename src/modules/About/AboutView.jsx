@@ -35,7 +35,7 @@ class About extends Component {
             <div style={styles.rightSpace}></div>
           </div>
 
-          <div style={styles.teacherExpertWrapper}>
+          <div style={styles.teacherExpertWrapperBottom}>
             <div style={styles.leftSpace}></div>
             <div style={styles.leftText}>
               <p style={styles.smallHeader}>TEACHERS</p>
