@@ -121,11 +121,13 @@ const styles = {
     },
   },
   buttonStyle: {
-    border: '1px solid rgba(204, 204, 204, .34)',
+    border: '1px solid #555555',
     padding: '15px',
     borderRadius: '20px',
     lineHeight: '0.4em',
-    marginTop: '1em'
+    marginTop: '1em',
+    margin: 5,
+    width: '235px',
   },
   mobileHide: {
     '@media (max-width: 768px)':{
