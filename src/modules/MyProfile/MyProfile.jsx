@@ -13,6 +13,8 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Checkbox from 'material-ui/Checkbox';
 import Chip from 'material-ui/Chip';
 import CircularProgress from 'material-ui/CircularProgress';
+import isArray from 'lodash/isArray';
+
 import EditCompanyDetailsModal from '../../components/MyProfileEditModals/EditCompanyDetailsModal';
 import EditBasicInfoModal from '../../components/MyProfileEditModals/EditBasicInfoModal';
 import EditExpertDetailsModal from '../../components/MyProfileEditModals/EditExpertDetailsModal';
@@ -44,6 +46,9 @@ function SubjectChips(props) {
   if (!subjects) {
     return null;
   }
+  if (!isArray(subjects)) {
+    return subjects;
+  }
 
   const list = subjects.map((subject) =>
   <Chip style={styles.chip}>{subject}</Chip>
@@ -55,6 +60,14 @@ function SubjectChips(props) {
 
 function SubjectList(props){
   const subjects = props.subjects;
+  console.log(subjects);
+  if (!subjects) {
+    return null;
+  }
+  if (!isArray(subjects)) {
+    return <span>{subjects}</span>;
+  }
+
   const length = subjects.length;
   const list = subjects.map((subjects, i) => {
     if (length === i+1) {
