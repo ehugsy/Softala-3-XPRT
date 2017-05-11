@@ -48,10 +48,6 @@ export default class EditCompanyDetailsModal extends React.Component {
     this.setState({open: false});
   };
 
-  handleLog = () => {
-    console.log(this.props)
-  }
-
   render() {
     const actions = [
       <FlatButton
@@ -78,7 +74,6 @@ export default class EditCompanyDetailsModal extends React.Component {
           actionsContainerStyle={styles.noborder}>
 
           <form onSubmit={this.props.handleSubmit}>
-            <button type="button" onClick={this.handleLog}>log</button>
             <div>
               <Field
                 name='company'
