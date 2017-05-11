@@ -126,12 +126,13 @@ export default class ExperdDetailsModal extends React.Component {
 
               </div>
               <FlatButton
+                type="submit"
                 label="Save"
                 primary={true}
-                onTouchTap={this.handleClose}
                 style={styles.button}
               />
               <FlatButton
+                type="button"
                 label="Cancel"
                 primary={true}
                 onTouchTap={this.handleClose}

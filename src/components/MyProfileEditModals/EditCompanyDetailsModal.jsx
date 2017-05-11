@@ -49,18 +49,6 @@ export default class EditCompanyDetailsModal extends React.Component {
   };
 
   render() {
-    const actions = [
-      <FlatButton
-        label="Save"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-    ];
 
     return (
       <div>
@@ -109,12 +97,13 @@ export default class EditCompanyDetailsModal extends React.Component {
               }
               </div>
               <FlatButton
+                type="submit"
                 label="Save"
                 primary={true}
-                onTouchTap={this.handleClose}
                 style={styles.button}
               />
               <FlatButton
+                type="button"
                 label="Cancel"
                 primary={true}
                 onTouchTap={this.handleClose}
