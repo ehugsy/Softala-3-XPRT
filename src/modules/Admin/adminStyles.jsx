@@ -25,7 +25,6 @@ const styles = {
     paddingRight:'4%',
     backgroundImage:"url('../img/xprt-background.png')",
       backgroundSize: '2500px',
-      backgroundRepeat: 'no-repeat',
     '@media (max-width: 768px)': {
       marginTop: 10
     },
