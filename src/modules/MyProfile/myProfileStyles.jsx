@@ -37,7 +37,6 @@ of the page overall
     width: '150px',
     height: '150px'
   },
-
   /*Adds a little space between the end of the page and the last card */
   emptyFooter: {
     paddingBottom:'1px',
@@ -47,7 +46,21 @@ of the page overall
   mainDivTextTitle: {
     color: theme.palette.primary1Color,
     fontSize: '16px',
-    fontWeight: '300'
+    fontWeight: '300',
+  },
+  mainDivTextTitleSchool: {
+    color: theme.palette.primary1Color,
+    fontSize: '16px',
+    fontWeight: '300',
+    marginTop: "-15px",
+    marginBottom: "-5px",
+  },
+  mainDivTextTitleLecture: {
+    color: theme.palette.primary1Color,
+    paddingTop: '15px',
+    fontSize: '16px',
+    fontWeight: '300',
+    marginBottom: "-5px",
   },
   mainDivText: {
     color: theme.palette.textColor,

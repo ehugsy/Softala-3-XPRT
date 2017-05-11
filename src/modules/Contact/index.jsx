@@ -8,6 +8,14 @@ export default connect(
   (dispatch) => ({
     getExperts() {
       dispatch(rest.actions.experts());
+    },
+    submitFeedback(fields, cb) {
+      dispatch(rest.actions.feedback.post({}, {
+        body: JSON.stringify({
+          ...fields,
+          creatorType: 'expert',
+        })
+      }, cb))
     }
   })
 )(ContactView);
