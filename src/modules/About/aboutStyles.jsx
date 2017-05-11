@@ -13,6 +13,15 @@ const styles = {
       flexDirection: 'column-reverse'
     },
   },
+  teacherExpertWrapperBottom: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingBottom: '25px',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column-reverse'
+    },
+  },
   secondWrapper: {
     height: '75vmin',
     display: 'flex',

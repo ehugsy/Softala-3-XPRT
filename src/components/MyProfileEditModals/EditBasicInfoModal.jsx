@@ -22,6 +22,14 @@ const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
   'Invalid email address' : undefined
 
+const tel = value =>
+  value && !/^\d{8,10}$/.test(value) ?
+  'Invalid phone number' : undefined
+
+const name = value =>
+  value && !/^[A-ZÅÄÖa-zåäö\s-]{3,100}$/.test(value) ?
+  'Name must contain only letters and be at least 3 characters long' : undefined
+
 const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
   <MyTextField
     floatingLabelText={label}
@@ -97,33 +105,34 @@ class BasicInfoModal extends Component {
                 <div>
                   <Field
                     name='name'
-                    validate={required}
+                    validate={[required, name]}
                     component={renderTextField}
                     label='Name'
                     type='text'
-                    floatingLabelFixed={true}/>
-
+                    floatingLabelFixed={true}
+                  />
                   <Field
                     name='phone'
-                    validate={required}
+                    validate={[required, tel]}
                     component={renderTextField}
                     label='Phone' type='text'
-                    floatingLabelFixed={true} />
-
+                    floatingLabelFixed={true}
+                  />
                   <Field
                     name='email'
                     validate={[required, email]}
                     component={renderTextField}
                     label='Email' type='text'
-                    floatingLabelFixed={true} />
-
+                    floatingLabelFixed={true}
+                  />
                   <Field
                     name='area'
                     label='Supported locations'
                     component={renderChipInput}
                     id='supportedLocations'
                     dataSource={cityList}
-                    floatingLabelFixed={true} />
+                    floatingLabelFixed={true}
+                  />
 
                 </div>
                 <FlatButton
