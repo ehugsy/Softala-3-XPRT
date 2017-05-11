@@ -162,7 +162,7 @@ export default class MyProfile extends Component {
           ...styles.titleStyle
         }} subtitleStyle={{
           ...styles.subtitleStyle
-        }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+        }} avatar={<Avatar src='../../img/placeholder_profilepicture.png' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           <p style={styles.mainDivTextTitleSchool}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
@@ -206,7 +206,7 @@ export default class MyProfile extends Component {
           ...styles.titleStyle
         }} subtitleStyle={{
           ...styles.subtitleStyle
-        }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+        }} avatar={<Avatar src='../../img/placeholder_profilepicture.png' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           <p style={styles.mainDivTextTitleSchool}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
@@ -239,7 +239,7 @@ export default class MyProfile extends Component {
           ...styles.titleStyle
         }} subtitleStyle={{
           ...styles.subtitleStyle
-        }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
+        }} avatar={<Avatar src='../../img/placeholder_profilepicture.png' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
           <p style={styles.mainDivTextTitleSchool}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
