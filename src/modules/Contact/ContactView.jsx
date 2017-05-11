@@ -51,10 +51,10 @@ class Contact extends Component {
             00140 Helsinki
           </p>
           <p>info@xprt.fi</p>
-          <IconButton>
+          <IconButton onTouchTap={() => (window.location = "https://www.facebook.com/HundrEDorg/")}>
             <FacebookIcon/>
           </IconButton>
-          <IconButton>
+          <IconButton onTouchTap={() => (window.location = "https://www.twitter.com/HundrEDorg/")}>
             <TwitterIcon/>
           </IconButton>
         </div>
