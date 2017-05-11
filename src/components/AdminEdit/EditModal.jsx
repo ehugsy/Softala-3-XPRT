@@ -112,6 +112,31 @@ class AdminEditModal extends Component {
     this.setState({open: false});
   };
 
+    handleNext = () => {
+      const {stepIndex} = this.state;
+      if (!this.state.loading) {
+        this.dummyAsync(() => this.setState({
+          loading: false,
+          stepIndex: stepIndex + 1,
+          finished: stepIndex >= 2
+        }));
+      }
+    };
+
+    handlePrev = () => {
+      const {stepIndex} = this.state;
+      if (stepIndex === 0) {
+        return this.props.closeRegistration();
+      }
+
+      if (!this.state.loading) {
+        this.dummyAsync(() => this.setState({
+          loading: false,
+          stepIndex: stepIndex - 1
+        }));
+      }
+    };
+
     render() {
       return (
         <div>
@@ -227,13 +252,12 @@ class AdminEditModal extends Component {
                 </div>
                 <FlatButton
                   label="Save"
-                  type="submit"
                   primary={true}
+                  onTouchTap={this.handleClose}
                   style={styles.button}
                 />
                 <FlatButton
                   label="Cancel"
-                  type="button"
                   primary={true}
                   onTouchTap={this.handleClose}
                   style={styles.button}
