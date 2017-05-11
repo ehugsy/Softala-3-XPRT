@@ -83,6 +83,7 @@ class LoginModal extends Component {
               label='Forgotten password?'
               hoverColor='#444444'
               onTouchTap={this.handleForgottenPassword}
+              style={{width: '100%'}}
             />
             {errMsg}
             <FlatButton
