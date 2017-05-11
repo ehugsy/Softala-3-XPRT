@@ -157,8 +157,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     height: '100%',
-
-
     '@media (max-width:769px)': {
       flexDirection: 'column',
     },
