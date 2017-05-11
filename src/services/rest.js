@@ -47,6 +47,10 @@ const rest = reduxApi({
     transformer: transformers.array,
     crud: true,
   },
+  adminUser: {
+    url: `${config.API_ROOT}/users/:userId`,
+    crud: true,
+  },
   register: {
     url: `${config.API_ROOT}/users`,
     crud: true,

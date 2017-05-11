@@ -12,6 +12,11 @@ export default connect(
     refresh() {
       dispatch(rest.actions.users());
       dispatch(rest.actions.adminLectures());
+    },
+    editProfile(userId, data, cb) {
+      dispatch(rest.actions.adminUser.post({ userId }, { body: JSON.stringify(
+        data)
+      }, cb));
     }
   })
 )(AdminView);

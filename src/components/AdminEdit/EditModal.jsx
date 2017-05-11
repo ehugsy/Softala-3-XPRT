@@ -227,12 +227,13 @@ class AdminEditModal extends Component {
                 </div>
                 <FlatButton
                   label="Save"
+                  type="submit"
                   primary={true}
-                  onTouchTap={this.handleClose}
                   style={styles.button}
                 />
                 <FlatButton
                   label="Cancel"
+                  type="button"
                   primary={true}
                   onTouchTap={this.handleClose}
                   style={styles.button}
