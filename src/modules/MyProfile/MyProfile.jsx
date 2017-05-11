@@ -157,7 +157,7 @@ export default class MyProfile extends Component {
           ...styles.subtitleStyle
         }} avatar={<Avatar src='../../img/Arska.jpg' size={60} style={styles.avatarStyle} />} actAsExpander={true} showExpandableButton={true}/>
         <CardText expandable={true}>
-          <p style={styles.mainDivTextTitle}>SCHOOL:</p>
+          <p style={styles.mainDivTextTitleSchool}>SCHOOL:</p>
           <p style={styles.mainDivTextBold}>Teacher:</p>
           <p style={styles.mainDivText}>{lecture.name}</p>
           <p style={styles.mainDivTextBold}>School name:</p>
@@ -166,7 +166,7 @@ export default class MyProfile extends Component {
           <p style={styles.mainDivText}><SubjectList subjects={lecture.subjects}/></p>
           <p style={styles.mainDivTextBold}>Educational stage:</p>
           <p style={styles.mainDivText}>{lecture.educationalstage}</p>
-          <p style={styles.mainDivTextTitle}>LECTURE:</p>
+          <p style={styles.mainDivTextTitleLecture}>LECTURE:</p>
           <p style={styles.mainDivTextBold}>Theme of the lecture:</p>
           <p style={styles.mainDivText}>{lecture.lecturetheme}</p>
           <p style={styles.mainDivTextBold}>Date of lecture: (option 1):</p>
