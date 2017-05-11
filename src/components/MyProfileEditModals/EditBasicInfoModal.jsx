@@ -129,13 +129,14 @@ class BasicInfoModal extends Component {
                 <FlatButton
                   label="Save"
                   primary={true}
-                  onTouchTap={this.handleClose}
+                  type="submit"
                   style={styles.button}
                 />
                 <FlatButton
                   label="Cancel"
                   primary={true}
                   onTouchTap={this.handleClose}
+                  type="button"
                   style={styles.button}
                 />
               </form>

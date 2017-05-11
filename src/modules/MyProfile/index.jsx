@@ -18,10 +18,10 @@ export default connect(
         {status: status}
       )}, cb));
     },
-    editProfile(data) {
+    editProfile(data, cb) {
       dispatch(rest.actions.profile.post({}, { body: JSON.stringify(
-        {image: file.image})
-      }));
+        data)
+      }, cb));
     },
   })
 )(MyProfile);
