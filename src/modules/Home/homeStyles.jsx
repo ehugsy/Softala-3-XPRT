@@ -11,8 +11,9 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'flex-end',
     flexWrap: 'no-wrap',
+    paddingBottom: '10%',
     '@media (max-width: 769px)': {
-      flexDirection: 'column'
+      flexDirection: 'column',
     },
   },
   //Wraps the lower part
@@ -28,7 +29,6 @@ const styles = {
     background: '#cccccc',
     height: '700px',
     width: '100%',
-    padding: '5%',
     '@media (max-width:769px)': {
       height: '100%',
     },
