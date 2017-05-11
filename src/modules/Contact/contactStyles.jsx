@@ -9,6 +9,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    paddingBottom: '20px',
     '@media (max-width: 768px)': {
       flexDirection: 'column-reverse'
     },
